@@ -1,11 +1,12 @@
 import { FOOTER_CONTENT } from "../constants/footer";
 
 export const Footer = () => (
-  <footer className="bg-gray-800 text-white p-4 text-center">
-    <p className="text-sm">
+  <footer className="  text-white p-4 text-center border-t border-gray-200">
+    <p className="text-sm text-black">
       {FOOTER_CONTENT.copyright}
     </p>
-    <ul className="flex flex-col items-center gap-1 my-2">
+   <div className="flex justify-center space-x-4 mt-2">
+     <ul className="flex flex-col items-center gap-1 my-2">
       {FOOTER_CONTENT.links.map(link => (
         <li key={link.href}>
           <a href={link.href} className="text-blue-400 hover:underline">
@@ -27,7 +28,8 @@ export const Footer = () => (
         </a>
       ))}
     </div>
-    <p className="text-xl mt-2">
+    </div>
+    <p className="text-xl mt-2 text-black">
       {FOOTER_CONTENT.address}
     </p>
   </footer>

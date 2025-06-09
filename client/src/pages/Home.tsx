@@ -29,22 +29,16 @@ export const Home = () => {
                 </main>
             </div>
             <main className="mx-auto px-4 py-8 xl:flex xl:w-full">
-                {HOME_SECTIONS.map((section, idx) => (
-                  <section
-                    key={section.title}
-                    className={
-                      idx === 0
-                        ? "mx-auto px-4 py-8"
-                        : "max-w-4xl mx-auto px-4 py-8"
-                    }
-                  >
-                    <h1 className={`text-2xl font-bold mb-4 ${idx === 0 ? "" : "h2"}`}>{section.title}</h1>
-                    {section.paragraphs.map((text, i) => (
-                      <p className="text-gray-700 mb-4" key={i}>{text}</p>
-                    ))}
-                  </section>
-                ))}
-                <section className="w-full px-4 py-8 flex flex-col">
+                <section className="mx-auto px-4 py-8">
+                    <h1 className="text-2xl font-bold mb-4 ">{HOME_SECTIONS[0].title}</h1>
+                    <p className="text-gray-700 mb-4">
+                        {HOME_SECTIONS[0].paragraphs[0]}
+                    </p>
+                    <p className="text-gray-700">
+                        {HOME_SECTIONS[0].paragraphs[1]}
+                    </p>
+                </section>
+                <section className=" w-full px-4 py-8 flex flex-col ">
                     {step === 1 && (
                         <form
                             className="w-full"
@@ -60,7 +54,7 @@ export const Home = () => {
                             <h3 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.serviceLabel}</h3>
                             <select className="border border-gray-300 rounded p-2 mb-4 w-full" required>
                                 {BOOKING_FORM_CONTENT.serviceOptions.map(opt => (
-                                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                                    <option key={opt.value} value={opt.value}>{opt.label}</option>
                                 ))}
                             </select>
                             <h2 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.sizeLabel}</h2>
@@ -74,7 +68,7 @@ export const Home = () => {
                             <h2 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.frequencyLabel}</h2>
                             <select className="border border-gray-300 rounded p-2 mb-4 w-full" required>
                                 {BOOKING_FORM_CONTENT.frequencyOptions.map(opt => (
-                                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                                    <option key={opt.value} value={opt.value}>{opt.label}</option>
                                 ))}
                             </select>
                             <button
@@ -94,13 +88,13 @@ export const Home = () => {
                         >
                             <h2 className="text-2xl font-bold mb-4">{CUSTOMER_FORM_CONTENT.title}</h2>
                             {CUSTOMER_FORM_CONTENT.fields.map((field, idx) => (
-                              <input
-                                key={idx}
-                                type={field.type}
-                                placeholder={field.placeholder}
-                                className="border border-gray-300 rounded p-2 mb-4 w-full max-w-md"
-                                required
-                              />
+                                <input
+                                    key={idx}
+                                    type={field.type}
+                                    placeholder={field.placeholder}
+                                    className="border border-gray-300 rounded p-2 mb-4 w-full max-w-md"
+                                    required
+                                />
                             ))}
                             <div className="flex gap-2">
                                 <button
@@ -119,6 +113,15 @@ export const Home = () => {
                             </div>
                         </form>
                     )}
+                </section>
+                <section className="max-w-4xl mx-auto px-4 py-8">
+                    <h2 className="text-2xl font-bold mb-4">{HOME_SECTIONS[1].title}</h2>
+                    <p className="text-gray-700 mb-4">
+                        {HOME_SECTIONS[1].paragraphs[0]}
+                    </p>
+                    <p className="text-gray-700 mb-4">
+                        {HOME_SECTIONS[1].paragraphs[1]}
+                    </p>
                 </section>
             </main>
         </>
