@@ -9,7 +9,6 @@ export const Home = () => {
         <>
             <div className="flex flex-col justify-center relative bg-gray-100">
                 <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${hero})` }}>
-                    {/* Pelicule overlay */}
                     <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
                     <img src={orionLogo} alt="Orion Städ Logo" className="absolute top-4 left-4 w-24 h-auto xl:w-[15rem] rounded-full z-20" />
                 </div>
@@ -71,7 +70,7 @@ export const Home = () => {
                             </select>
                             <button
                                 type="submit"
-                                className="bg-[#c09cc1] text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors w-full"
+                                className="bg-[#c09cc1] text-white px-4 py-2 rounded hover:bg-[#8e77ad] transition-colors w-full"
                             >
                                 Next
                             </button>
