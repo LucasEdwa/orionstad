@@ -24,7 +24,7 @@ export const Contact = () => {
                     setSent(true);
                     formRef.current?.reset();
                 },
-                (err) => {
+                () => {
                     setError("Failed to send message. Please try again.");
                 }
             );
