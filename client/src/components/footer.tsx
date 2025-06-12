@@ -28,7 +28,7 @@ export const Footer = () => (
         </li>
       ))}
     </ul>
-    <div className="mt-4 flex flex-col justify-center gap-4">
+    <div className=" flex flex-col justify-center gap-4">
       {FOOTER_CONTENT.social.map(link => (
         <a
           key={link.href}
@@ -43,7 +43,7 @@ export const Footer = () => (
     </div>
     </div>
     
-    <p className="text-xl mt-2 text-black">
+    <p className="xl:text-xl text-xs mt-2 text-black">
       {FOOTER_CONTENT.address}
     </p>
   </footer>

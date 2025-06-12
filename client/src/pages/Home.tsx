@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "../store";
+import { setBookingStep, setBookingForm, setCustomerForm, resetBooking } from "../store/bookingSlice";
 import hero from '../assets/header-cleaning.jpg';
 import orionLogo from '../assets/orion-logo.png';
 import {
@@ -9,7 +12,18 @@ import {
 } from "../constants/home";
 
 export const Home = () => {
-    const [step, setStep] = useState(1);
+    const dispatch = useDispatch();
+    const step = useSelector((state: RootState) => state.booking.step);
+    const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
+    const customerForm = useSelector((state: RootState) => state.booking.customerForm);
+
+    // Handlers for form changes
+    const handleBookingChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        dispatch(setBookingForm({ ...bookingForm, [e.target.name]: e.target.value }));
+    };
+    const handleCustomerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(setCustomerForm({ ...customerForm, [e.target.name]: e.target.value }));
+    };
 
     return (
         <>
@@ -38,13 +52,13 @@ export const Home = () => {
                         {HOME_SECTIONS[0].paragraphs[1]}
                     </p>
                 </section>
-                <section className=" w-full px-4 py-8 flex flex-col ">
+                <section className="w-full px-4 py-8 flex flex-col ">
                     {step === 1 && (
                         <form
                             className="w-full"
                             onSubmit={e => {
                                 e.preventDefault();
-                                setStep(2);
+                                dispatch(setBookingStep(2));
                             }}
                         >
                             <h2 className="text-2xl font-bold mb-4">{BOOKING_FORM_CONTENT.title}</h2>
@@ -52,21 +66,36 @@ export const Home = () => {
                                 {BOOKING_FORM_CONTENT.intro}
                             </p>
                             <h3 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.serviceLabel}</h3>
-                            <select className="border border-gray-300 rounded p-2 mb-4 w-full" required>
+                            <select
+                                name="serviceType"
+                                className="border border-gray-300 rounded p-2 mb-4 w-full"
+                                required
+                                value={bookingForm.serviceType || ""}
+                                onChange={handleBookingChange}
+                            >
                                 {BOOKING_FORM_CONTENT.serviceOptions.map(opt => (
                                     <option key={opt.value} value={opt.value}>{opt.label}</option>
                                 ))}
                             </select>
                             <h2 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.sizeLabel}</h2>
                             <input
+                                name="homeSize"
                                 type="number"
                                 min="0"
                                 placeholder="Enter home size in m²"
                                 className="border border-gray-300 rounded p-2 mb-4 w-full"
                                 required
+                                value={bookingForm.homeSize || ""}
+                                onChange={handleBookingChange}
                             />
                             <h2 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.frequencyLabel}</h2>
-                            <select className="border border-gray-300 rounded p-2 mb-4 w-full" required>
+                            <select
+                                name="frequency"
+                                className="border border-gray-300 rounded p-2 mb-4 w-full"
+                                required
+                                value={bookingForm.frequency || ""}
+                                onChange={handleBookingChange}
+                            >
                                 {BOOKING_FORM_CONTENT.frequencyOptions.map(opt => (
                                     <option key={opt.value} value={opt.value}>{opt.label}</option>
                                 ))}
@@ -83,24 +112,27 @@ export const Home = () => {
                         <form
                             onSubmit={e => {
                                 e.preventDefault();
-                                // handle submit here
+                                // handle submit here (send all data)
                             }}
                         >
                             <h2 className="text-2xl font-bold mb-4">{CUSTOMER_FORM_CONTENT.title}</h2>
                             {CUSTOMER_FORM_CONTENT.fields.map((field, idx) => (
                                 <input
                                     key={idx}
+                                    name={field.placeholder.replace(/\s+/g, '').toLowerCase()}
                                     type={field.type}
                                     placeholder={field.placeholder}
                                     className="border border-gray-300 rounded p-2 mb-4 w-full max-w-md"
                                     required
+                                    value={customerForm[field.placeholder.replace(/\s+/g, '').toLowerCase()] || ""}
+                                    onChange={handleCustomerChange}
                                 />
                             ))}
                             <div className="flex gap-2">
                                 <button
                                     type="button"
                                     className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400 transition-colors"
-                                    onClick={() => setStep(1)}
+                                    onClick={() => dispatch(setBookingStep(1))}
                                 >
                                     {CUSTOMER_FORM_CONTENT.backLabel}
                                 </button>

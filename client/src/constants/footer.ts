@@ -19,8 +19,8 @@ export const FOOTER_CONTENT: FooterContent = {
     { href: "/contact", label: "Contact Us" },
   ],
   social: [
-    { href: "https://www.facebook.com/orionstad", label: "Facebook" },
-    { href: "https://www.instagram.com/orionstad", label: "Instagram" },
-    { href: "https://www.linkedin.com/company/orionstad", label: "LinkedIn" },
+    { href: "https://www.facebook.com/people/Orion-Städ/pfbid032LTfFTwtW1M1Rjx4h1CSb3JXGQTonuXZyKpkZiu9j3ZXPUF6tc5KKqpVikBz5SDHl/", label: "Facebook" },
+    { href: "https://www.instagram.com/orion.stad/", label: "Instagram" },
+    { href: "https://www.linkedin.com/in/orion-städ-819995308/?originalSubdomain=se", label: "LinkedIn" },
   ],
 };
