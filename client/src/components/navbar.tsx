@@ -12,7 +12,9 @@ export const Navbar: FC = () => {
         <a href="/" className="font-bold text-xl">Orion Städ</a>
       </div>
       {/* Hamburger button for mobile */}
-      <SidebarMenuButton onClick={() => setSidebarOpen((open) => !open)} ariaLabel="Toggle menu" />
+      {!sidebarOpen && (
+        <SidebarMenuButton onClick={() => setSidebarOpen((open) => !open)} ariaLabel="Toggle menu" />
+      )}
       {/* Desktop menu */}
       <ul className="hidden md:flex space-x-6 navbar-menu">
         {NAVBAR_LINKS.map(link => (
