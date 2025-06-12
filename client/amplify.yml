@@ -1,18 +1,15 @@
 version: 1
 frontend:
   phases:
-    preBuild:
-      commands:
-        - npm ci
     build:
       commands:
+        - npm install
         - npm run build
   artifacts:
     baseDirectory: client/dist
     files:
-      - '**/*'
+      - "**/*"
   cache:
-    paths:
-      - node_modules/**/*
+    paths: []
   runtime:
     nodejs: 20
