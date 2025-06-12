@@ -3,11 +3,6 @@ frontend:
   phases:
     preBuild:
       commands:
-        - export NODE_VERSION=20
-        - echo "Node version before nvm:" && node -v
-        - nvm install 20
-        - nvm use 20
-        - echo "Node version after nvm:" && node -v
         - npm ci
     build:
       commands:
@@ -19,3 +14,5 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+  runtime:
+    nodejs: 20
