@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store";
-import { setBookingStep, setBookingForm, setCustomerForm, resetBooking } from "../store/bookingSlice";
+import { setBookingStep, setBookingForm, setCustomerForm } from "../store/bookingSlice";
 import hero from '../assets/header-cleaning.jpg';
 import orionLogo from '../assets/orion-logo.png';
 import {
@@ -23,6 +22,16 @@ export const Home = () => {
     };
     const handleCustomerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setCustomerForm({ ...customerForm, [e.target.name]: e.target.value }));
+    };
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        // Here you would typically send the booking and customer data to your backend
+        console.log("Booking Data:", bookingForm);
+        console.log("Customer Data:", customerForm);
+        // Reset the booking state after submission
+        dispatch(setBookingStep(1)); // Reset to step 1 after submission
+        dispatch(setBookingForm({})); // Clear booking form
+        dispatch(setCustomerForm({})); // Clear customer form
     };
 
     return (
@@ -110,10 +119,7 @@ export const Home = () => {
                     )}
                     {step === 2 && (
                         <form
-                            onSubmit={e => {
-                                e.preventDefault();
-                                // handle submit here (send all data)
-                            }}
+                            onSubmit={handleSubmit}
                         >
                             <h2 className="text-2xl font-bold mb-4">{CUSTOMER_FORM_CONTENT.title}</h2>
                             {CUSTOMER_FORM_CONTENT.fields.map((field, idx) => (
