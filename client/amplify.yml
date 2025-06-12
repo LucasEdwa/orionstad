@@ -1,0 +1,21 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - export NODE_VERSION=20
+        - echo "Node version before nvm:" && node -v
+        - nvm install 20
+        - nvm use 20
+        - echo "Node version after nvm:" && node -v
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: client/dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
