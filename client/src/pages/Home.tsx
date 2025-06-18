@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store";
 import { setBookingStep, setBookingForm, setCustomerForm } from "../store/bookingSlice";
+import { useRef, useState } from "react";
 import hero from '../assets/header-cleaning.jpg';
 import orionLogo from '../assets/orion-logo.png';
+import emailjs from "@emailjs/browser";
 import {
   HOME_HERO,
   HOME_SECTIONS,
@@ -15,6 +17,9 @@ export const Home = () => {
     const step = useSelector((state: RootState) => state.booking.step);
     const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
     const customerForm = useSelector((state: RootState) => state.booking.customerForm);
+    const formRef = useRef<HTMLFormElement>(null);
+    const [sent, setSent] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     // Handlers for form changes
     const handleBookingChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -23,17 +28,29 @@ export const Home = () => {
     const handleCustomerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setCustomerForm({ ...customerForm, [e.target.name]: e.target.value }));
     };
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Here you would typically send the booking and customer data to your backend
-        console.log("Booking Data:", bookingForm);
-        console.log("Customer Data:", customerForm);
-        // Reset the booking state after submission
-        dispatch(setBookingStep(1)); // Reset to step 1 after submission
-        dispatch(setBookingForm({})); // Clear booking form
-        dispatch(setCustomerForm({})); // Clear customer form
+        setError(null);
+        if (!formRef.current) return;
+        emailjs
+            .sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_IDHOME,
+                formRef.current,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            )
+            .then(
+                () => {
+                    setSent(true);
+                    formRef.current?.reset();
+                },
+                (err) => {
+                    setError("Failed to send message. Please try again.");
+                    console.error("EmailJS error:", err); // This will help you see the exact error from EmailJS
+                }
+            );
     };
-
+    
     return (
         <>
             <div className="flex flex-col justify-center relative bg-gray-100">
@@ -119,18 +136,24 @@ export const Home = () => {
                     )}
                     {step === 2 && (
                         <form
+                            ref={formRef}
                             onSubmit={handleSubmit}
                         >
+                            {/* Hidden inputs for booking step values */}
+                            <input type="hidden" name="serviceType" value={bookingForm.serviceType || ""} />
+                            <input type="hidden" name="homeSize" value={bookingForm.homeSize || ""} />
+                            <input type="hidden" name="frequency" value={bookingForm.frequency || ""} />
+
                             <h2 className="text-2xl font-bold mb-4">{CUSTOMER_FORM_CONTENT.title}</h2>
                             {CUSTOMER_FORM_CONTENT.fields.map((field, idx) => (
                                 <input
                                     key={idx}
-                                    name={field.placeholder.replace(/\s+/g, '').toLowerCase()}
+                                    name={field.name}
                                     type={field.type}
                                     placeholder={field.placeholder}
                                     className="border border-gray-300 rounded p-2 mb-4 w-full max-w-md"
                                     required
-                                    value={customerForm[field.placeholder.replace(/\s+/g, '').toLowerCase()] || ""}
+                                    value={customerForm[field.name] || ""}
                                     onChange={handleCustomerChange}
                                 />
                             ))}

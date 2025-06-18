@@ -15,6 +15,11 @@ export const CONTACT_SECTIONS = [
   },
   {
     title: "Contact Us",
+    fields: [
+      { name: "user_name", type: "text", placeholder: "Name" },
+      { name: "user_email", type: "email", placeholder: "Email" },
+      { name: "message", type: "textarea", placeholder: "Message" },
+    ],
   },
   {
     title: "Our Contact Details",

@@ -23,7 +23,7 @@ export type BookingFormContent = {
 
 export type CustomerFormContent = {
   title: string;
-  fields: { type: string; placeholder: string }[];
+  fields: { type: string; placeholder: string; name: string }[]; // add name
   backLabel: string;
   submitLabel: string;
 };
@@ -77,17 +77,17 @@ export const BOOKING_FORM_CONTENT: BookingFormContent = {
 export const CUSTOMER_FORM_CONTENT: CustomerFormContent = {
   title: "Customer Information",
   fields: [
-    { type: "text", placeholder: "Full Name" },
-    { type: "email", placeholder: "Email Address" },
-    { type: "tel", placeholder: "Phone Number" },
-    { type: "text", placeholder: "Address" },
-    { type: "text", placeholder: "Number of Rooms" },
-    { type: "text", placeholder: "Number of Bathrooms" },
-    { type: "text", placeholder: "How to Access Your Home" },
-    { type: "text", placeholder: "Priority Areas to Clean" },
-    { type: "text", placeholder: "Any Special Instructions" },
-    { type: "text", placeholder: "Sensitive Materials or Allergies" },
-    { type: "text", placeholder: "Pets in the Home" },
+    { type: "text", placeholder: "Full Name", name: "fullName" },
+    { type: "email", placeholder: "Email Address", name: "email" },
+    { type: "tel", placeholder: "Phone Number", name: "phone" },
+    { type: "text", placeholder: "Address", name: "address" },
+    { type: "text", placeholder: "Number of Rooms", name: "numberOfRooms" },
+    { type: "text", placeholder: "Number of Bathrooms", name: "numberOfBathrooms" },
+    { type: "text", placeholder: "How to Access Your Home", name: "accessInstructions" },
+    { type: "text", placeholder: "Priority Areas to Clean", name: "priorityAreas" },
+    { type: "text", placeholder: "Any Special Instructions", name: "specialInstructions" },
+    { type: "text", placeholder: "Sensitive Materials or Allergies", name: "allergies" },
+    { type: "text", placeholder: "Pets in the Home", name: "pets" },
   ],
   backLabel: "Back",
   submitLabel: "Submit",

@@ -25,8 +25,9 @@ export const Contact = () => {
                     setSent(true);
                     formRef.current?.reset();
                 },
-                () => {
+                (err) => {
                     setError("Failed to send message. Please try again.");
+                    console.error("EmailJS error:", err);
                 }
             );
     };
@@ -75,18 +76,35 @@ export const Contact = () => {
                         className="w-full bg-white p-6 rounded shadow-md"
                         onSubmit={handleSubmit}
                     >
-                        <div className="mb-4">
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Name</label>
-                            <input name="user_name" type="text" id="name" className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required />
-                        </div>
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            <input name="user_email" type="email" id="email" className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required />
-                        </div>
-                        <div className="mb-4">
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                            <textarea name="message" id="message" rows={4} className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                        </div>
+                        {CONTACT_SECTIONS[1]?.fields?.map((field, idx) => (
+                            <div className="mb-4" key={idx}>
+                                <label
+                                    htmlFor={field.name}
+                                    className="block text-sm font-medium text-gray-700 mb-2"
+                                >
+                                    {field.placeholder}
+                                </label>
+                                {field.type === "textarea" ? (
+                                    <textarea
+                                        name={field.name}
+                                        id={field.name}
+                                        rows={4}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        required
+                                        placeholder={field.placeholder}
+                                    />
+                                ) : (
+                                    <input
+                                        name={field.name}
+                                        type={field.type}
+                                        id={field.name}
+                                        className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        required
+                                        placeholder={field.placeholder}
+                                    />
+                                )}
+                            </div>
+                        ))}
                         <button type="submit" className="w-full bg-[#c09cc1] text-white py-2 rounded hover:bg-[#8e77ad] transition-colors duration-200">
                             Send Message
                         </button>

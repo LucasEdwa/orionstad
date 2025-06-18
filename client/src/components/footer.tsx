@@ -15,7 +15,7 @@ export const Footer = () => (
       data-reactroot
     ></iframe>
 
-    <p className="text-sm text-black">
+    <p className="text-sm text-black p-2">
       {FOOTER_CONTENT.copyright}
     </p>
    <div className="flex justify-around space-x-4 mt-2">
