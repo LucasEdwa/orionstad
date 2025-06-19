@@ -18,8 +18,8 @@ export const Home = () => {
     const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
     const customerForm = useSelector((state: RootState) => state.booking.customerForm);
     const formRef = useRef<HTMLFormElement>(null);
-    const [sent, setSent] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+    const [, setSent] = useState(false);
+    const [, setError] = useState<string | null>(null);
 
     // Handlers for form changes
     const handleBookingChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
