@@ -5,6 +5,8 @@ import { useRef, useState } from "react";
 import hero from '../assets/header-cleaning.jpg';
 import orionLogo from '../assets/orion-logo.png';
 import emailjs from "@emailjs/browser";
+import { showSuccess, showError } from '../utils/sweetAlert';
+
 import {
   HOME_HERO,
   HOME_SECTIONS,
@@ -28,27 +30,26 @@ export const Home = () => {
     const handleCustomerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setCustomerForm({ ...customerForm, [e.target.name]: e.target.value }));
     };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setError(null);
         if (!formRef.current) return;
-        emailjs
-            .sendForm(
+          try {
+            await emailjs.sendForm(
                 import.meta.env.VITE_EMAILJS_SERVICE_ID,
                 import.meta.env.VITE_EMAILJS_TEMPLATE_IDHOME,
                 formRef.current,
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-            )
-            .then(
-                () => {
-                    setSent(true);
-                    formRef.current?.reset();
-                },
-                (err) => {
-                    setError("Failed to send message. Please try again.");
-                    console.error("EmailJS error:", err); // This will help you see the exact error from EmailJS
-                }
             );
+            setSent(true);
+            formRef.current.reset();
+            dispatch(setBookingStep(1)); // Optionally reset booking step
+            showSuccess("Your message has been sent successfully!");
+        } catch (err) {
+            setError("Failed to send message. Please try again.");
+            showError("Failed to send message. Please try again.");
+            console.error("EmailJS error:", err);
+        }
     };
     
     return (

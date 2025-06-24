@@ -1,4 +1,5 @@
 import { FOOTER_CONTENT } from "../constants/footer";
+import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export const Footer = () => (
   <footer className="  text-white p-4 text-center border-t border-gray-200">
@@ -29,17 +30,37 @@ export const Footer = () => (
       ))}
     </ul>
     <div className=" flex flex-col justify-center gap-4">
-      {FOOTER_CONTENT.social.map(link => (
-        <a
-          key={link.href}
-          href={link.href}
-          className="text-black hover:underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {link.label}
-        </a>
-      ))}
+      {FOOTER_CONTENT.social.map(link => {
+        let Icon;
+        switch (link.icon) {
+          case "FaFacebook":
+            Icon = FaFacebook;
+            break;
+          case "FaInstagram":
+            Icon = FaInstagram;
+            break;
+          case "FaLinkedin":
+            Icon = FaLinkedin;
+            break;
+          case "FaWhatsapp":
+            Icon = FaWhatsapp;
+            break;
+          default:
+            Icon = null;
+        }
+        return (
+          <a
+            key={link.href}
+            href={link.href}
+            className="text-black hover:underline text-left flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {Icon && <Icon className="inline-block" />}
+            {link.label}
+          </a>
+        );
+      })}
     </div>
     </div>
     
