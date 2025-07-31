@@ -1,71 +1,80 @@
-import { FOOTER_CONTENT } from "../constants/footer";
+import { useTranslation } from "react-i18next";
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
-export const Footer = () => (
-  <footer className="  text-white p-4 text-center border-t border-gray-200">
-    <iframe
-      src="https://widget.reco.se/v2/venues/5868926/horizontal/small?inverted=false&border=true"
-      title="Orion Städ AB - Omdömen på Reco"
-      height="27"
-      style={{
-        width: "100%",
-        border: 0,
-        display: "block",
-        overflow: "hidden"
-      }}
-      data-reactroot
-    ></iframe>
+export const Footer = () => {
+  const { t } = useTranslation("footer");
+  const links = t("links", { returnObjects: true }) as Array<{ label: string; href: string }>;
+  const social = t("social", { returnObjects: true }) as Array<{ label: string; href: string; icon: string }>;
+  const copyright = t("copyright");
+  const address = t("address");
 
-    <p className="text-sm text-black p-2">
-      {FOOTER_CONTENT.copyright}
-    </p>
-   <div className="flex justify-around space-x-4 mt-2">
-     <ul className="flex flex-col items-center gap-1 my-2">
-      {FOOTER_CONTENT.links.map(link => (
-        <li key={link.href}>
-          <a href={link.href} className="text-black hover:underline">
-            {link.label}
-          </a>
-        </li>
-      ))}
-    </ul>
-    <div className=" flex flex-col justify-center gap-4">
-      {FOOTER_CONTENT.social.map(link => {
-        let Icon;
-        switch (link.icon) {
-          case "FaFacebook":
-            Icon = FaFacebook;
-            break;
-          case "FaInstagram":
-            Icon = FaInstagram;
-            break;
-          case "FaLinkedin":
-            Icon = FaLinkedin;
-            break;
-          case "FaWhatsapp":
-            Icon = FaWhatsapp;
-            break;
-          default:
-            Icon = null;
-        }
-        return (
-          <a
-            key={link.href}
-            href={link.href}
-            className="text-black hover:underline text-left flex items-center gap-2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {Icon && <Icon className="inline-block" />}
-            {link.label}
-          </a>
-        );
-      })}
-    </div>
-    </div>
-    
-    <p className="xl:text-xl text-xs mt-2 text-black">
-      {FOOTER_CONTENT.address}
-    </p>
-  </footer>
-);
+  return (
+    <footer className="  text-gray-800 bg-orion-gradient p-4 text-center border-t border-gray-200">
+      <iframe
+        src="https://widget.reco.se/v2/venues/5868926/horizontal/small?inverted=false&border=true"
+        title="Orion Städ AB - Omdömen på Reco"
+        height="27"
+        style={{
+          width: "100%",
+          border: 0,
+          display: "block",
+          overflow: "hidden",
+          backgroundColor: "transparent"
+        }}
+        data-reactroot
+      ></iframe>
+
+      <p className="text-sm p-2">
+        {copyright}
+      </p>
+      <div className="flex justify-around space-x-4 mt-2">
+        <ul className="flex flex-col items-center gap-1 my-2">
+          {links.map(link => (
+            <li key={link.href}>
+              <a href={link.href} className="hover:underline">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <div className=" flex flex-col justify-center gap-4">
+          {social.map(link => {
+            let Icon;
+            switch (link.icon) {
+              case "FaFacebook":
+                Icon = FaFacebook;
+                break;
+              case "FaInstagram":
+                Icon = FaInstagram;
+                break;
+              case "FaLinkedin":
+                Icon = FaLinkedin;
+                break;
+              case "FaWhatsapp":
+                Icon = FaWhatsapp;
+                break;
+              default:
+                Icon = null;
+            }
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className=" hover:underline text-left flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {Icon && <Icon className="inline-block" />}
+                {link.label}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+
+      <p className="xl:text-xl text-xs mt-2 ">
+        {address}
+      </p>
+    </footer>
+  );
+};

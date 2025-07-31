@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "logoAlt": "Logo de Orion Städ",
+    "imgAlt": "Héroe de servicios",
+    "title": "Nuestros Servicios",
+    "subtitle": "Descubra nuestra gama de servicios de limpieza profesional"
+  },
+  "sections": [
+    {
+      "title": "Limpieza del hogar (Hemstädning)",
+      "contents": [
+        { "type": "text", "label": "Limpieza regular:", "text": "Disponible semanal, quincenal o mensualmente. Incluye:" },
+        { "type": "list", "items": [
+          "Limpiar el polvo de todas las superficies",
+          "Aspirar y fregar los suelos",
+          "Limpieza de baños: inodoros, duchas, lavabos",
+          "Limpieza de cocina: limpiar superficies, limpiar exterior de electrodomésticos",
+          "Vaciar los cubos de basura"
+        ] },
+        { "type": "text", "label": "Limpieza profunda:", "text": "Una versión más exhaustiva de la limpieza regular. Incluye:" },
+        { "type": "list", "items": [
+          "Todas las tareas de la limpieza regular",
+          "Limpieza detallada de áreas de difícil acceso",
+          "Limpieza detrás y debajo de los muebles",
+          "Limpieza interior de horno y nevera"
+        ] },
+        { "type": "text", "label": "Limpieza de mudanza:", "text": "Limpieza integral para mudanzas. Incluye:" },
+        { "type": "list", "items": [
+          "Todas las tareas de la limpieza profunda",
+          "Limpieza dentro de armarios y closets",
+          "Limpieza de ventanas y alféizares",
+          "Eliminación de polvo o residuos restantes"
+        ] }
+      ]
+    },
+    {
+      "title": "Limpieza de oficinas",
+      "contents": [
+        { "type": "text", "text": "Servicios de limpieza adaptados para entornos de oficina. Incluye:" },
+        { "type": "list", "items": [
+          "Planes de limpieza personalizados para su oficina",
+          "Aspirado y fregado de suelos de oficina",
+          "Limpieza y desinfección de espacios de trabajo, incluidos escritorios, sillas y áreas comunes",
+          "Limpieza de baños y reposición de suministros",
+          "Limpieza de la zona de cocina, incluidos electrodomésticos y superficies",
+          "Horarios flexibles para minimizar la interrupción de su jornada laboral"
+        ] }
+      ]
+    },
+    {
+      "title": "Servicios especializados",
+      "contents": [
+        { "type": "text", "label": "Limpieza de nevera:", "text": "Incluye:" },
+        { "type": "list", "items": [
+          "Retirar todos los artículos de la nevera",
+          "Limpieza a fondo de estantes, cajones y superficies",
+          "Volver a colocar los artículos en la nevera"
+        ] },
+        { "type": "text", "label": "Limpieza de horno:", "text": "Incluye:" },
+        { "type": "list", "items": [
+          "Limpieza del interior del horno",
+          "Limpieza de las rejillas y la puerta del horno"
+        ] },
+        { "type": "text", "label": "Solicitudes extra:", "text": "También ofrecemos servicios de limpieza personalizados según necesidades específicas." }
+      ]
+    }
+  ]
+}

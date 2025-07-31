@@ -2,19 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store";
 import { setBookingStep, setBookingForm, setCustomerForm } from "../store/bookingSlice";
 import { useRef, useState } from "react";
-import hero from '../assets/header-cleaning.jpg';
-import orionLogo from '../assets/orion-logo.png';
 import emailjs from "@emailjs/browser";
 import { showSuccess, showError } from '../utils/sweetAlert';
 
-import {
-  HOME_HERO,
-  HOME_SECTIONS,
-  BOOKING_FORM_CONTENT,
-  CUSTOMER_FORM_CONTENT,
-} from "../constants/home";
+import { useTranslation } from "react-i18next";
+import Hero from "../components/home/hero";
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 export const Home = () => {
+    const { t } = useTranslation("home");
     const dispatch = useDispatch();
     const step = useSelector((state: RootState) => state.booking.step);
     const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
@@ -54,29 +50,17 @@ export const Home = () => {
     
     return (
         <>
-            <div className="flex flex-col justify-center relative bg-gray-100">
-                <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${hero})` }}>
-                    <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
-                    <img src={orionLogo} alt={HOME_HERO.logoImgAlt} className="absolute top-4 left-4 w-24 h-auto xl:w-[15rem] rounded-full z-20" />
-                </div>
-                <header className="w-full absolute z-30">
-                    <div className="px-4 py-6 text-white mt-24 xl:mt-0">
-                        <h1 className="text-3xl font-bold text-center xl:text-6xl">{HOME_HERO.welcome}</h1>
-                        <p className="text-lg text-center mt-2 font-semibold xl:text-2xl">{HOME_HERO.subtitle}</p>
-                    </div>
-                </header>
-                <main className="">
-                    <img src={hero} alt={HOME_HERO.heroImgAlt} className="max-w-full h-auto xl:h-[40rem] rounded-lg shadow-lg" />
-                </main>
+            <div className="flex flex-col text-gray-800 justify-center relative bg-gray-100">
+              <Hero onLogoAnimationEnd={() => console.log("Logo animation ended")} />
             </div>
             <main className="mx-auto px-4 py-8 xl:flex xl:w-full">
                 <section className="mx-auto px-4 py-8">
-                    <h1 className="text-2xl font-bold mb-4 ">{HOME_SECTIONS[0].title}</h1>
-                    <p className="text-gray-700 mb-4">
-                        {HOME_SECTIONS[0].paragraphs[0]}
+                    <h1 className="text-2xl font-bold mb-4 ">{t("sections.0.title")}</h1>
+                    <p className=" mb-4">
+                        {t("sections.0.paragraphs.0")}
                     </p>
-                    <p className="text-gray-700">
-                        {HOME_SECTIONS[0].paragraphs[1]}
+                    <p className="">
+                        {t("sections.0.paragraphs.1")}
                     </p>
                 </section>
                 <section className="w-full px-4 py-8 flex flex-col ">
@@ -88,11 +72,11 @@ export const Home = () => {
                                 dispatch(setBookingStep(2));
                             }}
                         >
-                            <h2 className="text-2xl font-bold mb-4">{BOOKING_FORM_CONTENT.title}</h2>
-                            <p className="text-gray-700 mb-4">
-                                {BOOKING_FORM_CONTENT.intro}
+                            <h2 className="text-2xl font-bold mb-4">{t("bookingForm.title")}</h2>
+                            <p className=" mb-4">
+                                {t("bookingForm.intro")}
                             </p>
-                            <h3 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.serviceLabel}</h3>
+                            <h3 className="text-xl font-semibold mb-2">{t("bookingForm.serviceLabel")}</h3>
                             <select
                                 name="serviceType"
                                 className="border border-gray-300 rounded p-2 mb-4 w-full"
@@ -100,22 +84,22 @@ export const Home = () => {
                                 value={bookingForm.serviceType || ""}
                                 onChange={handleBookingChange}
                             >
-                                {BOOKING_FORM_CONTENT.serviceOptions.map(opt => (
+                                {(t("bookingForm.serviceOptions", { returnObjects: true }) as Array<{ value: string; label: string }> ).map((opt) => (
                                     <option key={opt.value} value={opt.value}>{opt.label}</option>
                                 ))}
                             </select>
-                            <h2 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.sizeLabel}</h2>
+                            <h2 className="text-xl font-semibold mb-2">{t("bookingForm.sizeLabel")}</h2>
                             <input
                                 name="homeSize"
                                 type="number"
                                 min="0"
-                                placeholder="Enter home size in m²"
+                                placeholder={t("bookingForm.sizeLabel")}
                                 className="border border-gray-300 rounded p-2 mb-4 w-full"
                                 required
                                 value={bookingForm.homeSize || ""}
                                 onChange={handleBookingChange}
                             />
-                            <h2 className="text-xl font-semibold mb-2">{BOOKING_FORM_CONTENT.frequencyLabel}</h2>
+                            <h2 className="text-xl font-semibold mb-2">{t("bookingForm.frequencyLabel")}</h2>
                             <select
                                 name="frequency"
                                 className="border border-gray-300 rounded p-2 mb-4 w-full"
@@ -123,15 +107,15 @@ export const Home = () => {
                                 value={bookingForm.frequency || ""}
                                 onChange={handleBookingChange}
                             >
-                                {BOOKING_FORM_CONTENT.frequencyOptions.map(opt => (
+                                {(t("bookingForm.frequencyOptions", { returnObjects: true }) as Array<{ value: string; label: string }> ).map((opt) => (
                                     <option key={opt.value} value={opt.value}>{opt.label}</option>
                                 ))}
                             </select>
                             <button
                                 type="submit"
-                                className="bg-[#c09cc1] text-white px-4 py-2 rounded hover:bg-[#8e77ad] transition-colors w-full"
+                                className="bg-orion-gradient px-4 py-2 rounded hover:bg-[#8e77ad] transition-colors w-full"
                             >
-                                {BOOKING_FORM_CONTENT.nextLabel}
+                                {t("bookingForm.nextLabel")}
                             </button>
                         </form>
                     )}
@@ -145,8 +129,8 @@ export const Home = () => {
                             <input type="hidden" name="homeSize" value={bookingForm.homeSize || ""} />
                             <input type="hidden" name="frequency" value={bookingForm.frequency || ""} />
 
-                            <h2 className="text-2xl font-bold mb-4">{CUSTOMER_FORM_CONTENT.title}</h2>
-                            {CUSTOMER_FORM_CONTENT.fields.map((field, idx) => (
+                            <h2 className="text-2xl font-bold mb-4">{t("customerForm.title")}</h2>
+                            {(t("customerForm.fields", { returnObjects: true }) as Array<{ name: string; type: string; placeholder: string }> ).map((field, idx) => (
                                 <input
                                     key={idx}
                                     name={field.name}
@@ -161,31 +145,32 @@ export const Home = () => {
                             <div className="flex gap-2">
                                 <button
                                     type="button"
-                                    className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400 transition-colors"
+                                    className="bg-gray-300  px-4 py-2 rounded hover:bg-gray-400 transition-colors"
                                     onClick={() => dispatch(setBookingStep(1))}
                                 >
-                                    {CUSTOMER_FORM_CONTENT.backLabel}
+                                    {t("customerForm.backLabel")}
                                 </button>
                                 <button
                                     type="submit"
-                                    className="bg-[#c09cc1] text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+                                    className="bg-orion-gradient px-4 py-2 rounded hover:bg-blue-700 transition-colors"
                                 >
-                                    {CUSTOMER_FORM_CONTENT.submitLabel}
+                                    {t("customerForm.submitLabel")}
                                 </button>
                             </div>
                         </form>
                     )}
                 </section>
                 <section className="max-w-4xl mx-auto px-4 py-8">
-                    <h2 className="text-2xl font-bold mb-4">{HOME_SECTIONS[1].title}</h2>
-                    <p className="text-gray-700 mb-4">
-                        {HOME_SECTIONS[1].paragraphs[0]}
+                    <h2 className="text-2xl font-bold mb-4">{t("sections.1.title")}</h2>
+                    <p className="mb-4">
+                        {t("sections.1.paragraphs.0")}
                     </p>
-                    <p className="text-gray-700 mb-4">
-                        {HOME_SECTIONS[1].paragraphs[1]}
+                    <p className="mb-4">
+                        {t("sections.1.paragraphs.1")}
                     </p>
                 </section>
             </main>
+                <LanguageSwitcher />
         </>
     );
 }

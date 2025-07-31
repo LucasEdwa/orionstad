@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "logoAlt": "Orion Städ Logotyp",
+    "imgAlt": "Om Oss Hjälte",
+    "title": "Om Oss",
+    "subtitle": "Lär dig mer om vår historia och vårt uppdrag"
+  },
+  "sections": [
+    {
+      "title": "Vår Historia",
+      "paragraphs": [
+        "Orion Städ grundades med en passion för renlighet och har vuxit till en pålitlig leverantör av städtjänster. Vi är stolta över vår noggrannhet och vårt engagemang för kvalitet.",
+        "Vi tror på att använda miljövänliga produkter och tekniker för att säkerställa en säker och hälsosam miljö för dig och din familj."
+      ]
+    },
+    {
+      "title": "Vårt Uppdrag",
+      "paragraphs": [
+        "Orion Städ är engagerade i att tillhandahålla förstklassiga städtjänster som överträffar kundernas förväntningar. Vi strävar efter att skapa renare, hälsosammare och lyckligare boendemiljöer.",
+        "Vi är engagerade i ständig förbättring och innovation i våra städmetoder och söker alltid de bästa lösningarna för våra kunder."
+      ]
+    },
+    {
+      "title": "Vårt Team",
+      "paragraphs": [
+        "Vårt team av städproffs är dedikerade till att leverera den högsta servicenivån. Vi är utbildade, erfarna och utrustade med de bästa verktygen och produkterna."
+      ]
+    }
+  ]
+}

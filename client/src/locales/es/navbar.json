@@ -1,0 +1,8 @@
+{
+  "links": [
+    { "label": "Inicio", "href": "/" },
+    { "label": "Servicios", "href": "/services" },
+    { "label": "Sobre Nosotros", "href": "/about" },
+    { "label": "Contáctenos", "href": "/contact" }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "welcome": "Välkommen till Orion Städ",
+    "subtitle": "Din pålitliga partner för professionella städtjänster",
+    "heroImgAlt": "Städtjänst",
+    "logoImgAlt": "Orion Städ Logotyp",
+    "bookNow": "Boka nu"
+  },
+  "sections": [
+    {
+      "title": "Om Orion Städ",
+      "paragraphs": [
+        "På Orion Städ tror vi på att leverera excellens vid varje städning. Vårt team av dedikerade proffs ser till att ditt hem är skinande rent, så att du får mer tid till det som är viktigt.",
+        "Vi erbjuder ett utbud av anpassningsbara städtjänster som är skräddarsydda efter dina specifika behov. Från regelbunden hemstädning till storstädning – vårt mål är att ge dig en bekymmersfri upplevelse med resultat du kan lita på."
+      ]
+    },
+    {
+      "title": "Varför välja oss?",
+      "paragraphs": [
+        "Orion Städ utmärker sig genom sitt engagemang för kvalitet och kundnöjdhet. Vi använder miljövänliga produkter och de senaste städteknikerna för att säkerställa att ditt hem inte bara är rent utan också säkert för dig och dina nära och kära.",
+        "Våra tjänster är flexibla och prisvärda, vilket gör det enkelt att hålla ditt hem i toppskick utan att det kostar för mycket. Bli en av de många nöjda kunder som litar på Orion Städ för sina städbehov."
+      ]
+    }
+  ],
+  "bookingForm": {
+    "title": "Boka en städtjänst",
+    "intro": "Redo att uppleva skillnaden med Orion Städ? Det är enkelt att boka en städtjänst! Klicka bara på knappen nedan för att komma igång.",
+    "serviceLabel": "Välj tjänstetyp och ange boyta",
+    "serviceOptions": [
+      { "value": "", "label": "Välj tjänstetyp" },
+      { "value": "regular", "label": "Regelbunden städning" },
+      { "value": "deep", "label": "Storstädning" },
+      { "value": "move-in-out", "label": "Flyttstädning" }
+    ],
+    "sizeLabel": "Ange boyta (m²):",
+    "frequencyLabel": "Välj städfrekvens:",
+    "frequencyOptions": [
+      { "value": "", "label": "Välj frekvens" },
+      { "value": "one-time", "label": "Engångsstädning" },
+      { "value": "weekly", "label": "Veckostädning" },
+      { "value": "bi-weekly", "label": "Varannan vecka" },
+      { "value": "monthly", "label": "Månatlig städning" }
+    ],
+    "nextLabel": "Nästa"
+  },
+  "customerForm": {
+    "title": "Kundinformation",
+    "fields": [
+      { "type": "text", "placeholder": "Fullständigt namn", "name": "fullName" },
+      { "type": "email", "placeholder": "E-postadress", "name": "email" },
+      { "type": "tel", "placeholder": "Telefonnummer", "name": "phone" },
+      { "type": "text", "placeholder": "Adress", "name": "address" },
+      { "type": "text", "placeholder": "Antal rum", "name": "numberOfRooms" },
+      { "type": "text", "placeholder": "Antal badrum", "name": "numberOfBathrooms" },
+      { "type": "text", "placeholder": "Hur får vi tillgång till ditt hem?", "name": "accessInstructions" },
+      { "type": "text", "placeholder": "Prioriterade områden att städa", "name": "priorityAreas" },
+      { "type": "text", "placeholder": "Eventuella särskilda instruktioner", "name": "specialInstructions" },
+      { "type": "text", "placeholder": "Känsliga material eller allergier", "name": "allergies" },
+      { "type": "text", "placeholder": "Husdjur i hemmet", "name": "pets" }
+    ],
+    "backLabel": "Tillbaka",
+    "submitLabel": "Skicka"
+  }
+}

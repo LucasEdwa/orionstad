@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "logoAlt": "Logo de Orion Städ",
+    "imgAlt": "Héroe Sobre Nosotros",
+    "title": "Contáctenos",
+    "subtitle": "Estamos aquí para ayudarle. Póngase en contacto con Orion Städ hoy."
+  },
+  "sections": [
+    {
+      "title": "Por qué contactarnos",
+      "paragraphs": [
+        "Ya sea que tenga una pregunta, necesite más información o esté listo para reservar un servicio, estamos aquí para ayudarle. Nuestro equipo está dedicado a brindarle la mejor experiencia de servicio al cliente posible.",
+        "No dude en comunicarse con nosotros. Estamos encantados de ayudarle con cualquier consulta que pueda tener."
+      ]
+    },
+    {
+      "title": "Contáctenos",
+      "fields": [
+        { "name": "user_name", "type": "text", "placeholder": "Nombre" },
+        { "name": "user_email", "type": "email", "placeholder": "Correo electrónico" },
+        { "name": "message", "type": "textarea", "placeholder": "Mensaje" }
+      ]
+    },
+    {
+      "title": "Nuestros datos de contacto",
+      "intro": "Puede comunicarse con nosotros a través de los siguientes canales:",
+      "email": "polly@orionstad.se",
+      "emailHref": "mailto:polly@orionstad.se",
+      "phone": "+46 70 418 05 97",
+      "address": "Orion Städ, Södervägen 18A, 141 36 Estocolmo, Suecia",
+      "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1"
+    }
+  ]
+}

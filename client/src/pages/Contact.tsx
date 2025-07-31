@@ -2,10 +2,13 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import orionLogo from '../assets/orion-logo.png';
 import contactImg from '../assets/service-2.jpg';
-import { CONTACT_HERO, CONTACT_SECTIONS } from "../constants/contact";
+import { useTranslation } from "react-i18next";
 import { showSuccess, showError } from '../utils/sweetAlert';
 
 export const Contact = () => {
+    const { t } = useTranslation('contact');
+    const hero = t('hero', { returnObjects: true }) as { logoAlt: string; imgAlt: string; title: string; subtitle: string };
+    const sections = t('sections', { returnObjects: true }) as Array<any>;
     const formRef = useRef<HTMLFormElement>(null);
     const [, setSent] = useState(false);
     const [, setError] = useState<string | null>(null);
@@ -42,41 +45,43 @@ export const Contact = () => {
                     <div className="absolute inset-0 bg-black/40 z-10"></div>
                     <img
                         src={orionLogo}
-                        alt={CONTACT_HERO.logoAlt}
+                        alt={hero.logoAlt}
                         className="absolute top-4 left-4 w-24 h-auto xl:w-[15rem] rounded-full z-20"
                     />
                 </div>
                 <header className="w-full absolute z-30">
+                                        <div className="absolute inset-0 bg-white/40 z-10"></div>
+
                     <div className="px-4 py-6 text-white mt-24 xl:mt-0">
-                        <h1 className="text-3xl font-bold text-center xl:text-6xl">{CONTACT_HERO.title}</h1>
+                        <h1 className="text-3xl font-bold text-center xl:text-6xl">{hero.title}</h1>
                         <p className="text-lg text-center mt-2 font-semibold xl:text-2xl">
-                            {CONTACT_HERO.subtitle}
+                            {hero.subtitle}
                         </p>
                     </div>
                 </header>
                 <main>
                     <img
                         src={contactImg}
-                        alt={CONTACT_HERO.imgAlt}
+                        alt={hero.imgAlt}
                         className="max-w-full h-auto xl:h-[40rem] rounded-lg shadow-lg"
                     />
                 </main>
             </div>
             <main className="mx-auto px-4 py-8 xl:flex xl:w-full gap-5">
                 <section className="mx-auto px-4 py-8 xl:w-1/3 border-r border-gray-200 transition-transform duration-300 hover:scale-105">
-                    <h1 className="text-3xl font-bold mb-4 text-center">{CONTACT_SECTIONS[0]?.title}</h1>
-                    {CONTACT_SECTIONS[0]?.paragraphs?.map((p, i) => (
+                    <h1 className="text-3xl font-bold mb-4 text-center">{sections[0]?.title}</h1>
+                    {sections[0]?.paragraphs?.map((p: string, i: number) => (
                         <p className="text-lg mb-6" key={i}>{p}</p>
                     ))}
                 </section>
                 <section className="mx-auto px-4 py-8 xl:w-1/3 border-r border-gray-200 transition-transform duration-300">
-                    <h1 className="text-3xl font-bold mb-4 text-center">{CONTACT_SECTIONS[1]?.title}</h1>
+                    <h1 className="text-3xl font-bold mb-4 text-center">{sections[1]?.title}</h1>
                     <form
                         ref={formRef}
                         className="w-full bg-white p-6 rounded shadow-md"
                         onSubmit={handleSubmit}
                     >
-                        {CONTACT_SECTIONS[1]?.fields?.map((field, idx) => (
+                        {(sections[1]?.fields ?? []).map((field: any, idx: number) => (
                             <div className="mb-4" key={idx}>
                                 <label
                                     htmlFor={field.name}
@@ -106,25 +111,25 @@ export const Contact = () => {
                             </div>
                         ))}
                         <button type="submit" className="w-full bg-[#c09cc1] text-white py-2 rounded hover:bg-[#8e77ad] transition-colors duration-200">
-                            Send Message
+                            {t('sections.1.submitLabel', 'Send Message')}
                         </button>
                     </form>
                 </section>
                 <section className="mx-auto px-4 py-8 xl:w-1/3 border-r border-gray-200 transition-transform duration-300 hover:scale-105">
-                    <h1 className="text-3xl font-bold mb-4 text-center">{CONTACT_SECTIONS[2]?.title}</h1>
-                    <p className="text-lg mb-6">{CONTACT_SECTIONS[2]?.intro}</p>
+                    <h1 className="text-3xl font-bold mb-4 text-center">{sections[2]?.title}</h1>
+                    <p className="text-lg mb-6">{sections[2]?.intro}</p>
                     <ul className="list-disc pl-5">
                         <li className="mb-2">
-                            <strong>Email:</strong> <a href={CONTACT_SECTIONS[2]?.emailHref} className="text-[#c09cc1] hover:underline">{CONTACT_SECTIONS[2]?.email}</a>
+                            <strong>Email:</strong> <a href={sections[2]?.emailHref} className="text-[#c09cc1] hover:underline">{sections[2]?.email}</a>
                         </li>
                         <li className="mb-2">
-                            <strong>Phone:</strong> {CONTACT_SECTIONS[2]?.phone}
+                            <strong>Phone:</strong> {sections[2]?.phone}
                         </li>
                         <li className="mb-2">
-                            <strong>Address:</strong> {CONTACT_SECTIONS[2]?.address}
+                            <strong>Address:</strong> {sections[2]?.address}
                         </li>
                         <li className="mb-2">
-                            <strong>WhatsApp:</strong> <a href={CONTACT_SECTIONS[2]?.whatsapp} className="text-[#c09cc1] hover:underline">Send us a message</a>
+                            <strong>WhatsApp:</strong> <a href={sections[2]?.whatsapp} className="text-[#c09cc1] hover:underline">{t('sections.2.whatsappLabel', 'Send us a message')}</a>
                         </li>
                     </ul>
                 </section>

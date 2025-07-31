@@ -1,0 +1,30 @@
+{
+  "hero": {
+    "logoAlt": "Logo de Orion Städ",
+    "imgAlt": "Héroe Sobre Nosotros",
+    "title": "Sobre Nosotros",
+    "subtitle": "Conozca más sobre nuestra historia y misión"
+  },
+  "sections": [
+    {
+      "title": "Nuestra Historia",
+      "paragraphs": [
+        "Fundada con pasión por la limpieza, Orion Städ se ha convertido en un proveedor de servicios de limpieza de confianza. Nos enorgullecemos de nuestra atención al detalle y compromiso con la calidad.",
+        "Creemos en el uso de productos y técnicas ecológicas para garantizar un entorno seguro y saludable para usted y su familia."
+      ]
+    },
+    {
+      "title": "Nuestra Misión",
+      "paragraphs": [
+        "Orion Städ está comprometida a proporcionar servicios de limpieza de primera calidad que superen las expectativas del cliente. Nuestro objetivo es crear ambientes más limpios, saludables y felices.",
+        "Estamos comprometidos con la mejora continua e innovación en nuestros métodos de limpieza, siempre buscando las mejores soluciones para nuestros clientes."
+      ]
+    },
+    {
+      "title": "Nuestro Equipo",
+      "paragraphs": [
+        "Nuestro equipo de profesionales de la limpieza está dedicado a ofrecer el más alto estándar de servicio. Estamos capacitados, experimentados y equipados con las mejores herramientas y productos."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "links": [
+    { "label": "Hem", "href": "/" },
+    { "label": "Tjänster", "href": "/services" },
+    { "label": "Om Oss", "href": "/about" },
+    { "label": "Kontakt", "href": "/contact" }
+  ]
+}

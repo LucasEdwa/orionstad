@@ -25,7 +25,7 @@ export const Layout = () => {
   }, [location]);
 
   return (
-    <div>
+    <div className=" bg-gray-50 ">
       {/* Google Analytics */}
       <script
         async
@@ -48,7 +48,7 @@ export const Layout = () => {
         href={WHATSAPP_LINK}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed z-50 bottom-6 right-6 bg-[#c09cc1] hover:bg-green-600 text-white rounded-full shadow-lg p-4 flex items-center justify-center transition-colors"
+        className="fixed z-50 bottom-6 right-6 bg-orion-gradient hover:bg-green-600 text-white rounded-full shadow-lg p-4 flex items-center justify-center transition-colors"
         aria-label="Chat with us on WhatsApp"
       >
         <FaWhatsapp size={32} />

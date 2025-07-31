@@ -1,1 +1,9 @@
+/* Custom utility for Orion gradient background */
+.bg-orion-gradient {
+  background: linear-gradient(90deg, #c09cc1 0%, #f7e1ff 100%);
+}
+/* Orion Städ custom gradient variable */
+:root {
+  --orion-gradient: linear-gradient(90deg, #c09cc1 0%, #f7e1ff 100%);
+}
 @import "tailwindcss";

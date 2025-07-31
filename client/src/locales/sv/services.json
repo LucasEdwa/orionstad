@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "logoAlt": "Orion Städ Logotyp",
+    "imgAlt": "Tjänstehjälte",
+    "title": "Våra tjänster",
+    "subtitle": "Upptäck vårt utbud av professionella städtjänster"
+  },
+  "sections": [
+    {
+      "title": "Hemstädning",
+      "contents": [
+        { "type": "text", "label": "Regelbunden städning:", "text": "Tillgänglig varje vecka, varannan vecka eller varje månad. Inkluderar:" },
+        { "type": "list", "items": [
+          "Dammtorkning av alla ytor",
+          "Dammsugning och moppning av golv",
+          "Rengöring av badrum: toaletter, duschar, handfat",
+          "Köksrengöring: torka av ytor, rengöra utsidan av vitvaror",
+          "Tömning av papperskorgar"
+        ] },
+        { "type": "text", "label": "Storstädning:", "text": "En mer grundlig version av regelbunden städning. Inkluderar:" },
+        { "type": "list", "items": [
+          "Alla moment från regelbunden städning",
+          "Detaljerad rengöring av svåråtkomliga områden",
+          "Rengöring bakom och under möbler",
+          "Rengöring av ugn och kylskåp invändigt"
+        ] },
+        { "type": "text", "label": "Flyttstädning:", "text": "Omfattande städning vid flytt. Inkluderar:" },
+        { "type": "list", "items": [
+          "Alla moment från storstädning",
+          "Rengöring inuti skåp och garderober",
+          "Fönsterputs och rengöring av fönsterbrädor",
+          "Borttagning av kvarvarande damm eller skräp"
+        ] }
+      ]
+    },
+    {
+      "title": "Kontorsstädning",
+      "contents": [
+        { "type": "text", "text": "Skräddarsydda städtjänster för kontorsmiljöer. Inkluderar:" },
+        { "type": "list", "items": [
+          "Anpassade städplaner för ditt kontor",
+          "Dammsugning och moppning av kontorsgolv",
+          "Rengöring och desinficering av arbetsytor, inklusive skrivbord, stolar och gemensamma utrymmen",
+          "Rengöring av toaletter och påfyllning av förnödenheter",
+          "Rengöring av köksutrymmen, inklusive vitvaror och ytor",
+          "Flexibla scheman för att minimera störningar i arbetsdagen"
+        ] }
+      ]
+    },
+    {
+      "title": "Specialiserade tjänster",
+      "contents": [
+        { "type": "text", "label": "Kylskåpsrengöring:", "text": "Inkluderar:" },
+        { "type": "list", "items": [
+          "Ta ut alla varor ur kylskåpet",
+          "Noggrann rengöring av alla hyllor, lådor och ytor",
+          "Sätta tillbaka varorna i kylskåpet"
+        ] },
+        { "type": "text", "label": "Ugnsrengöring:", "text": "Inkluderar:" },
+        { "type": "list", "items": [
+          "Rengöring av insidan av ugnen",
+          "Rengöring av ugnsgaller och lucka"
+        ] },
+        { "type": "text", "label": "Extra önskemål:", "text": "Vi erbjuder även anpassade städtjänster efter specifika behov." }
+      ]
+    }
+  ]
+}

@@ -7,7 +7,7 @@ type SidebarMenuButtonProps = {
 
 export const SidebarMenuButton: FC<SidebarMenuButtonProps> = ({ onClick, ariaLabel }) => (
   <button
-    className="flex flex-col justify-center items-center xl:hidden  bg-white z-50"
+    className="flex flex-col justify-center items-center xl:hidden  z-50"
     style={{ width: 40, height: 40 }}
     onClick={onClick}
     aria-label={ariaLabel ?? "Toggle menu"}

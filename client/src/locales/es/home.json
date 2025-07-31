@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "welcome": "Bienvenido a Orion Städ",
+    "subtitle": "Su socio de confianza para servicios de limpieza profesional",
+    "heroImgAlt": "Servicio de limpieza",
+    "logoImgAlt": "Logo de Orion Städ",
+    "bookNow": "Reservar ahora"
+  },
+  "sections": [
+    {
+      "title": "Sobre Orion Städ",
+      "paragraphs": [
+        "En Orion Städ, creemos en ofrecer excelencia en cada limpieza. Nuestro equipo de profesionales está comprometido a asegurar que su hogar esté impecable y reluciente, dándole más tiempo para disfrutar de lo que más importa.",
+        "Ofrecemos una gama de servicios de limpieza personalizables adaptados a sus necesidades específicas. Desde limpieza regular hasta limpieza profunda, nuestro objetivo es brindar una experiencia sin estrés con resultados en los que puede confiar."
+      ]
+    },
+    {
+      "title": "¿Por qué elegirnos?",
+      "paragraphs": [
+        "Orion Städ se destaca por su compromiso con la calidad y la satisfacción del cliente. Utilizamos productos ecológicos y las técnicas de limpieza más avanzadas para garantizar que su hogar no solo esté limpio, sino también seguro para usted y sus seres queridos.",
+        "Nuestros servicios son flexibles y asequibles, lo que facilita mantener su hogar en óptimas condiciones sin gastar de más. Únase a los muchos clientes satisfechos que confían en Orion Städ para sus necesidades de limpieza."
+      ]
+    }
+  ],
+  "bookingForm": {
+    "title": "Reservar un servicio de limpieza",
+    "intro": "¿Listo para experimentar la diferencia de Orion Städ? ¡Reservar un servicio de limpieza es fácil! Simplemente haga clic en el botón de abajo para comenzar.",
+    "serviceLabel": "Seleccione el tipo de servicio e ingrese el tamaño del hogar",
+    "serviceOptions": [
+      { "value": "", "label": "Seleccione el tipo de servicio" },
+      { "value": "regular", "label": "Limpieza regular" },
+      { "value": "deep", "label": "Limpieza profunda" },
+      { "value": "move-in-out", "label": "Limpieza de mudanza" }
+    ],
+    "sizeLabel": "Ingrese el tamaño del hogar (m²):",
+    "frequencyLabel": "Seleccione la frecuencia de limpieza:",
+    "frequencyOptions": [
+      { "value": "", "label": "Seleccione la frecuencia" },
+      { "value": "one-time", "label": "Limpieza única" },
+      { "value": "weekly", "label": "Limpieza semanal" },
+      { "value": "bi-weekly", "label": "Limpieza quincenal" },
+      { "value": "monthly", "label": "Limpieza mensual" }
+    ],
+    "nextLabel": "Siguiente"
+  },
+  "customerForm": {
+    "title": "Información del cliente",
+    "fields": [
+      { "type": "text", "placeholder": "Nombre completo", "name": "fullName" },
+      { "type": "email", "placeholder": "Correo electrónico", "name": "email" },
+      { "type": "tel", "placeholder": "Número de teléfono", "name": "phone" },
+      { "type": "text", "placeholder": "Dirección", "name": "address" },
+      { "type": "text", "placeholder": "Número de habitaciones", "name": "numberOfRooms" },
+      { "type": "text", "placeholder": "Número de baños", "name": "numberOfBathrooms" },
+      { "type": "text", "placeholder": "Cómo acceder a su hogar", "name": "accessInstructions" },
+      { "type": "text", "placeholder": "Áreas prioritarias para limpiar", "name": "priorityAreas" },
+      { "type": "text", "placeholder": "Instrucciones especiales", "name": "specialInstructions" },
+      { "type": "text", "placeholder": "Materiales sensibles o alergias", "name": "allergies" },
+      { "type": "text", "placeholder": "Mascotas en el hogar", "name": "pets" }
+    ],
+    "backLabel": "Atrás",
+    "submitLabel": "Enviar"
+  }
+}
