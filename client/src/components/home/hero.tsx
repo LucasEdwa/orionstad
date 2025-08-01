@@ -26,6 +26,7 @@ const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
     return () => clearTimeout(timer);
   }, [onLogoAnimationEnd]);
 
+
   // Helper for logo animation with swipe up effect
   const LogoAnimation = () => (
     <img
@@ -36,9 +37,10 @@ const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
     />
   );
 
-  // Helper for hero content after logo
-  const HeroContent = () => (
-    <>
+
+  return (
+    <div className="relative w-full h-[100vh] flex items-center justify-center bg-black overflow-hidden">
+      {/* Video always mounted for performance */}
       <video
         src="https://amplify-d2gt0za7za73zb-ma-modelintrospectionschema-qthe560p7lyj.s3.eu-north-1.amazonaws.com/6195525-uhd_3840_2160_25fps.mp4"
         autoPlay
@@ -48,33 +50,31 @@ const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
         className="absolute inset-0 w-full h-full object-cover z-0"
         style={{ pointerEvents: 'none' }}
       />
-      <header className="w-full absolute top-70 left-0 z-20">
-        <div className="px-4 py-6 items-center">
-          <div className="rounded-lg px-6 py-4 animate-fadeInUp flex justify-center flex-col items-center ">
-            <h1 className="text-3xl font-bold text-center xl:text-6xl text-[#333333] animate-fadeInUp delay-200 drop-shadow-md">{t("hero.welcome")}</h1>
-            <p className="text-lg text-center mt-2 font-semibold xl:text-2xl text-[#333333] animate-fadeInUp delay-400 drop-shadow-sm">{t("hero.subtitle")}</p>
+      {/* Overlay logo or hero content */}
+      {showLogo ? (
+        <LogoAnimation />
+      ) : (
+        <header className="w-full absolute top-70 left-0 z-20">
+          <div className="px-4 py-6 items-center">
+            <div className="rounded-lg px-6 py-4 animate-fadeInUp flex justify-center flex-col items-center ">
+              <h1 className="text-3xl font-bold text-center xl:text-6xl text-[#333333] animate-fadeInUp delay-200 drop-shadow-md">{t("hero.welcome")}</h1>
+              <p className="text-lg text-center mt-2 font-semibold xl:text-2xl text-[#333333] animate-fadeInUp delay-400 drop-shadow-sm">{t("hero.subtitle")}</p>
+            </div>
+            <div className="mt-8 flex justify-center items-center animate-fadeInUp delay-500">
+              <button
+                className="bg-orion-gradient text-gray-800 px-8 py-3 rounded-full shadow-lg hover:bg-[#8e77ad] transition-colors w-[200px] max-w-xs text-lg font-semibold animate-fadeInUp delay-600"
+                onClick={() => {
+                  const el = document.getElementById("booking");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                aria-label={t("hero.bookNow")}
+              >
+                {t("hero.bookNow")}
+              </button>
+            </div>
           </div>
-          <div className="mt-8 flex justify-center items-center animate-fadeInUp delay-500">
-            <button
-              className="bg-orion-gradient text-gray-800 px-8 py-3 rounded-full shadow-lg hover:bg-[#8e77ad] transition-colors w-[200px] max-w-xs text-lg font-semibold animate-fadeInUp delay-600"
-              onClick={() => {
-                const el = document.getElementById("booking");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
-              aria-label={t("hero.bookNow")}
-            >
-              {t("hero.bookNow")}
-            </button>
-          </div>
-        </div>
-      </header>
-    </>
-  );
-
-  return (
-    <div className="relative w-full h-[100vh] flex items-center justify-center bg-black overflow-hidden">
-      {/* Logo animation */}
-      {showLogo ? <LogoAnimation /> : <HeroContent />}
+        </header>
+      )}
     </div>
   );
 };
