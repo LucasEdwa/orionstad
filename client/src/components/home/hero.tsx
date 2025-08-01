@@ -1,7 +1,7 @@
 
 
 import { useEffect, useState } from 'react';
-import orionLogo from '../../assets/orion-logo.png';
+import orionLogo from '../../assets/orionPride.jpeg';
 import { useTranslation } from 'react-i18next';
 
 interface HeroProps {
@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
     <img
       src={orionLogo}
       alt="Orion Logo"
-      className={`transition-all duration-1000 rounded-full w-48 h-48 object-contain z-30 ${logoVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-75 -translate-y-32'}`}
+      className={`transition-all duration-1000 rounded-full w-48 h-48 object-cover z-30 ${logoVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-75 -translate-y-32'}`}
       style={{ filter: 'drop-shadow(0 0 40px #c09cc1)' }}
     />
   );

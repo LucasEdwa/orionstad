@@ -10,7 +10,7 @@ export const About = () => {
     <div>
       <div className="relative flex flex-col justify-center bg-gray-100">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center "
           style={{ backgroundImage: `url(${aboutImg})` }}
         >
           <div className="absolute inset-0 bg-black/40 z-10"></div>
@@ -20,10 +20,10 @@ export const About = () => {
             className="absolute top-4 left-4 w-24 h-auto xl:w-[15rem] rounded-full z-20"
           />
         </div>
-                              <div className="absolute inset-0 bg-white/40 z-10"></div>
+        <div className="absolute inset-0 bg-white/40 z-10"></div>
         <header className="w-full absolute z-30">
 
-          <div className="px-4 py-6  mt-24 xl:mt-0">
+          <div className="px-4 py-6  mt-24 xl:mt-0 text-gray-800">
             <h1 className="text-3xl font-bold text-center xl:text-6xl">{hero.title}</h1>
             <p className="text-lg text-center mt-2 font-semibold xl:text-2xl">
               {hero.subtitle}
