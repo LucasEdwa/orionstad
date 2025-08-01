@@ -2,16 +2,28 @@
 import { useTranslation } from 'react-i18next';
 import orionLogo from '../assets/orion-logo.png';
 import homeCleaningImg from '../assets/services6.jpg';
+import homeCleaningImg2 from '../assets/services3.jpg';
+import homeCleaningImg3 from '../assets/services2.jpg';
 import officecleaningImg from '../assets/services8.jpg';
+import officecleaningImg2 from '../assets/services5.jpg';
 import specialCleaningImg from '../assets/services7.jpg';
+import specialCleaningImg2 from '../assets/services4.jpg';
+import { ServiceCard } from '../components/serviceCard';
+
+// Carousel Service Card component
 
 
 export const Services = () => {
   const { t } = useTranslation('services');
   const hero = t('hero', { returnObjects: true }) as { logoAlt: string; imgAlt: string; title: string; subtitle: string };
-  // Map each section to a service card with its own image
+  // Map each section to a service card with its own images
   const sections = t('sections', { returnObjects: true }) as Array<any>;
-  const serviceImages = [homeCleaningImg, officecleaningImg, specialCleaningImg];
+  // Each service gets an array of images
+  const serviceImages = [
+    [homeCleaningImg, homeCleaningImg2, homeCleaningImg3],
+    [officecleaningImg, officecleaningImg2],
+    [specialCleaningImg, specialCleaningImg2],
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -27,34 +39,12 @@ export const Services = () => {
         </header>
         <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 px-4">
           {sections.map((section, idx) => (
-            <div
+            <ServiceCard
               key={section.title}
-              className="bg-white rounded-2xl shadow-xl flex flex-col items-center p-6 hover:scale-105 transition-transform duration-300 border border-gray-100"
-            >
-              <img
-                src={serviceImages[idx]}
-                alt={section.title}
-                className="w-full h-56 object-cover rounded-xl mb-4 shadow-md"
-                loading="lazy"
-              />
-              <h2 className="text-2xl font-bold mb-2 text-[#6d3a7b] text-center">{section.title}</h2>
-              {section.contents?.map((content: any, i: number) =>
-                content.type === "text" ? (
-                  <p className="text-gray-700 mb-3 text-center" key={i}>
-                    {content.label && (
-                      <span className="font-bold text-lg">{content.label} </span>
-                    )}
-                    {content.text}
-                  </p>
-                ) : (
-                  <ul className="list-disc pl-5 mb-3 text-left" key={i}>
-                    {content.items?.map((item: string, j: number) => (
-                      <li key={j}>{item}</li>
-                    ))}
-                  </ul>
-                )
-              )}
-            </div>
+              title={section.title}
+              contents={section.contents}
+              images={serviceImages[idx]}
+            />
           ))}
         </div>
       </div>
