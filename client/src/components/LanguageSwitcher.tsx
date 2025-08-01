@@ -5,42 +5,42 @@ import type { Language } from "../store/languageSlice";
 import { useState } from "react";
 
 const LANGUAGES: { code: Language; label: string }[] = [
-  { code: "en", label: "English" },
-  { code: "es", label: "Español" },
-  { code: "sv", label: "Svenska" },
+    { code: "en", label: "English" },
+    { code: "es", label: "Español" },
+    { code: "sv", label: "Svenska" },
 ];
 
 export default function LanguageSwitcher() {
-  const dispatch = useDispatch();
-  const language = useSelector((state: RootState) => state.language.language);
-  const [open, setOpen] = useState(true);
+    const dispatch = useDispatch();
+    const language = useSelector((state: RootState) => state.language.language);
+    const [open, setOpen] = useState(true);
 
-  if (!open) return null;
+    if (!open) return null;
 
-  return (
-    <div
-      className="fixed bottom-0 z-100 bg-orion-gradient p-6 rounded-t-2xl flex flex-col items-end w-full "
-      style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.15)" }}
-    >
-      <button
-        onClick={() => setOpen(false)}
-        className="mb-2 text-black text-xl font-bold hover:text-red-500 focus:outline-none"
-        aria-label="Close language switcher"
-      >
-        ×
-      </button>
-<h4 className="text-black text-lg font-bold w-full text-center p-3">Select Language</h4>
-      <div className="flex gap-2 items-center w-full justify-center">
-        {LANGUAGES.map((lang) => (
-          <button
-            key={lang.code}
-            onClick={() => dispatch(setLanguage(lang.code))}
-            className={`px-2 py-1 rounded transition-colors duration-150 ${language === lang.code ? "bg-[#c09cc1] text-white" : "bg-gray-200"}`}
-          >
-            {lang.label}
-          </button>
-        ))}
-      </div>
-    </div>
-  );
+    return (
+        <div
+            className="fixed bottom-5 left-25 transform -translate-x-1/2 z-100 bg-orion-gradient p-1 rounded-2xl flex flex-col items-end w-[10rem] xl:w-md"
+            style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.15)" }}
+        >
+            <button
+                onClick={() => setOpen(false)}
+                className=" text-black text-xs font-bold hover:text-red-500 focus:outline-none absolute top-1 right-2"
+                aria-label="Close language switcher"
+            >
+                ×
+            </button>
+            <h4 className="text-black text-sm font-bold w-full text-center p-2">Select Language</h4>
+            <div className="w-full flex justify-center">
+                <select
+                    value={language}
+                    onChange={e => dispatch(setLanguage(e.target.value as Language))}
+                    className="px-3 py-2 rounded bg-white text-black border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#c09cc1]"
+                >
+                    {LANGUAGES.map(lang => (
+                        <option key={lang.code} value={lang.code}>{lang.label}</option>
+                    ))}
+                </select>
+            </div>
+        </div>
+    );
 }
