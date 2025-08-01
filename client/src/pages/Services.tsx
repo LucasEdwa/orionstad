@@ -26,7 +26,7 @@ export const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-100">
       <div className="relative flex flex-col items-center justify-center text-gray-800  pb-16">
         <header className="w-full max-w-4xl mx-auto text-center pt-16 pb-8">
           <img

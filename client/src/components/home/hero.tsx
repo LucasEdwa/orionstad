@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
       setTimeout(() => {
         setShowLogo(false);
         onLogoAnimationEnd();
-      }, 500);
+      }, 100);
     }, 2500);
     return () => clearTimeout(timer);
   }, [onLogoAnimationEnd]);
@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
 
 
   return (
-    <div className="relative w-full h-[100vh] flex items-center justify-center bg-black overflow-hidden">
+    <div className="relative w-full h-[100vh] flex items-center justify-center bg-black overflow-hidden" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
       {/* Video always mounted for performance */}
       <video
         src="https://amplify-d2gt0za7za73zb-ma-modelintrospectionschema-qthe560p7lyj.s3.eu-north-1.amazonaws.com/6195525-uhd_3840_2160_25fps.mp4"
@@ -54,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
       {showLogo ? (
         <LogoAnimation />
       ) : (
-        <header className="w-full absolute top-70 left-0 z-20">
+        <header className="w-full absolute top-90 left-0 z-20">
           <div className="px-4 py-6 items-center">
             <div className="rounded-lg px-6 py-4 animate-fadeInUp flex justify-center flex-col items-center ">
               <h1 className="text-3xl font-bold text-center xl:text-6xl text-[#333333] animate-fadeInUp delay-200 drop-shadow-md">{t("hero.welcome")}</h1>

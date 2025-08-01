@@ -7,8 +7,8 @@ export const About = () => {
   const hero = t('hero', { returnObjects: true }) as { logoAlt: string; imgAlt: string; title: string; subtitle: string };
   const sections = t('sections', { returnObjects: true }) as Array<any>;
   return (
-    <div>
-      <div className="relative flex flex-col justify-center bg-gray-100">
+    <div className="bg-gray-100">
+      <div className="relative flex flex-col justify-center ">
         <div
           className="absolute inset-0 bg-cover bg-center "
           style={{ backgroundImage: `url(${aboutImg})` }}

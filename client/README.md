@@ -1,54 +1,18 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Video Performance Optimization in Hero Component
 
-Currently, two official plugins are available:
+## Problem
+Previously, the background video in the Hero section was being unmounted and remounted when the logo animation ended. This caused the video to restart or flicker, resulting in a poor user experience and unnecessary performance overhead.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Solution
+The video element is now always mounted in the DOM, regardless of whether the logo animation or the hero content is being shown. Only the overlay (logo or hero content) changes, not the video element itself. This ensures:
 
-## Expanding the ESLint configuration
+- The video loads and plays smoothly without restarting or flickering.
+- Improved performance, as the video is not reloaded or re-decoded by the browser.
+- A seamless transition between the logo animation and the main hero content.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Implementation:**
+- The `<video>` element is rendered outside the conditional logic for the logo/content overlay.
+- Only the overlay (logo or hero content) is conditionally rendered.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+This approach provides a better user experience and more efficient resource usage for the landing page animation.

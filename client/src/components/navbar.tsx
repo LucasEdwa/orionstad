@@ -1,11 +1,14 @@
-import { useState } from "react";
-import type { FC } from "react";
+
 import { useTranslation } from "react-i18next";
 import { SidebarMenuButton } from "./SidebarMenuButton";
-import logoImg from "../assets/orion-logo.png"; 
+import logoImg from "../assets/orion-logo.png";
 
-export const Navbar: FC = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+type NavbarProps = {
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
+};
+
+export const Navbar: React.FC<NavbarProps> = ({ sidebarOpen, setSidebarOpen }) => {
   const { t } = useTranslation("navbar");
 
   // Get navbar links from translation file (navbar.links is an array of objects)
@@ -18,7 +21,7 @@ export const Navbar: FC = () => {
       </div>
       {/* Hamburger button for mobile */}
       {!sidebarOpen && (
-        <SidebarMenuButton onClick={() => setSidebarOpen((open) => !open)} ariaLabel="Toggle menu" />
+        <SidebarMenuButton onClick={() => setSidebarOpen(true)} ariaLabel="Toggle menu" />
       )}
       {/* Desktop menu */}
       <ul className="hidden md:flex space-x-6 navbar-menu">
@@ -30,9 +33,10 @@ export const Navbar: FC = () => {
       </ul>
       {/* Mobile sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-orion-gradient shadow-lg transform ${
+        className={`fixed top-0 left-0 h-screen w-1/2 bg-orion-gradient shadow-lg transform ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-200 ease-in-out z-50 md:hidden`}
+        } transition-transform duration-200 ease-in-out z-[100] md:hidden`}
+        style={{ background: 'linear-gradient(90deg, #c09cc1 0%, #f7e1ff 100%)' }}
       >
         <button
           className="absolute top-4 right-4 text-2xl"
@@ -61,7 +65,7 @@ export const Navbar: FC = () => {
       {/* Overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-30 z-40 md:hidden"
+          className="fixed inset-0 z-40 md:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}

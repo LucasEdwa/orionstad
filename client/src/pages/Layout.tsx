@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import { Navbar } from "../components/navbar";
+import { AnimatedNavbar } from "../components/AnimatedNavbar";
 import { Footer } from "../components/footer";
 import { FaWhatsapp } from "react-icons/fa";
 import { useEffect } from "react";
@@ -25,7 +25,7 @@ export const Layout = () => {
   }, [location]);
 
   return (
-    <div className=" bg-gray-50 ">
+    <div className="bg-gray-100 ">
       {/* Google Analytics */}
       <script
         async
@@ -41,7 +41,7 @@ export const Layout = () => {
           `,
         }}
       />
-      <Navbar />
+      <AnimatedNavbar />
       <Outlet />
       <Footer />
       <a

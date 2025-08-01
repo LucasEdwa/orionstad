@@ -36,7 +36,7 @@ export const Contact = () => {
     };
 
     return (
-        <div className="">
+        <div className="bg-gray-100">
             <div className="relative flex flex-col justify-center ">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
