@@ -5,6 +5,64 @@
     "title": "Nuestros Servicios",
     "subtitle": "Descubra nuestra gama de servicios de limpieza profesional"
   },
+  "ui": {
+    "whatWeOffer": "Lo que ofrecemos",
+    "whatWeOfferDescription": "Servicios de limpieza profesional adaptados a sus necesidades. Desde limpieza doméstica regular hasta mantenimiento especializado de oficinas.",
+    "whyChooseUs": "¿Por qué elegir Orion Städ?",
+    "whyChooseUsDescription": "Números que hablan de nuestro compromiso con la excelencia",
+    "getQuote": "Solicitar presupuesto para",
+    "learnMore": "Saber más",
+    "showLess": "Mostrar menos",
+    "moreFeatures": "características más...",
+    "categories": {
+      "home": "hogar",
+      "office": "oficina",
+      "specialized": "especializado"
+    }
+  },
+  "stats": {
+    "happyCustomers": {
+      "number": "500+",
+      "label": "Clientes satisfechos",
+      "description": "Clientes satisfechos que confían en nuestros servicios"
+    },
+    "experience": {
+      "number": "3+",
+      "label": "Años de experiencia",
+      "description": "Años de experiencia profesional en limpieza"
+    },
+    "support": {
+      "number": "24/7",
+      "label": "Soporte",
+      "description": "Siempre disponibles cuando nos necesite"
+    },
+    "satisfaction": {
+      "number": "100%",
+      "label": "Satisfacción",
+      "description": "Calidad garantizada en cada servicio"
+    }
+  },
+  "cta": {
+    "title": "¿Listo para experimentar la limpieza profesional?",
+    "description": "Permítanos encargarnos de sus necesidades de limpieza para que pueda concentrarse en lo que más importa. Obtenga su presupuesto gratuito hoy y únase a cientos de clientes satisfechos.",
+    "getFreeQuote": "Presupuesto gratuito",
+    "callNow": "Llamar ahora",
+    "phoneNumber": "+46 123 456 789",
+    "features": {
+      "quickResponse": {
+        "title": "Respuesta rápida",
+        "description": "Reserva el mismo día disponible"
+      },
+      "qualityGuaranteed": {
+        "title": "Calidad garantizada",
+        "description": "Promesa de satisfacción del 100%"
+      },
+      "fairPricing": {
+        "title": "Precios justos",
+        "description": "Transparente, sin tarifas ocultas"
+      }
+    }
+  },
   "sections": [
     {
       "title": "Limpieza del hogar (Hemstädning)",

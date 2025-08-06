@@ -5,6 +5,64 @@
     "title": "Our Services",
     "subtitle": "Discover our range of professional cleaning services"
   },
+  "ui": {
+    "whatWeOffer": "What We Offer",
+    "whatWeOfferDescription": "Professional cleaning services tailored to your needs. From regular home cleaning to specialized office maintenance.",
+    "whyChooseUs": "Why Choose Orion Städ?",
+    "whyChooseUsDescription": "Numbers that speak for our commitment to excellence",
+    "getQuote": "Get Quote for",
+    "learnMore": "Learn More",
+    "showLess": "Show Less",
+    "moreFeatures": "more features...",
+    "categories": {
+      "home": "home",
+      "office": "office", 
+      "specialized": "specialized"
+    }
+  },
+  "stats": {
+    "happyCustomers": {
+      "number": "500+",
+      "label": "Happy Customers",
+      "description": "Satisfied clients who trust our services"
+    },
+    "experience": {
+      "number": "3+",
+      "label": "Years Experience", 
+      "description": "Years of professional cleaning expertise"
+    },
+    "support": {
+      "number": "24/7",
+      "label": "Support",
+      "description": "Always available when you need us"
+    },
+    "satisfaction": {
+      "number": "100%",
+      "label": "Satisfaction",
+      "description": "Guaranteed quality in every service"
+    }
+  },
+  "cta": {
+    "title": "Ready to Experience Professional Cleaning?",
+    "description": "Let us take care of your cleaning needs so you can focus on what matters most. Get your free quote today and join hundreds of satisfied customers.",
+    "getFreeQuote": "Get Free Quote",
+    "callNow": "Call Now",
+    "phoneNumber": "+46 123 456 789",
+    "features": {
+      "quickResponse": {
+        "title": "Quick Response",
+        "description": "Same day booking available"
+      },
+      "qualityGuaranteed": {
+        "title": "Quality Guaranteed", 
+        "description": "100% satisfaction promise"
+      },
+      "fairPricing": {
+        "title": "Fair Pricing",
+        "description": "Transparent, no hidden fees"
+      }
+    }
+  },
   "sections": [
     {
       "title": "Home Cleaning (Hemstädning)",

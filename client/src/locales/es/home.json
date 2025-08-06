@@ -60,5 +60,44 @@
     ],
     "backLabel": "Atrás",
     "submitLabel": "Enviar"
+  },
+  "features": {
+    "title": "¿Por qué elegir Orion Städ?",
+    "subtitle": "Experimenta la diferencia de nuestro método único de limpieza que transforma hogares y vidas.",
+    "items": [
+      {
+        "title": "Calidad Premium",
+        "description": "Limpieza profesional con atención a cada detalle"
+      },
+      {
+        "title": "Confiable y asegurado",
+        "description": "Servicio completamente asegurado con limpiadores verificados"
+      },
+      {
+        "title": "Enfoque cuidadoso",
+        "description": "Tratamos tu hogar con respeto y presencia"
+      },
+      {
+        "title": "Servicio 5 estrellas",
+        "description": "Constantemente calificado como excelente por nuestros clientes satisfechos"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Lo que obtienes",
+    "quickContact": {
+      "title": "Contacto rápido",
+      "description": "¿Tienes preguntas? ¿Necesitas discutir requisitos especiales? ¡Estamos aquí para ayudar!",
+      "call": "Llámanos: +46 70 418 05 97",
+      "whatsapp": "Escríbenos por WhatsApp instantáneamente"
+    },
+    "items": [
+      "Consulta gratuita y plan de limpieza personalizado",
+      "Limpiadores profesionales, capacitados y confiables",
+      "Productos ecológicos seguros para la familia y las mascotas",
+      "Horarios flexibles que se adaptan a tu vida",
+      "Garantía de satisfacción del 100%",
+      "El mismo limpiador para consistencia y confianza"
+    ]
   }
 }

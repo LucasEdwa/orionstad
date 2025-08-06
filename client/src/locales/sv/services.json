@@ -5,6 +5,64 @@
     "title": "Våra tjänster",
     "subtitle": "Upptäck vårt utbud av professionella städtjänster"
   },
+  "ui": {
+    "whatWeOffer": "Vad vi erbjuder",
+    "whatWeOfferDescription": "Professionella städtjänster anpassade efter dina behov. Från regelbunden hemstädning till specialiserat kontorsunderhåll.",
+    "whyChooseUs": "Varför välja Orion Städ?",
+    "whyChooseUsDescription": "Siffror som talar för vårt engagemang för excellens",
+    "getQuote": "Få offert för",
+    "learnMore": "Läs mer",
+    "showLess": "Visa mindre",
+    "moreFeatures": "fler funktioner...",
+    "categories": {
+      "home": "hem",
+      "office": "kontor",
+      "specialized": "specialiserad"
+    }
+  },
+  "stats": {
+    "happyCustomers": {
+      "number": "500+",
+      "label": "Nöjda kunder",
+      "description": "Nöjda kunder som litar på våra tjänster"
+    },
+    "experience": {
+      "number": "3+",
+      "label": "Års erfarenhet",
+      "description": "År av professionell städexpertis"
+    },
+    "support": {
+      "number": "24/7",
+      "label": "Support",
+      "description": "Alltid tillgängliga när du behöver oss"
+    },
+    "satisfaction": {
+      "number": "100%",
+      "label": "Tillfredsställelse",
+      "description": "Garanterad kvalitet i varje tjänst"
+    }
+  },
+  "cta": {
+    "title": "Redo att uppleva professionell städning?",
+    "description": "Låt oss ta hand om dina städbehov så att du kan fokusera på det som betyder mest. Få din kostnadsfria offert idag och gå med hundratals nöjda kunder.",
+    "getFreeQuote": "Få gratis offert",
+    "callNow": "Ring nu",
+    "phoneNumber": "+46 123 456 789",
+    "features": {
+      "quickResponse": {
+        "title": "Snabb respons",
+        "description": "Bokning samma dag tillgänglig"
+      },
+      "qualityGuaranteed": {
+        "title": "Kvalitet garanterad",
+        "description": "100% tillfredsställelselöfte"
+      },
+      "fairPricing": {
+        "title": "Rättvisa priser",
+        "description": "Transparent, inga dolda avgifter"
+      }
+    }
+  },
   "sections": [
     {
       "title": "Hemstädning",

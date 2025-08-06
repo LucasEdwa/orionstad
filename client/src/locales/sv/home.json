@@ -60,5 +60,44 @@
     ],
     "backLabel": "Tillbaka",
     "submitLabel": "Skicka"
+  },
+  "features": {
+    "title": "Varför välja Orion Städ?",
+    "subtitle": "Upplev skillnaden med vår unika städmetod som förvandlar hem och liv.",
+    "items": [
+      {
+        "title": "Premium kvalitet",
+        "description": "Professionell städning med uppmärksamhet på varje detalj"
+      },
+      {
+        "title": "Pålitlig & försäkrad",
+        "description": "Fullt försäkrad tjänst med bakgrundskontrollerade städare"
+      },
+      {
+        "title": "Omtänksam approach",
+        "description": "Vi behandlar ditt hem med respekt och närvaro"
+      },
+      {
+        "title": "5-stjärnig service",
+        "description": "Konsekvent betygsatt som utmärkt av våra nöjda kunder"
+      }
+    ]
+  },
+  "benefits": {
+    "title": "Vad du får",
+    "quickContact": {
+      "title": "Snabb kontakt",
+      "description": "Har du frågor? Behöver diskutera särskilda krav? Vi är här för att hjälpa!",
+      "call": "Ring oss: +46 70 418 05 97",
+      "whatsapp": "Skicka WhatsApp meddelande direkt"
+    },
+    "items": [
+      "Gratis konsultation och anpassad städplan",
+      "Professionella, utbildade och pålitliga städare",
+      "Miljövänliga produkter säkra för familj och husdjur",
+      "Flexibel schemaläggning som passar ditt liv",
+      "100% nöjdhetsgaranti",
+      "Samma städare för kontinuitet och förtroende"
+    ]
   }
 }
