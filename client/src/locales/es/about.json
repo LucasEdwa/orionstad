@@ -27,7 +27,8 @@
       "paragraphs": [
         "Nuestra misión es cambiar vidas a través de la limpieza. Creemos que un hogar limpio crea equilibrio emocional, paz y claridad. Para nosotros, limpiar no es una tarea — es un acto de cuidado, e incluso sanación.",
         "Entramos a cada hogar con respeto y presencia, conscientes de que estamos entrando al espacio más íntimo de alguien. Nuestro objetivo es siempre el mismo: dejar belleza, orden y luz atrás.",
-        "Nuestros valores fundamentales guían todo lo que hacemos: Respeto, Dignidad, Integridad, Presencia, Transformación y Conexión Humana."
+        "Nuestros valores fundamentales guían todo lo que hacemos: Respeto, Dignidad, Integridad, Presencia, Transformación y Conexión Humana.",
+        "💡 Este es el corazón de lo que nos impulsa cada día"
       ]
     },
     {
@@ -54,5 +55,91 @@
         "Nos especializamos en hogares privados para clientes que valoran la calidad, discreción y sensibilidad, sirviendo Estocolmo y áreas circundantes con limpiezas regulares, limpiezas profundas y servicios de mudanza."
       ]
     }
-  ]
+  ],
+  "stats": {
+    "years": {
+      "emoji": "⭐",
+      "number": "3+",
+      "title": "Años de Excelencia",
+      "description": "Experiencia profesional en limpieza"
+    },
+    "clients": {
+      "emoji": "😊",
+      "number": "500+",
+      "title": "Clientes Felices",
+      "description": "Clientes satisfechos que confían en nosotros"
+    },
+    "team": {
+      "emoji": "👥",
+      "number": "10+",
+      "title": "Equipo Experto",
+      "description": "Profesionales calificados"
+    },
+    "certifications": {
+      "emoji": "🏆",
+      "number": "5+",
+      "title": "Certificaciones",
+      "description": "Calificaciones profesionales"
+    }
+  },
+  "values": {
+    "title": "Nuestros Valores Fundamentales",
+    "subtitle": "Estos valores guían todo lo que hacemos y moldean cómo servimos a nuestros clientes",
+    "description": "Este es el corazón de lo que nos impulsa cada día",
+    "items": [
+      {
+        "emoji": "🙏",
+        "title": "Respeto",
+        "description": "Honramos cada hogar como un espacio sagrado"
+      },
+      {
+        "emoji": "⭐",
+        "title": "Excelencia",
+        "description": "Estándares profesionales en cada detalle"
+      },
+      {
+        "emoji": "🦋",
+        "title": "Transformación",
+        "description": "Creando paz a través de la limpieza"
+      },
+      {
+        "emoji": "🤝",
+        "title": "Conexión",
+        "description": "Construyendo relaciones duraderas"
+      },
+      {
+        "emoji": "💎",
+        "title": "Integridad",
+        "description": "Servicio honesto y transparente"
+      },
+      {
+        "emoji": "🧘",
+        "title": "Presencia",
+        "description": "Atención consciente a tus necesidades"
+      }
+    ]
+  },
+  "cta": {
+    "title": "¿Listo para Transformar tu Espacio?",
+    "subtitle": "Experimenta la diferencia Orion. Permítenos traer paz, belleza y claridad a tu hogar con nuestro enfoque único de limpieza.",
+    "primaryButton": "🌟 Obtén tu Cotización Gratuita",
+    "secondaryButton": "💬 Contáctanos Hoy",
+    "trusts": [
+      {
+        "icon": "🔒",
+        "title": "Completamente Asegurado",
+        "description": "Protección completa"
+      },
+      {
+        "icon": "🌿",
+        "title": "Ecológico",
+        "description": "Seguro para familia y mascotas"
+      },
+      {
+        "icon": "⭐",
+        "title": "Equipo Certificado",
+        "description": "Estándares profesionales"
+      }
+    ]
+  }
 }

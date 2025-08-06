@@ -27,7 +27,8 @@
       "paragraphs": [
         "Our mission is to change lives through cleaning. We believe that a clean home creates emotional balance, peace, and clarity. For us, cleaning is not a chore — it's an act of care, and even healing.",
         "We enter each home with respect and presence, aware that we are stepping into someone's most intimate space. Our goal is always the same: leave beauty, order, and light behind.",
-        "Our core values guide everything we do: Respect, Dignity, Integrity, Presence, Transformation, and Human Connection."
+        "Our core values guide everything we do: Respect, Dignity, Integrity, Presence, Transformation, and Human Connection.",
+        "💡 This is the heart of what drives us every day"
       ]
     },
     {
@@ -54,5 +55,91 @@
         "We specialize in private homes for clients who value quality, discretion, and sensitivity, serving Stockholm and surrounding areas with regular cleanings, deep cleanings, and move-out services."
       ]
     }
-  ]
+  ],
+  "stats": {
+    "years": {
+      "emoji": "⭐",
+      "number": "3+",
+      "title": "Years of Excellence",
+      "description": "Professional cleaning expertise"
+    },
+    "clients": {
+      "emoji": "😊",
+      "number": "500+",
+      "title": "Happy Clients",
+      "description": "Satisfied customers who trust us"
+    },
+    "team": {
+      "emoji": "👥",
+      "number": "10+",
+      "title": "Expert Team",
+      "description": "Skilled professionals"
+    },
+    "certifications": {
+      "emoji": "🏆",
+      "number": "5+",
+      "title": "Certifications",
+      "description": "Professional qualifications"
+    }
+  },
+  "values": {
+    "title": "Our Core Values",
+    "subtitle": "These values guide everything we do and shape how we serve our clients",
+    "description": "This is the heart of what drives us every day",
+    "items": [
+      {
+        "emoji": "🙏",
+        "title": "Respect",
+        "description": "We honor every home as a sacred space"
+      },
+      {
+        "emoji": "⭐",
+        "title": "Excellence",
+        "description": "Professional standards in every detail"
+      },
+      {
+        "emoji": "🦋",
+        "title": "Transformation",
+        "description": "Creating peace through cleaning"
+      },
+      {
+        "emoji": "🤝",
+        "title": "Connection",
+        "description": "Building lasting relationships"
+      },
+      {
+        "emoji": "💎",
+        "title": "Integrity",
+        "description": "Honest and transparent service"
+      },
+      {
+        "emoji": "🧘",
+        "title": "Presence",
+        "description": "Mindful attention to your needs"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Transform Your Space?",
+    "subtitle": "Experience the Orion difference. Let us bring peace, beauty, and clarity to your home with our unique approach to cleaning.",
+    "primaryButton": "🌟 Get Your Free Quote",
+    "secondaryButton": "💬 Contact Us Today",
+    "trusts": [
+      {
+        "icon": "🔒",
+        "title": "Fully Insured",
+        "description": "Complete protection"
+      },
+      {
+        "icon": "🌿",
+        "title": "Eco-Friendly",
+        "description": "Safe for family & pets"
+      },
+      {
+        "icon": "⭐",
+        "title": "Certified Team",
+        "description": "Professional standards"
+      }
+    ]
+  }
 }

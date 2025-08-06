@@ -19,7 +19,7 @@
       "paragraphs": [
         "Vi städar inte bara — vi bryr oss, observerar och förvandlar. På Orion har vi en unik städmetod som blandar brasiliansk värme och uppmärksamhet på detaljer med skandinavisk effektivitet och standard.",
         "Vi ser hemmet som ett heligt utrymme, och vi behandlar det därefter. Vi använder säkra, miljövänliga produkter och fokuserar på djup träning, närvaro och intuition. Varje kund får en personlig service. Varje hem respekteras.",
-        "Varje städare är tränad inte bara i teknik, utan också i medvetenhet. Vår approach går bortom ytlig städning för att skapa emotionell balans, frid och klarhet i ditt bostadsutrymme."
+        "Varje städare är tränad inte bara i teknik, utan också i medvetenhet. Vårt tillvägagångssätt går bortom ytlig städning för att skapa emotionell balans, frid och klarhet i ditt bostadsutrymme."
       ]
     },
     {
@@ -27,7 +27,8 @@
       "paragraphs": [
         "Vårt uppdrag är att förändra liv genom städning. Vi tror att ett rent hem skapar emotionell balans, frid och klarhet. För oss är städning inte en syssla — det är en omtanke, och till och med helande.",
         "Vi kommer in i varje hem med respekt och närvaro, medvetna om att vi kliver in i någons mest intima utrymme. Vårt mål är alltid detsamma: lämna skönhet, ordning och ljus efter oss.",
-        "Våra kärnvärden vägleder allt vi gör: Respekt, Värdighet, Integritet, Närvaro, Transformation och Mänsklig Kontakt."
+        "Våra kärnvärden vägleder allt vi gör: Respekt, Värdighet, Integritet, Närvaro, Transformation och Mänsklig Kontakt.",
+        "💡 Detta är hjärtat av det som driver oss varje dag"
       ]
     },
     {
@@ -43,7 +44,7 @@
       "paragraphs": [
         "Vår grundare innehar certifieringar inklusive INSTA 800 (Skandinavisk Städkvalitetskontroll), PRYL (Professionell Städplanering), och specialträning inom hygien, desinfektion och miljövänliga metoder.",
         "Vi har utvecklat expertis inom behandling av alla golvtyper, vård av känsliga material som silver och kristaller, och skapat 'Städningens Psykologi' — fokuserat på den emotionella och energetiska påverkan av rena utrymmen.",
-        "Vi erbjuder också professionell träning i Orion-metoden, undervisar vår holistiska approach till andra professionella och städföretag som vill höja sina standarder."
+        "Vi erbjuder också professionell träning i Orion-metoden, undervisar vårt holistiska tillvägagångssätt till andra professionella och städföretag som vill höja sina standarder."
       ]
     },
     {
@@ -54,5 +55,91 @@
         "Vi specialiserar oss på privata hem för kunder som värdesätter kvalitet, diskretion och känslighet, betjänar Stockholm och omkringliggande områden med regelbunden städning, djupstädning och utflytningstjänster."
       ]
     }
-  ]
+  ],
+  "stats": {
+    "years": {
+      "emoji": "⭐",
+      "number": "3+",
+      "title": "År av Excellens",
+      "description": "Professionell städexpertis"
+    },
+    "clients": {
+      "emoji": "😊",
+      "number": "500+",
+      "title": "Nöjda Kunder",
+      "description": "Tillfredsställda kunder som litar på oss"
+    },
+    "team": {
+      "emoji": "👥",
+      "number": "10+",
+      "title": "Expertteam",
+      "description": "Skickliga professionella"
+    },
+    "certifications": {
+      "emoji": "🏆",
+      "number": "5+",
+      "title": "Certifieringar",
+      "description": "Professionella kvalifikationer"
+    }
+  },
+  "values": {
+    "title": "Våra Kärnvärden",
+    "subtitle": "Dessa värden vägleder allt vi gör och formar hur vi tjänar våra kunder",
+    "description": "Detta är hjärtat av det som driver oss varje dag",
+    "items": [
+      {
+        "emoji": "🙏",
+        "title": "Respekt",
+        "description": "Vi hedrar varje hem som ett heligt utrymme"
+      },
+      {
+        "emoji": "⭐",
+        "title": "Excellens",
+        "description": "Professionella standarder i varje detalj"
+      },
+      {
+        "emoji": "🦋",
+        "title": "Transformation",
+        "description": "Skapar frid genom städning"
+      },
+      {
+        "emoji": "🤝",
+        "title": "Kontakt",
+        "description": "Bygger varaktiga relationer"
+      },
+      {
+        "emoji": "💎",
+        "title": "Integritet",
+        "description": "Ärlig och transparent service"
+      },
+      {
+        "emoji": "🧘",
+        "title": "Närvaro",
+        "description": "Uppmärksam omsorg för dina behov"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Redo att Förvandla ditt Utrymme?",
+    "subtitle": "Upplev Orion-skillnaden. Låt oss bringa frid, skönhet och klarhet till ditt hem med vårt unika förhållningssätt till städning.",
+    "primaryButton": "🌟 Få din Gratis Offert",
+    "secondaryButton": "💬 Kontakta Oss Idag",
+    "trusts": [
+      {
+        "icon": "🔒",
+        "title": "Fullt Försäkrat",
+        "description": "Komplett skydd"
+      },
+      {
+        "icon": "🌿",
+        "title": "Miljövänligt",
+        "description": "Säkert för familj & husdjur"
+      },
+      {
+        "icon": "⭐",
+        "title": "Certifierat Team",
+        "description": "Professionella standarder"
+      }
+    ]
+  }
 }

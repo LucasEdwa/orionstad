@@ -1,7 +1,6 @@
 import { Outlet } from "react-router";
 import { AnimatedNavbar } from "../components/AnimatedNavbar";
-import { Footer } from "../components/footer";
-import { FaWhatsapp } from "react-icons/fa";
+import { Footer } from "../features/footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -44,15 +43,7 @@ export const Layout = () => {
       <AnimatedNavbar />
       <Outlet />
       <Footer />
-      <a
-        href={WHATSAPP_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed z-50 bottom-6 right-6 bg-orion-gradient hover:bg-green-600 text-white rounded-full shadow-lg p-4 flex items-center justify-center transition-colors"
-        aria-label="Chat with us on WhatsApp"
-      >
-        <FaWhatsapp size={32} />
-      </a>
+      
     </div>
   );
 };
