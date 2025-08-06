@@ -6,7 +6,6 @@ import { useLocation } from "react-router-dom";
 
 
 
-const WHATSAPP_LINK = import.meta.env.VITE_WHATSAPP_LINK;
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID;
 
 export const Layout = () => {
