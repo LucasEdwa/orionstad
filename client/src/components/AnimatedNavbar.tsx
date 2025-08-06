@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Navbar } from "./navbar";
-
+import { Navbar } from "../features/navbar";
 
 export const AnimatedNavbar: React.FC = () => {
   const [visible, setVisible] = useState(false); // Start hidden
-  const [sidebarOpen, setSidebarOpen] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
@@ -21,20 +19,13 @@ export const AnimatedNavbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close sidebar if navbar is hidden
-  useEffect(() => {
-    if (!visible && sidebarOpen) {
-      setSidebarOpen(false);
-    }
-  }, [visible, sidebarOpen]);
-
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 transition-transform duration-500 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+      <Navbar />
     </div>
   );
 };
