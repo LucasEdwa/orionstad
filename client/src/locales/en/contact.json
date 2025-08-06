@@ -1,34 +1,72 @@
 {
   "hero": {
     "logoAlt": "Orion Städ Logo",
-    "imgAlt": "About Hero",
-    "title": "Contact Us",
-    "subtitle": "We're here to help. Get in touch with Orion Städ today."
+    "imgAlt": "Contact Us",
+    "title": "Get in Touch",
+    "subtitle": "We're here to help. Let's start a conversation about your cleaning needs."
+  },
+  "quickActions": [
+    {
+      "title": "Call Us",
+      "description": "Speak directly with our team",
+      "icon": "FaPhone",
+      "action": "Call Now",
+      "href": "tel:+4670418097"
+    },
+    {
+      "title": "WhatsApp",
+      "description": "Quick chat for instant response",
+      "icon": "FaWhatsapp",
+      "action": "Message Us",
+      "href": "https://wa.me/message/I6GQY6OWYB5FH1"
+    },
+    {
+      "title": "Email",
+      "description": "Detailed inquiries welcome",
+      "icon": "FaEnvelope",
+      "action": "Send Email",
+      "href": "mailto:polly@orionstad.se"
+    },
+    {
+      "title": "Book Service",
+      "description": "Ready to schedule?",
+      "icon": "FaCheckCircle",
+      "action": "Book Now",
+      "href": "/#booking"
+    }
+  ],
+  "businessHours": {
+    "title": "Business Hours",
+    "weekdays": "8:00 AM - 6:00 PM",
+    "weekends": "10:00 AM - 4:00 PM",
+    "note": "Emergency cleaning services available 24/7 by appointment."
   },
   "sections": [
     {
       "title": "Why Contact Us",
       "paragraphs": [
         "Whether you have a question, need more information, or are ready to book a service, we're here to assist you. Our team is dedicated to providing you with the best customer service experience possible.",
-        "Don't hesitate to reach out to us. We're happy to help with any inquiries you may have."
+        "Don't hesitate to reach out to us. We're happy to help with any inquiries you may have and provide personalized solutions for your cleaning needs."
       ]
     },
     {
-      "title": "Contact Us",
+      "title": "Send Us a Message",
       "fields": [
         { "name": "user_name", "type": "text", "placeholder": "Name" },
         { "name": "user_email", "type": "email", "placeholder": "Email" },
         { "name": "message", "type": "textarea", "placeholder": "Message" }
-      ]
+      ],
+      "submitLabel": "Send Message"
     },
     {
-      "title": "Our Contact Details",
-      "intro": "You can reach us through the following channels:",
+      "title": "Contact Information",
+      "intro": "Reach out to us through any of these convenient channels:",
       "email": "polly@orionstad.se",
       "emailHref": "mailto:polly@orionstad.se",
       "phone": "+46 70 418 05 97",
       "address": "Orion Städ, Södervägen 18A, 141 36 Stockholm, Sweden",
-      "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1"
+      "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1",
+      "whatsappLabel": "Chat with us on WhatsApp"
     }
   ]
 }
