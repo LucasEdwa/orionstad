@@ -4,5 +4,10 @@
     { "label": "Tjänster", "href": "/services" },
     { "label": "Om Oss", "href": "/about" },
     { "label": "Kontakt", "href": "/contact" }
-  ]
+  ],
+  "contactInfo": {
+    "phone": "+46123456789",
+    "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1",
+    "bookNow": "Boka Nu"
+  }
 }

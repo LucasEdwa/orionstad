@@ -2,28 +2,56 @@
   "hero": {
     "logoAlt": "Logo de Orion Städ",
     "imgAlt": "Héroe Sobre Nosotros",
-    "title": "Nuestra Historia & Valores",
-    "subtitle": "Acompáñanos en nuestro viaje: conoce al equipo que pone la calidad y el cuidado en primer lugar"
+    "title": "Sobre Orion Städ AB",
+    "subtitle": "Transformando vidas a través del poder de la limpieza – donde la calidez brasileña se encuentra con la excelencia escandinava"
   },
   "sections": [
     {
-      "title": "Nuestra Historia",
+      "title": "Nuestra Historia de Origen",
       "paragraphs": [
-        "Fundada con pasión por la limpieza, Orion Städ se ha convertido en un proveedor de servicios de limpieza de confianza. Nos enorgullecemos de nuestra atención al detalle y compromiso con la calidad.",
-        "Creemos en el uso de productos y técnicas ecológicas para garantizar un entorno seguro y saludable para usted y su familia."
+        "Orion Städ AB nació de la experiencia vivida. Nuestra fundadora comenzó como limpiadora, después de emigrar a Suecia, y pasó años trabajando para otras empresas. Aunque agradecida por la oportunidad, notó que muchos métodos carecían de alma y precisión.",
+        "Así que creó su propio camino — uno que valora la calidad, el respeto y la conexión humana. La limpieza está en su sangre — una herencia de sus raíces polacas — y se dio cuenta de que era más que un trabajo. Era su vocación.",
+        "Fundó Orion para transformar vidas a través del poder de la limpieza, creando algo verdaderamente especial en el proceso."
       ]
     },
     {
-      "title": "Nuestra Misión",
+      "title": "Lo Que Nos Hace Diferentes",
       "paragraphs": [
-        "Orion Städ está comprometida a proporcionar servicios de limpieza de primera calidad que superen las expectativas del cliente. Nuestro objetivo es crear ambientes más limpios, saludables y felices.",
-        "Estamos comprometidos con la mejora continua e innovación en nuestros métodos de limpieza, siempre buscando las mejores soluciones para nuestros clientes."
+        "No solo limpiamos — cuidamos, observamos y transformamos. En Orion, tenemos un método único de limpieza que combina la calidez brasileña y la atención al detalle con la eficiencia y los estándares escandinavos.",
+        "Vemos el hogar como un espacio sagrado, y lo tratamos en consecuencia. Usamos productos seguros y ecológicos y nos enfocamos en entrenamiento profundo, presencia e intuición. Cada cliente recibe un servicio personalizado. Cada hogar es respetado.",
+        "Cada limpiadora está entrenada no solo en técnica, sino también en conciencia. Nuestro enfoque va más allá de la limpieza superficial para crear equilibrio emocional, paz y claridad en su espacio vital."
       ]
     },
     {
-      "title": "Nuestro Equipo",
+      "title": "Nuestra Misión y Valores",
       "paragraphs": [
-        "Nuestro equipo de profesionales de la limpieza está dedicado a ofrecer el más alto estándar de servicio. Estamos capacitados, experimentados y equipados con las mejores herramientas y productos."
+        "Nuestra misión es cambiar vidas a través de la limpieza. Creemos que un hogar limpio crea equilibrio emocional, paz y claridad. Para nosotros, limpiar no es una tarea — es un acto de cuidado, e incluso sanación.",
+        "Entramos a cada hogar con respeto y presencia, conscientes de que estamos entrando al espacio más íntimo de alguien. Nuestro objetivo es siempre el mismo: dejar belleza, orden y luz atrás.",
+        "Nuestros valores fundamentales guían todo lo que hacemos: Respeto, Dignidad, Integridad, Presencia, Transformación y Conexión Humana."
+      ]
+    },
+    {
+      "title": "Nuestro Equipo Experto",
+      "paragraphs": [
+        "Somos un equipo pequeño, altamente capacitado y multicultural — compuesto principalmente por mujeres inmigrantes. Muchas de ellas llegaron a Suecia sin oportunidades y se han convertido en maestras en el arte de la limpieza a través de Orion.",
+        "Cada miembro del equipo es entrenada personalmente desde cero hasta nivel profesional. Lo que nos une no son solo nuestras habilidades, sino el orgullo que tenemos en nuestro trabajo y la confianza que ganamos de nuestros clientes.",
+        "Nos apoyamos mutuamente, compartimos experiencias y seguimos aprendiendo. Orion es más que una empresa — es una fuerza colectiva guiada por un propósito compartido: servir a través de la excelencia, el cuidado y el amor por lo que hacemos."
+      ]
+    },
+    {
+      "title": "Excelencia Profesional",
+      "paragraphs": [
+        "Nuestra fundadora posee certificaciones incluyendo INSTA 800 (Control de Calidad de Limpieza Escandinavo), PRYL (Planificación Profesional de Limpieza), y entrenamiento especializado en higiene, desinfección y prácticas ecológicas.",
+        "Hemos desarrollado experiencia en tratar todos los tipos de pisos, cuidar materiales sensibles como plata y cristales, y creamos 'La Psicología de la Limpieza' — enfocándonos en el impacto emocional y energético de los espacios limpios.",
+        "También ofrecemos entrenamiento profesional en el Método Orion, enseñando nuestro enfoque holístico a otros profesionales y empresas de limpieza que quieren elevar sus estándares."
+      ]
+    },
+    {
+      "title": "Experiencia del Cliente",
+      "paragraphs": [
+        "Desde el primer contacto hasta las visitas recurrentes, escuchamos cuidadosamente las necesidades de cada cliente. Siempre asignamos la misma limpiadora, mantenemos comunicación clara y vamos más allá para asegurar la satisfacción.",
+        "Muchos de nuestros clientes dicen que sienten una renovada sensación de paz, energía y alegría después de nuestras visitas. Nuestra limpieza es visible — pero sus efectos también son emocionales y energéticos.",
+        "Nos especializamos en hogares privados para clientes que valoran la calidad, discreción y sensibilidad, sirviendo Estocolmo y áreas circundantes con limpiezas regulares, limpiezas profundas y servicios de mudanza."
       ]
     }
   ]

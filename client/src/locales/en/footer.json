@@ -1,6 +1,11 @@
 {
   "copyright": "© 2025 Orion Städ. All rights reserved.",
   "address": "Orion AB, Södervägen 18A, 14137 Huddinge, Sweden, Organisationsnummer 559468-1479",
+  "companyInfo": {
+    "name": "Orion Städ",
+    "tagline": "Where cleaning becomes caring",
+    "description": "We transform homes and lives through our unique cleaning method that blends Brazilian warmth with Scandinavian efficiency. Every home is treated as a sacred space deserving respect and presence."
+  },
   "links": [
     { "href": "/terms-of-service", "label": "Privacy Policy" },
     { "href": "/terms-of-service", "label": "Terms of Service" },

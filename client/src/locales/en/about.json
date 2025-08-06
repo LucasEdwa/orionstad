@@ -2,28 +2,56 @@
   "hero": {
     "logoAlt": "Orion Städ Logo",
     "imgAlt": "About Hero",
-    "title": "About Us",
-    "subtitle": "Join our journey – meet the team that puts quality and care first!"
+    "title": "About Orion Städ AB",
+    "subtitle": "Transforming lives through the power of cleaning – where Brazilian warmth meets Scandinavian excellence"
   },
   "sections": [
     {
-      "title": "Our Story",
+      "title": "Our Origin Story",
       "paragraphs": [
-        "Founded with a passion for cleanliness, Orion Städ has grown into a trusted cleaning service provider. We pride ourselves on our attention to detail and commitment to quality.",
-        "We believe in using eco-friendly products and techniques to ensure a safe and healthy environment for you and your family."
+        "Orion Städ AB was born from lived experience. Our founder started as a cleaner herself, after immigrating to Sweden, and spent years working for other companies. Although grateful for the opportunity, she noticed that many methods lacked both soul and precision.",
+        "So she created her own way — one that values quality, respect, and human connection. Cleaning is in her blood — a heritage from her Polish roots — and she realized it was more than just a job. It was her calling.",
+        "She founded Orion to transform lives through the power of cleaning, creating something truly special in the process."
       ]
     },
     {
-      "title": "Our Mission",
+      "title": "What Makes Us Different",
       "paragraphs": [
-        "Orion Städ is committed to providing top-notch cleaning services that exceed customer expectations. We aim to create cleaner, healthier, and happier living environments.",
-        "We are committed to continuous improvement and innovation in our cleaning methods, always seeking the best solutions for our clients."
+        "We don't just clean — we care, we observe, and we transform. At Orion, we have a unique cleaning method that blends Brazilian warmth and attention to detail with Scandinavian efficiency and standards.",
+        "We see the home as a sacred space, and we treat it accordingly. We use safe, eco-friendly products and focus on deep training, presence, and intuition. Every client receives a personalized service. Every home is respected.",
+        "Every cleaner is trained not only in technique, but also in awareness. Our approach goes beyond surface cleaning to create emotional balance, peace, and clarity in your living space."
       ]
     },
     {
-      "title": "Our Team",
+      "title": "Our Mission & Values",
       "paragraphs": [
-        "Our team of cleaning professionals is dedicated to delivering the highest standard of service. We are trained, experienced, and equipped with the best tools and products."
+        "Our mission is to change lives through cleaning. We believe that a clean home creates emotional balance, peace, and clarity. For us, cleaning is not a chore — it's an act of care, and even healing.",
+        "We enter each home with respect and presence, aware that we are stepping into someone's most intimate space. Our goal is always the same: leave beauty, order, and light behind.",
+        "Our core values guide everything we do: Respect, Dignity, Integrity, Presence, Transformation, and Human Connection."
+      ]
+    },
+    {
+      "title": "Our Expert Team",
+      "paragraphs": [
+        "We are a small, highly trained, multicultural team — mostly composed of immigrant women. Many of them came to Sweden without opportunities and have become masters in the art of cleaning through Orion.",
+        "Each team member is personally trained from zero to professional level. What unites us is not just our skills, but the pride we take in our work and the trust we earn from our clients.",
+        "We support one another, share experiences, and keep learning. Orion is more than a company — it's a collective force guided by a shared purpose: to serve through excellence, care, and love for what we do."
+      ]
+    },
+    {
+      "title": "Professional Excellence",
+      "paragraphs": [
+        "Our founder holds certifications including INSTA 800 (Scandinavian Cleaning Quality Control), PRYL (Professional Cleaning Planning), and specialized training in hygiene, disinfection, and eco-friendly practices.",
+        "We've developed expertise in treating all flooring types, caring for sensitive materials like silver and crystals, and created 'The Psychology of Cleaning' — focusing on the emotional and energetic impact of clean spaces.",
+        "We also offer professional training in the Orion Method, teaching our holistic approach to other professionals and cleaning companies who want to raise their standards."
+      ]
+    },
+    {
+      "title": "Client Experience",
+      "paragraphs": [
+        "From the first contact to recurring visits, we listen carefully to each client's needs. We always assign the same cleaner, maintain clear communication, and go above and beyond to ensure satisfaction.",
+        "Many of our clients say they feel a renewed sense of peace, energy, and joy after our visits. Our cleaning is visible — but its effects are also emotional and energetic.",
+        "We specialize in private homes for clients who value quality, discretion, and sensitivity, serving Stockholm and surrounding areas with regular cleanings, deep cleanings, and move-out services."
       ]
     }
   ]

@@ -4,5 +4,10 @@
     { "label": "Services", "href": "/services" },
     { "label": "About", "href": "/about" },
     { "label": "Contact", "href": "/contact" }
-  ]
+  ],
+  "contactInfo": {
+    "phone": "+46123456789",
+    "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1",
+    "bookNow": "Book Now"
+  }
 }
