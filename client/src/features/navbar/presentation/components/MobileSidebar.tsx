@@ -1,0 +1,106 @@
+import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import type { NavLink, ContactInfo, BrandInfo } from "../../domain/entities/NavLink";
+
+interface MobileSidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+  links: NavLink[];
+  contactInfo: ContactInfo;
+  brandInfo: BrandInfo;
+}
+
+export const MobileSidebar: React.FC<MobileSidebarProps> = ({ 
+  isOpen, 
+  onClose, 
+  links, 
+  contactInfo, 
+  brandInfo 
+}) => {
+  return (
+    <>
+      {/* Mobile Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-screen w-80 bg-gradient-to-br from-purple-900 to-purple-700 shadow-2xl transform ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-out z-[100] lg:hidden`}
+      >
+        {/* Sidebar Header */}
+        <div className="p-6 border-b border-purple-600">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-12 rounded-full shadow-lg" />
+              <div>
+                <h2 className="text-white font-bold text-lg">{brandInfo.name}</h2>
+                <p className="text-purple-200 text-sm italic">{brandInfo.tagline}</p>
+              </div>
+            </div>
+            <button
+              className="text-white hover:text-purple-200 transition-colors p-2"
+              onClick={onClose}
+              aria-label="Close menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Sidebar Navigation */}
+        <div className="p-6">
+          <ul className="space-y-4">
+            {links.map(link => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="flex items-center space-x-3 text-white hover:text-purple-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200 group"
+                  onClick={onClose}
+                >
+                  <span className="w-2 h-2 bg-purple-400 rounded-full group-hover:bg-white transition-colors"></span>
+                  <span className="font-medium">{link.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Contact Actions */}
+          <div className="mt-8 pt-6 border-t border-purple-600">
+            <div className="space-y-4">
+              <a
+                href={`tel:${contactInfo.phone}`}
+                className="flex items-center space-x-3 text-white hover:text-purple-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
+              >
+                <FaPhone className="w-4 h-4" />
+                <span>Call Us</span>
+              </a>
+              <a
+                href={contactInfo.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 text-white hover:text-green-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
+              >
+                <FaWhatsapp className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href="/#booking"
+                className="block w-full bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-50 transition-colors duration-200 shadow-lg"
+                onClick={onClose}
+              >
+                {contactInfo.bookNow}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+    </>
+  );
+};
