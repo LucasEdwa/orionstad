@@ -1,5 +1,5 @@
 import type { VideoConfig, BrandAssets } from '../domain/entities/Hero';
-import orionLogo from '../../../assets/orionPride.jpeg';
+import orionLogo from '../../../assets/orion-logo.png';
 
 export class AssetService {
   getVideoConfig(): VideoConfig {
