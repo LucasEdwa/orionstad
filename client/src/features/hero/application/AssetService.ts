@@ -4,7 +4,7 @@ import orionLogo from '../../../assets/orion-logo.png';
 export class AssetService {
   getVideoConfig(): VideoConfig {
     return {
-      src: "https://amplify-d2gt0za7za73zb-ma-modelintrospectionschema-qthe560p7lyj.s3.eu-north-1.amazonaws.com/6195525-uhd_3840_2160_25fps.mp4",
+      src: "https://myweblmp.s3.eu-north-1.amazonaws.com/6195525-uhd_3840_2160_25fps.mp4",
       autoPlay: true,
       loop: true,
       muted: true,
