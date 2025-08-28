@@ -1,14 +1,27 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-
+import respectImg from '../../../../assets/WEBSITE SYMBOLS /RESPECT.png';
+import excellenceImg from '../../../../assets/WEBSITE SYMBOLS /EXCELLENCE.png';
+import transformationImg from '../../../../assets/WEBSITE SYMBOLS /TRANSFORMATION.png';
+import connectionImg from '../../../../assets/WEBSITE SYMBOLS /CONNECTION.png';
+import integrityImg from '../../../../assets/WEBSITE SYMBOLS /INTEGRITY.png';
+import presenceImg from '../../../../assets/WEBSITE SYMBOLS /PRESENCE.png';
 export const CompanyValues: React.FC = () => {
   const { t } = useTranslation('about');
+
+  const images = [
+    respectImg,
+    excellenceImg,
+    transformationImg,
+    connectionImg,
+    integrityImg,
+    presenceImg
+  ];
   const valuesData = t('values', { returnObjects: true }) as {
     title: string;
     subtitle: string;
     description: string;
     items: Array<{
-      emoji: string;
       title: string;
       description: string;
     }>;
@@ -38,7 +51,7 @@ export const CompanyValues: React.FC = () => {
             >
               <div className="text-center">
                 <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {value.emoji}
+                  <img src={images[index]} alt={value.title} className="w-30 mx-auto" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors duration-300">
                   {value.title}

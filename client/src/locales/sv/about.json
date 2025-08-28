@@ -58,25 +58,21 @@
   ],
   "stats": {
     "years": {
-      "emoji": "⭐",
       "number": "3+",
       "title": "År av Excellens",
       "description": "Professionell städexpertis"
     },
     "clients": {
-      "emoji": "😊",
       "number": "500+",
       "title": "Nöjda Kunder",
       "description": "Tillfredsställda kunder som litar på oss"
     },
     "team": {
-      "emoji": "👥",
       "number": "10+",
       "title": "Expertteam",
       "description": "Skickliga professionella"
     },
     "certifications": {
-      "emoji": "🏆",
       "number": "5+",
       "title": "Certifieringar",
       "description": "Professionella kvalifikationer"
@@ -88,32 +84,26 @@
     "description": "Detta är hjärtat av det som driver oss varje dag",
     "items": [
       {
-        "emoji": "🙏",
         "title": "Respekt",
         "description": "Vi hedrar varje hem som ett heligt utrymme"
       },
       {
-        "emoji": "⭐",
         "title": "Excellens",
         "description": "Professionella standarder i varje detalj"
       },
       {
-        "emoji": "🦋",
         "title": "Transformation",
         "description": "Skapar frid genom städning"
       },
       {
-        "emoji": "🤝",
         "title": "Kontakt",
         "description": "Bygger varaktiga relationer"
       },
       {
-        "emoji": "💎",
         "title": "Integritet",
         "description": "Ärlig och transparent service"
       },
       {
-        "emoji": "🧘",
         "title": "Närvaro",
         "description": "Uppmärksam omsorg för dina behov"
       }
@@ -126,17 +116,14 @@
     "secondaryButton": "💬 Kontakta Oss Idag",
     "trusts": [
       {
-        "icon": "🔒",
         "title": "Fullt Försäkrat",
         "description": "Komplett skydd"
       },
       {
-        "icon": "🌿",
         "title": "Miljövänligt",
         "description": "Säkert för familj & husdjur"
       },
       {
-        "icon": "⭐",
         "title": "Certifierat Team",
         "description": "Professionella standarder"
       }

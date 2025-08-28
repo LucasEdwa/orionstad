@@ -10,7 +10,7 @@ export const BookingBenefits: React.FC<BookingBenefitsProps> = ({ benefits }) =>
   
   return (
     <div className="space-y-6">
-      <div className="bg-gradient-to-br from-purple-900 to-purple-700 rounded-2xl shadow-lg p-8 text-white">
+      <div className="bg-orion-gradient rounded-2xl shadow-lg p-8 text-white">
         <h3 className="text-2xl font-bold mb-6">{t("benefits.title")}</h3>
         <div className="space-y-4">
           {benefits.map((benefit, index) => (

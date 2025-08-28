@@ -31,7 +31,7 @@ export const HeroContentSection: React.FC<HeroContentProps> = ({
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fadeInUp delay-400">
           <button
             onClick={onScrollToBooking}
-            className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-8 py-4 rounded-full shadow-2xl hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 text-lg font-semibold min-w-[200px] group"
+            className="bg-orion-gradient text-white px-8 py-4 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg font-semibold min-w-[200px] group"
             aria-label={content.bookNow}
           >
             <span className="flex items-center justify-center space-x-2">
@@ -62,6 +62,10 @@ export const HeroContentSection: React.FC<HeroContentProps> = ({
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-green-400 rounded-full"></div>
               <span className="text-sm md:text-base">{t('hero.fiveStarService')}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <span className="text-sm md:text-base">{t('hero.eco-friendly')}</span>
             </div>
           </div>
         </div>

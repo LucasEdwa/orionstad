@@ -71,7 +71,7 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ onSubmit, isSubm
         <button
           type="submit"
           disabled={isSubmitting}
-          className="flex-1 bg-gradient-to-r from-purple-600 to-purple-500 text-white py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+          className="flex-1 bg-orion-gradient text-white py-3 rounded-xl font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
         >
           {isSubmitting ? (
             <>

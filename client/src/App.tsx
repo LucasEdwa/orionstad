@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from './store';
 import i18n from './i18n';
+// import { TidioChat } from './components/TidioChat';
 
 
 
@@ -19,6 +20,7 @@ useEffect(() => {
   return (
     <>
       <RouterProvider router={router} />
+      {/* <TidioChat /> */}
     </>
   );
 }

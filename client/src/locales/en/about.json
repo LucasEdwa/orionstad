@@ -58,25 +58,21 @@
   ],
   "stats": {
     "years": {
-      "emoji": "⭐",
       "number": "3+",
       "title": "Years of Excellence",
       "description": "Professional cleaning expertise"
     },
     "clients": {
-      "emoji": "😊",
       "number": "500+",
       "title": "Happy Clients",
       "description": "Satisfied customers who trust us"
     },
     "team": {
-      "emoji": "👥",
       "number": "10+",
       "title": "Expert Team",
       "description": "Skilled professionals"
     },
     "certifications": {
-      "emoji": "🏆",
       "number": "5+",
       "title": "Certifications",
       "description": "Professional qualifications"
@@ -88,32 +84,26 @@
     "description": "This is the heart of what drives us every day",
     "items": [
       {
-        "emoji": "🙏",
         "title": "Respect",
         "description": "We honor every home as a sacred space"
       },
       {
-        "emoji": "⭐",
         "title": "Excellence",
         "description": "Professional standards in every detail"
       },
       {
-        "emoji": "🦋",
         "title": "Transformation",
         "description": "Creating peace through cleaning"
       },
       {
-        "emoji": "🤝",
         "title": "Connection",
         "description": "Building lasting relationships"
       },
       {
-        "emoji": "💎",
         "title": "Integrity",
         "description": "Honest and transparent service"
       },
       {
-        "emoji": "🧘",
         "title": "Presence",
         "description": "Mindful attention to your needs"
       }
@@ -126,17 +116,14 @@
     "secondaryButton": "💬 Contact Us Today",
     "trusts": [
       {
-        "icon": "🔒",
         "title": "Fully Insured",
         "description": "Complete protection"
       },
       {
-        "icon": "🌿",
         "title": "Eco-Friendly",
         "description": "Safe for family & pets"
       },
       {
-        "icon": "⭐",
         "title": "Certified Team",
         "description": "Professional standards"
       }

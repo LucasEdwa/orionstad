@@ -1,27 +1,36 @@
 import { useTranslation } from "react-i18next";
-import { FeatureService } from "../../application/FeatureService";
+import { FaMagic, FaShieldAlt, FaHeart, FaStar } from 'react-icons/fa';
+import type { Feature } from "../../domain/entities/Feature";
+import type { IconType } from "react-icons";
+
+export interface FeatureWithIcon extends Feature {
+  icon: IconType;
+}
 
 export const useFeatures = () => {
   const { t, ready } = useTranslation("home");
-  const featureService = new FeatureService();
-  
-  // Use static data if i18n is not ready or fails
+  const icons = [FaMagic, FaShieldAlt, FaHeart, FaStar];
+
   if (!ready) {
     return {
-      features: featureService.getFeatures(),
-      benefits: featureService.getBenefits(),
+      features: undefined,
+      benefits: undefined,
     };
   }
-  
-  const featuresData = t("features.items", { returnObjects: true }) as any[];
+
+  const featuresData = t("features.items", { returnObjects: true }) as Feature[];
   const benefitsData = t("benefits.items", { returnObjects: true }) as string[];
-  
-  // Validate translation data before using
-  const validFeaturesData = Array.isArray(featuresData) ? featuresData : undefined;
-  const validBenefitsData = Array.isArray(benefitsData) ? benefitsData : undefined;
-  
-  return {
-    features: featureService.getFeatures(validFeaturesData),
-    benefits: featureService.getBenefits(validBenefitsData),
-  };
+
+  const features: FeatureWithIcon[] | undefined =
+    Array.isArray(featuresData) && featuresData.length === 4
+      ? featuresData.map((feature, index) => ({
+          ...feature,
+          icon: icons[index],
+        }))
+      : undefined;
+
+  const benefits: string[] | undefined =
+    Array.isArray(benefitsData) && benefitsData.length > 0 ? benefitsData : undefined;
+
+  return { features, benefits };
 };

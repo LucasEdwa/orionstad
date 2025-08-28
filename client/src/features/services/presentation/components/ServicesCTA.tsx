@@ -12,7 +12,7 @@ export const ServicesCTA: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-purple-600 to-blue-600 py-20">
+    <div className="bg-orion-gradient py-20">
       <div className="max-w-4xl mx-auto text-center px-4">
         <h2 className="text-4xl font-bold text-white mb-6">
           {t('cta.title')}

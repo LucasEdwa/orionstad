@@ -3,7 +3,12 @@
     "logoAlt": "Orion Städ Logotyp",
     "imgAlt": "Tjänstehjälte",
     "title": "Våra tjänster",
-    "subtitle": "Upptäck vårt utbud av professionella städtjänster"
+    "subtitle": "Upptäck vårt utbud av professionella städtjänster",
+    "highlights": [
+      "Hemstädning",
+      "Kontorsstädning",
+      "Specialiserade tjänster"
+    ]
   },
   "ui": {
     "whatWeOffer": "Vad vi erbjuder",

@@ -20,12 +20,12 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({
     <>
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen w-80 bg-gradient-to-br from-purple-900 to-purple-700 shadow-2xl transform ${
+        className={`fixed top-0 left-0 h-screen w-80 bg-orion-gradient shadow-2xl transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-out z-[100] lg:hidden`}
       >
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-purple-600">
+        <div className="p-6 border-b bg-orion-gradient">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-12 rounded-full shadow-lg" />
@@ -56,7 +56,7 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({
                   className="flex items-center space-x-3 text-white hover:text-purple-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200 group"
                   onClick={onClose}
                 >
-                  <span className="w-2 h-2 bg-purple-400 rounded-full group-hover:bg-white transition-colors"></span>
+                  <span className="w-2 h-2 bg-orion-gradient rounded-full group-hover:bg-white transition-colors"></span>
                   <span className="font-medium">{link.label}</span>
                 </a>
               </li>
@@ -64,7 +64,7 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({
           </ul>
 
           {/* Mobile Contact Actions */}
-          <div className="mt-8 pt-6 border-t border-purple-600">
+          <div className="mt-8 pt-6 border-t bg-orion-gradient">
             <div className="space-y-4">
               <a
                 href={`tel:${contactInfo.phone}`}

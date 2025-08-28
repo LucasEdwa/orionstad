@@ -35,7 +35,7 @@ export const ContactActions: React.FC<ContactActionsProps> = ({ contactInfo, isS
       </a>
       <a
         href="/#booking"
-        className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-6 py-2 rounded-full font-semibold hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+        className="bg-orion-gradient text-white px-6 py-2 rounded-full font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
       >
         {contactInfo.bookNow}
       </a>

@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' 
-          : 'bg-gradient-to-r from-purple-900/90 to-purple-700/90 backdrop-blur-sm py-4'
+          : 'bg-orion-gradient backdrop-blur-sm py-4'
       }`}>
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           

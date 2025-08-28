@@ -39,7 +39,16 @@
     "title": "Business Hours",
     "weekdays": "8:00 AM - 6:00 PM",
     "weekends": "10:00 AM - 4:00 PM",
-    "note": "Emergency cleaning services available 24/7 by appointment."
+    "note": "Emergency cleaning services available 24/7 by appointment.",
+    "responseTime": "We typically respond within 2 hours"
+  },
+  "form": {
+    "sending": "Sending...",
+    "placeholders": {
+      "name": "Enter your name...",
+      "email": "Enter your email address...",
+      "message": "Enter your message..."
+    }
   },
   "sections": [
     {

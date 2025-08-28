@@ -85,7 +85,7 @@ export const BookingStepOne: React.FC<BookingStepOneProps> = ({ onNext }) => {
 
       <button
         type="submit"
-        className="w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+        className="w-full bg-orion-gradient text-white py-4 rounded-xl font-semibold  transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
       >
         <span>{t("bookingForm.nextLabel")}</span>
         <FaArrowRight className="w-4 h-4" />

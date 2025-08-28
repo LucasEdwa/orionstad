@@ -3,7 +3,12 @@
     "logoAlt": "Orion Städ Logo",
     "imgAlt": "Service-hero",
     "title": "Our Services",
-    "subtitle": "Discover our range of professional cleaning services"
+    "subtitle": "Discover our range of professional cleaning services",
+    "highlights": [
+      "Home Cleaning",
+      "Office Cleaning",
+      "Specialized Services"
+    ]
   },
   "ui": {
     "whatWeOffer": "What We Offer",

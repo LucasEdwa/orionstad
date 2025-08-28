@@ -3,7 +3,12 @@
     "logoAlt": "Logo de Orion Städ",
     "imgAlt": "Héroe de servicios",
     "title": "Nuestros Servicios",
-    "subtitle": "Descubra nuestra gama de servicios de limpieza profesional"
+    "subtitle": "Descubra nuestra gama de servicios de limpieza profesional",
+    "highlights": [
+      "Limpieza del hogar",
+      "Limpieza de oficinas",
+      "Servicios especializados"
+    ]
   },
   "ui": {
     "whatWeOffer": "Lo que ofrecemos",

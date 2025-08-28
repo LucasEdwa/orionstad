@@ -39,7 +39,16 @@
     "title": "Öppettider",
     "weekdays": "8:00 - 18:00",
     "weekends": "10:00 - 16:00",
-    "note": "Akuta städtjänster tillgängliga dygnet runt efter bokning."
+    "note": "Akuta städtjänster tillgängliga dygnet runt efter bokning.",
+    "responseTime": "Vi svarar vanligtvis inom 2 timmar"
+  },
+  "form": {
+    "sending": "Skickar...",
+    "placeholders": {
+      "name": "Ange ditt namn...",
+      "email": "Ange din e-postadress...",
+      "message": "Skriv ditt meddelande..."
+    }
   },
   "sections": [
     {

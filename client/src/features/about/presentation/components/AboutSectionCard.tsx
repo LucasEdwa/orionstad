@@ -15,7 +15,7 @@ export const AboutSectionCard: React.FC<AboutSectionProps> = ({ section, index }
     <section
       className={`
         ${isHighlighted 
-          ? 'bg-gradient-to-br from-purple-900 to-purple-700 text-white' 
+          ? 'bg-orion-gradient text-white' 
           : 'bg-white'
         }
         rounded-3xl shadow-xl p-8 md:p-12 

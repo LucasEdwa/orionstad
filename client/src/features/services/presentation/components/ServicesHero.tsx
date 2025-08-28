@@ -1,6 +1,10 @@
 import React from 'react';
 import type { ServiceHero } from '../../domain/entities/Service';
 import { AssetsRepository } from '../../infrastructure/AssetsRepository';
+import homeserviceImg from '../../../../assets/home-cleaning.png';
+import officeServiceImg from '../../../../assets/office-cleaning.png';
+import specializedserviceImg from '../../../../assets/customized-service.png';
+
 
 interface ServicesHeroProps {
   hero: ServiceHero;
@@ -9,6 +13,26 @@ interface ServicesHeroProps {
 export const ServicesHero: React.FC<ServicesHeroProps> = ({ hero }) => {
   const assetsRepository = new AssetsRepository();
   const orionLogo = assetsRepository.getOrionLogo();
+  
+  const t = (key: string) => key;
+
+  const highlights = [
+    {
+      img: homeserviceImg,
+      label: t(hero.highlights[0]),
+      alt: t('Home Cleaning Icon')
+    },
+    {
+      img: officeServiceImg,
+      label: t(hero.highlights[1]),
+      alt: t('Office Cleaning Icon')
+    },
+    {
+      img: specializedserviceImg,
+      label: t(hero.highlights[2]),
+      alt: t('Specialized Services Icon')
+    }
+  ];
 
   return (
     <header className="w-full max-w-6xl mx-auto text-center pt-20 pb-12">
@@ -32,20 +56,14 @@ export const ServicesHero: React.FC<ServicesHeroProps> = ({ hero }) => {
         {hero.subtitle}
       </p>
 
-      {/* Feature highlights */}
-      <div className="flex flex-wrap justify-center gap-6 mt-8">
-        <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-          <span className="text-2xl">🏠</span>
-          <span className="font-medium text-gray-700">Home Cleaning</span>
-        </div>
-        <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-          <span className="text-2xl">🏢</span>
-          <span className="font-medium text-gray-700">Office Cleaning</span>
-        </div>
-        <div className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
-          <span className="text-2xl">⭐</span>
-          <span className="font-medium text-gray-700">Specialized Services</span>
-        </div>
+      {/* Feature highlights with images */}
+      <div className="flex flex-wrap justify-center gap-4 mt-8">
+        {highlights.map((highlight) => (
+          <div key={highlight.label} className="flex items-center space-x-1 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+            <img src={highlight.img} alt={highlight.alt} className="w-20 object-cover" />
+            <span className="font-medium text-gray-700">{highlight.label}</span>
+          </div>
+        ))}
       </div>
     </header>
   );

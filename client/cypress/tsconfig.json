@@ -19,7 +19,7 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "../cypress.config.ts"
+    "../cypress.config.mjs"
   ],
   "exclude": [
     "../node_modules"

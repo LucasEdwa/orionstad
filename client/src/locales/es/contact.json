@@ -39,7 +39,16 @@
     "title": "Horarios de Atención",
     "weekdays": "8:00 AM - 6:00 PM",
     "weekends": "10:00 AM - 4:00 PM",
-    "note": "Servicios de limpieza de emergencia disponibles 24/7 con cita previa."
+    "note": "Servicios de limpieza de emergencia disponibles 24/7 con cita previa.",
+    "responseTime": "Normalmente respondemos dentro de 2 horas"
+  },
+  "form": {
+    "sending": "Enviando...",
+    "placeholders": {
+      "name": "Ingrese su nombre...",
+      "email": "Ingrese su correo electrónico...",
+      "message": "Escriba su mensaje..."
+    }
   },
   "sections": [
     {

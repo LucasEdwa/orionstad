@@ -58,25 +58,21 @@
   ],
   "stats": {
     "years": {
-      "emoji": "⭐",
       "number": "3+",
       "title": "Años de Excelencia",
       "description": "Experiencia profesional en limpieza"
     },
     "clients": {
-      "emoji": "😊",
       "number": "500+",
       "title": "Clientes Felices",
       "description": "Clientes satisfechos que confían en nosotros"
     },
     "team": {
-      "emoji": "👥",
       "number": "10+",
       "title": "Equipo Experto",
       "description": "Profesionales calificados"
     },
     "certifications": {
-      "emoji": "🏆",
       "number": "5+",
       "title": "Certificaciones",
       "description": "Calificaciones profesionales"
@@ -88,32 +84,26 @@
     "description": "Este es el corazón de lo que nos impulsa cada día",
     "items": [
       {
-        "emoji": "🙏",
         "title": "Respeto",
         "description": "Honramos cada hogar como un espacio sagrado"
       },
       {
-        "emoji": "⭐",
         "title": "Excelencia",
         "description": "Estándares profesionales en cada detalle"
       },
       {
-        "emoji": "🦋",
         "title": "Transformación",
         "description": "Creando paz a través de la limpieza"
       },
       {
-        "emoji": "🤝",
         "title": "Conexión",
         "description": "Construyendo relaciones duraderas"
       },
       {
-        "emoji": "💎",
         "title": "Integridad",
         "description": "Servicio honesto y transparente"
       },
       {
-        "emoji": "🧘",
         "title": "Presencia",
         "description": "Atención consciente a tus necesidades"
       }
@@ -126,17 +116,14 @@
     "secondaryButton": "💬 Contáctanos Hoy",
     "trusts": [
       {
-        "icon": "🔒",
         "title": "Completamente Asegurado",
         "description": "Protección completa"
       },
       {
-        "icon": "🌿",
         "title": "Ecológico",
         "description": "Seguro para familia y mascotas"
       },
       {
-        "icon": "⭐",
         "title": "Equipo Certificado",
         "description": "Estándares profesionales"
       }

@@ -14,6 +14,7 @@ export interface Service {
 }
 
 export interface ServiceHero {
+  highlights: any;
   logoAlt: string;
   imgAlt: string;
   title: string;

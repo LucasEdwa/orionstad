@@ -45,7 +45,7 @@ const Home = () => {
         <AboutSection />
 
         {/* Features Section */}
-        <FeaturesGrid features={features} />
+        <FeaturesGrid features={features??[]} />
 
         {/* Booking Section */}
         <section className="max-w-7xl mx-auto px-6 py-16" id="booking">
@@ -66,7 +66,7 @@ const Home = () => {
             </div>
 
             {/* Booking Benefits */}
-            <BookingBenefits benefits={benefits} />
+            <BookingBenefits benefits={benefits ?? []} />
           </div>
         </section>
       </main>

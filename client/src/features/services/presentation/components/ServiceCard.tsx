@@ -4,6 +4,16 @@ import type { Service } from '../../domain/entities/Service';
 import { useServiceCardCarousel } from '../hooks/useServiceCardCarousel';
 import { ServiceCardService } from '../../application/ServiceCardService';
 
+import homeserviceImg from '../../../../assets/home-cleaning.png';
+import officeServiceImg from '../../../../assets/office-cleaning.png';
+import specializedserviceImg from '../../../../assets/customized-service.png';
+
+const highlightIcons = {
+  home: homeserviceImg,
+  office: officeServiceImg,
+  specialized: specializedserviceImg
+};
+
 interface ServiceCardProps {
   service: Service;
   i18nNs?: string;
@@ -20,11 +30,18 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 
   const shouldShowIndicators = serviceCardService.shouldShowCarouselIndicators(service.images.length);
 
+  // Calculate total items and whether there's more content to show
+  const totalListItems = service.contents?.reduce((total, content) => {
+    return total + (content.items?.length || 0);
+  }, 0) || 0;
+
+  const hasMoreContent = totalListItems > 3 || (service.contents && service.contents.length > 2);
+
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'home': return '🏠';
-      case 'office': return '🏢';
-      case 'specialized': return '⭐';
+      case 'home': return <img src={highlightIcons.home} alt={t('ui.categories.home')} className="w-12 object-cover rounded-full" />;
+      case 'office': return <img src={highlightIcons.office} alt={t('ui.categories.office')} className="w-12 object-cover rounded-full" />;
+      case 'specialized': return <img src={highlightIcons.specialized} alt={t('ui.categories.specialized')} className="w-12 object-cover rounded-full" />;
       default: return '✨';
     }
   };
@@ -54,8 +71,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         
         {/* Category badge */}
         <div className="absolute top-4 left-4 z-30">
-          <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-2 shadow-lg">
-            <span className="text-lg">{getCategoryIcon(service.category)}</span>
+          <div className="bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center  shadow-lg">
+            <span className="text-md">{getCategoryIcon(service.category)}</span>
             <span className="text-sm font-medium text-gray-700 capitalize">{t(`ui.categories.${service.category}`)}</span>
           </div>
         </div>
@@ -85,36 +102,52 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         
         {/* Content preview/expanded */}
         <div className={`flex-1 transition-all duration-300 ${isExpanded ? '' : 'line-clamp-4'}`}>
-          {service.contents?.slice(0, isExpanded ? service.contents.length : 2).map((content, i) =>
-            content.type === "text" ? (
-              <p className="text-gray-600 mb-3 leading-relaxed" key={i}>
-                {content.label && (
-                  <span className="font-semibold text-purple-600">{t(content.label)} </span>
-                )}
-                {content.text && t(content.text)}
-              </p>
-            ) : (
-              <div className="mb-4" key={i}>
-                <ul className="space-y-2">
-                  {content.items?.slice(0, isExpanded ? content.items.length : 3).map((item: string, j: number) => (
-                    <li key={j} className="flex items-start space-x-2 text-gray-600">
-                      <span className="text-purple-500 font-bold">•</span>
-                      <span className="leading-relaxed">{t(item)}</span>
-                    </li>
-                  ))}
-                  {!isExpanded && content.items && content.items.length > 3 && (
-                    <li className="text-purple-500 font-medium">
-                      +{content.items.length - 3} {t('ui.moreFeatures')}
-                    </li>
-                  )}
-                </ul>
-              </div>
-            )
+          {(() => {
+            let totalItemsShown = 0;
+            const maxItemsInPreview = 3;
+            
+            return service.contents?.slice(0, isExpanded ? service.contents.length : 2).map((content, i) => {
+              if (content.type === "text") {
+                return (
+                  <p className="text-gray-600 mb-3 leading-relaxed" key={i}>
+                    {content.label && (
+                      <span className="font-semibold text-purple-600">{t(content.label)} </span>
+                    )}
+                    {content.text && t(content.text)}
+                  </p>
+                );
+              } else {
+                // For list items, calculate how many we can show
+                const remainingSlots = isExpanded ? (content.items?.length || 0) : Math.max(0, maxItemsInPreview - totalItemsShown);
+                const itemsToShow = content.items?.slice(0, remainingSlots) || [];
+                totalItemsShown += itemsToShow.length;
+                
+                return (
+                  <div className="mb-4" key={i}>
+                    <ul className="space-y-2">
+                      {itemsToShow.map((item: string, j: number) => (
+                        <li key={j} className="flex items-start space-x-2 text-gray-600">
+                          <span className="text-purple-500 font-bold">•</span>
+                          <span className="leading-relaxed">{t(item)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              }
+            });
+          })()}
+          
+          {/* Show "+X more features" only if there are actually more items */}
+          {!isExpanded && totalListItems > 3 && (
+            <div className="text-purple-500 font-medium">
+              +{totalListItems - 3} {t('ui.moreFeatures')}
+            </div>
           )}
         </div>
 
         {/* Expand/Collapse button */}
-        {service.contents && service.contents.length > 2 && (
+        {hasMoreContent && (
           <button
             onClick={toggleExpand}
             className="mt-4 text-purple-600 hover:text-purple-800 font-medium transition-colors duration-300 flex items-center space-x-1 self-start"
@@ -128,7 +161,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 
         {/* Action button */}
         <div className="mt-6 pt-4 border-t border-gray-100">
-          <button className="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white py-3 rounded-xl font-semibold hover:from-purple-600 hover:to-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <button className="w-full bg-orion-gradient text-white py-3 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
             {t('ui.getQuote')} {t(service.title)}
           </button>
         </div>

@@ -23,7 +23,7 @@ export const AboutSection: React.FC = () => {
         </div>
 
         {/* Second Story Card */}
-        <div className="bg-gradient-to-br from-purple-900 to-purple-700 rounded-2xl shadow-lg p-8 text-white transform hover:scale-105 transition-all duration-300">
+        <div className="bg-orion-gradient rounded-2xl shadow-lg p-8 text-white transform hover:scale-105 transition-all duration-300">
           <div className="flex items-center space-x-3 mb-6">
             <div className="bg-white/20 p-3 rounded-full">
               <FaMagic className="w-6 h-6 text-white" />

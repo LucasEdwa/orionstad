@@ -15,6 +15,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({
   const { t } = useTranslation('contact');
   const { handleSubmit, isSubmitting } = useContactForm();
 
+  // Helper function to get the correct placeholder
+  const getPlaceholder = (fieldName: string, fieldPlaceholder: string) => {
+    // Try to get specific translation first
+    const translationKey = `form.placeholders.${fieldName}`;
+    const translation = t(translationKey, '');
+    
+    // If translation exists, use it; otherwise fall back to field placeholder
+    return translation || fieldPlaceholder;
+  };
+
   if (!formSection) {
     return null;
   }
@@ -46,7 +56,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                 rows={5}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none"
                 required
-                placeholder={`Enter your ${field.placeholder.toLowerCase()}...`}
+                placeholder={getPlaceholder(field.name, field.placeholder)}
               />
             ) : (
               <input
@@ -55,7 +65,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                 id={field.name}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
                 required
-                placeholder={`Enter your ${field.placeholder.toLowerCase()}...`}
+                placeholder={getPlaceholder(field.name, field.placeholder)}
               />
             )}
           </div>
@@ -64,7 +74,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         <button 
           type="submit" 
           disabled={isSubmitting}
-          className="w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          className="w-full bg-orion-gradient text-white py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
         >
           {isSubmitting ? (
             <span className="flex items-center justify-center">
@@ -72,7 +82,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              Sending...
+              {t('form.sending')}
             </span>
           ) : (
             formSection.submitLabel || t('sections.1.submitLabel', 'Send Message')
