@@ -26,7 +26,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
         } transition-transform duration-300 ease-out z-[100] lg:hidden`}
       >
         {/* Sidebar Header */}
-        <div className="p-6 border-b bg-orion-gradient">
+        <div className="p-6 border-b border-purple-500 bg-orion-gradient">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-12 rounded-full shadow-lg" />
@@ -57,7 +57,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
                   className="flex items-center space-x-3 text-white hover:text-purple-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200 group"
                   onClick={onClose}
                 >
-                  <span className="w-2 h-2 bg-orion-gradient rounded-full group-hover:bg-white transition-colors"></span>
+                  <span className="w-1 h-1 bg-orion-gradient rounded-full group-hover:bg-white transition-colors"></span>
                   <span className="font-medium">{link.label}</span>
                 </a>
               </li>
@@ -65,7 +65,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
           </ul>
 
           {/* Mobile Contact Actions */}
-          <div className="mt-8 pt-6 border-t bg-orion-gradient">
+          <div className="mt-8 pt-6 border-t border-purple-500 bg-orion-gradient">
             <div className="space-y-4">
               <a
                 href={`tel:${contactInfo.phone}`}
@@ -98,7 +98,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          className="fixed inset-0 z-40 lg:hidden"
           onClick={onClose}
         />
       )}

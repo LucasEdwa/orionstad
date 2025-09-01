@@ -11,6 +11,9 @@ export const useNavbarState = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(navbarStateService.shouldShowScrolledStyle(window.scrollY));
+      if (window.scrollY < 20) {
+        setSidebarOpen(false);
+      }
     };
     
     window.addEventListener('scroll', handleScroll);
