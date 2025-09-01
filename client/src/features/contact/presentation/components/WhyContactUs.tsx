@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ContactSection } from '../../domain/entities/Contact';
 import { FaCheckCircle } from 'react-icons/fa';
@@ -7,7 +7,7 @@ interface WhyContactUsProps {
   whyContactSection: ContactSection | null;
 }
 
-export const WhyContactUs: React.FC<WhyContactUsProps> = ({ whyContactSection }) => {
+export const WhyContactUs = memo<WhyContactUsProps>(({ whyContactSection }) => {
   const { t } = useTranslation('contact');
   
   if (!whyContactSection) {
@@ -26,4 +26,4 @@ export const WhyContactUs: React.FC<WhyContactUsProps> = ({ whyContactSection })
       </div>
     </div>
   );
-};
+});

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import type { BrandInfo } from "../../domain/entities/NavLink";
 
 interface BrandLogoProps {
@@ -5,7 +6,7 @@ interface BrandLogoProps {
   isScrolled: boolean;
 }
 
-export const BrandLogo: React.FC<BrandLogoProps> = ({ brandInfo, isScrolled }) => {
+export const BrandLogo = memo<BrandLogoProps>(({ brandInfo, isScrolled }) => {
   return (
     <div className="flex items-center space-x-3">
       <a href="/" className="flex items-center space-x-3 group">
@@ -29,4 +30,4 @@ export const BrandLogo: React.FC<BrandLogoProps> = ({ brandInfo, isScrolled }) =
       </a>
     </div>
   );
-};
+});

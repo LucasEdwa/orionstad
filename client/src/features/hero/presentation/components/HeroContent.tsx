@@ -1,6 +1,7 @@
 import { FaArrowDown } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import type { HeroContent as HeroContentType } from "../../domain/entities/Hero";
+import { memo } from 'react';
 
 interface HeroContentProps {
   content: HeroContentType;
@@ -8,7 +9,7 @@ interface HeroContentProps {
   onScrollToContent: () => void;
 }
 
-export const HeroContentSection: React.FC<HeroContentProps> = ({
+export const HeroContentSection = memo<HeroContentProps>(({
   content,
   onScrollToBooking,
   onScrollToContent,
@@ -72,4 +73,4 @@ export const HeroContentSection: React.FC<HeroContentProps> = ({
       </div>
     </div>
   );
-};
+});

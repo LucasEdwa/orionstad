@@ -1,11 +1,10 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import yearsImg from '../../../../assets/WEBSITE SYMBOLS /YEARSOFEXPERIENCE.png';
-import clientsImg from '../../../../assets/WEBSITE SYMBOLS /HAPPY CLIENTS.png';
-import teamImg from '../../../../assets/WEBSITE SYMBOLS /TEAM.png';
-import certificationsImg from '../../../../assets/WEBSITE SYMBOLS /CERTIFICATION.png';
+import yearsImg from '../../../../assets/WEBSITE SYMBOLS/YEARSOFEXPERIENCE.png';
+import clientsImg from '../../../../assets/WEBSITE SYMBOLS/HAPPY CLIENTS.png';
+import teamImg from '../../../../assets/WEBSITE SYMBOLS/TEAM.png';
+import certificationsImg from '../../../../assets/WEBSITE SYMBOLS/CERTIFICATION.png';
 
-export const AboutStats: React.FC = () => {
+export const  AboutStats = () => {
   const { t } = useTranslation('about');
 
   // Get stats data from translations

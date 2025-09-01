@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Service } from '../../domain/entities/Service';
 import { useServiceCardCarousel } from '../hooks/useServiceCardCarousel';
@@ -19,7 +19,7 @@ interface ServiceCardProps {
   i18nNs?: string;
 }
 
-export const ServiceCard: React.FC<ServiceCardProps> = ({ 
+export const ServiceCard = memo<ServiceCardProps>(({ 
   service, 
   i18nNs = 'services' 
 }) => {
@@ -168,4 +168,4 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       </div>
     </div>
   );
-};
+});

@@ -1,8 +1,17 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
+import quickResponseimg from '../../../../assets/quick response.png';
+import qualityGuaranteedimg from '../../../../assets/quality.png';
+import fairPricingimg from '../../../../assets/fair pricing.png';
 
-export const ServicesCTA: React.FC = () => {
+export const ServicesCTA= () => {
+
   const { t } = useTranslation('services');
+
+  const imgs = {
+    quickResponse: quickResponseimg,
+    qualityGuaranteed: qualityGuaranteedimg,
+    fairPricing: fairPricingimg
+  };
 
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
@@ -10,6 +19,7 @@ export const ServicesCTA: React.FC = () => {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  
 
   return (
     <div className="bg-orion-gradient py-20">
@@ -39,7 +49,7 @@ export const ServicesCTA: React.FC = () => {
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
           <div className="flex items-center justify-center space-x-2">
-            <span className="text-2xl">🕒</span>
+            <img src={imgs.quickResponse} alt={t('cta.features.quickResponse.title')} className="w-12 object-cover rounded-full" />
             <div>
               <div className="font-semibold">{t('cta.features.quickResponse.title')}</div>
               <div className="text-sm text-purple-100">{t('cta.features.quickResponse.description')}</div>
@@ -47,7 +57,7 @@ export const ServicesCTA: React.FC = () => {
           </div>
           
           <div className="flex items-center justify-center space-x-2">
-            <span className="text-2xl">🏆</span>
+            <img src={imgs.qualityGuaranteed} alt={t('cta.features.qualityGuaranteed.title')} className="w-12 object-cover rounded-full" />
             <div>
               <div className="font-semibold">{t('cta.features.qualityGuaranteed.title')}</div>
               <div className="text-sm text-purple-100">{t('cta.features.qualityGuaranteed.description')}</div>
@@ -55,7 +65,7 @@ export const ServicesCTA: React.FC = () => {
           </div>
           
           <div className="flex items-center justify-center space-x-2">
-            <span className="text-2xl">💰</span>
+            <img src={imgs.fairPricing} alt={t('cta.features.fairPricing.title')} className="w-12 object-cover rounded-full" />
             <div>
               <div className="font-semibold">{t('cta.features.fairPricing.title')}</div>
               <div className="text-sm text-purple-100">{t('cta.features.fairPricing.description')}</div>

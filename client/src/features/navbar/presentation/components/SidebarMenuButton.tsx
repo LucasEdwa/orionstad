@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { memo } from "react";
 
 type SidebarMenuButtonProps = {
   onClick: () => void;
@@ -6,7 +6,7 @@ type SidebarMenuButtonProps = {
   isScrolled?: boolean;
 };
 
-export const SidebarMenuButton: FC<SidebarMenuButtonProps> = ({ 
+export const SidebarMenuButton = memo<SidebarMenuButtonProps>(({ 
   onClick, 
   ariaLabel, 
   isScrolled = false 
@@ -26,4 +26,4 @@ export const SidebarMenuButton: FC<SidebarMenuButtonProps> = ({
       />
     ))}
   </button>
-);
+))

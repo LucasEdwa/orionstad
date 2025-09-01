@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import type { Service } from '../../domain/entities/Service';
 import { ServiceCard } from './ServiceCard';
 
@@ -6,7 +6,7 @@ interface ServicesGridProps {
   services: Service[];
 }
 
-export const ServicesGrid: React.FC<ServicesGridProps> = ({ services }) => {
+export const ServicesGrid = memo<ServicesGridProps>(({ services }) => {
   return (
     <div className="w-full max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 px-4">
@@ -25,4 +25,4 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({ services }) => {
       </div>
     </div>
   );
-};
+});

@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { LogoAnimation } from "./components/LogoAnimation";
 import { VideoControls } from "./components/VideoControls";
 import { HeroContentSection } from "./components/HeroContent";
@@ -9,16 +10,20 @@ import { useVideoControls } from "./hooks/useVideoControls";
 import { useScrollActions } from "./hooks/useScrollActions";
 import { useHeroContent } from "./hooks/useHeroContent";
 
-interface HeroProps {
-  onLogoAnimationEnd: () => void;
-}
 
-export const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
-  const { showLogo, logoVisible, isVideoPlaying, setIsVideoPlaying, isMuted, setIsMuted } = useHeroState(onLogoAnimationEnd);
+
+export const Hero = () => {
+  const { showLogo, logoVisible, isVideoPlaying, setIsVideoPlaying, isMuted, setIsMuted } = useHeroState();
   const { setVideoRef, toggleVideo, toggleMute } = useVideoControls(isVideoPlaying, setIsVideoPlaying, isMuted, setIsMuted);
   const { scrollToBooking, scrollToContent } = useScrollActions();
   const { videoConfig, brandAssets, content } = useHeroContent();
 
+  const handleToggleVideo = useCallback(() => {
+    toggleVideo();
+  }, [toggleVideo]);
+  const handleToggleMute = useCallback(() => {
+    toggleMute();
+  }, [toggleMute]);
   return (
     <div className="relative w-full h-screen flex items-center justify-center bg-black overflow-hidden">
       {/* Enhanced video background */}
@@ -42,8 +47,8 @@ export const Hero: React.FC<HeroProps> = ({ onLogoAnimationEnd }) => {
         <VideoControls
           isVideoPlaying={isVideoPlaying}
           isMuted={isMuted}
-          onToggleVideo={toggleVideo}
-          onToggleMute={toggleMute}
+          onToggleVideo={handleToggleVideo}
+          onToggleMute={handleToggleMute}
         />
       )}
 

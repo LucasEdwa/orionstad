@@ -1,7 +1,8 @@
+import { useMemo } from 'react';
 import { BrowserScrollService } from '../../infrastructure/BrowserScrollService';
 
 export const useScrollActions = () => {
-  const scrollService = new BrowserScrollService();
+  const scrollService = useMemo(() => new BrowserScrollService(), []);
 
   const scrollToBooking = () => {
     scrollService.scrollToElement("booking");

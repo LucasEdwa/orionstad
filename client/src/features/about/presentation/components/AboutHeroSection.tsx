@@ -1,4 +1,4 @@
-import React from 'react';
+import  { memo } from 'react';
 import type { AboutHero } from '../../domain/entities/About';
 import { AboutAssetsRepository } from '../../infrastructure/AboutAssetsRepository';
 
@@ -6,7 +6,7 @@ interface AboutHeroProps {
   hero: AboutHero;
 }
 
-export const AboutHeroSection: React.FC<AboutHeroProps> = ({ hero }) => {
+export const AboutHeroSection = memo<AboutHeroProps>(({ hero }) => {
   const assetsRepository = new AboutAssetsRepository();
 
   return (
@@ -53,4 +53,4 @@ export const AboutHeroSection: React.FC<AboutHeroProps> = ({ hero }) => {
       </header>
     </div>
   );
-};
+});

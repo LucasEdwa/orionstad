@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import type { ServiceHero } from '../../domain/entities/Service';
 import { AssetsRepository } from '../../infrastructure/AssetsRepository';
 import homeserviceImg from '../../../../assets/home-cleaning.png';
@@ -10,7 +10,7 @@ interface ServicesHeroProps {
   hero: ServiceHero;
 }
 
-export const ServicesHero: React.FC<ServicesHeroProps> = ({ hero }) => {
+export const ServicesHero = memo<ServicesHeroProps>(({ hero }) => {
   const assetsRepository = new AssetsRepository();
   const orionLogo = assetsRepository.getOrionLogo();
   
@@ -67,4 +67,4 @@ export const ServicesHero: React.FC<ServicesHeroProps> = ({ hero }) => {
       </div>
     </header>
   );
-};
+});

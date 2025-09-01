@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import type { AboutSection } from '../../domain/entities/About';
 import { AboutAnimationService } from '../../application/AboutAnimationService';
 
@@ -7,7 +7,7 @@ interface AboutSectionProps {
   index: number;
 }
 
-export const AboutSectionCard: React.FC<AboutSectionProps> = ({ section, index }) => {
+export const AboutSectionCard = memo<AboutSectionProps>(({ section, index }) => {
   const animationService = new AboutAnimationService();
   const isHighlighted = section.highlight;
 
@@ -36,7 +36,7 @@ export const AboutSectionCard: React.FC<AboutSectionProps> = ({ section, index }
         <div className="flex items-center mb-8">
           {section.icon && (
             <div className={`text-4xl mr-4 ${isHighlighted ? 'filter drop-shadow-lg' : ''}`}>
-              {section.icon}
+  <img src={section.icon} alt={section.title} className="w-28" />
             </div>
           )}
           <h2 className={`text-3xl md:text-4xl font-bold ${
@@ -80,4 +80,4 @@ export const AboutSectionCard: React.FC<AboutSectionProps> = ({ section, index }
       </div>
     </section>
   );
-};
+});

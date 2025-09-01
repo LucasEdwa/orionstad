@@ -1,10 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import ecoImg from '../../../../assets/WEBSITE SYMBOLS /ECO.png';
-import insuredImg from '../../../../assets/WEBSITE SYMBOLS /INSURED.png';
-import certifiedImg from '../../../../assets/WEBSITE SYMBOLS /ClientExperience.png';
-export const AboutCTA: React.FC = () => {
+import ecoImg from '../../../../assets/WEBSITE SYMBOLS/ECO.png';
+import insuredImg from '../../../../assets/WEBSITE SYMBOLS/INSURED.png';
+import certifiedImg from '../../../../assets/WEBSITE SYMBOLS/ClientExperience.png';
+
+export const AboutCTA = () => {
   const { t } = useTranslation('about');
 
   // Map trust titles to their corresponding images

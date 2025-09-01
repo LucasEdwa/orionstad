@@ -27,5 +27,5 @@ export interface TeamStats {
 export interface CompanyValues {
   title: string;
   description: string;
-  icon: string;
+  icon?: string;
 }

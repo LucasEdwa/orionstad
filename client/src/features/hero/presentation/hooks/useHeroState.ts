@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { HeroStateService } from '../../application/HeroStateService';
 
-export const useHeroState = (onLogoAnimationEnd: () => void) => {
+export const useHeroState = () => {
   const heroStateService = new HeroStateService();
   const initialState = heroStateService.getInitialState();
   
@@ -16,11 +16,11 @@ export const useHeroState = (onLogoAnimationEnd: () => void) => {
       setLogoVisible(false);
       setTimeout(() => {
         setShowLogo(false);
-        onLogoAnimationEnd();
       }, heroStateService.getFadeOutDuration());
     }, heroStateService.getLogoAnimationDuration());
     return () => clearTimeout(timer);
-  }, [onLogoAnimationEnd, heroStateService]);
+  }, [heroStateService]);
+
 
   return {
     showLogo,

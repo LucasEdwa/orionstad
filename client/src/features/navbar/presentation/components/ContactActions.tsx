@@ -1,12 +1,13 @@
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import type { ContactInfo } from "../../domain/entities/NavLink";
+import { memo } from "react";
 
 interface ContactActionsProps {
   contactInfo: ContactInfo;
   isScrolled: boolean;
 }
 
-export const ContactActions: React.FC<ContactActionsProps> = ({ contactInfo, isScrolled }) => {
+export const ContactActions = memo<ContactActionsProps>(({ contactInfo, isScrolled }) => {
   return (
     <div className="flex items-center space-x-3 border-l border-purple-300 pl-6">
       <a
@@ -41,4 +42,4 @@ export const ContactActions: React.FC<ContactActionsProps> = ({ contactInfo, isS
       </a>
     </div>
   );
-};
+});

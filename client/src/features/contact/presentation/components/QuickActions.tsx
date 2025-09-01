@@ -1,12 +1,12 @@
-import React from 'react';
 import type { QuickAction } from '../../domain/entities/Contact';
 import { ContactIconService } from '../../application/ContactIconService';
+import { memo } from 'react';
 
 interface QuickActionsProps {
   quickActions: QuickAction[];
 }
 
-export const QuickActions: React.FC<QuickActionsProps> = ({ quickActions }) => {
+export const QuickActions = memo<QuickActionsProps>(({ quickActions }) => {
   const iconService = new ContactIconService();
 
   return (
@@ -38,4 +38,4 @@ export const QuickActions: React.FC<QuickActionsProps> = ({ quickActions }) => {
       </div>
     </div>
   );
-};
+});

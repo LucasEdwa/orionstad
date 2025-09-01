@@ -1,12 +1,12 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import respectImg from '../../../../assets/WEBSITE SYMBOLS /RESPECT.png';
-import excellenceImg from '../../../../assets/WEBSITE SYMBOLS /EXCELLENCE.png';
-import transformationImg from '../../../../assets/WEBSITE SYMBOLS /TRANSFORMATION.png';
-import connectionImg from '../../../../assets/WEBSITE SYMBOLS /CONNECTION.png';
-import integrityImg from '../../../../assets/WEBSITE SYMBOLS /INTEGRITY.png';
-import presenceImg from '../../../../assets/WEBSITE SYMBOLS /PRESENCE.png';
-export const CompanyValues: React.FC = () => {
+import respectImg from '../../../../assets/WEBSITE SYMBOLS/RESPECT.png';
+import excellenceImg from '../../../../assets/WEBSITE SYMBOLS/EXCELLENCE.png';
+import transformationImg from '../../../../assets/WEBSITE SYMBOLS/TRANSFORMATION.png';
+import connectionImg from '../../../../assets/WEBSITE SYMBOLS/CONNECTION.png';
+import integrityImg from '../../../../assets/WEBSITE SYMBOLS/INTEGRITY.png';
+import presenceImg from '../../../../assets/WEBSITE SYMBOLS/PRESENCE.png';
+
+export const CompanyValues = () => {
   const { t } = useTranslation('about');
 
   const images = [

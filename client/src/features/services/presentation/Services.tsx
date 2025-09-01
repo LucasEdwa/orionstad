@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useServicesData } from './hooks/useServicesData';
 import { ServicesHero } from './components/ServicesHero';
@@ -6,7 +5,7 @@ import { ServicesGrid } from './components/ServicesGrid';
 import { ServicesStats } from './components/ServicesStats';
 import { ServicesCTA } from './components/ServicesCTA';
 
-export const Services: React.FC = () => {
+export const Services = () => {
   const { t } = useTranslation('services');
   const { hero, services } = useServicesData();
 

@@ -1,3 +1,4 @@
+import { memo } from "react";
 import type { BrandAssets } from "../../domain/entities/Hero";
 
 interface LogoAnimationProps {
@@ -5,7 +6,7 @@ interface LogoAnimationProps {
   logoVisible: boolean;
 }
 
-export const LogoAnimation: React.FC<LogoAnimationProps> = ({ brandAssets, logoVisible }) => {
+export const LogoAnimation = memo(({ brandAssets, logoVisible }: LogoAnimationProps) => {
   return (
     <div className="flex flex-col items-center justify-center space-y-6">
       <div className={`relative transition-all duration-1000 ease-out ${logoVisible ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 -translate-y-20'}`}>
@@ -30,4 +31,4 @@ export const LogoAnimation: React.FC<LogoAnimationProps> = ({ brandAssets, logoV
       </div>
     </div>
   );
-};
+});

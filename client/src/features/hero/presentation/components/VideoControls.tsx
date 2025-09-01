@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
 interface VideoControlsProps {
@@ -7,7 +8,7 @@ interface VideoControlsProps {
   onToggleMute: () => void;
 }
 
-export const VideoControls: React.FC<VideoControlsProps> = ({
+export const VideoControls = memo<VideoControlsProps>(({
   isVideoPlaying,
   isMuted,
   onToggleVideo,
@@ -39,4 +40,4 @@ export const VideoControls: React.FC<VideoControlsProps> = ({
       </button>
     </div>
   );
-};
+});

@@ -27,15 +27,13 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleStepOneNext = () => {
-    // Could add validation logic here if needed
-  };
+  
 
   return (
     <>
       {/* Hero Section */}
       <div className="relative bg-gray-50">
-        <Hero onLogoAnimationEnd={() => console.log("Logo animation ended")} />
+        <Hero />
       </div>
 
       {/* Main Content */}
@@ -54,7 +52,7 @@ const Home = () => {
             {/* Booking Form */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
               {step === 1 && (
-                <BookingStepOne onNext={handleStepOneNext} />
+                <BookingStepOne onNext={() => {}} />
               )}
 
               {step === 2 && (

@@ -1,14 +1,13 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ContactSection } from '../../domain/entities/Contact';
 import { useContactForm } from '../hooks/useContactForm';
-
+import {memo} from 'react';
 interface ContactFormProps {
   formSection: ContactSection | null;
   whyContactSection: ContactSection | null;
 }
 
-export const ContactForm: React.FC<ContactFormProps> = ({ 
+export const ContactForm = memo<ContactFormProps>(({ 
   formSection, 
   whyContactSection 
 }) => {
@@ -91,4 +90,4 @@ export const ContactForm: React.FC<ContactFormProps> = ({
       </form>
     </div>
   );
-};
+});

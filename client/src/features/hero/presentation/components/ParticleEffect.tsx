@@ -1,4 +1,4 @@
-export const ParticleEffect: React.FC = () => {
+export const ParticleEffect = () => {
   return (
     <div className="absolute inset-0 z-5">
       {[...Array(20)].map((_, i) => (

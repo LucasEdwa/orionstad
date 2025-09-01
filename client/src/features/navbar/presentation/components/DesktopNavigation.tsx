@@ -1,3 +1,4 @@
+import { memo } from "react";
 import type { NavLink } from "../../domain/entities/NavLink";
 
 interface DesktopNavigationProps {
@@ -5,7 +6,7 @@ interface DesktopNavigationProps {
   isScrolled: boolean;
 }
 
-export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ links, isScrolled }) => {
+export const DesktopNavigation = memo<DesktopNavigationProps>(({ links, isScrolled }) => {
   return (
     <div className="hidden lg:flex items-center space-x-8">
       <ul className="flex space-x-6">
@@ -27,4 +28,4 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({ links, isS
       </ul>
     </div>
   );
-};
+});

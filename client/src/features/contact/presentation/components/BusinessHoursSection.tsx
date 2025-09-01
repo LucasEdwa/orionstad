@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 import type { BusinessHours } from '../../domain/entities/Contact';
 import { FaClock } from 'react-icons/fa';
 
@@ -6,7 +6,7 @@ interface BusinessHoursProps {
   businessHours: BusinessHours;
 }
 
-export const BusinessHoursSection: React.FC<BusinessHoursProps> = ({ businessHours }) => {
+export const BusinessHoursSection = memo<BusinessHoursProps>(({ businessHours }) => {
   return (
     <div className="bg-white rounded-2xl shadow-lg p-8">
       <div className="flex items-center space-x-3 mb-6">
@@ -34,4 +34,4 @@ export const BusinessHoursSection: React.FC<BusinessHoursProps> = ({ businessHou
       </div>
     </div>
   );
-};
+});

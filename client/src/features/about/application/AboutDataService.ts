@@ -1,4 +1,20 @@
+import OurStoryimg from "../../../assets/WEBSITE SYMBOLS/ORIGIN.png";
+import whatMakesUsDifImg from "../../../assets/WEBSITE SYMBOLS/TEAM.png";
+import missionValuesImg from "../../../assets/WEBSITE SYMBOLS/Mission&Values.png";
+import expertTeamImg from "../../../assets/office-cleaning.png";
+import proffTeamImg from "../../../assets/WEBSITE SYMBOLS/ClientExperience.png";
+import clientExpImg from "../../../assets/office-cleaning.png";
 import type { AboutPageData, AboutSection, TeamStats, CompanyValues } from '../domain/entities/About';
+
+// Move icons array outside the class for better performance
+const SECTION_ICONS = [
+  OurStoryimg, // Our Origin Story
+  whatMakesUsDifImg, // What Makes Us Different
+  missionValuesImg, // Our Mission & Values
+  expertTeamImg, // Our Expert Team
+  proffTeamImg, // Professional Excellence
+  clientExpImg  // Client Experience
+];
 
 export class AboutDataService {
   createAboutPageData(hero: any, sections: any[]): AboutPageData {
@@ -17,19 +33,10 @@ export class AboutDataService {
   }
 
   private getSectionIcon(index: number): string {
-    const icons = [
-      '🌟', // Our Origin Story
-      '💎', // What Makes Us Different
-      '🎯', // Our Mission & Values
-      '👥', // Our Expert Team
-      '🏆', // Professional Excellence
-      '❤️'  // Client Experience
-    ];
-    return icons[index] || '✨';
+    return SECTION_ICONS[index] || '✨';
   }
 
   private shouldHighlight(index: number): boolean {
-    // Highlight mission & values section
     return index === 2;
   }
 
@@ -47,32 +54,26 @@ export class AboutDataService {
       {
         title: 'Respect',
         description: 'We honor every home as a sacred space',
-        icon: '🙏'
       },
       {
         title: 'Excellence',
         description: 'Professional standards in every detail',
-        icon: '⭐'
       },
       {
         title: 'Transformation',
         description: 'Creating peace through cleaning',
-        icon: '🦋'
       },
       {
         title: 'Connection',
         description: 'Building lasting relationships',
-        icon: '🤝'
       },
       {
         title: 'Integrity',
         description: 'Honest and transparent service',
-        icon: '💎'
       },
       {
         title: 'Presence',
         description: 'Mindful attention to your needs',
-        icon: '🧘'
       }
     ];
   }

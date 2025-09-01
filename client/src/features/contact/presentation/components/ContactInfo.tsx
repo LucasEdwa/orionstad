@@ -1,13 +1,12 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ContactSection } from '../../domain/entities/Contact';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
-
+import { memo } from 'react';
 interface ContactInfoProps {
   contactSection: ContactSection | null;
 }
 
-export const ContactInfo: React.FC<ContactInfoProps> = ({ contactSection }) => {
+export const ContactInfo = memo<ContactInfoProps>(({ contactSection }) => {
   const { t } = useTranslation('contact');
 
   if (!contactSection) {
@@ -81,4 +80,4 @@ export const ContactInfo: React.FC<ContactInfoProps> = ({ contactSection }) => {
       </div>
     </div>
   );
-};
+});

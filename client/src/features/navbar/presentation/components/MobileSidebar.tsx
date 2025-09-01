@@ -1,5 +1,6 @@
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import type { NavLink, ContactInfo, BrandInfo } from "../../domain/entities/NavLink";
+import { memo } from "react";
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -9,7 +10,7 @@ interface MobileSidebarProps {
   brandInfo: BrandInfo;
 }
 
-export const MobileSidebar: React.FC<MobileSidebarProps> = ({ 
+export const MobileSidebar = memo<MobileSidebarProps>(({ 
   isOpen, 
   onClose, 
   links, 
@@ -103,4 +104,4 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({
       )}
     </>
   );
-};
+});
