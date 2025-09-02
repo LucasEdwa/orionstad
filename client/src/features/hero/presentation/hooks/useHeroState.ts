@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { HeroStateService } from '../../application/HeroStateService';
 
+// Create service instance outside of hook to prevent recreation on every render
+const heroStateService = new HeroStateService();
+
 export const useHeroState = () => {
-  const heroStateService = new HeroStateService();
-  const initialState = heroStateService.getInitialState();
+  // Get initial state once using useMemo
+  const initialState = useMemo(() => heroStateService.getInitialState(), []);
   
   const [showLogo, setShowLogo] = useState(initialState.showLogo);
   const [logoVisible, setLogoVisible] = useState(initialState.logoVisible);
@@ -11,15 +14,20 @@ export const useHeroState = () => {
   const [isMuted, setIsMuted] = useState(initialState.isMuted);
 
   useEffect(() => {
+    const fadeOutDuration = heroStateService.getFadeOutDuration();
+    const logoAnimationDuration = heroStateService.getLogoAnimationDuration();
+
     setLogoVisible(true);
-    const timer = setTimeout(() => {
+    const logoTimer = setTimeout(() => {
       setLogoVisible(false);
-      setTimeout(() => {
+      const fadeTimer = setTimeout(() => {
         setShowLogo(false);
-      }, heroStateService.getFadeOutDuration());
-    }, heroStateService.getLogoAnimationDuration());
-    return () => clearTimeout(timer);
-  }, [heroStateService]);
+      }, fadeOutDuration);
+      return () => clearTimeout(fadeTimer);
+    }, logoAnimationDuration);
+    
+    return () => clearTimeout(logoTimer);
+  }, []); // Empty dependency array since we use the stable heroStateService instance
 
 
   return {

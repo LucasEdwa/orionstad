@@ -14,3 +14,7 @@ export interface CustomerField {
   type: string;
   placeholder: string;
 }
+export interface Option {
+  value: string;
+  label: string;
+}
