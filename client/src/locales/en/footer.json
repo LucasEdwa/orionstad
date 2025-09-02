@@ -10,7 +10,7 @@
     "description": "We transform homes and lives through our unique cleaning method that blends Brazilian warmth with Scandinavian efficiency. Every home is treated as a sacred space deserving respect and presence."
   },
   "links": [
-    { "href": "/terms-of-service", "label": "Privacy Policy" },
+    { "href": "/privacy-policy", "label": "Privacy Policy" },
     { "href": "/terms-of-service", "label": "Terms of Service" },
     { "href": "/contact", "label": "Contact Us" }
   ],

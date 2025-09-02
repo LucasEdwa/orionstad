@@ -10,7 +10,7 @@
     "description": "Transformamos hogares y vidas a través de nuestro método único de limpieza que combina la calidez brasileña con la eficiencia escandinava. Cada hogar es tratado como un espacio sagrado que merece respeto y presencia."
   },
   "links": [
-    { "href": "/terms-of-service", "label": "Política de Privacidad" },
+    { "href": "/privacy-policy", "label": "Política de Privacidad" },
     { "href": "/terms-of-service", "label": "Términos de Servicio" },
     { "href": "/contact", "label": "Contáctenos" }
   ],
