@@ -1,5 +1,6 @@
 import { FaShieldAlt, FaInfoCircle, FaCheckCircle } from "react-icons/fa";
 import type { TermsSection } from '../../domain/entities/TermsOfService';
+import { useCallback } from 'react';
 
 interface TermsSectionCardProps {
   section: TermsSection;
@@ -7,7 +8,7 @@ interface TermsSectionCardProps {
 }
 
 export const TermsSectionCard = ({ section, colorScheme }: TermsSectionCardProps) => {
-  const getIcon = () => {
+  const getIcon = useCallback(() => {
     switch (section.type) {
       case 'privacy':
         return <FaShieldAlt className="text-xl" />;
@@ -16,7 +17,7 @@ export const TermsSectionCard = ({ section, colorScheme }: TermsSectionCardProps
       default:
         return <FaCheckCircle className="text-xl" />;
     }
-  };
+  }, [section.type]);
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">

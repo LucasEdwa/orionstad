@@ -16,6 +16,7 @@ export const HeroContentSection = memo<HeroContentProps>(({
 }) => {
   const { t } = useTranslation('home');
 
+  // If these handlers are defined inside a parent, recommend parent to use useCallback
   return (
     <div className="relative z-20 w-full max-w-7xl mx-auto px-6">
       <div className="text-center">

@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
 import type { Feature } from "../../domain/entities/Feature";
-import { memo } from "react";
 
 interface FeaturesGridProps {
   features: Feature[];
 }
 
-export const FeaturesGrid = memo<FeaturesGridProps>(({ features }) => {
+export const FeaturesGrid: React.FC<FeaturesGridProps> = ({ features }) => {
   const { t } = useTranslation("home");
   
   return (
@@ -33,4 +32,4 @@ export const FeaturesGrid = memo<FeaturesGridProps>(({ features }) => {
       </div>
     </section>
   );
-});
+}

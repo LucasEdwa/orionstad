@@ -1,8 +1,9 @@
-import { memo, useState } from 'react';
+import { memo, useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Service } from '../../domain/entities/Service';
 import { useServiceCardCarousel } from '../hooks/useServiceCardCarousel';
 import { ServiceCardService } from '../../application/ServiceCardService';
+
 
 import homeserviceImg from '../../../../assets/home-cleaning.png';
 import officeServiceImg from '../../../../assets/office-cleaning.png';
@@ -46,9 +47,9 @@ export const ServiceCard = memo<ServiceCardProps>(({
     }
   };
 
-  const toggleExpand = () => {
-    setIsExpanded(!isExpanded);
-  };
+  const toggleExpand = useCallback(() => {
+    setIsExpanded((prev) => !prev);
+  }, []);
 
   return (
     <div className="group bg-white rounded-3xl shadow-xl flex flex-col overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 transform hover:-translate-y-2">

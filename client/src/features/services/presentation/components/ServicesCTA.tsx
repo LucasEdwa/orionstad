@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useCallback } from 'react';
 import quickResponseimg from '../../../../assets/quick response.png';
 import qualityGuaranteedimg from '../../../../assets/quality.png';
 import fairPricingimg from '../../../../assets/fair pricing.png';
@@ -13,12 +14,12 @@ export const ServicesCTA= () => {
     fairPricing: fairPricingimg
   };
 
-  const scrollToContact = () => {
+  const scrollToContact = useCallback(() => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
   
 
   return (

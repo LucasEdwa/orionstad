@@ -1,4 +1,3 @@
-import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { FaCheckCircle } from 'react-icons/fa';
 
@@ -6,7 +5,7 @@ interface BookingBenefitsProps {
   benefits: string[];
 }
 
-export const BookingBenefits = memo<BookingBenefitsProps>(({ benefits }) => {
+export const BookingBenefits = ({ benefits }: BookingBenefitsProps) => {
   const { t } = useTranslation("home");
   
   return (
@@ -54,4 +53,4 @@ export const BookingBenefits = memo<BookingBenefitsProps>(({ benefits }) => {
       </div>
     </div>
   );
-});
+}

@@ -1,8 +1,7 @@
-import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { FaHeart, FaMagic } from 'react-icons/fa';
 
-export const AboutSection = memo(() => {
+export const AboutSection =() => {
   const { t } = useTranslation("home");
 
   return (
@@ -39,4 +38,4 @@ export const AboutSection = memo(() => {
       </div>
     </section>
   );
-});
+}

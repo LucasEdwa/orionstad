@@ -1,13 +1,14 @@
 import type { ContactInfo } from '../../domain/entities/NavigationItem';
+import { useCallback } from 'react';
 
 interface ContactInfoDisplayProps {
   contacts: ContactInfo[];
 }
 
 export const ContactInfoDisplay = ({ contacts }: ContactInfoDisplayProps) => {
-  const getHref = (contact: ContactInfo): string => {
+  const getHref = useCallback((contact: ContactInfo): string => {
     return contact.type === 'phone' ? `tel:${contact.value}` : `mailto:${contact.value}`;
-  };
+  }, []);
 
   return (
     <div className="mt-8 text-center">
