@@ -1,7 +1,7 @@
 import OurStoryimg from "../../../assets/WEBSITE SYMBOLS/ORIGIN.png";
-import whatMakesUsDifImg from "../../../assets/WEBSITE SYMBOLS/TEAM.png";
-import missionValuesImg from "../../../assets/WEBSITE SYMBOLS/Mission&Values.png";
-import expertTeamImg from "../../../assets/office-cleaning.png";
+import whatMakesUsDifImg from "../../../assets/WEBSITE SYMBOLS/Difference.png";
+import missionValuesImg from "../../../assets/WEBSITE SYMBOLS/Values.png";
+import expertTeamImg from "../../../assets/WEBSITE SYMBOLS/TEAM (2) (1).png";
 import proffTeamImg from "../../../assets/WEBSITE SYMBOLS/ClientExperience.png";
 import clientExpImg from "../../../assets/office-cleaning.png";
 import type { AboutPageData, AboutSection, TeamStats, CompanyValues } from '../domain/entities/About';

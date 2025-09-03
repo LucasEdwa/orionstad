@@ -28,7 +28,7 @@ export const QuickActions = memo<QuickActionsProps>(({ quickActions }) => {
                 </div>
                 <h3 className="font-semibold text-gray-800 mb-2">{action.title}</h3>
                 <p className="text-gray-600 text-sm">{action.description}</p>
-                <span className="mt-3 text-purple-600 font-medium group-hover:underline">
+                <span className="mt-3 text-purple-400 font-medium group-hover:underline">
                   {action.action}
                 </span>
               </div>

@@ -16,7 +16,7 @@ export const BookingBenefits = ({ benefits }: BookingBenefitsProps) => {
         <div className="space-y-4">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-center space-x-3">
-              <FaCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0"  />
+              <FaCheckCircle className="w-5 h-5 text-white flex-shrink-0"  />
               <span className="text-purple-100">{benefit}</span>
             </div>
           ))}
@@ -31,7 +31,7 @@ export const BookingBenefits = ({ benefits }: BookingBenefitsProps) => {
         <div className="space-y-3">
           <a
             href="tel:+4670418097"
-            className="flex items-center space-x-3 text-purple-600 hover:text-purple-700 transition-colors"
+            className="flex items-center space-x-3 text-purple-400 hover:text-purple-700 transition-colors"
           >
             <div className="bg-purple-100 p-2 rounded-full">
               <FaCheckCircle className="w-4 h-4" />
@@ -42,9 +42,9 @@ export const BookingBenefits = ({ benefits }: BookingBenefitsProps) => {
             href="https://wa.me/message/I6GQY6OWYB5FH1"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-3 text-green-600 hover:text-green-700 transition-colors"
+            className="flex items-center space-x-3 text-purple-400 hover:text-green-700 transition-colors"
           >
-            <div className="bg-green-100 p-2 rounded-full">
+            <div className="bg-purple-100 p-2 rounded-full">
               <FaCheckCircle className="w-4 h-4" />
             </div>
             <span className="font-medium">{t("benefits.quickContact.whatsapp")}</span>

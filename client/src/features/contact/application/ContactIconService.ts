@@ -18,20 +18,20 @@ export class ContactIconService {
   getIconColor(iconName: string): string {
     switch (iconName) {
       case 'FaWhatsapp':
-        return 'text-green-600';
+        return 'text-purple-400';
       case 'FaPhone':
       case 'FaEnvelope':
       case 'FaMapMarkerAlt':
       case 'FaClock':
       default:
-        return 'text-purple-600';
+        return 'text-purple-400';
     }
   }
 
   getBackgroundColor(iconName: string): string {
     switch (iconName) {
       case 'FaWhatsapp':
-        return 'bg-green-100';
+        return 'bg-purple-100';
       case 'FaPhone':
       case 'FaEnvelope':
       case 'FaMapMarkerAlt':

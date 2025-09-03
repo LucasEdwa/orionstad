@@ -8,6 +8,10 @@ export interface ContactInfo {
   whatsapp: string;
   bookNow: string;
 }
+export interface ContactAction {
+  label: string;
+  href: string;
+}
 
 export interface NavbarState {
   isScrolled: boolean;

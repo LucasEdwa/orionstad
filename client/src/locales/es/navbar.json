@@ -8,6 +8,10 @@
   "contactInfo": {
     "phone": "+46123456789",
     "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1",
-    "bookNow": "Reservar Ahora"
+    "bookNow": "Reservar ahora"
+  },
+  "contactAction": {
+    "label": "Llamarnos",
+    "href": "/contact"
   }
 }

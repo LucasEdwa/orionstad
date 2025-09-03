@@ -23,13 +23,13 @@ export const ContactInfo = memo<ContactInfoProps>(({ contactSection }) => {
       <div className="space-y-4">
         <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
           <div className="bg-purple-100 p-3 rounded-full">
-            <FaEnvelope className="w-5 h-5 text-purple-600" />
+            <FaEnvelope className="w-5 h-5 text-purple-400" />
           </div>
           <div>
             <p className="font-semibold text-gray-800">Email</p>
             <a 
               href={contactSection.emailHref} 
-              className="text-purple-600 hover:underline"
+              className="text-purple-400 hover:underline"
             >
               {contactSection.email}
             </a>
@@ -38,13 +38,13 @@ export const ContactInfo = memo<ContactInfoProps>(({ contactSection }) => {
 
         <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
           <div className="bg-purple-100 p-3 rounded-full">
-            <FaPhone className="w-5 h-5 text-purple-600" />
+            <FaPhone className="w-5 h-5 text-purple-400" />
           </div>
           <div>
             <p className="font-semibold text-gray-800">Phone</p>
             <a 
               href={`tel:${contactSection.phone}`}
-              className="text-purple-600 hover:underline"
+              className="text-purple-400 hover:underline"
             >
               {contactSection.phone}
             </a>

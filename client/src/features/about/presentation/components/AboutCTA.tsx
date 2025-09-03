@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import ecoImg from '../../../../assets/WEBSITE SYMBOLS/ECO.png';
-import insuredImg from '../../../../assets/WEBSITE SYMBOLS/INSURED.png';
-import certifiedImg from '../../../../assets/WEBSITE SYMBOLS/ClientExperience.png';
+import insuredImg from '../../../../assets/WEBSITE SYMBOLS/Integrity2.png';
+import certifiedImg from '../../../../assets/WEBSITE SYMBOLS/TEAM (2).png';
 
 export const AboutCTA = () => {
   const { t } = useTranslation('about');

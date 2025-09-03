@@ -1,6 +1,7 @@
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import type { NavLink, ContactInfo, BrandInfo } from "../../domain/entities/NavLink";
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 
 interface MobileSidebarProps {
   isOpen: boolean;
@@ -10,23 +11,23 @@ interface MobileSidebarProps {
   brandInfo: BrandInfo;
 }
 
-export const MobileSidebar = memo<MobileSidebarProps>(({ 
-  isOpen, 
-  onClose, 
-  links, 
-  contactInfo, 
-  brandInfo 
+export const MobileSidebar = memo<MobileSidebarProps>(({
+  isOpen,
+  onClose,
+  links,
+  contactInfo,
+  brandInfo
 }) => {
+  const { t } = useTranslation('navbar');
   return (
     <>
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen w-80 bg-orion-gradient shadow-2xl transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-out z-[100] lg:hidden`}
+        className={`fixed top-0 left-0 h-screen w-80 bg-orion-gradient shadow-2xl transform ${isOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 ease-out z-[100] lg:hidden`}
       >
         {/* Sidebar Header */}
-        <div className="p-6 border-b border-purple-500 bg-orion-gradient">
+        <div className="p-6 shadow-md bg-orion-gradient">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-12 rounded-full shadow-lg" />
@@ -65,14 +66,14 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
           </ul>
 
           {/* Mobile Contact Actions */}
-          <div className="mt-8 pt-6 border-t border-purple-500 bg-orion-gradient">
+          <div className="mt-8 pt-6 shadow-xs rounded-t-2xl border-y border-purple-500 bg-orion-gradient">
             <div className="space-y-4">
               <a
                 href={`tel:${contactInfo.phone}`}
                 className="flex items-center space-x-3 text-white hover:text-purple-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
               >
                 <FaPhone className="w-4 h-4" />
-                <span>Call Us</span>
+                <span>{t("contactAction.label")}</span>
               </a>
               <a
                 href={contactInfo.whatsapp}
