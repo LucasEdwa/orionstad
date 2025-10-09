@@ -21,8 +21,8 @@ export const FeaturesGrid: React.FC<FeaturesGridProps> = ({ features }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="text-center group">
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
-                <feature.icon className="w-8 h-8 text-purple-600" />
+              <div className="bg-orion-gradient w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                <feature.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>

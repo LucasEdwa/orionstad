@@ -1,12 +1,13 @@
 /* Custom utility for Orion gradient background */
 .bg-orion-gradient {
-  background: linear-gradient(90deg, #8e77ab 0%, #b0a0c4 100%);
+  background: linear-gradient(90deg,  #CDB697 0%, #98754C 100%);
 }
+
 /* Orion Städ custom gradient variable */
 :root {
-  --orion-gradient: linear-gradient(90deg, #c09cc1 0%, #f7e1ff 100%);
-  --contact-gradient-from:  rgba(192, 156, 193, 0.6); /* purple-900/70 */
-  --contact-gradient-to: rgba(247, 225, 255, 0.2); /* purple-600/50 */
+  --orion-gradient: linear-gradient(90deg, #3C0C0C 0%, #98754C 100%);
+  --contact-gradient-from:  #3C0C0C /* purple-900/70 */
+  --contact-gradient-to: #98754C /* purple-600/50 */
 }
 
 .bg-contact-gradient {

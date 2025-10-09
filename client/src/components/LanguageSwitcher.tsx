@@ -55,7 +55,7 @@ export default function LanguageSwitcher() {
                 {!isOpen ? (
                     <button
                         onClick={handleToggle}
-                        className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white p-3 md:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 flex items-center gap-2 group"
+                        className="bg-orion-gradient hover:from-[#CDB697] text-white p-3 md:p-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 flex items-center gap-2 group"
                         aria-label="Change language"
                     >
                         <span className="text-xl md:text-2xl">{currentLanguage?.flag}</span>
@@ -64,7 +64,7 @@ export default function LanguageSwitcher() {
                 ) : (
                     <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-fadeInUp">
                         {/* Header */}
-                        <div className="bg-gradient-to-r from-purple-600 to-purple-500 text-white p-4 flex items-center justify-between">
+                        <div className="bg-orion-gradient text-white p-4 flex items-center justify-between">
                             <div className="flex items-center gap-2">
                                 <FaGlobe className="text-lg" />
                                 <span className="font-semibold text-sm md:text-base">Choose Language</span>
@@ -86,7 +86,7 @@ export default function LanguageSwitcher() {
                                     onClick={() => handleLanguageChange(lang.code)}
                                     className={`w-full flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
                                         language === lang.code
-                                            ? 'bg-purple-50 text-purple-700 border-2 border-purple-200'
+                                            ? 'bg-gray-50 text-[#CDB697] border-2 border-gray-200'
                                             : 'hover:bg-gray-50 text-gray-700'
                                     }`}
                                 >
@@ -96,7 +96,7 @@ export default function LanguageSwitcher() {
                                         <div className="text-xs text-gray-500">{lang.label}</div>
                                     </div>
                                     {language === lang.code && (
-                                        <FaCheck className="text-purple-600 text-sm" />
+                                        <FaCheck className="text-[#CDB697] text-sm" />
                                     )}
                                 </button>
                             ))}
@@ -125,8 +125,8 @@ export default function LanguageSwitcher() {
                                 onClick={() => handleLanguageChange(lang.code)}
                                 className={`px-3 py-2 text-sm font-medium transition-all duration-200 ${
                                     language === lang.code
-                                        ? 'bg-purple-600 text-white'
-                                        : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50'
+                                        ? 'bg-orion-gradient text-white'
+                                        : 'text-gray-600 hover:text-[#CDB697] hover:bg-[#CDB697]/10'
                                 } ${index === 0 ? 'rounded-l-full' : ''} ${
                                     index === LANGUAGES.length - 1 ? 'rounded-r-full' : ''
                                 }`}

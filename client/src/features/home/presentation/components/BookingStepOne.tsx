@@ -41,7 +41,7 @@ export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext }) =
           type="number"
           min="0"
           placeholder="Enter size in m²"
-          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#CDB697] focus:border-transparent transition-all duration-200"
           required
           value={bookingForm.homeSize || ""}
           onChange={handleChange}

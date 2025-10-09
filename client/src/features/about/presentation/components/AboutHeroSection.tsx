@@ -16,7 +16,7 @@ export const AboutHeroSection = memo<AboutHeroProps>(({ hero }) => {
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={assetsRepository.getHeroBackgroundStyle()}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-purple-900/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40  z-10"></div>
         
         {/* Floating logo */}
         <div className="absolute top-8 left-8 z-20 animate-float">
@@ -35,7 +35,7 @@ export const AboutHeroSection = memo<AboutHeroProps>(({ hero }) => {
       <header className="relative z-30 text-center px-6 py-16">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-6xl xl:text-8xl font-extrabold text-white mb-8 leading-tight animate-fade-in-up">
-            <span className="bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-white to-[#CDB697] bg-clip-text text-transparent">
               {hero.title}
             </span>
           </h1>

@@ -22,7 +22,7 @@ export const BrandLogo = memo<BrandLogoProps>(({ brandInfo, isScrolled }) => {
             {brandInfo.name}
           </span>
           <span className={`text-xs italic transition-colors duration-300 ${
-            isScrolled ? 'text-purple-600' : 'text-purple-200'
+            isScrolled ? 'text-gray-600' : 'text-purple-200'
           }`}>
             {brandInfo.tagline}
           </span>

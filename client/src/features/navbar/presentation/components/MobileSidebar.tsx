@@ -33,7 +33,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
               <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-12 rounded-full shadow-lg" />
               <div>
                 <h2 className="text-white font-bold text-lg">{brandInfo.name}</h2>
-                <p className="text-purple-200 text-sm italic">{brandInfo.tagline}</p>
+                <p className="text-gray-100 text-sm italic">{brandInfo.tagline}</p>
               </div>
             </div>
             <button
@@ -66,7 +66,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
           </ul>
 
           {/* Mobile Contact Actions */}
-          <div className="mt-8 pt-6 shadow-xs rounded-t-2xl border-y border-purple-500 bg-orion-gradient">
+          <div className="mt-8 pt-6">
             <div className="space-y-4">
               <a
                 href={`tel:${contactInfo.phone}`}
@@ -86,7 +86,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
               </a>
               <a
                 href="/#booking"
-                className="block w-full bg-white text-purple-700 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-50 transition-colors duration-200 shadow-lg"
+                className="block w-full bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-50 transition-colors duration-200 shadow-lg"
                 onClick={onClose}
               >
                 {contactInfo.bookNow}

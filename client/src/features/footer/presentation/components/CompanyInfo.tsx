@@ -8,11 +8,11 @@ interface CompanyInfoProps {
 
 export const CompanyInfo: React.FC<CompanyInfoProps> = ({ companyInfo, address }) => {
   return (
-    <div className="lg:col-span-2">
+    <div className="lg:col-span-2 text-gray-800">
       <h3 className="text-2xl font-bold mb-3">{companyInfo.name}</h3>
-      <p className="text-purple-200 text-lg mb-4 italic">{companyInfo.tagline}</p>
-      <p className="text-purple-100 leading-relaxed mb-6">{companyInfo.description}</p>
-      <div className="text-sm text-purple-200 leading-relaxed">
+      <p className=" text-lg mb-4 italic">{companyInfo.tagline}</p>
+      <p className="leading-relaxed mb-6">{companyInfo.description}</p>
+      <div className="text-sm leading-relaxed">
         {address}
       </div>
     </div>

@@ -47,7 +47,7 @@ export const ServicesStats: React.FC = () => {
   const StatCard = ({ stat }: { stat: typeof stats[0] }) => (
     <div className="text-center group hover:scale-105 transition-transform duration-300">
       <img src={statImages[stat.key]} alt={stat.label} className="w-36  object-contain mx-auto" />
-      <div className="text-3xl font-bold text-gray-800 mb-2 group-hover:text-purple-600 transition-colors duration-300">
+      <div className="text-3xl font-bold text-gray-800 mb-2 group-hover:text-[#CDB697] transition-colors duration-300">
         {stat.number}
       </div>
       <div className="text-lg font-semibold text-gray-700 mb-2">

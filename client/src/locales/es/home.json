@@ -49,6 +49,7 @@
   },
   "customerForm": {
     "title": "Información del cliente",
+    "intro": "Por favor, proporcione su información de contacto para completar la reserva.",
     "fields": [
       { "type": "text", "placeholder": "Nombre completo", "name": "fullName" },
       { "type": "email", "placeholder": "Correo electrónico", "name": "email" },

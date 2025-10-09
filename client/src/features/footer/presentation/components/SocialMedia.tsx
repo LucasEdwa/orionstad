@@ -13,7 +13,7 @@ export const SocialMedia: React.FC<SocialMediaProps> = ({ social }) => {
 
   return (
     <div>
-      <h4 className="text-lg font-semibold mb-4 text-purple-200">
+      <h4 className="text-lg font-semibold mb-4 text-gray-800">
         {t('connectTitle', 'Connect With Us')}
       </h4>
       <div className="space-y-3">
@@ -24,7 +24,7 @@ export const SocialMedia: React.FC<SocialMediaProps> = ({ social }) => {
             <a
               key={link.href}
               href={link.href}
-              className="text-purple-100 hover:text-white transition-colors duration-200 flex items-center gap-3 group"
+              className="text-gray-800 hover:text-gray-600 transition-colors duration-200 flex items-center gap-3 group"
               target="_blank"
               rel="noopener noreferrer"
             >

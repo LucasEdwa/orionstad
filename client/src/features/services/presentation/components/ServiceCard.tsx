@@ -97,7 +97,7 @@ export const ServiceCard = memo<ServiceCardProps>(({
 
       {/* Content */}
       <div className="p-6 flex-1 flex flex-col">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
+        <h2 className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-[#CDB697] transition-colors duration-300">
           {t(service.title)}
         </h2>
         
@@ -112,7 +112,7 @@ export const ServiceCard = memo<ServiceCardProps>(({
                 return (
                   <p className="text-gray-600 mb-3 leading-relaxed" key={i}>
                     {content.label && (
-                      <span className="font-semibold text-purple-600">{t(content.label)} </span>
+                      <span className="font-semibold text-[#CDB697]">{t(content.label)} </span>
                     )}
                     {content.text && t(content.text)}
                   </p>
@@ -128,7 +128,7 @@ export const ServiceCard = memo<ServiceCardProps>(({
                     <ul className="space-y-2">
                       {itemsToShow.map((item: string, j: number) => (
                         <li key={j} className="flex items-start space-x-2 text-gray-600">
-                          <span className="text-purple-500 font-bold">•</span>
+                          <span className="text-[#CDB697] font-bold">•</span>
                           <span className="leading-relaxed">{t(item)}</span>
                         </li>
                       ))}
@@ -141,7 +141,7 @@ export const ServiceCard = memo<ServiceCardProps>(({
           
           {/* Show "+X more features" only if there are actually more items */}
           {!isExpanded && totalListItems > 3 && (
-            <div className="text-purple-500 font-medium">
+            <div className="text-[#CDB697] font-medium">
               +{totalListItems - 3} {t('ui.moreFeatures')}
             </div>
           )}
@@ -151,7 +151,7 @@ export const ServiceCard = memo<ServiceCardProps>(({
         {hasMoreContent && (
           <button
             onClick={toggleExpand}
-            className="mt-4 text-purple-600 hover:text-purple-800 font-medium transition-colors duration-300 flex items-center space-x-1 self-start"
+            className="mt-4 text-[#CDB697] hover:text-[#CDB697] font-medium transition-colors duration-300 flex items-center space-x-1 self-start"
           >
             <span>{isExpanded ? t('ui.showLess') : t('ui.learnMore')}</span>
             <span className={`transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>

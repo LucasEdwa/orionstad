@@ -37,7 +37,7 @@ export const CompanyValues = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-4 animate-fade-in-up animation-delay-200">
             {valuesData.subtitle}
           </p>
-          <p className="text-lg text-purple-600 font-medium animate-fade-in-up animation-delay-300">
+          <p className="text-lg text-gray-600 font-medium animate-fade-in-up animation-delay-300">
             {valuesData.description}
           </p>
         </div>

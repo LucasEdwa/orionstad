@@ -15,14 +15,14 @@ export const AboutSectionCard = memo<AboutSectionProps>(({ section, index }) => 
     <section
       className={`
         ${isHighlighted
-          ? 'bg-orion-gradient text-white'
+          ? 'bg-orion-gradient'
           : 'bg-white'
         }
         rounded-3xl shadow-xl p-8 md:p-12 
         ${animationService.getCardHoverClass()}
         ${animationService.getSectionAnimationClass(index)}
         ${index % 2 === 1 ? 'lg:ml-12' : 'lg:mr-12'}
-        border ${isHighlighted ? 'border-purple-500' : 'border-gray-100'}
+        border ${isHighlighted ? 'border-[#CDB697]' : 'border-gray-100'}
         relative overflow-hidden
       `}
       style={{ animationDelay: animationService.getStaggeredDelay(index) }}
@@ -36,7 +36,7 @@ export const AboutSectionCard = memo<AboutSectionProps>(({ section, index }) => 
         <div className="flex items-center mb-8">
           {section.icon && (
             <div className={`text-4xl mr-4 ${isHighlighted ? 'filter drop-shadow-lg ' : ''}`}>
-              <img src={section.icon} alt={section.title} className={`w-28 border ${isHighlighted ? 'border-white' : 'border-purple-300'} rounded-b-full`} />
+              <img src={section.icon} alt={section.title} className={`w-28 `} />
             </div>
           )}
           <h2 className={`text-3xl md:text-4xl font-bold ${isHighlighted ? 'text-white' : 'text-gray-800'

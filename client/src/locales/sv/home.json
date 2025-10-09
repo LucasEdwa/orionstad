@@ -49,6 +49,7 @@
   },
   "customerForm": {
     "title": "Kundinformation",
+    "intro": "Vänligen ange din kontaktinformation för att slutföra bokningen.",
     "fields": [
       { "type": "text", "placeholder": "Fullständigt namn", "name": "fullName" },
       { "type": "email", "placeholder": "E-postadress", "name": "email" },

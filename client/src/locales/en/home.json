@@ -50,6 +50,7 @@
   },
   "customerForm": {
     "title": "Customer Information",
+    "intro": "Please provide your contact information to complete the booking.",
     "fields": [
       { "type": "text", "placeholder": "Full Name", "name": "fullName" },
       { "type": "email", "placeholder": "Email Address", "name": "email" },

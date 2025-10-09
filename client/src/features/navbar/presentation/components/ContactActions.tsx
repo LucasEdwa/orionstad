@@ -14,7 +14,7 @@ export const ContactActions = memo<ContactActionsProps>(({ contactInfo, isScroll
         href={`tel:${contactInfo.phone}`}
         className={`p-2 rounded-full transition-all duration-200 ${
           isScrolled 
-            ? 'text-gray-600 hover:text-purple-600 hover:bg-purple-50' 
+            ? 'text-gray-600 hover:text-gray-900 hover:bg-purple-50' 
             : 'text-white hover:text-purple-200 hover:bg-white/10'
         }`}
         title="Call us"

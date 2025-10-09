@@ -37,7 +37,7 @@ export const Dropdown = memo(({ options, value, onChange, label, icon, id }: Dro
         onClick={() => setIsOpen(prev => !prev)}
         aria-expanded={isOpen}
         aria-controls={`${id}-dropdown`}
-        className="w-full px-4 py-3 border text-left border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+        className="w-full px-4 py-3 border text-left border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#CDB697] focus:border-transparent transition-all duration-200"
         tabIndex={0}
       >
         {selectedLabel}

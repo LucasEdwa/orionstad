@@ -38,7 +38,7 @@ export const ServicesHero = memo<ServicesHeroProps>(({ hero }) => {
     <header className="w-full max-w-6xl mx-auto text-center pt-20 pb-12">
       {/* Animated Logo */}
       <div className="relative mb-8">
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 blur-xl opacity-30 animate-pulse"></div>
+        <div className="absolute inset-0 rounded-full  blur-xl opacity-30 animate-pulse"></div>
         <img
           src={hero.logoAlt ? orionLogo : ''}
           alt={hero.logoAlt}
@@ -47,7 +47,7 @@ export const ServicesHero = memo<ServicesHeroProps>(({ hero }) => {
       </div>
 
       {/* Title with Gradient */}
-      <h1 className="text-5xl xl:text-7xl font-extrabold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent drop-shadow-sm">
+      <h1 className="text-5xl xl:text-7xl font-extrabold mb-6 text-gray-800 drop-shadow-sm">
         {hero.title}
       </h1>
       

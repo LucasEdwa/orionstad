@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   const { footerData, reviewsWidget } = useFooterData();
 
   return (
-    <footer className="bg-orion-gradient text-white">
+    <footer className="bg-white text-gray-800">
       {/* Reviews Widget */}
       <ReviewsWidget widget={reviewsWidget} />
 

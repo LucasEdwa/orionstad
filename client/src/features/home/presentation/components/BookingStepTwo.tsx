@@ -37,7 +37,7 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ onSubmit, isSubm
 
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">{t("customerForm.title")}</h2>
-        <p className="text-gray-600">Please provide your contact information to complete the booking.</p>
+        <p className="text-gray-600">{t("customerForm.intro")}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -51,7 +51,7 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ onSubmit, isSubm
               type={field.type}
               id={field.name}
               placeholder={`Enter your ${field.placeholder.toLowerCase()}...`}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#CDB697] focus:border-transparent transition-all duration-200"
               required={['fullName', 'email', 'phone', 'address'].includes(field.name)}
               value={customerForm[field.name] || ""}
               onChange={handleCustomerChange}

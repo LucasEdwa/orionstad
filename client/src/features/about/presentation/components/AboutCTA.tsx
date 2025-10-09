@@ -33,7 +33,7 @@ export const AboutCTA = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up delay-500">
             <Link 
               to="/#booking" 
-              className="bg-white text-purple-600 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 inline-block text-center shadow-xl hover:shadow-2xl"
+              className="bg-white text-[#CDB697] px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 inline-block text-center shadow-xl hover:shadow-2xl"
             >
               {t('cta.primaryButton')}
             </Link>
@@ -46,7 +46,7 @@ export const AboutCTA = () => {
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-purple-100">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-white animate-fade-in-up delay-700">
             {trusts.map((trust, index) => (
               <div key={index} className="flex items-center justify-center space-x-3">
                 <img src={trustImages[index]} alt={trust.title} className="w-40" />

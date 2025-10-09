@@ -11,13 +11,13 @@ export const BookingBenefits = ({ benefits }: BookingBenefitsProps) => {
   return (
     <div className="space-y-6">
       {/** Benefits Section */}
-      <div className="bg-orion-gradient rounded-2xl shadow-lg p-8 text-white">
+      <div className="bg-white rounded-2xl shadow-lg p-8 text-gray-800">
         <h3 className="text-2xl font-bold mb-6">{t("benefits.title")}</h3>
         <div className="space-y-4">
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-center space-x-3">
-              <FaCheckCircle className="w-5 h-5 text-white flex-shrink-0"  />
-              <span className="text-purple-100">{benefit}</span>
+              <FaCheckCircle className="w-5 h-5 text-gray-800 flex-shrink-0"  />
+              <span className="text-gray-800">{benefit}</span>
             </div>
           ))}
         </div>
@@ -31,23 +31,23 @@ export const BookingBenefits = ({ benefits }: BookingBenefitsProps) => {
         <div className="space-y-3">
           <a
             href="tel:+4670418097"
-            className="flex items-center space-x-3 text-purple-400 hover:text-purple-700 transition-colors"
+            className="flex items-center space-x-3 text-gray-800 hover:text-gray-700 transition-colors"
           >
-            <div className="bg-purple-100 p-2 rounded-full">
+            <div className=" p-2 rounded-full">
               <FaCheckCircle className="w-4 h-4" />
             </div>
-            <span className="font-medium">{t("benefits.quickContact.call")}</span>
+            <span className="font-medium text-gray-800">{t("benefits.quickContact.call")}</span>
           </a>
           <a
             href="https://wa.me/message/I6GQY6OWYB5FH1"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-3 text-purple-400 hover:text-green-700 transition-colors"
+            className="flex items-center space-x-3 text-gray-800 hover:text-green-700 transition-colors"
           >
-            <div className="bg-purple-100 p-2 rounded-full">
+            <div className="p-2 rounded-full">
               <FaCheckCircle className="w-4 h-4" />
             </div>
-            <span className="font-medium">{t("benefits.quickContact.whatsapp")}</span>
+            <span className="font-medium text-gray-800">{t("benefits.quickContact.whatsapp")}</span>
           </a>
         </div>
       </div>
