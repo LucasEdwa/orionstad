@@ -1,5 +1,4 @@
 import { Outlet } from "react-router";
-import { AnimatedNavbar } from "../components/AnimatedNavbar";
 import { Footer } from "../features/footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -39,7 +38,6 @@ export const Layout = () => {
           `,
         }}
       />
-      <AnimatedNavbar />
       <Outlet />
       <Footer />
       
