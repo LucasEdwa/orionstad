@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import respectImg from '../../../../assets/WEBSITE SYMBOLS/Respect.png';
-import excellenceImg from '../../../../assets/WEBSITE SYMBOLS/EXCELLENCE.png';
-import transformationImg from '../../../../assets/WEBSITE SYMBOLS/TRANSFORMATION.png';
-import connectionImg from '../../../../assets/WEBSITE SYMBOLS/CONNECTION.png';
-import integrityImg from '../../../../assets/WEBSITE SYMBOLS/INTEGRITY.png';
-import presenceImg from '../../../../assets/WEBSITE SYMBOLS/PRESENCE.png';
+import excellenceImg from '../../../../assets/WEBSITE SYMBOLS/Excellence.png';
+import transformationImg from '../../../../assets/WEBSITE SYMBOLS/Transformation.png';
+import connectionImg from '../../../../assets/WEBSITE SYMBOLS/Connection.png';
+import integrityImg from '../../../../assets/WEBSITE SYMBOLS/Integrity.png';
+import presenceImg from '../../../../assets/WEBSITE SYMBOLS/presence.png';
 
 export const CompanyValues = () => {
   const { t } = useTranslation('about');
