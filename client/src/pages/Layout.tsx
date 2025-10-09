@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 import { Footer } from "../features/footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import  { AnimatedNavbar } from "../components/AnimatedNavbar";
+import  { AnimatedNavbar } from "../components/AnimatedNav";
 
 
 
