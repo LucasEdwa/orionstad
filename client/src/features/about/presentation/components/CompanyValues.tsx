@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import respectImg from '../../../../assets/WEBSITE SYMBOLS/RESPECT.png';
+import respectImg from '../../../../assets/WEBSITE SYMBOLS/Respect.png';
 import excellenceImg from '../../../../assets/WEBSITE SYMBOLS/EXCELLENCE.png';
 import transformationImg from '../../../../assets/WEBSITE SYMBOLS/TRANSFORMATION.png';
 import connectionImg from '../../../../assets/WEBSITE SYMBOLS/CONNECTION.png';
