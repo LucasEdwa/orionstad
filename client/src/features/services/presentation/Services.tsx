@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useServicesData } from './hooks/useServicesData';
 import { ServicesHero } from './components/ServicesHero';
 import { ServicesGrid } from './components/ServicesGrid';
-import { ServicesStats } from './components/ServicesStats';
+// import { ServicesStats } from './components/ServicesStats';
 import { ServicesCTA } from './components/ServicesCTA';
 
 export const Services = () => {
@@ -20,7 +20,7 @@ export const Services = () => {
       </div>
 
       {/* Stats Section */}
-      <ServicesStats />
+      {/* <ServicesStats /> */}
 
       {/* Services Grid Section */}
       <div className="py-16 px-4">

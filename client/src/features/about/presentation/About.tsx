@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAboutData } from './hooks/useAboutData';
 import { AboutHeroSection } from './components/AboutHeroSection';
-import { AboutStats } from './components/AboutStats';
+// import { AboutStats } from './components/AboutStats';
 import { CompanyValues } from './components/CompanyValues';
 import { AboutSectionCard } from './components/AboutSectionCard';
 import { AboutCTA } from './components/AboutCTA';
@@ -14,8 +14,8 @@ export const About: React.FC = () => {
       {/* Hero Section */}
       <AboutHeroSection hero={hero} />
 
-      {/* Stats Section */}
-      <AboutStats />
+      {/* Stats Section
+      <AboutStats /> */}
 
       {/* Company Values */}
       <CompanyValues />

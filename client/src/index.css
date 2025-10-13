@@ -1,7 +1,9 @@
 /* Custom utility for Orion gradient background */
+/* Classy & chic Orion gradient */
 .bg-orion-gradient {
-  background: linear-gradient(90deg,  #CDB697 0%, #98754C 100%);
+  background: linear-gradient(90deg,  #BFAE9F 0%, #E3D5C6 100%);
 }
+
 
 /* Orion Städ custom gradient variable */
 :root {

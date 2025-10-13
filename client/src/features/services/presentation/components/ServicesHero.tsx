@@ -35,14 +35,14 @@ export const ServicesHero = memo<ServicesHeroProps>(({ hero }) => {
   ];
 
   return (
-    <header className="w-full max-w-6xl mx-auto text-center pt-20 pb-12">
+    <header className="w-full max-w-6xl mx-auto text-center pt-20 pb-12 bg-orion-gradient">
       {/* Animated Logo */}
       <div className="relative mb-8">
         <div className="absolute inset-0 rounded-full  blur-xl opacity-30 animate-pulse"></div>
         <img
           src={hero.logoAlt ? orionLogo : ''}
           alt={hero.logoAlt}
-          className="relative mx-auto w-28 h-28 xl:w-44 xl:h-44 rounded-full shadow-2xl bg-white object-contain transform hover:scale-110 transition-transform duration-500 border-4 border-white"
+          className="relative mx-auto w-28 h-28 xl:w-44 xl:h-44 rounded-full shadow-2xl  object-contain transform hover:scale-110 transition-transform duration-500 border-4 border-white"
         />
       </div>
 

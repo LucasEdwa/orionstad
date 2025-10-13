@@ -58,15 +58,15 @@ export const HeroContentSection = memo<HeroContentProps>(({
         <div className="mt-12 animate-fadeInUp delay-600">
           <div className="flex flex-wrap justify-center items-center gap-6 text-white/80">
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-white rounded-full"></div>
               <span className="text-sm md:text-base">{t('hero.licensedInsured')}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-white rounded-full"></div>
               <span className="text-sm md:text-base">{t('hero.fiveStarService')}</span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-white rounded-full"></div>
               <span className="text-sm md:text-base">{t('hero.eco-friendly')}</span>
             </div>
           </div>

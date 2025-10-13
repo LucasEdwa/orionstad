@@ -53,7 +53,7 @@ export const CompanyValues = () => {
                 <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
                   <img src={images[index]} alt={value.title} className="w-30 mx-auto" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-gray-800 mb-4 group-hover:text-[#ad7d65] transition-colors duration-300">
                   {value.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
