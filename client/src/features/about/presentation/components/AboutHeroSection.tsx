@@ -13,7 +13,7 @@ export const AboutHeroSection = memo<AboutHeroProps>(({ hero }) => {
     <div className="relative flex flex-col justify-center min-h-[70vh] xl:min-h-[80vh] overflow-hidden">
       {/* Background with parallax effect */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center"
         style={assetsRepository.getHeroBackgroundStyle()}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40  z-10"></div>

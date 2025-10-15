@@ -102,7 +102,7 @@ export const ServiceCard = memo<ServiceCardProps>(({
         </h2>
         
         {/* Content preview/expanded */}
-        <div className={`flex-1 transition-all duration-300 ${isExpanded ? '' : 'line-clamp-4'}`}>
+  <div className={`flex-1 transition-all duration-300 ${isExpanded ? '' : 'md:line-clamp-4'}`}>
           {(() => {
             let totalItemsShown = 0;
             const maxItemsInPreview = 3;
