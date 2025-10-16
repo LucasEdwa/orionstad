@@ -12,14 +12,14 @@ export const ContactHeroSection = memo<ContactHeroProps>(({ hero }) => {
   return (
     <div className="relative flex flex-col justify-center min-h-[60vh] xl:min-h-[70vh]">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0  bg-center"
         style={assetsRepository.getHeroBackgroundStyle()}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40  z-10"></div>
         <img
           src={assetsRepository.getOrionLogo()}
           alt={hero.logoAlt}
-          className="absolute top-6 left-6 w-20 h-20 xl:w-32 xl:h-32 rounded-full shadow-lg z-20 border-4 border-white/20"
+          className="absolute top-6 left-6 w-20 h-20 xl:w-32 xl:h-32 rounded-full object-cover shadow-lg z-20 border-4 border-white/20"
         />
       </div>
       

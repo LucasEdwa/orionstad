@@ -30,7 +30,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
         <div className="p-6 shadow-md bg-orion-gradient">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-12 rounded-full shadow-lg" />
+              <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-15 rounded-full object-cover shadow-lg" />
               <div>
                 <h2 className="text-white font-bold text-lg">{brandInfo.name}</h2>
                 <p className="text-gray-100 text-sm italic">{brandInfo.tagline}</p>
