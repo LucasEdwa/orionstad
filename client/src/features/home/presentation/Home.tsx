@@ -14,6 +14,7 @@ import { BookingBenefits } from "./components/BookingBenefits";
 // Hooks
 import { useBookingSubmission } from "./hooks/useBookingSubmission";
 import { useFeatures } from "./hooks/useFeatures";
+import  { AutoPromotionLoop } from "../../../components/AutoPromotionLoop";
 
 const Home = () => {
   const step = useSelector((state: RootState) => state.booking.step);
@@ -34,6 +35,7 @@ const Home = () => {
       {/* Hero Section */}
       <div className="relative bg-gray-50">
         <Hero />
+        <AutoPromotionLoop />
       </div>
 
       {/* Main Content */}

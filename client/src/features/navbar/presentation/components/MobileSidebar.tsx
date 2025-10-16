@@ -1,3 +1,4 @@
+import React from "react";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import type { NavLink, ContactInfo, BrandInfo } from "../../domain/entities/NavLink";
 import { memo } from "react";
@@ -19,12 +20,24 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
   brandInfo
 }) => {
   const { t } = useTranslation('navbar');
+    // Prevent body scroll when sidebar is open
+    React.useEffect(() => {
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }, [isOpen]);
   return (
     <>
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-screen w-80 bg-orion-gradient shadow-2xl transform ${isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 left-0 w-80 bg-orion-gradient shadow-2xl transform ${isOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-out z-[100] lg:hidden`}
+        style={{ height: '100dvh' }}
       >
         {/* Sidebar Header */}
         <div className="p-6 shadow-md bg-orion-gradient">
