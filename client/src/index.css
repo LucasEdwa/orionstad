@@ -5,57 +5,11 @@ body, #root {
 /* Promo shine text gradient */
 /* Improved readable gold gradient for promo text */
 /* High-contrast gold-white gradient for promo text */
-.promo-shine-text {
-  background: linear-gradient(90deg, #FFD700, #fff, #FFD700);
-  background-size: 200% 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  animation: shine-gold 3s linear infinite;
-}
 
-@keyframes shine-gold {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-@keyframes promo-marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-promo-marquee {
-  animation: promo-marquee 18s linear infinite;
-}
-@keyframes promo-slide {
-  0% {
-    transform: translateX(100%);
-    opacity: 0.5;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.animate-promo-slide {
-  animation: promo-slide 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
 /* Custom utility for Orion gradient background */
 /* Classy & chic Orion gradient */
 .bg-orion-gradient {
-  background: linear-gradient(90deg,  #BFAE9F 0%, #E3D5C6 100%);
+  background: linear-gradient(90deg,  #d2b093 0%, #e2d8cc 100%);
 }
 
 
@@ -127,7 +81,17 @@ body, #root {
     transform: translateY(-10px);
   }
 }
-
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
 .animate-slide-in-left {
   animation: slide-in-left 0.8s ease-out;
 }

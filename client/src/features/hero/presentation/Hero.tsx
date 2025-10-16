@@ -39,8 +39,8 @@ export const Hero = () => {
       />
       
       {/* Enhanced gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50 z-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FFD700/30] via-transparent to-[rgba(0,0,0,0.5)] z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700/30] to-transparent z-10"></div>
 
       {/* Video controls */}
       {!showLogo && (

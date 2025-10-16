@@ -13,7 +13,7 @@ export const BrandLogo = memo<BrandLogoProps>(({ brandInfo, isScrolled }) => {
         <img 
           src={brandInfo.logoSrc} 
           alt={`${brandInfo.name} Logo`} 
-          className="h-10 w-10 rounded-full shadow-md group-hover:scale-105 transition-transform duration-200" 
+          className="h-10 w-20 rounded-full group-hover:scale-105 transition-transform duration-200 object-cover" 
         />
         <div className="flex flex-col">
           <span className={`font-bold text-lg leading-tight transition-colors duration-300 ${

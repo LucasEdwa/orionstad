@@ -35,22 +35,22 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
     <>
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 w-80 bg-orion-gradient shadow-2xl transform ${isOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed top-0 left-0 w-80 bg-white shadow-2xl transform ${isOpen ? "translate-x-0" : "-translate-x-full"
           } transition-transform duration-300 ease-out z-[100] lg:hidden`}
         style={{ height: '100dvh' }}
       >
         {/* Sidebar Header */}
-        <div className="p-6 shadow-md bg-orion-gradient">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-15 rounded-full object-cover shadow-lg" />
-              <div>
-                <h2 className="text-white font-bold text-lg">{brandInfo.name}</h2>
-                <p className="text-gray-100 text-sm italic">{brandInfo.tagline}</p>
+        <div className="p-6  bg-gray-50">
+          <div className="flex items-center justify-center">
+            <div className="flex flex-col items-center space-x-3 relative">
+              <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-54 w-86 rounded-full object-fill" />
+              <div className="w-full text-center mt-2">
+                <h2 className="text-[#d2b093] font-bold text-lg">{brandInfo.name}</h2>
+                <p className="text-gray-600 text-sm italic">{brandInfo.tagline}</p>
               </div>
             </div>
             <button
-              className="text-white hover:text-purple-200 transition-colors p-2"
+              className="text-gray-800 hover:text-gray-600 transition-colors p-2 absolute top-0 right-0"
               onClick={onClose}
               aria-label="Close menu"
             >
@@ -62,13 +62,13 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
         </div>
 
         {/* Sidebar Navigation */}
-        <div className="p-6">
-          <ul className="space-y-4">
+        <div className="p-6 bg-gray-50">
+          <ul className="space-y-4 ">
             {links.map(link => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="flex items-center space-x-3 text-white hover:text-purple-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200 group"
+                  className="flex items-center space-x-3 text-gray-800 hover:text-gray-600 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200 group"
                   onClick={onClose}
                 >
                   <span className="w-1 h-1 bg-orion-gradient rounded-full group-hover:bg-white transition-colors"></span>
@@ -83,7 +83,7 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
             <div className="space-y-4">
               <a
                 href={`tel:${contactInfo.phone}`}
-                className="flex items-center space-x-3 text-white hover:text-purple-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
+                className="flex items-center space-x-3 text-gray-800 hover:text-gray-600 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
               >
                 <FaPhone className="w-4 h-4" />
                 <span>{t("contactAction.label")}</span>
@@ -92,14 +92,14 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
                 href={contactInfo.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-white hover:text-green-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
+                className="flex items-center space-x-3 text-gray-800 hover:text-green-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
               >
                 <FaWhatsapp className="w-4 h-4" />
                 <span>WhatsApp</span>
               </a>
               <a
                 href="/#booking"
-                className="block w-full bg-white text-gray-800 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-50 transition-colors duration-200 shadow-lg"
+                className="block w-full bg-orion-gradient text-gray-800 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-50 transition-colors duration-200 shadow-lg"
                 onClick={onClose}
               >
                 {contactInfo.bookNow}

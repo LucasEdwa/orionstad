@@ -1,4 +1,14 @@
 {
+  "marketingPromo": {
+    "title": "¡20% de descuento para nuevos clientes!",
+    "description": "Comienza este otoño con un hogar más saludable y feliz. Disfruta de un 20% de descuento en tu primera limpieza y regala a tu familia bienestar y tranquilidad."
+  },
+  "autumnPromotionMessages": [
+    " Promoción de otoño: ¡20% de descuento en todos los servicios de limpieza para nuevos clientes!",
+    "¡Reserva ahora y disfruta de un hogar reluciente este otoño!",
+  "Solo por esta temporada: transforma tu hogar y ahorra con nuestra oferta especial de otoño. Aprovecha la oportunidad de renovar tu espacio y sentir la diferencia de una limpieza profesional.",
+  "Elige limpieza ecológica y disfruta de un ambiente cálido, saludable y acogedor este otoño. Nuestro equipo utiliza productos sostenibles para cuidar de tu familia y del planeta."
+  ],
   "hero": {
     "welcome": "Bienvenido a Orion Städ",
     "subtitle": "Su socio de confianza para servicios de limpieza profesional",

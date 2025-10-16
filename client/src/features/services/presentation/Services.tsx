@@ -12,8 +12,8 @@ export const Services = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Hero Section */}
-      <div className="relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-blue-100 opacity-50"></div>
+      <div className="relative overflow-hidden ">
+        <div className="absolute inset-0 "></div>
         <div className="relative flex flex-col items-center justify-center text-gray-800 pb-16">
           <ServicesHero hero={hero} />
         </div>

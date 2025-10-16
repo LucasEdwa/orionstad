@@ -1,4 +1,14 @@
 {
+  "marketingPromo": {
+    "title": "20% Off for New Customers!",
+    "description": "Start this autumn with a healthier, happier home. Enjoy 20% off your first cleaning and give your family the gift of well-being and peace of mind."
+  },
+  "autumnPromotionMessages": [
+    " Autumn Promotion: 20% off all cleaning services for new clients!",
+    "Book now and enjoy a sparkling home this fall!",
+  "For a limited time only: transform your home and save with our special autumn offer. Experience the comfort and freshness of a professionally cleaned space.",
+  "Choose eco-friendly cleaning and enjoy a warm, healthy, and inviting home this autumn. Our team uses sustainable products to care for your family and the planet."
+  ],
   "hero": {
     "welcome": "Welcome to Orion Städ",
     "subtitle": "Your trusted partner for professional cleaning services",
@@ -105,5 +115,6 @@
       "100% satisfaction guarantee",
       "Same cleaner for consistency and trust"
     ]
+  
   }
 }

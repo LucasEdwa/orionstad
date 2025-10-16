@@ -1,4 +1,14 @@
 {
+  "marketingPromo": {
+    "title": "20% rabatt för nya kunder!",
+    "description": "Börja hösten med ett friskare och lyckligare hem. Få 20% rabatt på din första städning och ge din familj välbefinnande och sinnesro."
+  },
+  "autumnPromotionMessages": [
+    "Höstkampanj: 20% rabatt på alla städtjänster för nya kunder!",
+    "Boka nu och njut av ett skinande rent hem i höst!",
+  "Endast denna säsong: förvandla ditt hem och spara med vårt speciella hösterbjudande. Ta chansen att uppleva skillnaden med professionell städning.",
+  "Välj miljövänlig städning och njut av ett varmt, hälsosamt och inbjudande hem i höst. Vårt team använder hållbara produkter för att ta hand om din familj och miljön."
+  ],
   "hero": {
     "welcome": "Välkommen till Orion Städ",
     "subtitle": "Din pålitliga partner för professionella städtjänster",

@@ -35,19 +35,19 @@ export const ServicesHero = memo<ServicesHeroProps>(({ hero }) => {
   ];
 
   return (
-    <header className="w-full max-w-6xl mx-auto text-center pt-20 pb-12 bg-orion-gradient">
+    <header className="w-full max-w-6xl mx-auto text-center pt-20 pb-12 ">
       {/* Animated Logo */}
       <div className="relative mb-8">
         <div className="absolute inset-0 rounded-full  blur-xl opacity-30 animate-pulse"></div>
         <img
           src={hero.logoAlt ? orionLogo : ''}
           alt={hero.logoAlt}
-          className="relative mx-auto w-28 h-28 xl:w-44 xl:h-44 rounded-full shadow-2xl  object-contain transform hover:scale-110 transition-transform duration-500 border-4 border-white"
+          className="relative mx-auto w-48 h-48 xl:w-44 xl:h-44 rounded-full object-contain transform hover:scale-110 transition-transform duration-500 "
         />
       </div>
 
       {/* Title with Gradient */}
-      <h1 className="text-5xl xl:text-7xl font-extrabold mb-6 text-gray-800 drop-shadow-sm">
+      <h1 className="text-5xl xl:text-7xl font-extrabold mb-6 text-[#d2b093] drop-shadow-sm">
         {hero.title}
       </h1>
       
