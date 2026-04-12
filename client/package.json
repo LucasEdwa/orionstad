@@ -11,7 +11,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test:e2e": "start-server-and-test dev http://localhost:5173 cypress:run",
-    "test:e2e:open": "start-server-and-test dev http://localhost:5173 cypress:open"
+    "test:e2e:open": "start-server-and-test dev http://localhost:5173 cypress:open",
+    "prepare": "husky"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -38,9 +39,14 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "start-server-and-test": "^2.0.13",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.30.1",
     "vite": "^6.3.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --max-warnings 0"
   }
 }
