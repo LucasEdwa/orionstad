@@ -38,7 +38,7 @@ export class TermsOfServiceService {
     }
   }
 
-  getSectionColorScheme(_type: string): { from: string; to: string } {
+  getSectionColorScheme(): { from: string; to: string } {
     return { from: 'from-[#3C0C0C]', to: 'to-[#98754C]' };
   }
 

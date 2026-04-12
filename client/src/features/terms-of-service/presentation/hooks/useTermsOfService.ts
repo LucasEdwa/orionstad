@@ -20,8 +20,8 @@ export const useTermsOfService = () => {
     navigate(-1);
   };
 
-  const getSectionColorScheme = (type: string) => {
-    return service.getSectionColorScheme(type);
+  const getSectionColorScheme = () => {
+    return service.getSectionColorScheme();
   };
 
   return {

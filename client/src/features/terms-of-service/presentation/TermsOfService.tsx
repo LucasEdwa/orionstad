@@ -32,7 +32,7 @@ export const TermsOfService = () => {
             <TermsSectionCard
               key={section.id}
               section={section}
-              colorScheme={getSectionColorScheme(section.type)}
+              colorScheme={getSectionColorScheme()}
             />
           ))}
           
