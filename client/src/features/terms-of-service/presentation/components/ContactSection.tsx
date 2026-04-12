@@ -19,9 +19,9 @@ export const ContactSection = ({ actions }: ContactSectionProps) => {
 
   const getButtonStyles = (action: ContactAction): string => {
     if (action.primary) {
-      return "bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2";
+      return "bg-[#3C0C0C] hover:bg-[#5a1a1a] text-white px-8 py-3 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2";
     }
-    return "bg-white hover:bg-gray-50 text-purple-600 border-2 border-purple-600 px-8 py-3 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2";
+    return "bg-white hover:bg-gray-50 text-[#3C0C0C] border-2 border-[#3C0C0C] px-8 py-3 rounded-full font-semibold transition-colors inline-flex items-center justify-center gap-2";
   };
 
   const getIcon = (action: ContactAction) => {
@@ -32,7 +32,7 @@ export const ContactSection = ({ actions }: ContactSectionProps) => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-2xl p-8 text-center">
+    <div className="bg-gradient-to-r from-[#f5efe8] to-[#f9f5f0] rounded-2xl p-8 text-center">
       <h3 className="text-2xl font-bold text-gray-800 mb-4">Questions About Our Terms?</h3>
       <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
         We're always happy to clarify anything! Feel free to reach out if you have 

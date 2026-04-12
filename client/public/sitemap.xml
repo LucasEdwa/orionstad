@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.orionstad.se/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.orionstad.se/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orionstad.se/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orionstad.se/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.orionstad.se/" />
+  </url>
+  <url>
+    <loc>https://www.orionstad.se/services</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.orionstad.se/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orionstad.se/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orionstad.se/services" />
+  </url>
+  <url>
+    <loc>https://www.orionstad.se/about</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.orionstad.se/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orionstad.se/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orionstad.se/about" />
+  </url>
+  <url>
+    <loc>https://www.orionstad.se/contact</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.orionstad.se/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orionstad.se/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orionstad.se/contact" />
+  </url>
+  <url>
+    <loc>https://www.orionstad.se/booking</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.orionstad.se/booking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.orionstad.se/booking" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.orionstad.se/booking" />
+  </url>
+  <url>
+    <loc>https://www.orionstad.se/terms-of-service</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

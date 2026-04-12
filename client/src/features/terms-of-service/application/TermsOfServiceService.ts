@@ -38,15 +38,8 @@ export class TermsOfServiceService {
     }
   }
 
-  getSectionColorScheme(type: string): { from: string; to: string } {
-    switch (type) {
-      case 'privacy':
-        return { from: 'from-purple-600', to: 'to-purple-500' };
-      case 'terms':
-        return { from: 'from-blue-600', to: 'to-blue-500' };
-      default:
-        return { from: 'from-green-600', to: 'to-green-500' };
-    }
+  getSectionColorScheme(_type: string): { from: string; to: string } {
+    return { from: 'from-[#3C0C0C]', to: 'to-[#98754C]' };
   }
 
   handleGoBack(): void {

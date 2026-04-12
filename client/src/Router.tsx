@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { Layout } from './pages/Layout';
 import { NotFound } from './pages/NotFound';
 import { Home } from './pages/Home';
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       {path: "/about", element: <About /> },
       {path: "/contact", element: <Contact /> },
       { path: "/terms-of-service", element: <TermsOfService /> },
-      { path: "/privacy-policy", element: <TermsOfService /> },
+      { path: "/privacy-policy", element: <Navigate to="/terms-of-service" replace /> },
       { path: "/booking", element: <Booking /> },
     ],
   },

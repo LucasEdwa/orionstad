@@ -16,7 +16,7 @@ export const TermsOfService = () => {
   } = useTermsOfService();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#f9f5f0] via-white to-[#f5efe8]">
       <TermsHeader
         title={termsContent.title}
         description={termsContent.description}
