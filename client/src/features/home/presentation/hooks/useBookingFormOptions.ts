@@ -1,4 +1,4 @@
-import { useMemo, useEffect } from 'react';
+import { useMemo, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { setBookingForm } from '../../../../store/bookingSlice';
@@ -8,6 +8,8 @@ export const useBookingFormOptions = () => {
   const { t } = useTranslation("home");
   const dispatch = useDispatch();
   const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
+  const bookingFormRef = useRef(bookingForm);
+  bookingFormRef.current = bookingForm;
 
   const serviceOptions = useMemo(
     () => t("bookingForm.serviceOptions", { returnObjects: true }) as Array<{ value: string; label: string }>,
@@ -30,26 +32,27 @@ export const useBookingFormOptions = () => {
 
   useEffect(() => {
     // Only set initial values if both options are loaded and we don't have values yet
+    const current = bookingFormRef.current;
     if (serviceOptions.length > 0 && frequencyOptions.length > 0) {
-      const updates: Partial<typeof bookingForm> = {};
+      const updates: Partial<typeof current> = {};
       
-      if (!bookingForm.serviceType) {
+      if (!current.serviceType) {
         updates.serviceType = serviceOptions[0].value;
       }
       
-      if (!bookingForm.frequency || !frequencyOptions.find(opt => opt.value === bookingForm.frequency)) {
+      if (!current.frequency || !frequencyOptions.find(opt => opt.value === current.frequency)) {
         updates.frequency = frequencyOptions[0].value;
       }
 
       // Only dispatch if we need to set some initial values
       if (Object.keys(updates).length > 0) {
         dispatch(setBookingForm({
-          ...bookingForm,
+          ...current,
           ...updates
         }));
       }
     }
-  }, [serviceOptions, frequencyOptions]); // Only depend on the options loading, not on form state
+  }, [serviceOptions, frequencyOptions, dispatch]); // Only depend on the options loading, not on form state
 
   return {
     serviceOptions,

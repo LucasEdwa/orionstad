@@ -6,6 +6,7 @@ import {Services} from './pages/Services';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import TermsOfService from './pages/TermsOfService';
+import { Booking } from './pages/Booking';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       {path: "/contact", element: <Contact /> },
       { path: "/terms-of-service", element: <TermsOfService /> },
       { path: "/privacy-policy", element: <TermsOfService /> },
+      { path: "/booking", element: <Booking /> },
     ],
   },
 ]);

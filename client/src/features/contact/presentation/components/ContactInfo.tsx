@@ -14,16 +14,16 @@ export const ContactInfo = memo<ContactInfoProps>(({ contactSection }) => {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-8">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">
+    <div className="bg-white rounded-2xl shadow-lg p-6">
+      <h2 className="text-2xl font-bold text-gray-800 mb-3">
         {contactSection.title}
       </h2>
-      <p className="text-gray-600 mb-6">{contactSection.intro}</p>
+      <p className="text-gray-600 text-sm mb-4">{contactSection.intro}</p>
       
-      <div className="space-y-4">
-        <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-          <div className=" p-3 rounded-full">
-            <FaEnvelope className="w-5 h-5 text-gray-400" />
+      <div className="space-y-3">
+        <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-xl">
+          <div className="p-2 rounded-full">
+            <FaEnvelope className="w-4 h-4 text-gray-400" />
           </div>
           <div>
             <p className="font-semibold text-gray-800">Email</p>
@@ -36,9 +36,9 @@ export const ContactInfo = memo<ContactInfoProps>(({ contactSection }) => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-          <div className=" p-3 rounded-full">
-            <FaPhone className="w-5 h-5 text-gray-400" />
+        <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-xl">
+          <div className="p-2 rounded-full">
+            <FaPhone className="w-4 h-4 text-gray-400" />
           </div>
           <div>
             <p className="font-semibold text-gray-800">Phone</p>
@@ -51,9 +51,9 @@ export const ContactInfo = memo<ContactInfoProps>(({ contactSection }) => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
-          <div className="p-3 rounded-full">
-            <FaMapMarkerAlt className="w-5 h-5 text-gray-400" />
+        <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-xl">
+          <div className="p-2 rounded-full">
+            <FaMapMarkerAlt className="w-4 h-4 text-gray-400" />
           </div>
           <div>
             <p className="font-semibold text-gray-800">Address</p>
@@ -61,9 +61,9 @@ export const ContactInfo = memo<ContactInfoProps>(({ contactSection }) => {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4 p-4 bg-green-50 rounded-xl">
-          <div className="bg-green-100 p-3 rounded-full">
-            <FaWhatsapp className="w-5 h-5 text-green-600" />
+        <div className="flex items-center space-x-3 p-3 bg-green-50 rounded-xl">
+          <div className="bg-green-100 p-2 rounded-full">
+            <FaWhatsapp className="w-4 h-4 text-green-600" />
           </div>
           <div>
             <p className="font-semibold text-gray-800">WhatsApp</p>

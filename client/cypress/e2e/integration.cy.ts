@@ -18,9 +18,9 @@ describe('End-to-End EmailJS Integration Tests', () => {
       cy.get('input[name="fullName"]', { timeout: 5000 }).should('be.visible')
       
       // Mock EmailJS before form submission
-      cy.window().then((win: any) => {
-        if (win.emailjs) {
-          cy.stub(win.emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
+      cy.window().then((win: Window) => {
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
         }
       })
       
@@ -59,9 +59,9 @@ describe('End-to-End EmailJS Integration Tests', () => {
       cy.get('button[type="submit"]').click()
       
       // Mock EmailJS failure
-      cy.window().then((win: any) => {
-        if (win.emailjs) {
-          cy.stub(win.emailjs, 'sendForm').rejects(new Error('Service unavailable'))
+      cy.window().then((win: Window) => {
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').rejects(new Error('Service unavailable'))
         }
       })
       
@@ -88,9 +88,9 @@ describe('End-to-End EmailJS Integration Tests', () => {
       cy.visit('/contact')
       
       // Mock EmailJS
-      cy.window().then((win: any) => {
-        if (win.emailjs) {
-          cy.stub(win.emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
+      cy.window().then((win: Window) => {
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
         }
       })
       
@@ -114,9 +114,9 @@ describe('End-to-End EmailJS Integration Tests', () => {
       cy.visit('/contact')
       
       // Mock EmailJS failure
-      cy.window().then((win: any) => {
-        if (win.emailjs) {
-          cy.stub(win.emailjs, 'sendForm').rejects(new Error('Contact service error'))
+      cy.window().then((win: Window) => {
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').rejects(new Error('Contact service error'))
         }
       })
       
@@ -162,29 +162,30 @@ describe('End-to-End EmailJS Integration Tests', () => {
       // This test checks if EmailJS would work without actually sending
       cy.visit('/')
       
-      cy.window().then((win: any) => {
+      cy.window().then((win: Window) => {
+        const emailjsWin = win as Window & { emailjs?: { sendForm: (...args: unknown[]) => unknown; send: (...args: unknown[]) => unknown } };
         // Check if emailjs is loaded
-        expect(win.emailjs).to.exist
+        expect(emailjsWin.emailjs).to.exist;
         
         // Check if emailjs has required methods
-        expect(win.emailjs.sendForm).to.be.a('function')
-        expect(win.emailjs.send).to.be.a('function')
+        expect(emailjsWin.emailjs!.sendForm).to.be.a('function');
+        expect(emailjsWin.emailjs!.send).to.be.a('function');
       })
     })
 
     it('should have all required environment variables for production', () => {
-      cy.task('checkEnvVars').then((bookingVars: any) => {
+      cy.task('checkEnvVars').then((bookingVars: { serviceId: string; templateId: string; publicKey: string }) => {
         // Verify booking form environment variables
-        expect(bookingVars.serviceId).to.not.equal('not-set')
-        expect(bookingVars.templateId).to.not.equal('not-set')
-        expect(bookingVars.publicKey).to.not.equal('not-set')
+        expect(bookingVars.serviceId).to.not.equal('not-set');
+        expect(bookingVars.templateId).to.not.equal('not-set');
+        expect(bookingVars.publicKey).to.not.equal('not-set');
       })
       
-      cy.task('checkContactEnvVars').then((contactVars: any) => {
+      cy.task('checkContactEnvVars').then((contactVars: { serviceId: string; templateId: string; publicKey: string }) => {
         // Verify contact form environment variables
-        expect(contactVars.serviceId).to.not.equal('not-set')
-        expect(contactVars.templateId).to.not.equal('not-set')
-        expect(contactVars.publicKey).to.not.equal('not-set')
+        expect(contactVars.serviceId).to.not.equal('not-set');
+        expect(contactVars.templateId).to.not.equal('not-set');
+        expect(contactVars.publicKey).to.not.equal('not-set');
       })
     })
   })

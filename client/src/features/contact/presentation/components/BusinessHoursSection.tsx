@@ -8,12 +8,12 @@ interface BusinessHoursProps {
 
 export const BusinessHoursSection = memo<BusinessHoursProps>(({ businessHours }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-8">
-      <div className="flex items-center space-x-3 mb-6">
-        <div className="bg-orion-gradient p-3 rounded-full">
-          <FaClock className="w-5 h-5 text-white" />
+    <div className="bg-white rounded-2xl shadow-lg p-6">
+      <div className="flex items-center space-x-3 mb-4">
+        <div className="bg-orion-gradient p-2 rounded-full">
+          <FaClock className="w-4 h-4 text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-gray-800">{businessHours.title}</h3>
+        <h3 className="text-xl font-bold text-gray-800">{businessHours.title}</h3>
       </div>
       
       <div className="space-y-3">
@@ -27,7 +27,7 @@ export const BusinessHoursSection = memo<BusinessHoursProps>(({ businessHours })
         </div>
       </div>
 
-      <div className="mt-6 p-4 bg-[rgba(205,183,151,0.1)] rounded-xl">
+      <div className="mt-4 p-3 bg-[rgba(205,183,151,0.1)] rounded-xl">
         <p className="text-sm text-gray-700">
           <strong>Note:</strong> {businessHours.note}
         </p>

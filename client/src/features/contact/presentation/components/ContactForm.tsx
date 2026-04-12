@@ -29,22 +29,22 @@ export const ContactForm = memo<ContactFormProps>(({
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-8">
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
+    <div className="bg-white rounded-2xl shadow-lg p-6">
+      <div className="mb-4">
+        <h2 className="text-2xl font-bold text-gray-800 mb-2">
           {formSection.title}
         </h2>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-600 text-sm leading-relaxed">
           {whyContactSection?.paragraphs?.[0]}
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4">
         {(formSection.fields ?? []).map((field, idx) => (
           <div key={idx}>
             <label
               htmlFor={field.name}
-              className="block text-sm font-semibold text-gray-700 mb-2"
+              className="block text-sm font-semibold text-gray-700 mb-1"
             >
               {field.placeholder}
             </label>
@@ -52,8 +52,8 @@ export const ContactForm = memo<ContactFormProps>(({
               <textarea
                 name={field.name}
                 id={field.name}
-                rows={5}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none"
+                rows={3}
+                className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none text-sm"
                 required
                 placeholder={getPlaceholder(field.name, field.placeholder)}
               />
@@ -62,7 +62,7 @@ export const ContactForm = memo<ContactFormProps>(({
                 name={field.name}
                 type={field.type}
                 id={field.name}
-                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-sm"
                 required
                 placeholder={getPlaceholder(field.name, field.placeholder)}
               />
@@ -73,7 +73,7 @@ export const ContactForm = memo<ContactFormProps>(({
         <button 
           type="submit" 
           disabled={isSubmitting}
-          className="w-full bg-orion-gradient text-white py-4 rounded-xl font-semibold hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          className="w-full bg-orion-gradient text-white py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
         >
           {isSubmitting ? (
             <span className="flex items-center justify-center">

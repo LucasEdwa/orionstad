@@ -34,7 +34,7 @@ export const useContactForm = () => {
         setFormState(contactFormService.getErrorState(formState, errorMessage));
         showError(errorMessage);
       }
-    } catch (error) {
+    } catch {
       const errorMessage = 'An unexpected error occurred';
       setFormState(contactFormService.getErrorState(formState, errorMessage));
       showError(errorMessage);

@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import type { ServiceImageCarousel } from '../../domain/entities/ServiceCard';
 import { ServiceCardService } from '../../application/ServiceCardService';
 
 export const useServiceCardCarousel = (imagesCount: number): ServiceImageCarousel & {
   nextImage: () => void;
 } => {
-  const serviceCardService = new ServiceCardService();
+  const serviceCardService = useMemo(() => new ServiceCardService(), []);
   const [carousel, setCarousel] = useState<ServiceImageCarousel>(
     serviceCardService.getInitialCarouselState()
   );

@@ -4,10 +4,11 @@
 export {}
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
     interface Chainable {
-      fillBookingForm(bookingData: any, customerData: any): Chainable<void>
-      fillContactForm(contactData: any): Chainable<void>
+      fillBookingForm(bookingData: { serviceType: string; homeSize: string; frequency: string }, customerData: { fullName: string; email: string; phone: string; address: string; specialInstructions?: string }): Chainable<void>
+      fillContactForm(contactData: { user_name: string; user_email: string; message: string }): Chainable<void>
       mockEmailJS(shouldSucceed?: boolean): Chainable<void>
       handleSweetAlert(expectedType: 'success' | 'error'): Chainable<void>
     }
@@ -49,7 +50,7 @@ Cypress.Commands.add('fillContactForm', (contactData) => {
 // Mock EmailJS command
 Cypress.Commands.add('mockEmailJS', (shouldSucceed = true) => {
   cy.window().then((win) => {
-    const anyWin = win as any
+    const anyWin = win as Window & { emailjs?: { sendForm: unknown } };
     if (anyWin.emailjs) {
       if (shouldSucceed) {
         cy.stub(anyWin.emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })

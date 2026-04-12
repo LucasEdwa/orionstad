@@ -26,7 +26,7 @@ export const Contact: React.FC = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           
           {/* Contact Form */}
           <ContactForm 
@@ -35,7 +35,7 @@ export const Contact: React.FC = () => {
           />
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             
             {/* Contact Details */}
             <ContactInfo contactSection={contactSection} />

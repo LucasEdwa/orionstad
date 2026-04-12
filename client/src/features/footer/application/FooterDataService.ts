@@ -9,15 +9,8 @@ export class FooterDataService {
     };
   }
 
-  organizeFooterData(footerData: any): FooterData {
-    return {
-      companyInfo: footerData.companyInfo,
-      address: footerData.address,
-      copyright: footerData.copyright,
-      links: footerData.links,
-      social: footerData.social,
-      taglineBottom: footerData.taglineBottom
-    };
+  organizeFooterData(footerData: FooterData): FooterData {
+    return footerData;
   }
 
   getSocialIconMap(): Record<string, string> {

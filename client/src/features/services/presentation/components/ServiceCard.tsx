@@ -8,6 +8,7 @@ import { ServiceCardService } from '../../application/ServiceCardService';
 import homeserviceImg from '../../../../assets/home-cleaning.png';
 import officeServiceImg from '../../../../assets/office-cleaning.png';
 import specializedserviceImg from '../../../../assets/customized-service.png';
+import { Link } from 'react-router-dom';
 
 const highlightIcons = {
   home: homeserviceImg,
@@ -161,10 +162,10 @@ export const ServiceCard = memo<ServiceCardProps>(({
         )}
 
         {/* Action button */}
-        <div className="mt-6 pt-4 border-t border-gray-100">
-          <button className="w-full bg-orion-gradient text-white py-3 rounded-xl font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+        <div className="mt-6 pt-4 border-t border-gray-100 flex justify-center">
+          <Link to="/booking" className="w-full bg-orion-gradient text-white py-3 rounded-xl font-semibold text-center transform p-2 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
             {t('ui.getQuote')} {t(service.title)}
-          </button>
+          </Link>
         </div>
       </div>
     </div>

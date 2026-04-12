@@ -4,7 +4,7 @@ import missionValuesImg from "../../../assets/WEBSITE SYMBOLS/Values.png";
 import expertTeamImg from "../../../assets/WEBSITE SYMBOLS/TEAM (2) (1).png";
 import proffTeamImg from "../../../assets/WEBSITE SYMBOLS/Professional Excellence.png";
 import clientExpImg from "../../../assets/WEBSITE SYMBOLS/Client Experience.png";
-import type { AboutPageData, AboutSection, TeamStats, CompanyValues } from '../domain/entities/About';
+import type { AboutPageData, AboutHero, AboutSection, TeamStats, CompanyValues } from '../domain/entities/About';
 
 // Move icons array outside the class for better performance
 const SECTION_ICONS = [
@@ -17,14 +17,14 @@ const SECTION_ICONS = [
 ];
 
 export class AboutDataService {
-  createAboutPageData(hero: any, sections: any[]): AboutPageData {
+  createAboutPageData(hero: AboutHero, sections: AboutSection[]): AboutPageData {
     return {
       hero,
       sections: this.enhanceSections(sections)
     };
   }
 
-  private enhanceSections(sections: any[]): AboutSection[] {
+  private enhanceSections(sections: AboutSection[]): AboutSection[] {
     return sections.map((section, index) => ({
       ...section,
       icon: this.getSectionIcon(index),

@@ -4,7 +4,7 @@ import type { RootState } from '../store';
 
 declare global {
   interface Window {
-    tidioIdentify?: (data: any) => void;
+    tidioIdentify?: (data: Record<string, string>) => void;
     tidioChatApi?: {
       display: (show: boolean) => void;
       open: () => void;

@@ -57,9 +57,9 @@ describe('Contact Form - EmailJS Integration', () => {
   describe('Contact Form Submission with EmailJS', () => {
     it('should successfully submit contact form with EmailJS (mock)', () => {
       // Mock EmailJS to avoid actually sending emails during tests
-      cy.window().then((win: any) => {
-        if (win.emailjs) {
-          cy.stub(win.emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
+      cy.window().then((win: Window) => {
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
         }
       })
 
@@ -91,9 +91,9 @@ describe('Contact Form - EmailJS Integration', () => {
 
     it('should handle EmailJS errors gracefully', () => {
       // Mock EmailJS to simulate error
-      cy.window().then((win: any) => {
-        if (win.emailjs) {
-          cy.stub(win.emailjs, 'sendForm').rejects(new Error('EmailJS service error'))
+      cy.window().then((win: Window) => {
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').rejects(new Error('EmailJS service error'))
         }
       })
 
@@ -121,10 +121,10 @@ describe('Contact Form - EmailJS Integration', () => {
 
     it('should handle missing EmailJS configuration', () => {
       // Mock missing EmailJS configuration
-      cy.window().then((win: any) => {
-        if (win.emailjs) {
+      cy.window().then((win: Window) => {
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
           // Mock the sendForm to simulate configuration error
-          cy.stub(win.emailjs, 'sendForm').rejects(new Error('EmailJS not configured'))
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').rejects(new Error('EmailJS not configured'))
         }
       })
 
@@ -210,10 +210,10 @@ describe('Contact Form - EmailJS Integration', () => {
   describe('EmailJS Environment Variables', () => {
     it('should have EmailJS environment variables configured for contact', () => {
       // Check if environment variables are available via Cypress env
-      cy.task('checkContactEnvVars').then((envVars: any) => {
-        expect(envVars.serviceId).to.exist
-        expect(envVars.templateId).to.exist  
-        expect(envVars.publicKey).to.exist
+      cy.task('checkContactEnvVars').then((envVars: { serviceId: string; templateId: string; publicKey: string }) => {
+        expect(envVars.serviceId).to.exist;
+        expect(envVars.templateId).to.exist;
+        expect(envVars.publicKey).to.exist;
       })
     })
   })

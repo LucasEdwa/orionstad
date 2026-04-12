@@ -10,28 +10,23 @@ export interface FeatureWithIcon extends Feature {
 
 export const useFeatures = () => {
   const { t, ready } = useTranslation("home");
-  const icons = [FaMagic, FaShieldAlt, FaHeart, FaStar];
+  const icons = useMemo(() => [FaMagic, FaShieldAlt, FaHeart, FaStar], []);
 
-  if (!ready) {
-    return {
-      features: undefined,
-      benefits: undefined,
-    };
-  }
-
-  const featuresData = t("features.items", { returnObjects: true }) as Feature[];
-  const benefitsData = t("benefits.items", { returnObjects: true }) as string[];
+  const featuresData = ready ? (t("features.items", { returnObjects: true }) as Feature[]) : undefined;
+  const benefitsData = ready ? (t("benefits.items", { returnObjects: true }) as string[]) : undefined;
 
   const features: FeatureWithIcon[] | undefined = useMemo(() => {
+    if (!featuresData) return undefined;
     return Array.isArray(featuresData) && featuresData.length === 4
       ? featuresData.map((feature, index) => ({
           ...feature,
           icon: icons[index],
         }))
       : undefined;
-  }, [featuresData]);
+  }, [featuresData, icons]);
 
   const benefits: string[] | undefined = useMemo(() => {
+    if (!benefitsData) return undefined;
     return Array.isArray(benefitsData) && benefitsData.length > 0 ? benefitsData : undefined;
   }, [benefitsData]);
 

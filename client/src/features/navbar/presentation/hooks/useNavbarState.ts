@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { NavbarStateService } from "../../application/NavbarStateService";
 
 export const useNavbarState = () => {
-  const navbarStateService = new NavbarStateService();
+  const navbarStateService = useMemo(() => new NavbarStateService(), []);
   const initialState = navbarStateService.getInitialState();
   
   const [isScrolled, setIsScrolled] = useState(initialState.isScrolled);

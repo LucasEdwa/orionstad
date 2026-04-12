@@ -1,7 +1,7 @@
-import type { Service, ServiceCategory, ServicesPageData } from '../domain/entities/Service';
+import type { Service, ServiceContent, ServiceCategory, ServiceHero, ServicesPageData } from '../domain/entities/Service';
 
 export class ServicesDataService {
-  transformRawData(rawSections: any[], serviceImages: string[][]): Service[] {
+  transformRawData(rawSections: Array<{ title: string; contents: ServiceContent[] }>, serviceImages: string[][]): Service[] {
     return rawSections.map((section, index) => ({
       id: `service-${index}`,
       title: section.title,
@@ -16,7 +16,7 @@ export class ServicesDataService {
     return categories[index] || 'home';
   }
 
-  createServicesPageData(hero: any, services: Service[]): ServicesPageData {
+  createServicesPageData(hero: ServiceHero, services: Service[]): ServicesPageData {
     return {
       hero,
       services

@@ -1,4 +1,4 @@
-import type { ContactPageData, ContactHero, QuickAction, BusinessHours, ContactSection } from '../domain/entities/Contact';
+import type { ContactPageData, ContactHero, QuickAction, BusinessHours, ContactSection, ContactField } from '../domain/entities/Contact';
 
 export class ContactDataService {
   createContactPageData(
@@ -19,7 +19,7 @@ export class ContactDataService {
     return sections[index] || null;
   }
 
-  getFormFields(sections: ContactSection[]): any[] {
+  getFormFields(sections: ContactSection[]): ContactField[] {
     const formSection = this.getContactSection(sections, 1);
     return formSection?.fields || [];
   }

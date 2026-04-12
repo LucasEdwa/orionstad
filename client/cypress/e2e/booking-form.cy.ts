@@ -89,10 +89,10 @@ describe('Booking Form - EmailJS Integration', () => {
 
     it('should successfully submit booking form with EmailJS (mock)', () => {
       // Mock EmailJS to avoid actually sending emails during tests
-      cy.window().then((win: any) => {
+      cy.window().then((win: Window) => {
         // Mock emailjs if it exists
-        if (win.emailjs) {
-          cy.stub(win.emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
         }
       })
 
@@ -133,9 +133,9 @@ describe('Booking Form - EmailJS Integration', () => {
 
     it('should handle EmailJS errors gracefully', () => {
       // Mock EmailJS to simulate error
-      cy.window().then((win: any) => {
-        if (win.emailjs) {
-          cy.stub(win.emailjs, 'sendForm').rejects(new Error('Network error'))
+      cy.window().then((win: Window) => {
+        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
+          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').rejects(new Error('Network error'))
         }
       })
 
@@ -186,10 +186,10 @@ describe('Booking Form - EmailJS Integration', () => {
     it('should have EmailJS environment variables configured', () => {
       // Check if environment variables are available via Cypress env
       // These should be set in cypress.config.ts or via CI/CD
-      cy.task('checkEnvVars').then((envVars: any) => {
-        expect(envVars.serviceId).to.exist
-        expect(envVars.templateId).to.exist  
-        expect(envVars.publicKey).to.exist
+      cy.task('checkEnvVars').then((envVars: { serviceId: string; templateId: string; publicKey: string }) => {
+        expect(envVars.serviceId).to.exist;
+        expect(envVars.templateId).to.exist;
+        expect(envVars.publicKey).to.exist;
       })
     })
   })

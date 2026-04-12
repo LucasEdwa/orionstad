@@ -1,17 +1,17 @@
 import { useTranslation } from 'react-i18next';
 import { FooterDataService } from '../../application/FooterDataService';
-import type { FooterData } from '../../domain/entities/Footer';
+import type { FooterData, CompanyInfo, FooterLink, SocialLink } from '../../domain/entities/Footer';
 
 export const useFooterData = () => {
   const { t } = useTranslation('footer');
   const footerDataService = new FooterDataService();
 
-  const rawData = {
-    companyInfo: t('companyInfo', { returnObjects: true }),
+  const rawData: FooterData = {
+    companyInfo: t('companyInfo', { returnObjects: true }) as unknown as CompanyInfo,
     address: t('address'),
     copyright: t('copyright'),
-    links: t('links', { returnObjects: true }),
-    social: t('social', { returnObjects: true }),
+    links: t('links', { returnObjects: true }) as unknown as FooterLink[],
+    social: t('social', { returnObjects: true }) as unknown as SocialLink[],
     taglineBottom: t('taglineBottom')
   };
 

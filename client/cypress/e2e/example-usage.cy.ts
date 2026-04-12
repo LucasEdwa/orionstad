@@ -87,13 +87,13 @@ describe('EmailJS Forms Testing Example', () => {
     })
 
     it('should verify environment variables are set', () => {
-      cy.task('checkEnvVars').then((vars: any) => {
+      cy.task('checkEnvVars').then((vars: { serviceId: string; templateId: string; publicKey: string }) => {
         expect(vars.serviceId).to.not.equal('not-set')
         expect(vars.templateId).to.not.equal('not-set')
         expect(vars.publicKey).to.not.equal('not-set')
       })
       
-      cy.task('checkContactEnvVars').then((vars: any) => {
+      cy.task('checkContactEnvVars').then((vars: { serviceId: string; templateId: string; publicKey: string }) => {
         expect(vars.serviceId).to.not.equal('not-set')
         expect(vars.templateId).to.not.equal('not-set')
         expect(vars.publicKey).to.not.equal('not-set')
