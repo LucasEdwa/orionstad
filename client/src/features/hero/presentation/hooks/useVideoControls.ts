@@ -1,30 +1,47 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
-export const useVideoControls = (isVideoPlaying: boolean, setIsVideoPlaying: (playing: boolean) => void, isMuted: boolean, setIsMuted: (muted: boolean) => void) => {
-  const [videoRef, setVideoRef] = useState<HTMLVideoElement | null>(null);
+export const useVideoControls = () => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const [hasError, setHasError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  const toggleVideo = () => {
-    if (videoRef) {
-      if (isVideoPlaying) {
-        videoRef.pause();
-      } else {
-        videoRef.play();
-      }
-      setIsVideoPlaying(!isVideoPlaying);
+  const setVideoRef = useCallback((node: HTMLVideoElement | null) => {
+    videoRef.current = node;
+  }, []);
+
+  const toggleVideo = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isVideoPlaying) {
+      video.pause();
+    } else {
+      video.play().catch(() => setHasError(true));
     }
-  };
+    setIsVideoPlaying((prev) => !prev);
+  }, [isVideoPlaying]);
 
-  const toggleMute = () => {
-    if (videoRef) {
-      videoRef.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
+  const toggleMute = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = !isMuted;
+    setIsMuted((prev) => !prev);
+  }, [isMuted]);
+
+  const handleVideoError = useCallback(() => {
+    setHasError(true);
+    setIsVideoPlaying(false);
+  }, []);
 
   return {
-    videoRef,
+    isVideoPlaying,
+    isMuted,
+    hasError,
     setVideoRef,
     toggleVideo,
     toggleMute,
+    handleVideoError,
   };
 };

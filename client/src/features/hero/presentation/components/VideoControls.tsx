@@ -8,12 +8,12 @@ interface VideoControlsProps {
   onToggleMute: () => void;
 }
 
-export const VideoControls = memo<VideoControlsProps>(({
+export const VideoControls = memo<VideoControlsProps>(function VideoControls({
   isVideoPlaying,
   isMuted,
   onToggleVideo,
   onToggleMute,
-}) => {
+}) {
   return (
     <div className="absolute top-6 right-6 z-30 flex space-x-3">
       <button

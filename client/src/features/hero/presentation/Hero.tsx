@@ -1,8 +1,8 @@
-import { useCallback } from "react";
 import { LogoAnimation } from "./components/LogoAnimation";
 import { VideoControls } from "./components/VideoControls";
 import { HeroContentSection } from "./components/HeroContent";
 import { ParticleEffect } from "./components/ParticleEffect";
+import { HeroErrorBoundary } from "./components/HeroErrorBoundary";
 
 // Hooks
 import { useHeroState } from "./hooks/useHeroState";
@@ -10,47 +10,42 @@ import { useVideoControls } from "./hooks/useVideoControls";
 import { useScrollActions } from "./hooks/useScrollActions";
 import { useHeroContent } from "./hooks/useHeroContent";
 
-
-
-export const Hero = () => {
-  const { showLogo, logoVisible, isVideoPlaying, setIsVideoPlaying, isMuted, setIsMuted } = useHeroState();
-  const { setVideoRef, toggleVideo, toggleMute } = useVideoControls(isVideoPlaying, setIsVideoPlaying, isMuted, setIsMuted);
+const HeroInner = () => {
+  const { showLogo, logoVisible } = useHeroState();
+  const { isVideoPlaying, isMuted, hasError, setVideoRef, toggleVideo, toggleMute, handleVideoError } = useVideoControls();
   const { scrollToBooking, scrollToContent } = useScrollActions();
   const { videoConfig, brandAssets, content } = useHeroContent();
 
-  const handleToggleVideo = useCallback(() => {
-    toggleVideo();
-  }, [toggleVideo]);
-  const handleToggleMute = useCallback(() => {
-    toggleMute();
-  }, [toggleMute]);
   return (
     <div className="relative w-full h-screen flex items-center justify-center bg-black overflow-hidden">
-      {/* Enhanced video background */}
-      <video
-        ref={setVideoRef}
-        src={videoConfig.src}
-        autoPlay={videoConfig.autoPlay}
-        loop={videoConfig.loop}
-        muted={isMuted}
-        playsInline
-        poster="/orion-logo.png"
-        aria-label="Orion Städ professional cleaning services promotional video"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        style={{ pointerEvents: 'none' }}
-      />
+      {/* Video background with error resilience */}
+      {!hasError && (
+        <video
+          ref={setVideoRef}
+          src={videoConfig.src}
+          autoPlay={videoConfig.autoPlay}
+          loop={videoConfig.loop}
+          muted={isMuted}
+          playsInline
+          poster="/orion-logo.png"
+          aria-label="Orion Städ professional cleaning services promotional video"
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{ pointerEvents: 'none' }}
+          onError={handleVideoError}
+        />
+      )}
       
       {/* Enhanced gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FFD700/30] via-transparent to-[rgba(0,0,0,0.5)] z-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700/30] to-transparent z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FFD700/30] via-transparent to-[rgba(0,0,0,0.5)] z-10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700/30] to-transparent z-10" />
 
-      {/* Video controls */}
-      {!showLogo && (
+      {/* Video controls — hidden during logo intro and when video fails */}
+      {!showLogo && !hasError && (
         <VideoControls
           isVideoPlaying={isVideoPlaying}
           isMuted={isMuted}
-          onToggleVideo={handleToggleVideo}
-          onToggleMute={handleToggleMute}
+          onToggleVideo={toggleVideo}
+          onToggleMute={toggleMute}
         />
       )}
 
@@ -70,3 +65,9 @@ export const Hero = () => {
     </div>
   );
 };
+
+export const Hero = () => (
+  <HeroErrorBoundary>
+    <HeroInner />
+  </HeroErrorBoundary>
+);

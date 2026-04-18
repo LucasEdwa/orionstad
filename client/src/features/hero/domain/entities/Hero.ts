@@ -9,6 +9,10 @@ export interface HeroContent {
   welcome: string;
   subtitle: string;
   bookNow: string;
+  learnMore: string;
+  licensedInsured: string;
+  fiveStarService: string;
+  ecoFriendly: string;
 }
 
 export interface VideoConfig {

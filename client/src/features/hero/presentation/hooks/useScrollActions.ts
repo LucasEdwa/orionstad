@@ -1,19 +1,17 @@
-import { useMemo } from 'react';
+import { useCallback } from 'react';
 import { BrowserScrollService } from '../../infrastructure/BrowserScrollService';
 
+// Module-level singleton — no state, pure side-effect service
+const scrollService = new BrowserScrollService();
+
 export const useScrollActions = () => {
-  const scrollService = useMemo(() => new BrowserScrollService(), []);
-
-  const scrollToBooking = () => {
+  const scrollToBooking = useCallback(() => {
     scrollService.scrollToElement("booking");
-  };
+  }, []);
 
-  const scrollToContent = () => {
+  const scrollToContent = useCallback(() => {
     scrollService.scrollToSelector('main');
-  };
+  }, []);
 
-  return {
-    scrollToBooking,
-    scrollToContent,
-  };
+  return { scrollToBooking, scrollToContent };
 };

@@ -6,7 +6,11 @@ export class StaticContentRepository implements ContentRepository {
     return {
       welcome: "Premium Cleaning Services",
       subtitle: "Experience the difference of our unique cleaning method that transforms homes and lives",
-      bookNow: "Book Now"
+      bookNow: "Book Now",
+      learnMore: "Learn More",
+      licensedInsured: "Licensed & Insured",
+      fiveStarService: "5-Star Service",
+      ecoFriendly: "Eco-friendly Products",
     };
   }
 }
