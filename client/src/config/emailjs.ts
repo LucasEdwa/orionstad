@@ -1,9 +1,13 @@
-/** Centralized EmailJS configuration sourced from environment variables. */
+import { validateEnv } from '../validation';
+
+const env = validateEnv();
+
+/** Centralized EmailJS configuration validated via Zod at startup. */
 export const emailjsConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
-  templateIdHome: import.meta.env.VITE_EMAILJS_TEMPLATE_IDHOME as string,
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string,
+  serviceId: env.VITE_EMAILJS_SERVICE_ID,
+  templateId: env.VITE_EMAILJS_TEMPLATE_ID,
+  templateIdHome: env.VITE_EMAILJS_TEMPLATE_IDHOME,
+  publicKey: env.VITE_EMAILJS_PUBLIC_KEY,
 } as const;
 
 /** Returns true when the base EmailJS credentials (service, public key) are set. */

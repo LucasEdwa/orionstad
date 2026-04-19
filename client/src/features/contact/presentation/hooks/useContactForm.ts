@@ -3,13 +3,15 @@ import type { ContactFormState } from '../../domain/entities/ContactForm';
 import { ContactFormService } from '../../application/ContactFormService';
 import { EmailRepository } from '../../infrastructure/EmailRepository';
 import { showSuccess, showError } from '../../../../utils/sweetAlert';
+import { contactFormSchema, useFormValidation } from '../../../../validation';
+import type { FieldErrors } from '../../../../validation';
 
 // Module-level singletons — stateless services reused across renders
 const contactFormService = new ContactFormService();
 const emailRepository = new EmailRepository();
 
 /**
- * Manages contact form lifecycle: validation, submission via EmailJS,
+ * Manages contact form lifecycle: Zod validation, submission via EmailJS,
  * and user feedback through SweetAlert notifications.
  */
 export const useContactForm = () => {
@@ -17,6 +19,7 @@ export const useContactForm = () => {
   const [formState, setFormState] = useState<ContactFormState>(
     contactFormService.getInitialFormState()
   );
+  const { fieldErrors, validate, clearFieldError } = useFormValidation(contactFormSchema);
 
   const submitForm = async (formElement: HTMLFormElement) => {
     if (!emailRepository.isConfigured()) {
@@ -26,17 +29,27 @@ export const useContactForm = () => {
       return;
     }
 
+    // Extract and validate form data with Zod
+    const formData = new FormData(formElement);
+    const raw = {
+      user_name: (formData.get('user_name') as string) ?? '',
+      user_email: (formData.get('user_email') as string) ?? '',
+      message: (formData.get('message') as string) ?? '',
+    };
+    const result = validate(raw);
+    if (!result.success) return;
+
     setFormState(contactFormService.getSubmittingState(formState));
 
     try {
-      const result = await emailRepository.sendEmail(formElement);
+      const emailResult = await emailRepository.sendEmail(formElement);
       
-      if (result.success) {
+      if (emailResult.success) {
         setFormState(contactFormService.getSuccessState(formState));
         formElement.reset();
         showSuccess("Your message has been sent successfully! We'll get back to you soon.");
       } else {
-        const errorMessage = result.error || 'Failed to send message';
+        const errorMessage = emailResult.error || 'Failed to send message';
         setFormState(contactFormService.getErrorState(formState, errorMessage));
         showError(errorMessage);
       }
@@ -59,6 +72,8 @@ export const useContactForm = () => {
     handleSubmit,
     isSubmitting: formState.isSubmitting,
     error: formState.error,
-    isSent: formState.isSent
+    isSent: formState.isSent,
+    fieldErrors: fieldErrors as FieldErrors,
+    clearFieldError,
   };
 };

@@ -3,13 +3,17 @@ import { useTranslation } from "react-i18next";
 import type { RootState } from "../../../../store";
 import { setBookingStep, setCustomerForm } from "../../../../store/bookingSlice";
 import { SubmitButton } from "./SubmitButton";
+import { FieldError } from "../../../../components/FieldError";
+import type { FieldErrors } from "../../../../validation";
 
 interface BookingStepTwoProps {
   formAction: (formData: FormData) => void;
   isPending: boolean;
+  fieldErrors?: FieldErrors;
+  clearFieldError?: (field: string) => void;
 }
 
-export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ formAction, isPending }) => {
+export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ formAction, isPending, fieldErrors = {}, clearFieldError }) => {
   const { t } = useTranslation("home");
   const dispatch = useDispatch();
   const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
@@ -17,6 +21,7 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ formAction, isPe
 
   const handleCustomerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setCustomerForm({ ...customerForm, [e.target.name]: e.target.value }));
+    clearFieldError?.(e.target.name);
   };
 
   return (
@@ -42,11 +47,12 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ formAction, isPe
               type={field.type}
               id={field.name}
               placeholder={`Enter your ${field.placeholder.toLowerCase()}...`}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#CDB697] focus:border-transparent transition-all duration-200"
+              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#CDB697] focus:border-transparent transition-all duration-200 ${fieldErrors[field.name] ? 'border-red-500' : 'border-gray-300'}`}
               required={['fullName', 'email', 'phone', 'address'].includes(field.name)}
               value={customerForm[field.name] || ""}
               onChange={handleCustomerChange}
             />
+            <FieldError name={field.name} errors={fieldErrors} />
           </div>
         ))}
       </div>

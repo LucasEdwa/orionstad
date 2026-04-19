@@ -1,17 +1,23 @@
 import emailjs from '@emailjs/browser';
 import type { EmailSubmissionResult } from '../domain/entities/ContactForm';
 import { emailjsConfig } from '../../../config/emailjs';
+import { emailjsResponseSchema } from '../../../validation';
 
 /** Sends contact form data to the company inbox via EmailJS. */
 export class EmailRepository {
   async sendEmail(formElement: HTMLFormElement): Promise<EmailSubmissionResult> {
     try {
-      await emailjs.sendForm(
+      const raw = await emailjs.sendForm(
         emailjsConfig.serviceId,
         emailjsConfig.templateId,
         formElement,
         emailjsConfig.publicKey
       );
+
+      const parsed = emailjsResponseSchema.safeParse(raw);
+      if (!parsed.success) {
+        console.warn('Unexpected EmailJS response shape:', raw);
+      }
       
       return { success: true };
     } catch (error) {

@@ -1,10 +1,12 @@
-import { useActionState } from "react";
+import { useActionState, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../../../../store";
 import { resetBooking } from "../../../../store/bookingSlice";
 import { SubmitBookingUseCase } from "../../domain/usecases/SubmitBookingUseCase";
 import { EmailJSBookingRepository } from "../../infrastructure/EmailJSBookingRepository";
 import { SweetAlertNotificationService } from "../../infrastructure/SweetAlertNotificationService";
+import { customerFormSchema } from "../../../../validation";
+import type { FieldErrors } from "../../../../validation";
 
 type SubmissionState = {
   error: string | null;
@@ -20,18 +22,41 @@ const submitBookingUseCase = new SubmitBookingUseCase(bookingRepository, notific
 
 /**
  * Handles async booking form submission via React 19 `useActionState`.
- * Composes the EmailJS repository and SweetAlert notification service
- * through the SubmitBookingUseCase, then resets Redux booking state on success.
+ * Validates customer form data with Zod before submitting.
  */
 export const useBookingSubmission = () => {
   const dispatch = useDispatch();
   const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
   const customerForm = useSelector((state: RootState) => state.booking.customerForm);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+
+  const clearFieldError = useCallback(
+    (field: string) =>
+      setFieldErrors(prev => {
+        if (!prev[field]) return prev;
+        const next = { ...prev };
+        delete next[field];
+        return next;
+      }),
+    [],
+  );
 
   const [submissionState, formAction, isPending] = useActionState(
     async (
       ...[, ]: [previous: SubmissionState, formData: FormData]
     ): Promise<SubmissionState> => {
+      const result = customerFormSchema.safeParse(customerForm);
+      if (!result.success) {
+        const errors: FieldErrors = {};
+        for (const issue of result.error.issues) {
+          const key = issue.path.join('.');
+          if (!errors[key]) errors[key] = issue.message;
+        }
+        setFieldErrors(errors);
+        return { error: "Please fix the form errors", success: false };
+      }
+      setFieldErrors({});
+
       try {
         await submitBookingUseCase.execute(bookingForm, customerForm);
         dispatch(resetBooking());
@@ -44,5 +69,5 @@ export const useBookingSubmission = () => {
     initialState,
   );
 
-  return { isPending, formAction, submissionState };
+  return { isPending, formAction, submissionState, fieldErrors, clearFieldError };
 };

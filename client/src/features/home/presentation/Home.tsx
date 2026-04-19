@@ -20,7 +20,7 @@ const Home = () => {
   const step = useSelector((state: RootState) => state.booking.step);
   const [showLang, setShowLang] = useState(false);
   
-  const { isPending, formAction } = useBookingSubmission();
+  const { isPending, formAction, fieldErrors, clearFieldError } = useBookingSubmission();
   const { features, benefits } = useFeatures();
 
   useEffect(() => {
@@ -62,6 +62,8 @@ const Home = () => {
                 <BookingStepTwo 
                   formAction={formAction}
                   isPending={isPending}
+                  fieldErrors={fieldErrors}
+                  clearFieldError={clearFieldError}
                 />
               )}
             </div>

@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import type { ContactSection } from '../../domain/entities/Contact';
 import { useContactForm } from '../hooks/useContactForm';
 import {memo} from 'react';
+import { FieldError } from '../../../../components/FieldError';
 interface ContactFormProps {
   formSection: ContactSection | null;
   whyContactSection: ContactSection | null;
@@ -12,7 +13,7 @@ export const ContactForm = memo<ContactFormProps>(({
   whyContactSection 
 }) => {
   const { t } = useTranslation('contact');
-  const { handleSubmit, isSubmitting } = useContactForm();
+  const { handleSubmit, isSubmitting, fieldErrors, clearFieldError } = useContactForm();
 
   // Helper function to get the correct placeholder
   const getPlaceholder = (fieldName: string, fieldPlaceholder: string) => {
@@ -53,20 +54,23 @@ export const ContactForm = memo<ContactFormProps>(({
                 name={field.name}
                 id={field.name}
                 rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none text-sm"
+                className={`w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none text-sm ${fieldErrors[field.name] ? 'border-red-500' : 'border-gray-300'}`}
                 required
                 placeholder={getPlaceholder(field.name, field.placeholder)}
+                onChange={() => clearFieldError(field.name)}
               />
             ) : (
               <input
                 name={field.name}
                 type={field.type}
                 id={field.name}
-                className="w-full px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-sm"
+                className={`w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-sm ${fieldErrors[field.name] ? 'border-red-500' : 'border-gray-300'}`}
                 required
                 placeholder={getPlaceholder(field.name, field.placeholder)}
+                onChange={() => clearFieldError(field.name)}
               />
             )}
+            <FieldError name={field.name} errors={fieldErrors} />
           </div>
         ))}
         

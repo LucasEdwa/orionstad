@@ -5,7 +5,7 @@ import type { RootState } from "../../store";
 
 export const BookingPage = () => {
     const step = useSelector((state: RootState) => state.booking.step);
-    const { isPending, formAction } = useBookingSubmission();
+    const { isPending, formAction, fieldErrors, clearFieldError } = useBookingSubmission();
     const { benefits } = useFeatures();
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
@@ -24,6 +24,8 @@ export const BookingPage = () => {
                 <BookingStepTwo 
                   formAction={formAction}
                   isPending={isPending}
+                  fieldErrors={fieldErrors}
+                  clearFieldError={clearFieldError}
                 />
               )}
             </div>
