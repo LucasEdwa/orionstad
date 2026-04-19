@@ -13,6 +13,7 @@ export const useBookingSubmission = () => {
   const customerForm = useSelector((state: RootState) => state.booking.customerForm);
 
   const submitBooking = async (formRef: HTMLFormElement) => {
+    if (isSubmitting) return;
     setIsSubmitting(true);
     
     try {

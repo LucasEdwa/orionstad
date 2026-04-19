@@ -1,8 +1,4 @@
-import { BookingStepOne } from "../home/presentation/components/BookingStepOne";
-import { BookingStepTwo } from "../home/presentation/components/BookingStepTwo";
-import { BookingBenefits } from "../home/presentation/components/BookingBenefits";
-import { useBookingSubmission } from "../../features/home/presentation/hooks/useBookingSubmission";
-import { useFeatures } from "../../features/home/presentation/hooks/useFeatures";
+import { BookingStepOne, BookingStepTwo, BookingBenefits, useBookingSubmission, useFeatures } from "../home";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../store";
 
