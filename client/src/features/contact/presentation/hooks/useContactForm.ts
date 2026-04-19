@@ -4,9 +4,15 @@ import { ContactFormService } from '../../application/ContactFormService';
 import { EmailRepository } from '../../infrastructure/EmailRepository';
 import { showSuccess, showError } from '../../../../utils/sweetAlert';
 
+// Module-level singletons — stateless services reused across renders
+const contactFormService = new ContactFormService();
+const emailRepository = new EmailRepository();
+
+/**
+ * Manages contact form lifecycle: validation, submission via EmailJS,
+ * and user feedback through SweetAlert notifications.
+ */
 export const useContactForm = () => {
-  const contactFormService = new ContactFormService();
-  const emailRepository = new EmailRepository();
   
   const [formState, setFormState] = useState<ContactFormState>(
     contactFormService.getInitialFormState()

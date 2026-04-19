@@ -2,20 +2,6 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../store';
 
-declare global {
-  interface Window {
-    tidioIdentify?: (data: Record<string, string>) => void;
-    tidioChatApi?: {
-      display: (show: boolean) => void;
-      open: () => void;
-      close: () => void;
-      hide: () => void;
-      show: () => void;
-      setColorScheme: (scheme: string) => void;
-    };
-  }
-}
-
 interface TidioChatProps {
   tidioKey?: string;
 }

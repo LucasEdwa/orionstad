@@ -1,29 +1,19 @@
 import emailjs from '@emailjs/browser';
 import type { EmailSubmissionResult } from '../domain/entities/ContactForm';
+import { emailjsConfig } from '../../../config/emailjs';
 
+/** Sends contact form data to the company inbox via EmailJS. */
 export class EmailRepository {
-  private serviceId: string;
-  private templateId: string;
-  private publicKey: string;
-
-  constructor() {
-    this.serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    this.templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    this.publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-  }
-
   async sendEmail(formElement: HTMLFormElement): Promise<EmailSubmissionResult> {
     try {
       await emailjs.sendForm(
-        this.serviceId,
-        this.templateId,
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
         formElement,
-        this.publicKey
+        emailjsConfig.publicKey
       );
       
-      return {
-        success: true
-      };
+      return { success: true };
     } catch (error) {
       console.error('EmailJS error:', error);
       
@@ -35,6 +25,6 @@ export class EmailRepository {
   }
 
   isConfigured(): boolean {
-    return !!(this.serviceId && this.templateId && this.publicKey);
+    return !!(emailjsConfig.serviceId && emailjsConfig.templateId && emailjsConfig.publicKey);
   }
 }

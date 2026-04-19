@@ -1,5 +1,6 @@
 import type { ContactFormData, ContactFormState, EmailSubmissionResult } from '../domain/entities/ContactForm';
 
+/** Manages contact form validation, state transitions, and submission result creation. */
 export class ContactFormService {
   getInitialFormState(): ContactFormState {
     return {

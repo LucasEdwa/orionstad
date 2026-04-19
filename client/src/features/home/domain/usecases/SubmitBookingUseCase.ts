@@ -1,6 +1,11 @@
 import type { BookingForm, CustomerForm } from '../entities/BookingForm';
 import type { BookingRepository, NotificationService } from '../repositories/BookingRepository';
 
+/**
+ * Orchestrates the booking submission workflow.
+ * Delegates persistence to a BookingRepository and user feedback to a NotificationService,
+ * keeping the use case independent of infrastructure concerns.
+ */
 export class SubmitBookingUseCase {
   private bookingRepository: BookingRepository;
   private notificationService: NotificationService;

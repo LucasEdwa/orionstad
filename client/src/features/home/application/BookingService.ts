@@ -1,5 +1,6 @@
 import type { BookingForm, CustomerForm, BookingState } from '../domain/entities/BookingForm';
 
+/** Validates booking and customer form data and manages the multi-step form state. */
 export class BookingService {
   validateBookingForm(form: BookingForm): boolean {
     return !!(form.serviceType && form.homeSize && form.frequency);

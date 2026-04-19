@@ -13,6 +13,16 @@ type SubmissionState = {
 
 const initialState: SubmissionState = { error: null, success: false };
 
+// Module-level singletons — stateless services reused across renders
+const bookingRepository = new EmailJSBookingRepository();
+const notificationService = new SweetAlertNotificationService();
+const submitBookingUseCase = new SubmitBookingUseCase(bookingRepository, notificationService);
+
+/**
+ * Handles async booking form submission via React 19 `useActionState`.
+ * Composes the EmailJS repository and SweetAlert notification service
+ * through the SubmitBookingUseCase, then resets Redux booking state on success.
+ */
 export const useBookingSubmission = () => {
   const dispatch = useDispatch();
   const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
@@ -23,10 +33,6 @@ export const useBookingSubmission = () => {
       ...[, ]: [previous: SubmissionState, formData: FormData]
     ): Promise<SubmissionState> => {
       try {
-        const bookingRepository = new EmailJSBookingRepository();
-        const notificationService = new SweetAlertNotificationService();
-        const submitBookingUseCase = new SubmitBookingUseCase(bookingRepository, notificationService);
-
         await submitBookingUseCase.execute(bookingForm, customerForm);
         dispatch(resetBooking());
         return { error: null, success: true };
