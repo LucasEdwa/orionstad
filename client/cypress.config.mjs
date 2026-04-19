@@ -23,7 +23,7 @@ export default defineConfig({
         checkContactEnvVars() {
           return {
             serviceId: process.env.VITE_EMAILJS_SERVICE_ID || 'not-set',
-            templateId: process.env.VITE_EMAILJS_TEMPLATE_IDCONTACT || 'not-set',
+            templateId: process.env.VITE_EMAILJS_TEMPLATE_ID || 'not-set',
             publicKey: process.env.VITE_EMAILJS_PUBLIC_KEY || 'not-set'
           }
         }

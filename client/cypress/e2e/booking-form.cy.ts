@@ -11,14 +11,14 @@ describe('Booking Form - EmailJS Integration', () => {
     it('should display the initial booking form correctly', () => {
       cy.get('h2').should('contain.text', 'Book a Cleaning Service')
       
-      // Check if all required fields are present
-      cy.get('select[name="serviceType"]').should('be.visible')
+      // Check if custom dropdowns and input are present
+      cy.get('button[aria-controls="service-dropdown"]').should('be.visible')
       cy.get('input[name="homeSize"]').should('be.visible')
-      cy.get('select[name="frequency"]').should('be.visible')
+      cy.get('button[aria-controls="frequency-dropdown"]').should('be.visible')
     })
 
     it('should validate required fields before proceeding to step 2', () => {
-      // Try to submit without filling required fields
+      // Try to submit without filling homeSize (required field)
       cy.get('button[type="submit"]').click()
       
       // Form should not proceed to step 2 due to HTML5 validation
@@ -26,25 +26,25 @@ describe('Booking Form - EmailJS Integration', () => {
     })
 
     it('should proceed to step 2 when all fields are filled correctly', () => {
-      // Fill out step 1 form
-      cy.get('select[name="serviceType"]').select('deep')
+      // Fill out step 1 form using custom dropdowns
+      cy.selectDropdown('service', 'deep')
       cy.get('input[name="homeSize"]').type('85')
-      cy.get('select[name="frequency"]').select('bi-weekly')
+      cy.selectDropdown('frequency', 'bi-weekly')
       
       // Submit step 1
       cy.get('button[type="submit"]').click()
       
       // Should proceed to step 2
-      cy.get('h2').should('contain.text', 'customer information', { matchCase: false })
+      cy.get('h2').should('contain.text', 'Customer Information')
     })
   })
 
   describe('Booking Form Step 2 - Customer Information & EmailJS', () => {
     beforeEach(() => {
       // Fill step 1 to get to step 2
-      cy.get('select[name="serviceType"]').select('regular')
+      cy.selectDropdown('service', 'regular')
       cy.get('input[name="homeSize"]').type('75')
-      cy.get('select[name="frequency"]').select('weekly')
+      cy.selectDropdown('frequency', 'weekly')
       cy.get('button[type="submit"]').click()
       
       // Wait for step 2 to load
@@ -58,7 +58,7 @@ describe('Booking Form - EmailJS Integration', () => {
       cy.get('input[name="phone"]').should('be.visible')
       cy.get('input[name="address"]').should('be.visible')
       
-      // Check for optional fields (these might be dynamically generated)
+      // Check for minimum number of form inputs
       cy.get('form').within(() => {
         cy.get('input, textarea').should('have.length.at.least', 4)
       })
@@ -84,17 +84,12 @@ describe('Booking Form - EmailJS Integration', () => {
       
       // Should be back at step 1
       cy.get('h2').should('contain.text', 'Book a Cleaning Service')
-      cy.get('select[name="serviceType"]').should('have.value', 'regular')
+      cy.get('button[aria-controls="service-dropdown"]').should('contain.text', 'Regular Cleaning')
     })
 
     it('should successfully submit booking form with EmailJS (mock)', () => {
-      // Mock EmailJS to avoid actually sending emails during tests
-      cy.window().then((win: Window) => {
-        // Mock emailjs if it exists
-        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
-          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').resolves({ status: 200, text: 'OK' })
-        }
-      })
+      // Mock EmailJS at the network level
+      cy.mockEmailJS(true)
 
       // Fill out all required customer information
       cy.get('input[name="fullName"]').type('John Doe')
@@ -133,11 +128,7 @@ describe('Booking Form - EmailJS Integration', () => {
 
     it('should handle EmailJS errors gracefully', () => {
       // Mock EmailJS to simulate error
-      cy.window().then((win: Window) => {
-        if ((win as Window & { emailjs?: { sendForm: unknown } }).emailjs) {
-          cy.stub((win as Window & { emailjs: { sendForm: unknown } }).emailjs, 'sendForm').rejects(new Error('Network error'))
-        }
-      })
+      cy.mockEmailJS(false)
 
       // Fill out form
       cy.get('input[name="fullName"]').type('Jane Doe')
@@ -157,7 +148,7 @@ describe('Booking Form - EmailJS Integration', () => {
       cy.get('.swal2-confirm').click()
 
       // Should remain on step 2
-      cy.get('h2').should('contain.text', 'customer information', { matchCase: false })
+      cy.get('h2').should('contain.text', 'Customer Information')
     })
 
     it('should retain form data when navigating between steps', () => {
@@ -169,9 +160,9 @@ describe('Booking Form - EmailJS Integration', () => {
       cy.contains('button', 'Back', { matchCase: false }).click()
 
       // Verify step 1 data is retained
-      cy.get('select[name="serviceType"]').should('have.value', 'regular')
+      cy.get('button[aria-controls="service-dropdown"]').should('contain.text', 'Regular Cleaning')
       cy.get('input[name="homeSize"]').should('have.value', '75')
-      cy.get('select[name="frequency"]').should('have.value', 'weekly')
+      cy.get('button[aria-controls="frequency-dropdown"]').should('contain.text', 'Weekly Cleaning')
 
       // Go back to step 2
       cy.get('button[type="submit"]').click()
@@ -186,7 +177,8 @@ describe('Booking Form - EmailJS Integration', () => {
     it('should have EmailJS environment variables configured', () => {
       // Check if environment variables are available via Cypress env
       // These should be set in cypress.config.ts or via CI/CD
-      cy.task('checkEnvVars').then((envVars: { serviceId: string; templateId: string; publicKey: string }) => {
+      cy.task('checkEnvVars').then((result) => {
+        const envVars = result as { serviceId: string; templateId: string; publicKey: string }
         expect(envVars.serviceId).to.exist;
         expect(envVars.templateId).to.exist;
         expect(envVars.publicKey).to.exist;

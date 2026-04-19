@@ -3,7 +3,7 @@ describe('EmailJS Forms Testing Example', () => {
     it('should test booking form with custom commands', () => {
       cy.visit('/')
       
-      // Mock EmailJS before testing
+      // Mock EmailJS at the network level before interacting with forms
       cy.mockEmailJS(true)
       
       // Use custom command to fill booking form
@@ -30,7 +30,7 @@ describe('EmailJS Forms Testing Example', () => {
     it('should test contact form with custom commands', () => {
       cy.visit('/contact')
       
-      // Mock EmailJS
+      // Mock EmailJS at the network level
       cy.mockEmailJS(true)
       
       // Use custom command to fill contact form
@@ -63,37 +63,31 @@ describe('EmailJS Forms Testing Example', () => {
   })
 
   describe('Production Readiness Tests', () => {
-    it('should verify all forms work in production mode', () => {
-      // These tests run with real EmailJS configuration but mocked sending
-      // This ensures the forms are properly configured for production
-      
+    it('should verify all forms are properly structured', () => {
+      // Verify booking form structure
       cy.visit('/')
-      
-      // Verify EmailJS is loaded
-      cy.window().should('have.property', 'emailjs')
-      
-      // Test booking form structure
-      cy.get('select[name="serviceType"]').should('be.visible')
+      cy.get('#booking', { timeout: 10000 }).should('be.visible')
+      cy.get('button[aria-controls="service-dropdown"]').should('be.visible')
       cy.get('input[name="homeSize"]').should('be.visible')
-      cy.get('select[name="frequency"]').should('be.visible')
+      cy.get('button[aria-controls="frequency-dropdown"]').should('be.visible')
       
-      // Navigate to contact page
+      // Navigate to contact page and verify contact form structure
       cy.visit('/contact')
-      
-      // Test contact form structure  
       cy.get('input[name="user_name"]').should('be.visible')
       cy.get('input[name="user_email"]').should('be.visible')
       cy.get('textarea[name="message"]').should('be.visible')
     })
 
     it('should verify environment variables are set', () => {
-      cy.task('checkEnvVars').then((vars: { serviceId: string; templateId: string; publicKey: string }) => {
+      cy.task('checkEnvVars').then((result) => {
+        const vars = result as { serviceId: string; templateId: string; publicKey: string }
         expect(vars.serviceId).to.not.equal('not-set')
         expect(vars.templateId).to.not.equal('not-set')
         expect(vars.publicKey).to.not.equal('not-set')
       })
       
-      cy.task('checkContactEnvVars').then((vars: { serviceId: string; templateId: string; publicKey: string }) => {
+      cy.task('checkContactEnvVars').then((result) => {
+        const vars = result as { serviceId: string; templateId: string; publicKey: string }
         expect(vars.serviceId).to.not.equal('not-set')
         expect(vars.templateId).to.not.equal('not-set')
         expect(vars.publicKey).to.not.equal('not-set')

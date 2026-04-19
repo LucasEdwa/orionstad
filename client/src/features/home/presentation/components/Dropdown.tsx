@@ -47,6 +47,7 @@ export const Dropdown = memo(({ options, value, onChange, label, icon, id }: Dro
           {options.map(opt => (
             <div
               key={opt.value}
+              data-value={opt.value}
               onClick={() => {
                 onChange(opt.value);
                 setIsOpen(false);

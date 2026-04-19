@@ -32,9 +32,10 @@ Cypress.Commands.add('fillBookingForm', (bookingData, customerData) => {
   
   // Optional fields
   if (customerData.specialInstructions) {
+    const instructions = customerData.specialInstructions
     cy.get('body').then(($body) => {
       if ($body.find('input[name="specialInstructions"]').length > 0) {
-        cy.get('input[name="specialInstructions"]').type(customerData.specialInstructions)
+        cy.get('input[name="specialInstructions"]').type(instructions)
       }
     })
   }

@@ -87,6 +87,11 @@ jobs:
           start: npm run dev
           wait-on: http://localhost:5173
           wait-on-timeout: 120
+        env:
+          VITE_EMAILJS_SERVICE_ID: test_service_id
+          VITE_EMAILJS_TEMPLATE_ID: test_template_id
+          VITE_EMAILJS_TEMPLATE_IDHOME: test_template_id_home
+          VITE_EMAILJS_PUBLIC_KEY: test_public_key
 
       - uses: actions/upload-artifact@v4
         if: failure()
