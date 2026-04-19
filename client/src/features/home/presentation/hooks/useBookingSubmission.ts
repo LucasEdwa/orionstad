@@ -4,7 +4,7 @@ import type { RootState } from "../../../../store";
 import { resetBooking } from "../../../../store/bookingSlice";
 import { SubmitBookingUseCase } from "../../domain/usecases/SubmitBookingUseCase";
 import { EmailJSBookingRepository } from "../../infrastructure/EmailJSBookingRepository";
-import { SweetAlertNotificationService } from "../../infrastructure/SweetAlertNotificationService";
+import { SonnerNotificationService } from "../../infrastructure/SweetAlertNotificationService";
 import { customerFormSchema } from "../../../../validation";
 import type { FieldErrors } from "../../../../validation";
 
@@ -17,7 +17,7 @@ const initialState: SubmissionState = { error: null, success: false };
 
 // Module-level singletons — stateless services reused across renders
 const bookingRepository = new EmailJSBookingRepository();
-const notificationService = new SweetAlertNotificationService();
+const notificationService = new SonnerNotificationService();
 const submitBookingUseCase = new SubmitBookingUseCase(bookingRepository, notificationService);
 
 /**

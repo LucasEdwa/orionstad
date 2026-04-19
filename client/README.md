@@ -137,3 +137,48 @@ VITE_EMAILJS_TEMPLATE_IDCONTACT=...
 VITE_EMAILJS_PUBLIC_KEY=...
 ```
 
+## Handling Failure Cases
+
+### 404 — Route Not Found
+
+React Router's `errorElement` catches any unmatched URL and renders the `NotFound` feature. The page provides:
+- A descriptive "page not found" header
+- Navigation links back to key pages (Home, Services, Contact)
+- Contact information so the user is never stranded
+- SEO `<meta name="robots" content="noindex">` to prevent indexing
+
+```tsx
+// Router.tsx
+{
+  path: "/",
+  element: <Layout />,
+  errorElement: <NotFound />,  // catches both unmatched routes AND render errors
+  children: [...]
+}
+```
+
+### 500 / Runtime Errors
+
+React Router's `errorElement` also functions as an **error boundary**. If any route component throws during render, the same `NotFound` page catches it and displays a recovery UI. No white screen.
+
+### Form Submission Failures
+
+Both booking and contact forms handle failure at two layers:
+
+| Layer | Mechanism | User Feedback |
+|-------|-----------|---------------|
+| **Validation** | Zod schemas (`bookingStepOneSchema`, `customerFormSchema`, `contactFormSchema`) run before any network call | Per-field red border + inline error message via `<FieldError>` component |
+| **Network** | `try/catch` around EmailJS `sendForm()` in repository classes | Sonner toast (`toast.error(...)`) with descriptive message |
+| **Config** | `validateEnv()` runs at startup; `emailRepository.isConfigured()` checked before submit | Toast: "Email service is not configured" |
+
+### Environment Variable Validation
+
+At startup, `src/validation/env.ts` validates all required `VITE_EMAILJS_*` variables via a Zod schema. If any are missing:
+- A `console.warn` logs the missing variable names
+- Email features degrade gracefully (forms show "Email service is not configured" on submit)
+- The app does **not** crash
+
+### EmailJS Response Validation
+
+After every `emailjs.sendForm()` call, the response is validated against `emailjsResponseSchema` (`{ status: number, text: string }`). Unexpected response shapes are logged via `console.warn` for debugging without crashing the user flow.
+

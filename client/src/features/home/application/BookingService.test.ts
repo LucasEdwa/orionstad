@@ -4,7 +4,7 @@ import { BookingService } from './BookingService';
 describe('BookingService', () => {
   const service = new BookingService();
 
-  describe('validateBookingForm', () => {
+  describe('validateBookingForm (Zod-backed)', () => {
     it('returns true when all fields are filled', () => {
       expect(
         service.validateBookingForm({ serviceType: 'deep', homeSize: '2', frequency: 'weekly' })
@@ -32,23 +32,17 @@ describe('BookingService', () => {
     it('returns false for empty object', () => {
       expect(service.validateBookingForm({})).toBe(false);
     });
-  });
 
-  describe('validateCustomerForm', () => {
-    const validForm = { fullName: 'Jane', email: 'j@e.com', phone: '123', address: 'St 1' };
-
-    it('returns true when all required fields are present', () => {
-      expect(service.validateCustomerForm(validForm)).toBe(true);
+    it('returns false when homeSize is not a positive number', () => {
+      expect(
+        service.validateBookingForm({ serviceType: 'deep', homeSize: '0', frequency: 'weekly' })
+      ).toBe(false);
     });
 
-    it('returns false when a required field is empty', () => {
-      expect(service.validateCustomerForm({ ...validForm, email: '  ' })).toBe(false);
-    });
-
-    it('returns false when a required field is missing', () => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { phone, ...rest } = validForm;
-      expect(service.validateCustomerForm(rest)).toBe(false);
+    it('returns false when homeSize is non-numeric', () => {
+      expect(
+        service.validateBookingForm({ serviceType: 'deep', homeSize: 'abc', frequency: 'weekly' })
+      ).toBe(false);
     });
   });
 

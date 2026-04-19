@@ -1,14 +1,14 @@
-import type { BookingForm, CustomerForm, BookingState } from '../domain/entities/BookingForm';
+import type { BookingForm, BookingState } from '../domain/entities/BookingForm';
+import { bookingStepOneSchema } from '../../../validation';
 
-/** Validates booking and customer form data and manages the multi-step form state. */
+/** Validates booking form data via Zod and manages the multi-step form state. */
 export class BookingService {
   validateBookingForm(form: BookingForm): boolean {
-    return !!(form.serviceType && form.homeSize && form.frequency);
-  }
-
-  validateCustomerForm(form: CustomerForm): boolean {
-    const requiredFields = ['fullName', 'email', 'phone', 'address'];
-    return requiredFields.every(field => form[field]?.trim());
+    return bookingStepOneSchema.safeParse({
+      serviceType: form.serviceType ?? '',
+      homeSize: form.homeSize ?? '',
+      frequency: form.frequency ?? '',
+    }).success;
   }
 
   getInitialState(): BookingState {
