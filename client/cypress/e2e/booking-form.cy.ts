@@ -114,13 +114,8 @@ describe('Booking Form - EmailJS Integration', () => {
       cy.get('button[type="submit"]').should('contain.text', 'Sending')
       cy.get('button[type="submit"]').should('be.disabled')
 
-      // Wait for success message (SweetAlert)
-      cy.get('.swal2-container', { timeout: 10000 }).should('be.visible')
-      cy.get('.swal2-title').should('contain.text', 'Success')
-      cy.get('.swal2-html-container').should('contain.text', 'booking request has been sent')
-
-      // Close success modal
-      cy.get('.swal2-confirm').click()
+      // Wait for success toast (Sonner)
+      cy.get('[data-sonner-toast][data-type="success"]', { timeout: 10000 }).should('be.visible')
 
       // Should reset to step 1
       cy.get('h2').should('contain.text', 'Book a Cleaning Service')
@@ -139,13 +134,8 @@ describe('Booking Form - EmailJS Integration', () => {
       // Submit the form
       cy.get('button[type="submit"]').click()
 
-      // Wait for error message
-      cy.get('.swal2-container', { timeout: 10000 }).should('be.visible')
-      cy.get('.swal2-title').should('contain.text', 'Error')
-      cy.get('.swal2-html-container').should('contain.text', 'Failed to send')
-
-      // Close error modal
-      cy.get('.swal2-confirm').click()
+      // Wait for error toast (Sonner)
+      cy.get('[data-sonner-toast][data-type="error"]', { timeout: 10000 }).should('be.visible')
 
       // Should remain on step 2
       cy.get('h2').should('contain.text', 'Customer Information')

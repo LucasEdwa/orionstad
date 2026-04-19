@@ -36,10 +36,8 @@ describe('End-to-End EmailJS Integration Tests', () => {
       // Submit booking
       cy.get('button[type="submit"]').click()
       
-      // Verify success
-      cy.get('.swal2-container', { timeout: 10000 }).should('be.visible')
-      cy.get('.swal2-title').should('contain.text', 'Success')
-      cy.get('.swal2-confirm').click()
+      // Verify success toast
+      cy.get('[data-sonner-toast][data-type="success"]', { timeout: 10000 }).should('be.visible')
       
       // Should return to step 1
       cy.get('h2').should('contain.text', 'Book a Cleaning Service')
@@ -66,10 +64,8 @@ describe('End-to-End EmailJS Integration Tests', () => {
       
       cy.get('button[type="submit"]').click()
       
-      // Verify error handling
-      cy.get('.swal2-container', { timeout: 10000 }).should('be.visible')
-      cy.get('.swal2-title').should('contain.text', 'Error')
-      cy.get('.swal2-confirm').click()
+      // Verify error toast
+      cy.get('[data-sonner-toast][data-type="error"]', { timeout: 10000 }).should('be.visible')
       
       // Should remain on step 2 with data intact
       cy.get('input[name="fullName"]').should('have.value', 'Failure Test User')
@@ -90,10 +86,8 @@ describe('End-to-End EmailJS Integration Tests', () => {
       
       cy.get('button[type="submit"]').click()
       
-      // Verify success
-      cy.get('.swal2-container', { timeout: 10000 }).should('be.visible')
-      cy.get('.swal2-title').should('contain.text', 'Success')
-      cy.get('.swal2-confirm').click()
+      // Verify success toast
+      cy.get('[data-sonner-toast][data-type="success"]', { timeout: 10000 }).should('be.visible')
       
       // Form should be reset
       cy.get('input[name="user_name"]').should('have.value', '')
@@ -112,10 +106,8 @@ describe('End-to-End EmailJS Integration Tests', () => {
       
       cy.get('button[type="submit"]').click()
       
-      // Verify error handling
-      cy.get('.swal2-container', { timeout: 10000 }).should('be.visible')
-      cy.get('.swal2-title').should('contain.text', 'Error')
-      cy.get('.swal2-confirm').click()
+      // Verify error toast
+      cy.get('[data-sonner-toast][data-type="error"]', { timeout: 10000 }).should('be.visible')
       
       // Form should retain data
       cy.get('input[name="user_name"]').should('have.value', 'Contact Failure Test')

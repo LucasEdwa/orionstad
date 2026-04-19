@@ -11,6 +11,8 @@ declare global {
       fillBookingForm(bookingData: { serviceType: string; homeSize: string; frequency: string }, customerData: { fullName: string; email: string; phone: string; address: string; specialInstructions?: string }): Chainable<void>
       fillContactForm(contactData: { user_name: string; user_email: string; message: string }): Chainable<void>
       mockEmailJS(shouldSucceed?: boolean): Chainable<void>
+      handleToast(expectedType: 'success' | 'error'): Chainable<void>
+      /** @deprecated Use handleToast instead */
       handleSweetAlert(expectedType: 'success' | 'error'): Chainable<void>
     }
   }
@@ -72,15 +74,14 @@ Cypress.Commands.add('mockEmailJS', (shouldSucceed = true) => {
   }
 })
 
-// Handle SweetAlert command
+// Handle Sonner toast notification
+Cypress.Commands.add('handleToast', (expectedType) => {
+  const selector = `[data-sonner-toast][data-type="${expectedType}"]`
+  cy.get(selector, { timeout: 10000 }).should('be.visible')
+})
+
+// Legacy alias for backward compatibility
 Cypress.Commands.add('handleSweetAlert', (expectedType) => {
-  cy.get('.swal2-container', { timeout: 10000 }).should('be.visible')
-
-  if (expectedType === 'success') {
-    cy.get('.swal2-title').should('contain.text', 'Success')
-  } else {
-    cy.get('.swal2-title').should('contain.text', 'Error')
-  }
-
-  cy.get('.swal2-confirm').click()
+  const selector = `[data-sonner-toast][data-type="${expectedType}"]`
+  cy.get(selector, { timeout: 10000 }).should('be.visible')
 })

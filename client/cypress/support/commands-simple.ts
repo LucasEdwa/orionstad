@@ -62,15 +62,8 @@ Cypress.Commands.add('mockEmailJS', (shouldSucceed = true) => {
   })
 })
 
-// Handle SweetAlert command
+// Handle Sonner toast notification
 Cypress.Commands.add('handleSweetAlert', (expectedType) => {
-  cy.get('.swal2-container', { timeout: 10000 }).should('be.visible')
-  
-  if (expectedType === 'success') {
-    cy.get('.swal2-title').should('contain.text', 'Success')
-  } else {
-    cy.get('.swal2-title').should('contain.text', 'Error')
-  }
-  
-  cy.get('.swal2-confirm').click()
+  const selector = `[data-sonner-toast][data-type="${expectedType}"]`
+  cy.get(selector, { timeout: 10000 }).should('be.visible')
 })
