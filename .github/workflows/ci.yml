@@ -43,7 +43,7 @@ jobs:
           cache-dependency-path: client/package-lock.json
 
       - run: npm ci
-      - run: npx tsc -b --noEmit
+      - run: npx tsc --noEmit
 
   build:
     name: Build
