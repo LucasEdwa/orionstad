@@ -62,11 +62,18 @@ This is a client-side interactive application: multi-step booking forms, video h
 
 Vite provides sub-second HMR, native ESM dev serving, and faster production builds than webpack-based alternatives.
 
-### Why Redux Toolkit for "just" language and booking?
+### React 19 Features in Use
+
+- **`useActionState`** — The booking form submission is managed by `useActionState` in `useBookingSubmission`. It handles the async lifecycle (pending → success/error) and returns `[state, formAction, isPending]`. No manual `useState(false)` toggles.
+- **`useFormStatus`** — The `SubmitButton` component reads pending state directly from the enclosing `<form>` context via `useFormStatus()`. The submit button disables and shows a spinner automatically — no prop drilling of `isSubmitting`.
+- **Form `action` prop** — `BookingStepTwo` uses `<form action={formAction}>` instead of the legacy `onSubmit` + `e.preventDefault()` pattern.
+
+### Why Redux Toolkit, not TanStack Query?
 
 - **Booking state** spans two steps across two routes (`/` home section and `/booking` page). It must survive navigation without prop-drilling through the router. RTK's `createSlice` co-locates actions + reducers with zero boilerplate.
 - **Language state** is global because a single language change must update: i18n translations, `<html lang>` attribute, OG locale meta tags, hreflang alternates, and localStorage persistence — all atomically.
 - Both slices use RTK's `createSlice` (not legacy action types/reducers).
+- **Why not TanStack Query?** There is no server. EmailJS is a client-side SDK — a fire-and-forget call that sends an email. There's no cache to invalidate, no data to refetch, no optimistic updates. TanStack Query solves server-state synchronization; this app has no server state.
 
 ### Why Tailwind CSS 4?
 
@@ -84,6 +91,8 @@ Utility-first approach with native CSS custom properties for theming (`bg-orion-
 
 Supported languages: Swedish (`sv`), English (`en`), Spanish (`es`).
 
+**Why not URL-based i18n (`/en/booking`)?** Google's documentation confirms hreflang alternates are sufficient for language discovery. URL-based i18n would require duplicating every route with a `/:lang` prefix and adding server-side redirects — significant complexity for a 3-language SPA that already has proper hreflang, `og:locale`, and dynamic `<html lang>`.
+
 ## E2E Testing
 
 The Cypress suite covers the **critical booking funnel** end-to-end:
@@ -99,11 +108,13 @@ npm run test:e2e        # Headless Cypress
 npm run test:e2e:open   # Interactive Cypress runner
 ```
 
-## Double-Submit Prevention
+## Submission Handling (React 19 Pattern)
 
-The booking form prevents duplicate submissions at two levels:
-1. **UI**: Submit button is `disabled={isSubmitting}` and shows a spinner
-2. **Hook**: `useBookingSubmission` guards with `if (isSubmitting) return` before setting state
+The booking form uses React 19's native form action model:
+
+1. **`useActionState`** in `useBookingSubmission` — manages the async action lifecycle. Returns `[submissionState, formAction, isPending]`. React handles the pending → resolved transition.
+2. **`useFormStatus`** in `SubmitButton` — reads `{ pending }` directly from the form context. The button automatically disables and shows a spinner while the action is in-flight.
+3. **`<form action={formAction}>`** — React 19's form action pattern. No `e.preventDefault()`, no manual state toggles. The framework manages the submission lifecycle.
 
 ## Getting Started
 

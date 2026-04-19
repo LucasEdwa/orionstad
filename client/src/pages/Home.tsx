@@ -1,5 +1,4 @@
-// Import the clean architecture Home component
-import { Home as CleanArchHome } from '../features/home/presentation/Home';
+import { Home as CleanArchHome } from '../features/home';
 import { SEO, BASE_URL } from '../components/SEO';
 
 const organizationSchema = {

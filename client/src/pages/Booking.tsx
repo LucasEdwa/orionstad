@@ -1,4 +1,4 @@
-import { BookingPage } from "../features/booking/BookingPage";
+import { BookingPage } from "../features/booking";
 import { SEO, BASE_URL } from '../components/SEO';
 
 export const Booking = () => {

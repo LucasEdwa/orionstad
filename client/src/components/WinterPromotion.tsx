@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ParticleEffect } from "../features/hero/presentation/components/ParticleEffect";
+import { ParticleEffect } from "../features/hero";
 import { Link } from "react-router-dom";
 
 export default function PromoPopup() {

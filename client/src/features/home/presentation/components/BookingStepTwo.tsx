@@ -1,35 +1,26 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import type { RootState } from "../../../../store";
 import { setBookingStep, setCustomerForm } from "../../../../store/bookingSlice";
-import { FaCheckCircle } from 'react-icons/fa';
+import { SubmitButton } from "./SubmitButton";
 
 interface BookingStepTwoProps {
-  onSubmit: (formRef: HTMLFormElement) => Promise<void>;
-  isSubmitting: boolean;
+  formAction: (formData: FormData) => void;
+  isPending: boolean;
 }
 
-export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ onSubmit, isSubmitting }) => {
+export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ formAction, isPending }) => {
   const { t } = useTranslation("home");
   const dispatch = useDispatch();
   const bookingForm = useSelector((state: RootState) => state.booking.bookingForm);
   const customerForm = useSelector((state: RootState) => state.booking.customerForm);
-  const formRef = useRef<HTMLFormElement>(null);
 
   const handleCustomerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setCustomerForm({ ...customerForm, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (formRef.current) {
-      await onSubmit(formRef.current);
-    }
-  };
-
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+    <form action={formAction} className="space-y-6">
       {/* Hidden inputs for booking step values */}
       <input type="hidden" name="serviceType" value={bookingForm.serviceType || ""} />
       <input type="hidden" name="homeSize" value={bookingForm.homeSize || ""} />
@@ -63,31 +54,13 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ onSubmit, isSubm
       <div className="flex flex-col sm:flex-row gap-4">
         <button
           type="button"
-          className="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-300 transition-colors duration-200"
+          disabled={isPending}
+          className="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-300 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={() => dispatch(setBookingStep(1))}
         >
           {t("customerForm.backLabel")}
         </button>
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="flex-1 bg-orion-gradient text-white py-3 rounded-xl font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
-        >
-          {isSubmitting ? (
-            <>
-              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              <span>Sending...</span>
-            </>
-          ) : (
-            <>
-              <FaCheckCircle className="w-4 h-4" />
-              <span>{t("customerForm.submitLabel")}</span>
-            </>
-          )}
-        </button>
+        <SubmitButton />
       </div>
     </form>
   );

@@ -20,7 +20,7 @@ const Home = () => {
   const step = useSelector((state: RootState) => state.booking.step);
   const [showLang, setShowLang] = useState(false);
   
-  const { isSubmitting, submitBooking } = useBookingSubmission();
+  const { isPending, formAction } = useBookingSubmission();
   const { features, benefits } = useFeatures();
 
   useEffect(() => {
@@ -60,8 +60,8 @@ const Home = () => {
 
               {step === 2 && (
                 <BookingStepTwo 
-                  onSubmit={submitBooking}
-                  isSubmitting={isSubmitting}
+                  formAction={formAction}
+                  isPending={isPending}
                 />
               )}
             </div>

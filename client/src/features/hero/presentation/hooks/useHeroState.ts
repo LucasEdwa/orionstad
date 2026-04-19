@@ -7,7 +7,7 @@ const heroStateService = new HeroStateService();
 export const useHeroState = () => {
   const [showLogo, setShowLogo] = useState(true);
   const [logoVisible, setLogoVisible] = useState(false);
-  const fadeTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const fadeTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     const fadeOutDuration = heroStateService.getFadeOutDuration();
