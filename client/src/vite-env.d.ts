@@ -10,6 +10,8 @@ interface ImportMetaEnv {
   readonly VITE_CHAT_TITLE?: string;
   /** Subheader (e.g. company). */
   readonly VITE_CHAT_SUBTITLE?: string;
+  /** CTA bubble above the chat launcher; leave unset for built-in Swedish text. */
+  readonly VITE_CHAT_LAUNCHER_TEASER?: string;
   /** Set to `false`, `0`, `no`, or `off` to hide the chat widget by default. */
   readonly VITE_CHAT_VISIBLE?: string;
 }

@@ -3,6 +3,7 @@ import { FaComments, FaPaperPlane, FaTimes } from 'react-icons/fa';
 
 const WIDGET_SCRIPT_ID = 'cloud-chat-widget-script';
 const SESSION_STORAGE_KEY = 'orionstad-chat-session-id';
+const LAUNCHER_TEASER_DISMISSED_KEY = 'orionstad-chat-launcher-teaser-dismissed';
 
 function resolveWidgetEnabled(prop: boolean | undefined): boolean {
   if (prop !== undefined) {
@@ -79,6 +80,8 @@ export interface CloudChatProps {
   title?: string;
   subtitle?: string;
   launcherLabel?: string;
+  /** Short CTA next to the launcher (Tidio-style bubble). Empty = hidden. Env: `VITE_CHAT_LAUNCHER_TEASER`. */
+  launcherTeaser?: string;
   visible?: boolean;
 }
 
@@ -88,6 +91,7 @@ function ChatPanelChrome({
   title,
   subtitle,
   launcherLabel,
+  launcherTeaser,
   children,
 }: {
   open: boolean;
@@ -95,9 +99,29 @@ function ChatPanelChrome({
   title: string;
   subtitle: string;
   launcherLabel: string;
+  launcherTeaser: string;
   children: React.ReactNode;
 }) {
   const panelId = useId();
+  const [teaserDismissed, setTeaserDismissed] = useState(() => {
+    try {
+      return localStorage.getItem(LAUNCHER_TEASER_DISMISSED_KEY) === '1';
+    } catch {
+      return false;
+    }
+  });
+
+  const dismissTeaser = useCallback(() => {
+    try {
+      localStorage.setItem(LAUNCHER_TEASER_DISMISSED_KEY, '1');
+    } catch {
+      /* ignore */
+    }
+    setTeaserDismissed(true);
+  }, []);
+
+  const teaserText = launcherTeaser.trim();
+  const showTeaser = Boolean(teaserText) && !open && !teaserDismissed;
 
   useEffect(() => {
     if (!open) {
@@ -125,19 +149,42 @@ function ChatPanelChrome({
 
   return (
     <>
-      <button
-        type="button"
-        className="fixed bottom-5 right-5 z-[10050] flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg transition hover:opacity-95 focus:ring-2 focus:ring-[#98754C] focus:ring-offset-2 focus:outline-none sm:bottom-6 sm:right-6"
-        style={{
-          background: 'linear-gradient(135deg, #3C0C0C 0%, #98754C 100%)',
-        }}
-        aria-label={launcherLabel}
-        aria-expanded={open}
-        aria-controls={panelId}
-        onClick={() => setOpen((v) => !v)}
-      >
-        {open ? <FaTimes className="h-6 w-6" aria-hidden /> : <FaComments className="h-6 w-6" aria-hidden />}
-      </button>
+      <div className="fixed bottom-5 right-5 z-[10050] flex flex-col items-end gap-2 sm:bottom-6 sm:right-6">
+        {showTeaser ? (
+          <div
+            className="animate-fade-in-up relative max-w-[min(280px,calc(100vw-5.5rem))] rounded-2xl border border-[#3C0C0C]/18 bg-white px-3.5 py-2.5 pr-9 shadow-lg"
+            role="region"
+            aria-label="Inbjudan att chatta"
+          >
+            <p className="text-sm leading-snug font-medium text-neutral-800">{teaserText}</p>
+            <button
+              type="button"
+              className="absolute top-1.5 right-1.5 flex h-7 w-7 items-center justify-center rounded-lg text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-800 focus:ring-2 focus:ring-[#98754C]/50 focus:outline-none"
+              aria-label="Stäng meddelande"
+              onClick={dismissTeaser}
+            >
+              <FaTimes className="h-3.5 w-3.5" aria-hidden />
+            </button>
+            <div
+              className="absolute -bottom-1.5 right-5 h-3 w-3 rotate-45 border-b border-r border-[#3C0C0C]/18 bg-white"
+              aria-hidden
+            />
+          </div>
+        ) : null}
+        <button
+          type="button"
+          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white shadow-lg transition hover:opacity-95 focus:ring-2 focus:ring-[#98754C] focus:ring-offset-2 focus:outline-none"
+          style={{
+            background: 'linear-gradient(135deg, #3C0C0C 0%, #98754C 100%)',
+          }}
+          aria-label={launcherLabel}
+          aria-expanded={open}
+          aria-controls={panelId}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <FaTimes className="h-6 w-6" aria-hidden /> : <FaComments className="h-6 w-6" aria-hidden />}
+        </button>
+      </div>
 
       {open ? (
         <>
@@ -162,7 +209,9 @@ function ChatPanelChrome({
             >
               <div className="min-w-0">
                 <p className="truncate text-sm font-semibold tracking-tight">{title}</p>
-                <p className="truncate text-xs text-white/85">{subtitle}</p>
+                {subtitle.trim() ? (
+                  <p className="truncate text-xs text-white/85">{subtitle}</p>
+                ) : null}
               </div>
               <button
                 type="button"
@@ -186,11 +235,13 @@ function CloudChatApiPanel({
   title,
   subtitle,
   launcherLabel,
+  launcherTeaser,
 }: {
   apiBase: string;
   title: string;
   subtitle: string;
   launcherLabel: string;
+  launcherTeaser: string;
 }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<ChatLine[]>([]);
@@ -243,12 +294,19 @@ function CloudChatApiPanel({
   }, []);
 
   return (
-    <ChatPanelChrome open={open} setOpen={setOpen} title={title} subtitle={subtitle} launcherLabel={launcherLabel}>
+    <ChatPanelChrome
+      open={open}
+      setOpen={setOpen}
+      title={title}
+      subtitle={subtitle}
+      launcherLabel={launcherLabel}
+      launcherTeaser={launcherTeaser}
+    >
       <div className="flex min-h-0 flex-1 flex-col bg-neutral-50">
         <div ref={listRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto px-3 py-3">
           {messages.length === 0 && !pending && (
             <p className="text-sm text-neutral-600">
-              Hej! Ställ en fråga om städning, priser, RUT eller bokning — vi svarar på svenska.
+              Hej! Ställ en fråga om städning, priser, RUT eller bokning — vi svarar på svenska, portugisiska eller spanska.
             </p>
           )}
           {messages.map((m, i) => (
@@ -332,16 +390,25 @@ function CloudChatIframeEmbed({
   title,
   subtitle,
   launcherLabel,
+  launcherTeaser,
 }: {
   chatUrl: string;
   title: string;
   subtitle: string;
   launcherLabel: string;
+  launcherTeaser: string;
 }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <ChatPanelChrome open={open} setOpen={setOpen} title={title} subtitle={subtitle} launcherLabel={launcherLabel}>
+    <ChatPanelChrome
+      open={open}
+      setOpen={setOpen}
+      title={title}
+      subtitle={subtitle}
+      launcherLabel={launcherLabel}
+      launcherTeaser={launcherTeaser}
+    >
       <iframe
         title={title}
         src={chatUrl}
@@ -356,9 +423,11 @@ export const CloudChat: React.FC<CloudChatProps> = ({
   apiBaseUrl = import.meta.env.VITE_CHAT_API_URL,
   widgetScriptUrl = import.meta.env.VITE_CHAT_WIDGET_SCRIPT_URL,
   chatUrl = import.meta.env.VITE_CHAT_URL,
-  title = import.meta.env.VITE_CHAT_TITLE ?? 'The Cleaner Assistant',
-  subtitle = import.meta.env.VITE_CHAT_SUBTITLE ?? 'Ectus Tech',
-  launcherLabel = 'Open chat',
+  title = import.meta.env.VITE_CHAT_TITLE ?? 'Orion Städ Assistent Chat',
+  subtitle = import.meta.env.VITE_CHAT_SUBTITLE ?? '',
+  launcherLabel = 'Öppna chatt',
+  launcherTeaser = import.meta.env.VITE_CHAT_LAUNCHER_TEASER ??
+    'Hej! 👋 Behöver du hjälp? Chatta med oss om städning, priser eller bokning.',
   visible: visibleProp,
 }) => {
   const enabled = resolveWidgetEnabled(visibleProp);
@@ -409,7 +478,13 @@ export const CloudChat: React.FC<CloudChatProps> = ({
 
   if (apiMode) {
     return (
-      <CloudChatApiPanel apiBase={apiBase} title={title} subtitle={subtitle} launcherLabel={launcherLabel} />
+      <CloudChatApiPanel
+        apiBase={apiBase}
+        title={title}
+        subtitle={subtitle}
+        launcherLabel={launcherLabel}
+        launcherTeaser={launcherTeaser}
+      />
     );
   }
 
@@ -427,6 +502,7 @@ export const CloudChat: React.FC<CloudChatProps> = ({
       title={title}
       subtitle={subtitle}
       launcherLabel={launcherLabel}
+      launcherTeaser={launcherTeaser}
     />
   );
 };
