@@ -5,6 +5,22 @@ const WIDGET_SCRIPT_ID = 'cloud-chat-widget-script';
 const SESSION_STORAGE_KEY = 'orionstad-chat-session-id';
 const LAUNCHER_TEASER_DISMISSED_KEY = 'orionstad-chat-launcher-teaser-dismissed';
 
+/** Shown when no prop/env copy is set; also use in `<CloudChat launcherTeaser={...} />` for reliable production text. */
+export const DEFAULT_LAUNCHER_TEASER =
+  'Hej! 👋 Behöver du hjälp? Chatta med oss om städning, priser eller bokning.';
+
+/** Env can be empty in Amplify (`VITE_CHAT_LAUNCHER_TEASER=`); `??` does not fall back for "", so we normalize here. */
+function resolveLauncherTeaser(prop: string | undefined, envRaw: string | undefined): string {
+  if (prop !== undefined) {
+    return prop;
+  }
+  const fromEnv = typeof envRaw === 'string' ? envRaw.trim() : '';
+  if (fromEnv !== '') {
+    return fromEnv;
+  }
+  return DEFAULT_LAUNCHER_TEASER;
+}
+
 function resolveWidgetEnabled(prop: boolean | undefined): boolean {
   if (prop !== undefined) {
     return prop;
@@ -80,7 +96,7 @@ export interface CloudChatProps {
   title?: string;
   subtitle?: string;
   launcherLabel?: string;
-  /** Short CTA next to the launcher (Tidio-style bubble). Empty = hidden. Env: `VITE_CHAT_LAUNCHER_TEASER`. */
+  /** CTA bubble above the launcher. Omit for env/default copy; pass `""` to hide. */
   launcherTeaser?: string;
   visible?: boolean;
 }
@@ -105,7 +121,7 @@ function ChatPanelChrome({
   const panelId = useId();
   const [teaserDismissed, setTeaserDismissed] = useState(() => {
     try {
-      return localStorage.getItem(LAUNCHER_TEASER_DISMISSED_KEY) === '1';
+      return sessionStorage.getItem(LAUNCHER_TEASER_DISMISSED_KEY) === '1';
     } catch {
       return false;
     }
@@ -113,7 +129,7 @@ function ChatPanelChrome({
 
   const dismissTeaser = useCallback(() => {
     try {
-      localStorage.setItem(LAUNCHER_TEASER_DISMISSED_KEY, '1');
+      sessionStorage.setItem(LAUNCHER_TEASER_DISMISSED_KEY, '1');
     } catch {
       /* ignore */
     }
@@ -426,10 +442,13 @@ export const CloudChat: React.FC<CloudChatProps> = ({
   title = import.meta.env.VITE_CHAT_TITLE ?? 'Orion Städ Assistent Chat',
   subtitle = import.meta.env.VITE_CHAT_SUBTITLE ?? '',
   launcherLabel = 'Öppna chatt',
-  launcherTeaser = import.meta.env.VITE_CHAT_LAUNCHER_TEASER ??
-    'Hej! 👋 Behöver du hjälp? Chatta med oss om städning, priser eller bokning.',
+  launcherTeaser: launcherTeaserProp,
   visible: visibleProp,
 }) => {
+  const launcherTeaser = resolveLauncherTeaser(
+    launcherTeaserProp,
+    import.meta.env.VITE_CHAT_LAUNCHER_TEASER,
+  );
   const enabled = resolveWidgetEnabled(visibleProp);
   const apiBase = normalizeApiBase(apiBaseUrl ?? '');
   const apiMode = Boolean(apiBase);

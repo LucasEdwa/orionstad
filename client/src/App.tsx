@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from './store';
 import i18n from './i18n';
 import { Toaster } from 'sonner';
-import { CloudChat } from './components/CloudChat';
+import { CloudChat, DEFAULT_LAUNCHER_TEASER } from './components/CloudChat';
 
 
 
@@ -22,7 +22,7 @@ useEffect(() => {
     <>
       <Toaster position="top-right" richColors closeButton />
       <RouterProvider router={router} />
-      <CloudChat />
+      <CloudChat launcherTeaser={DEFAULT_LAUNCHER_TEASER} />
     </>
   );
 }
