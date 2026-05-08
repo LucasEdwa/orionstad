@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from './store';
 import i18n from './i18n';
 import { Toaster } from 'sonner';
-// import { TidioChat } from './components/TidioChat';
+import { CloudChat } from './components/CloudChat';
 
 
 
@@ -22,7 +22,7 @@ useEffect(() => {
     <>
       <Toaster position="top-right" richColors closeButton />
       <RouterProvider router={router} />
-      {/* <TidioChat /> */}
+      <CloudChat />
     </>
   );
 }
