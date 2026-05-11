@@ -1,5 +1,14 @@
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
-import { FaComments, FaPaperPlane, FaTimes } from 'react-icons/fa';
+import {
+  FaCheckCircle,
+  FaExclamationCircle,
+  FaMagic,
+  FaPaperPlane,
+  FaRedoAlt,
+  FaRobot,
+  FaTimes,
+  FaUserCircle,
+} from 'react-icons/fa';
 
 const WIDGET_SCRIPT_ID = 'cloud-chat-widget-script';
 const SESSION_STORAGE_KEY = 'orionstad-chat-session-id';
@@ -34,6 +43,30 @@ function resolveWidgetEnabled(prop: boolean | undefined): boolean {
 
 function normalizeApiBase(url: string): string {
   return url.trim().replace(/\/+$/, '');
+}
+
+function TypingIndicator() {
+  return (
+    <div
+      className="flex items-center gap-1 rounded-2xl rounded-bl-md border border-neutral-200 bg-white px-3 py-2 shadow-sm"
+      aria-hidden
+    >
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#98754C] [animation-delay:-0.3s]" />
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#98754C] [animation-delay:-0.15s]" />
+      <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#98754C]" />
+    </div>
+  );
+}
+
+function AssistantMessageAvatar() {
+  return (
+    <div
+      className="flex h-8 w-8 shrink-0 items-center justify-center self-end rounded-full bg-gradient-to-br from-[#3C0C0C] to-[#98754C] text-white shadow-sm"
+      aria-hidden
+    >
+      <FaRobot className="h-4 w-4" />
+    </div>
+  );
 }
 
 function getOrCreateSessionId(): string {
@@ -168,11 +201,25 @@ function ChatPanelChrome({
       <div className="fixed bottom-5 right-5 z-[10050] flex flex-col items-end gap-2 sm:bottom-6 sm:right-6">
         {showTeaser ? (
           <div
-            className="animate-fade-in-up relative max-w-[min(280px,calc(100vw-5.5rem))] rounded-2xl border border-[#3C0C0C]/18 bg-white px-3.5 py-2.5 pr-9 shadow-lg"
+            className="animate-fade-in-up relative max-w-[min(300px,calc(100vw-5.5rem))] rounded-2xl border border-[#3C0C0C]/18 bg-white px-3.5 py-3 pr-10 shadow-lg"
             role="region"
             aria-label="Inbjudan att chatta"
           >
-            <p className="text-sm leading-snug font-medium text-neutral-800">{teaserText}</p>
+            <div className="flex gap-3 pr-4">
+              <div
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#3C0C0C] to-[#98754C] text-white shadow-md"
+                aria-hidden
+              >
+                <FaRobot className="h-6 w-6" />
+              </div>
+              <div className="min-w-0 pt-0.5">
+                <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-[#3C0C0C]/90">
+                  <FaMagic className="h-3 w-3 shrink-0 text-[#98754C]" aria-hidden />
+                  Städassistenten
+                </p>
+                <p className="mt-1 text-sm leading-snug font-medium text-neutral-800">{teaserText}</p>
+              </div>
+            </div>
             <button
               type="button"
               className="absolute top-1.5 right-1.5 flex h-7 w-7 items-center justify-center rounded-lg text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-800 focus:ring-2 focus:ring-[#98754C]/50 focus:outline-none"
@@ -189,7 +236,7 @@ function ChatPanelChrome({
         ) : null}
         <button
           type="button"
-          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white shadow-lg transition hover:opacity-95 focus:ring-2 focus:ring-[#98754C] focus:ring-offset-2 focus:outline-none"
+          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white shadow-lg ring-2 ring-white/35 transition hover:opacity-95 hover:shadow-xl focus:ring-2 focus:ring-[#98754C] focus:ring-offset-2 focus:outline-none"
           style={{
             background: 'linear-gradient(135deg, #3C0C0C 0%, #98754C 100%)',
           }}
@@ -198,7 +245,11 @@ function ChatPanelChrome({
           aria-controls={panelId}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <FaTimes className="h-6 w-6" aria-hidden /> : <FaComments className="h-6 w-6" aria-hidden />}
+          {open ? (
+            <FaTimes className="h-6 w-6" aria-hidden />
+          ) : (
+            <FaRobot className="h-7 w-7" aria-hidden />
+          )}
         </button>
       </div>
 
@@ -223,11 +274,19 @@ function ChatPanelChrome({
                 background: 'linear-gradient(90deg, #3C0C0C 0%, #98754C 100%)',
               }}
             >
-              <div className="min-w-0">
-                <p className="truncate text-sm font-semibold tracking-tight">{title}</p>
-                {subtitle.trim() ? (
-                  <p className="truncate text-xs text-white/85">{subtitle}</p>
-                ) : null}
+              <div className="flex min-w-0 gap-3">
+                <div
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 backdrop-blur-sm"
+                  aria-hidden
+                >
+                  <FaRobot className="h-5 w-5" />
+                </div>
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold tracking-tight">{title}</p>
+                  {subtitle.trim() ? (
+                    <p className="truncate text-xs text-white/85">{subtitle}</p>
+                  ) : null}
+                </div>
               </div>
               <button
                 type="button"
@@ -318,45 +377,74 @@ function CloudChatApiPanel({
       launcherLabel={launcherLabel}
       launcherTeaser={launcherTeaser}
     >
-      <div className="flex min-h-0 flex-1 flex-col bg-neutral-50">
+      <div className="flex min-h-0 flex-1 flex-col bg-gradient-to-b from-neutral-50 to-white">
         <div ref={listRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto px-3 py-3">
           {messages.length === 0 && !pending && (
-            <p className="text-sm text-neutral-600">
-              Hej! Ställ en fråga om städning, priser, RUT eller bokning — vi svarar på svenska, portugisiska eller spanska.
-            </p>
+            <div className="rounded-2xl border border-[#3C0C0C]/10 bg-white p-4 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#3C0C0C] to-[#98754C] text-white shadow-md"
+                  aria-hidden
+                >
+                  <FaRobot className="h-6 w-6" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-semibold text-neutral-900">Välkommen!</p>
+                  <p className="mt-1 text-sm leading-relaxed text-neutral-600">
+                    Ställ en fråga om städning, priser, RUT eller bokning — vi svarar på svenska, portugisiska eller
+                    spanska.
+                  </p>
+                  <p className="mt-3 flex items-center gap-2 text-xs text-[#98754C]">
+                    <FaMagic className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                    Tips: nämn yta eller adress om du vill ha en grov uppskattning.
+                  </p>
+                </div>
+              </div>
+            </div>
           )}
           {messages.map((m, i) => (
             <div
               key={`${i}-${m.role}-${m.text.slice(0, 20)}`}
-              className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
+              className={`flex gap-2 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
+              {m.role === 'assistant' ? <AssistantMessageAvatar /> : null}
               <div
-                className={`max-w-[90%] rounded-2xl px-3 py-2 text-sm whitespace-pre-wrap ${
+                className={`max-w-[min(85%,280px)] rounded-2xl px-3 py-2 text-sm whitespace-pre-wrap ${
                   m.role === 'user'
-                    ? 'bg-[#3C0C0C] text-white'
-                    : 'border border-neutral-200 bg-white text-neutral-900 shadow-sm'
+                    ? 'rounded-br-md bg-[#3C0C0C] text-white'
+                    : 'rounded-bl-md border border-neutral-200 bg-white text-neutral-900 shadow-sm'
                 }`}
               >
                 {m.text}
               </div>
+              {m.role === 'user' ? (
+                <div className="shrink-0 self-end text-[#98754C]" aria-hidden>
+                  <FaUserCircle className="h-8 w-8 opacity-95" />
+                </div>
+              ) : null}
             </div>
           ))}
           {pending && (
-            <div className="flex justify-start">
-              <div className="rounded-2xl border border-neutral-200 bg-white px-3 py-2 text-sm text-neutral-500 shadow-sm">
-                Skriver…
-              </div>
+            <div className="flex justify-start gap-2">
+              <span className="sr-only">Assistenten skriver</span>
+              <AssistantMessageAvatar />
+              <TypingIndicator />
             </div>
           )}
           {error && (
-            <p className="rounded-lg bg-red-50 px-2 py-1.5 text-sm text-red-800" role="alert">
-              {error}
-            </p>
+            <div
+              className="flex items-start gap-2 rounded-xl border border-red-100 bg-red-50 px-3 py-2 text-sm text-red-900"
+              role="alert"
+            >
+              <FaExclamationCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-600" aria-hidden />
+              <span>{error}</span>
+            </div>
           )}
           {bookingDone && (
-            <p className="rounded-lg bg-emerald-50 px-2 py-1.5 text-sm text-emerald-900">
-              Tack — enligt chatten är din bokning klar. Vi hör av oss vid behov.
-            </p>
+            <div className="flex items-start gap-2 rounded-xl border border-emerald-100 bg-emerald-50 px-3 py-2 text-sm text-emerald-900">
+              <FaCheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden />
+              <span>Tack — enligt chatten är din bokning klar. Vi hör av oss vid behov.</span>
+            </div>
           )}
         </div>
 
@@ -364,9 +452,10 @@ function CloudChatApiPanel({
           <div className="mb-2 flex justify-end">
             <button
               type="button"
-              className="text-xs text-[#98754C] underline underline-offset-2 hover:text-[#3C0C0C]"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-[#98754C] underline-offset-4 hover:text-[#3C0C0C] hover:underline"
               onClick={newConversation}
             >
+              <FaRedoAlt className="h-3 w-3 shrink-0" aria-hidden />
               Ny chatt
             </button>
           </div>
