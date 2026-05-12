@@ -13,7 +13,7 @@ body, #root {
 }
 
 
-/* Orion Städ custom gradient variable */
+/* Orion Home custom gradient variable */
 :root {
   --orion-gradient: linear-gradient(90deg, #3C0C0C 0%, #98754C 100%);
   --contact-gradient-from:  #3C0C0C /* purple-900/70 */

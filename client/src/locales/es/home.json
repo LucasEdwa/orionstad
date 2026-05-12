@@ -15,10 +15,10 @@
   "Elige limpieza ecológica y disfruta de un ambiente cálido, saludable y acogedor este otoño. Nuestro equipo utiliza productos sostenibles para cuidar de tu familia y del planeta."
   ],
   "hero": {
-    "welcome": "Bienvenido a Orion Städ",
+    "welcome": "Bienvenido a Orion Home",
     "subtitle": "Su socio de confianza para servicios de limpieza profesional",
     "heroImgAlt": "Servicio de limpieza",
-    "logoImgAlt": "Logo de Orion Städ",
+    "logoImgAlt": "Logo de Orion Home",
     "bookNow": "Reservar ahora",
     "learnMore": "Saber Más",
     "licensedInsured": "Licenciado y Asegurado",
@@ -29,7 +29,7 @@
     {
       "title": "Nacido de la experiencia, guiado por el corazón",
       "paragraphs": [
-        "Orion Städ fue fundado por alguien que entiende la limpieza desde cero. Después de años trabajando como limpiador y notar que muchos métodos carecían tanto de alma como de precisión, creamos nuestro propio camino: uno que valora la calidad, el respeto y la conexión humana.",
+        "Orion Home fue fundado por alguien que entiende la limpieza desde cero. Después de años trabajando como limpiador y notar que muchos métodos carecían tanto de alma como de precisión, creamos nuestro propio camino: uno que valora la calidad, el respeto y la conexión humana.",
         "No solo limpiamos: cuidamos, observamos y transformamos. Nuestro método único combina la calidez brasileña y la atención al detalle con la eficiencia escandinava, tratando cada hogar como un espacio sagrado que merece respeto y presencia."
       ]
     },
@@ -43,7 +43,7 @@
   ],
   "bookingForm": {
     "title": "Reservar un servicio de limpieza",
-    "intro": "¿Listo para experimentar la diferencia de Orion Städ? ¡Reservar un servicio de limpieza es fácil! Simplemente haga clic en el botón de abajo para comenzar.",
+    "intro": "¿Listo para experimentar la diferencia de Orion Home? ¡Reservar un servicio de limpieza es fácil! Simplemente haga clic en el botón de abajo para comenzar.",
     "serviceLabel": "Seleccione el tipo de servicio e ingrese el tamaño del hogar",
     "serviceOptions": [
       { "value": "", "label": "Seleccione el tipo de servicio" },
@@ -82,7 +82,7 @@
     "submitLabel": "Enviar"
   },
   "features": {
-    "title": "¿Por qué elegir Orion Städ?",
+    "title": "¿Por qué elegir Orion Home?",
     "subtitle": "Experimenta la diferencia de nuestro método único de limpieza que transforma hogares y vidas.",
     "items": [
       {

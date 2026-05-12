@@ -14,7 +14,7 @@ export class AssetService {
   getBrandAssets(): BrandAssets {
     return {
       logoSrc: orionLogo,
-      brandName: "Orion Städ",
+      brandName: "Orion Home",
       tagline: "Where cleaning becomes caring"
     };
   }

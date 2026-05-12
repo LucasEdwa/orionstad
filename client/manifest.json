@@ -1,11 +1,11 @@
 {
-  "name": "Orion Städ – Professional Cleaning Services",
-  "short_name": "Orion Städ",
+  "name": "Orion Home – Professional Cleaning Services",
+  "short_name": "Orion Home",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#f9f5f0",
   "theme_color": "#3C0C0C",
-  "description": "Orion Städ – Professional cleaning services in Stockholm, Sweden. Home cleaning, office cleaning, deep cleaning, and move-in/move-out.",
+  "description": "Orion Home – Professional cleaning services in Stockholm, Sweden. Home cleaning, office cleaning, deep cleaning, and move-in/move-out.",
   "icons": [
     {
       "src": "/orion-logo.png",

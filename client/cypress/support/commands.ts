@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-// Custom commands for Orion Städ testing
+// Custom commands for Orion Home testing
 export {}
 
 declare global {

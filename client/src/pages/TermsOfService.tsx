@@ -6,7 +6,7 @@ const TermsOfService = () => {
     <>
       <SEO
         title="Terms of Service"
-        description="Read the terms of service and privacy policy for Orion Städ professional cleaning services in Stockholm, Sweden."
+        description="Read the terms of service and privacy policy for Orion Home professional cleaning services in Stockholm, Sweden."
         canonicalUrl={`${BASE_URL}/terms-of-service`}
         breadcrumbs={[
           { name: 'Home', url: BASE_URL },

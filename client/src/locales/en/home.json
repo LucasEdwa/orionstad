@@ -16,10 +16,10 @@
   "Choose eco-friendly cleaning and enjoy a warm, healthy, and inviting home this autumn. Our team uses sustainable products to care for your family and the planet."
   ],
   "hero": {
-    "welcome": "Welcome to Orion Städ",
+    "welcome": "Welcome to Orion Home",
     "subtitle": "Your trusted partner for professional cleaning services",
     "heroImgAlt": "Cleaning Service",
-    "logoImgAlt": "Orion Städ Logo",
+    "logoImgAlt": "Orion Home Logo",
     "bookNow": "Book Now",
     "learnMore": "Learn More",
     "licensedInsured": "Licensed & Insured",
@@ -31,7 +31,7 @@
     {
       "title": "Born from Experience, Guided by Heart",
       "paragraphs": [
-        "Orion Städ was founded by someone who understands cleaning from the ground up. After years of working as a cleaner and noticing that many methods lacked both soul and precision, we created our own way — one that values quality, respect, and human connection.",
+        "Orion Home was founded by someone who understands cleaning from the ground up. After years of working as a cleaner and noticing that many methods lacked both soul and precision, we created our own way — one that values quality, respect, and human connection.",
         "We don't just clean — we care, we observe, and we transform. Our unique method blends Brazilian warmth and attention to detail with Scandinavian efficiency, treating every home as a sacred space that deserves respect and presence."
       ]
     },
@@ -45,7 +45,7 @@
   ],
   "bookingForm": {
     "title": "Book a Cleaning Service",
-    "intro": "Ready to experience the Orion Städ difference? Booking a cleaning service is easy! Simply click the button below to get started.",
+    "intro": "Ready to experience the Orion Home difference? Booking a cleaning service is easy! Simply click the button below to get started.",
     "serviceLabel": "Select Service Type and Enter Home Size",
     "serviceOptions": [
       { "value": "", "label": "Select Service Type" },
@@ -84,7 +84,7 @@
     "submitLabel": "Submit"
   },
   "features": {
-    "title": "Why Choose Orion Städ?",
+    "title": "Why Choose Orion Home?",
     "subtitle": "Experience the difference of our unique cleaning method that transforms homes and lives.",
     "items": [
       {

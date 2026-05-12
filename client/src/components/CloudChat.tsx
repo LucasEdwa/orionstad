@@ -535,7 +535,7 @@ export const CloudChat: React.FC<CloudChatProps> = ({
   widgetScriptUrl = import.meta.env.VITE_CHAT_WIDGET_SCRIPT_URL,
   chatUrl = import.meta.env.VITE_CHAT_URL,
   apiKey = import.meta.env.VITE_CHATBOT_API_KEY,
-  title = import.meta.env.VITE_CHAT_TITLE ?? 'Orion Städ Assistent Chat',
+  title = import.meta.env.VITE_CHAT_TITLE ?? 'Orion Home Assistent Chat',
   subtitle = import.meta.env.VITE_CHAT_SUBTITLE ?? '',
   launcherLabel = 'Öppna chatt',
   launcherTeaser: launcherTeaserProp,

@@ -29,32 +29,32 @@ export type CustomerFormContent = {
 };
 
 export const HOME_HERO: HomeHero = {
-  welcome: "Welcome to Orion Städ",
+  welcome: "Welcome to Orion Home",
   subtitle: "Your trusted partner for professional cleaning services",
   heroImgAlt: "Cleaning Service",
-  logoImgAlt: "Orion Städ Logo",
+  logoImgAlt: "Orion Home Logo",
 };
 
 export const HOME_SECTIONS: HomeSection[] = [
   {
-    title: "About Orion Städ",
+    title: "About Orion Home",
     paragraphs: [
-      "At Orion Städ, we believe in delivering excellence with every clean. Our team of dedicated professionals is committed to ensuring your home is spotless and sparkling, giving you more time to enjoy the things that matter most.",
+      "At Orion Home, we believe in delivering excellence with every clean. Our team of dedicated professionals is committed to ensuring your home is spotless and sparkling, giving you more time to enjoy the things that matter most.",
       "We offer a range of customizable cleaning services tailored to meet your specific needs. From regular home cleaning to deep cleaning, our goal is to provide a stress-free experience with results you can trust.",
     ],
   },
   {
     title: "Why Choose Us?",
     paragraphs: [
-      "Orion Städ stands out for its commitment to quality and customer satisfaction. We use eco-friendly products and the latest cleaning techniques to ensure your home is not only clean but also safe for you and your loved ones.",
-      "Our services are flexible and affordable, making it easy to keep your home in top shape without breaking the bank. Join the many satisfied customers who trust Orion Städ for their home cleaning needs.",
+      "Orion Home stands out for its commitment to quality and customer satisfaction. We use eco-friendly products and the latest cleaning techniques to ensure your home is not only clean but also safe for you and your loved ones.",
+      "Our services are flexible and affordable, making it easy to keep your home in top shape without breaking the bank. Join the many satisfied customers who trust Orion Home for their home cleaning needs.",
     ],
   },
 ];
 
 export const BOOKING_FORM_CONTENT: BookingFormContent = {
   title: "Book a Cleaning Service",
-  intro: "Ready to experience the Orion Städ difference? Booking a cleaning service is easy! Simply click the button below to get started.",
+  intro: "Ready to experience the Orion Home difference? Booking a cleaning service is easy! Simply click the button below to get started.",
   serviceLabel: "Select Service Type and Enter Home Size",
   serviceOptions: [
     { value: "", label: "Select Service Type" },

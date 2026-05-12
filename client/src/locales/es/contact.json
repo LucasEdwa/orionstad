@@ -1,6 +1,6 @@
 {
   "hero": {
-    "logoAlt": "Logo de Orion Städ",
+    "logoAlt": "Logo de Orion Home",
     "imgAlt": "Contáctenos",
     "title": "Póngase en Contacto",
     "subtitle": "Estamos aquí para ayudarle. Comencemos una conversación sobre sus necesidades de limpieza."
@@ -73,7 +73,7 @@
       "email": "polly@orionstad.se",
       "emailHref": "mailto:polly@orionstad.se",
       "phone": "+46 70 418 05 97",
-      "address": "Orion Städ, Södervägen 18A, 141 36 Estocolmo, Suecia",
+      "address": "Orion Home, Södervägen 18A, 141 36 Estocolmo, Suecia",
       "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1",
       "whatsappLabel": "Chatea con nosotros en WhatsApp"
     }

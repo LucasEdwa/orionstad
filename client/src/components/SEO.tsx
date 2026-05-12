@@ -19,7 +19,7 @@ interface SEOProps {
   breadcrumbs?: BreadcrumbItem[];
 }
 
-const SITE_NAME = 'Orion Städ';
+const SITE_NAME = 'Orion Home';
 const DEFAULT_DESCRIPTION =
   'Professional cleaning services in Stockholm, Sweden. Home cleaning, office cleaning, deep cleaning, and move-in/move-out cleaning. Eco-friendly and affordable.';
 export const BASE_URL = 'https://www.orionstad.se';

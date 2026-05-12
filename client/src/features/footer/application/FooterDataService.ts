@@ -4,7 +4,7 @@ export class FooterDataService {
   getReviewsWidget(): ReviewsWidget {
     return {
       src: "https://widget.reco.se/v2/venues/5868926/horizontal/small?inverted=false&border=true",
-      title: "Orion Städ AB - Omdömen på Reco",
+      title: "Orion Home AB - Omdömen på Reco",
       height: 27
     };
   }

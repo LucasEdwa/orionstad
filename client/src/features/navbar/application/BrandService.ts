@@ -5,7 +5,7 @@ export class BrandService {
   getBrandInfo(): BrandInfo {
     return {
       logoSrc: logoImg,
-      name: "Orion Städ",
+      name: "Orion Home",
       tagline: "Where cleaning becomes caring"
     };
   }

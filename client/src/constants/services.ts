@@ -1,5 +1,5 @@
 export const SERVICES_HERO = {
-  logoAlt: "Orion Städ Logo",
+  logoAlt: "Orion Home Logo",
   imgAlt: "Service-hero",
   title: "Our Services",
   subtitle: "Discover our range of professional cleaning services",

@@ -5,7 +5,7 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': `${BASE_URL}/#organization`,
-  name: 'Orion Städ',
+  name: 'Orion Home',
   url: BASE_URL,
   logo: `${BASE_URL}/orion-logo.png`,
   contactPoint: {
@@ -26,7 +26,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': `${BASE_URL}/#business`,
-  name: 'Orion Städ',
+  name: 'Orion Home',
   description: 'Professional cleaning services in Stockholm, Sweden. Home cleaning, office cleaning, deep cleaning, and move-in/move-out cleaning.',
   url: BASE_URL,
   telephone: '+46704180597',
@@ -63,7 +63,7 @@ const localBusinessSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Orion Städ',
+  name: 'Orion Home',
   url: BASE_URL,
   publisher: { '@id': `${BASE_URL}/#organization` },
   inLanguage: ['sv', 'en', 'es'],
@@ -73,7 +73,7 @@ const Home = () => (
   <>
     <SEO
       description="Professional cleaning services in Stockholm. Home cleaning, office cleaning, deep cleaning, and move-in/move-out. Eco-friendly products. Book online today!"
-      keywords="städning Stockholm, hemstädning, kontorsstädning, flyttstädning, deep cleaning Stockholm, professional cleaning Sweden, Orion Städ, städfirma Stockholm, eco-friendly cleaning, miljövänlig städning"
+      keywords="städning Stockholm, hemstädning, kontorsstädning, flyttstädning, deep cleaning Stockholm, professional cleaning Sweden, Orion Home, städfirma Stockholm, eco-friendly cleaning, miljövänlig städning"
       canonicalUrl={BASE_URL}
       structuredData={[organizationSchema, localBusinessSchema, websiteSchema]}
     />

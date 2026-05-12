@@ -1,5 +1,5 @@
 
-# Orion Städ — Client Application
+# Orion Home — Client Application
 
 React 19 + TypeScript frontend for [orionstad.se](https://www.orionstad.se), a professional cleaning services company based in Stockholm.
 
@@ -147,7 +147,7 @@ VITE_CHAT_API_URL=https://app.second-horizon.com
 VITE_CHAT_WIDGET_SCRIPT_URL=https://app.second-horizon.com/widget.js
 VITE_CHATBOT_API_URL=https://app.second-horizon.com
 VITE_CHATBOT_API_KEY=your_key_here
-VITE_CHATBOT_NAME=Orion Städ
+VITE_CHATBOT_NAME=Orion Home
 VITE_CHATBOT_GREETING=Hej! 👋 Hur kan jag hjälpa dig idag?
 ```
 

@@ -1,6 +1,6 @@
 {
   "hero": {
-    "logoAlt": "Orion Städ Logotyp",
+    "logoAlt": "Orion Home Logotyp",
     "imgAlt": "Kontakta oss",
     "title": "Hör av Dig",
     "subtitle": "Vi finns här för att hjälpa. Låt oss börja ett samtal om dina städbehov."
@@ -73,7 +73,7 @@
       "email": "polly@orionstad.se",
       "emailHref": "mailto:polly@orionstad.se",
       "phone": "+46 70 418 05 97",
-      "address": "Orion Städ, Södervägen 18A, 141 36 Stockholm, Sverige",
+      "address": "Orion Home, Södervägen 18A, 141 36 Stockholm, Sverige",
       "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1",
       "whatsappLabel": "Chatta med oss på WhatsApp"
     }

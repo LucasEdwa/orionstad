@@ -1,6 +1,6 @@
 {
   "hero": {
-    "logoAlt": "Orion Städ Logo",
+    "logoAlt": "Orion Home Logo",
     "imgAlt": "Service-hero",
     "title": "Our Services",
     "subtitle": "Discover our range of professional cleaning services",
@@ -13,7 +13,7 @@
   "ui": {
     "whatWeOffer": "What We Offer",
     "whatWeOfferDescription": "Professional cleaning services tailored to your needs. From regular home cleaning to specialized office maintenance.",
-    "whyChooseUs": "Why Choose Orion Städ?",
+    "whyChooseUs": "Why Choose Orion Home?",
     "whyChooseUsDescription": "Numbers that speak for our commitment to excellence",
     "getQuote": "Get Quote for",
     "learnMore": "Learn More",

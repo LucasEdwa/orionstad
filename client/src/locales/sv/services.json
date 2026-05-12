@@ -1,6 +1,6 @@
 {
   "hero": {
-    "logoAlt": "Orion Städ Logotyp",
+    "logoAlt": "Orion Home Logotyp",
     "imgAlt": "Tjänstehjälte",
     "title": "Våra tjänster",
     "subtitle": "Upptäck vårt utbud av professionella städtjänster",
@@ -13,7 +13,7 @@
   "ui": {
     "whatWeOffer": "Vad vi erbjuder",
     "whatWeOfferDescription": "Professionella städtjänster anpassade efter dina behov. Från regelbunden hemstädning till specialiserat kontorsunderhåll.",
-    "whyChooseUs": "Varför välja Orion Städ?",
+    "whyChooseUs": "Varför välja Orion Home?",
     "whyChooseUsDescription": "Siffror som talar för vårt engagemang för excellens",
     "getQuote": "Få offert för",
     "learnMore": "Läs mer",

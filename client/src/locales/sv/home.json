@@ -15,10 +15,10 @@
   "Välj miljövänlig städning och njut av ett varmt, hälsosamt och inbjudande hem i höst. Vårt team använder hållbara produkter för att ta hand om din familj och miljön."
   ],
   "hero": {
-    "welcome": "Välkommen till Orion Städ",
+    "welcome": "Välkommen till Orion Home",
     "subtitle": "Din pålitliga partner för professionella städtjänster",
     "heroImgAlt": "Städtjänst",
-    "logoImgAlt": "Orion Städ Logotyp",
+    "logoImgAlt": "Orion Home Logotyp",
     "bookNow": "Boka nu",
     "learnMore": "Läs Mer",
     "licensedInsured": "Licensierad & Försäkrad",
@@ -29,7 +29,7 @@
     {
       "title": "Född av erfarenhet, ledd av hjärtat",
       "paragraphs": [
-        "Orion Städ grundades av någon som förstår städning från grunden upp. Efter år av att arbeta som städare och märka att många metoder saknade både själ och precision, skapade vi vår egen väg — en som värdesätter kvalitet, respekt och mänsklig kontakt.",
+        "Orion Home grundades av någon som förstår städning från grunden upp. Efter år av att arbeta som städare och märka att många metoder saknade både själ och precision, skapade vi vår egen väg — en som värdesätter kvalitet, respekt och mänsklig kontakt.",
         "Vi städar inte bara — vi bryr oss, observerar och förvandlar. Vår unika metod blandar brasiliansk värme och uppmärksamhet på detaljer med skandinavisk effektivitet, och behandlar varje hem som ett heligt utrymme som förtjänar respekt och närvaro."
       ]
     },
@@ -43,7 +43,7 @@
   ],
   "bookingForm": {
     "title": "Boka en städtjänst",
-    "intro": "Redo att uppleva skillnaden med Orion Städ? Det är enkelt att boka en städtjänst! Klicka bara på knappen nedan för att komma igång.",
+    "intro": "Redo att uppleva skillnaden med Orion Home? Det är enkelt att boka en städtjänst! Klicka bara på knappen nedan för att komma igång.",
     "serviceLabel": "Välj tjänstetyp och ange boyta",
     "serviceOptions": [
       { "value": "", "label": "Välj tjänstetyp" },
@@ -82,7 +82,7 @@
     "submitLabel": "Skicka"
   },
   "features": {
-    "title": "Varför välja Orion Städ?",
+    "title": "Varför välja Orion Home?",
     "subtitle": "Upplev skillnaden med vår unika städmetod som förvandlar hem och liv.",
     "items": [
       {

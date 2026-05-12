@@ -28,7 +28,7 @@ const HeroInner = () => {
           muted={isMuted}
           playsInline
           poster="/orion-logo.png"
-          aria-label="Orion Städ professional cleaning services promotional video"
+          aria-label="Orion Home professional cleaning services promotional video"
           className="absolute inset-0 w-full h-full object-cover z-0"
           style={{ pointerEvents: 'none' }}
           onError={handleVideoError}

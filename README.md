@@ -1,7 +1,6 @@
-# Orion Städ ✨
+# Orion Home ✨
 
-**The website behind a real cleaning company in Stockholm.**  
-Built by me to solve a real problem — not as a tutorial exercise.
+Orion Home is a professional cleaning company based in Stockholm, Sweden. This repo powers their entire web presence: a multilingual marketing site with an integrated booking system that sends real service requests via email.
 
 🔗 **Live at** [www.orionstad.se](https://www.orionstad.se)
 
@@ -9,7 +8,7 @@ Built by me to solve a real problem — not as a tutorial exercise.
 
 ## What is this?
 
-Orion Städ is a professional cleaning company based in Stockholm, Sweden. This repo powers their entire web presence: a multilingual marketing site with an integrated booking system that sends real service requests via email.
+Orion Home is a professional cleaning company based in Stockholm, Sweden. This repo powers their entire web presence: a multilingual marketing site with an integrated booking system that sends real service requests via email.
 
 Customers pick a cleaning service, fill out a two-step booking form, and hit submit. That's it — the request lands in the company inbox through EmailJS, and the customer gets instant feedback via SweetAlert. No backend server needed.
 

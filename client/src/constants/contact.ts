@@ -1,8 +1,8 @@
 export const CONTACT_HERO = {
-  logoAlt: "Orion Städ Logo",
+  logoAlt: "Orion Home Logo",
   imgAlt: "About Hero",
   title: "Contact Us",
-  subtitle: "We're here to help. Get in touch with Orion Städ today.",
+  subtitle: "We're here to help. Get in touch with Orion Home today.",
 };
 
 export const CONTACT_SECTIONS = [
@@ -27,7 +27,7 @@ export const CONTACT_SECTIONS = [
     email: "polly@orionstad.se",
     emailHref: "mailto:polly@orionstad.se",
     phone: "+46 70 418 05 97",
-    address: "Orion Städ, Södervägen 18A, 141 36 Stockholm, Sweden",
+    address: "Orion Home, Södervägen 18A, 141 36 Stockholm, Sweden",
     whatsapp: "https://wa.me/message/I6GQY6OWYB5FH1",
   },
 ];
