@@ -6,6 +6,14 @@ interface ImportMetaEnv {
   readonly VITE_CHAT_WIDGET_SCRIPT_URL?: string;
   /** Full URL of the cloud-hosted chat UI to embed (iframe panel). */
   readonly VITE_CHAT_URL?: string;
+  /** Widget bootstrap URL exposed to `window.CHATBOT_API_URL` when loading `widget.js`. */
+  readonly VITE_CHATBOT_API_URL?: string;
+  /** Public key exposed to `window.CHATBOT_API_KEY` for widget bootstrap. */
+  readonly VITE_CHATBOT_API_KEY?: string;
+  /** Widget title exposed to `window.CHATBOT_NAME`. */
+  readonly VITE_CHATBOT_NAME?: string;
+  /** Widget greeting exposed to `window.CHATBOT_GREETING`. */
+  readonly VITE_CHATBOT_GREETING?: string;
   /** Main header line (e.g. assistant name). */
   readonly VITE_CHAT_TITLE?: string;
   /** Subheader (e.g. company). */

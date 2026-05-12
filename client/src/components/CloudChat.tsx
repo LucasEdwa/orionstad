@@ -96,11 +96,13 @@ async function postChat(
   apiBase: string,
   sessionId: string,
   message: string,
+  apiKey: string,
 ): Promise<{ reply: string; done: boolean }> {
   const res = await fetch(`${apiBase}/chat`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'X-API-Key': apiKey,
       // Ngrok free tier: reduces browser warning interstitial issues on API calls
       'ngrok-skip-browser-warning': '69420',
     },
@@ -126,6 +128,8 @@ export interface CloudChatProps {
   widgetScriptUrl?: string;
   /** Iframe URL. Env: `VITE_CHAT_URL`. Used if no API base and no widget script. */
   chatUrl?: string;
+  /** API key passed as X-API-Key for direct chat requests. */
+  apiKey?: string;
   title?: string;
   subtitle?: string;
   launcherLabel?: string;
@@ -307,12 +311,14 @@ function ChatPanelChrome({
 
 function CloudChatApiPanel({
   apiBase,
+  apiKey,
   title,
   subtitle,
   launcherLabel,
   launcherTeaser,
 }: {
   apiBase: string;
+  apiKey: string;
   title: string;
   subtitle: string;
   launcherLabel: string;
@@ -337,7 +343,7 @@ function CloudChatApiPanel({
     setPending(true);
     try {
       const sessionId = getOrCreateSessionId();
-      const data = await postChat(apiBase, sessionId, text);
+      const data = await postChat(apiBase, sessionId, text, apiKey);
       setMessages((m) => [...m, { role: 'assistant', text: data.reply }]);
       setBookingDone(Boolean(data.done));
     } catch (e) {
@@ -346,7 +352,7 @@ function CloudChatApiPanel({
     } finally {
       setPending(false);
     }
-  }, [apiBase, input, pending]);
+  }, [apiBase, apiKey, input, pending]);
 
   useEffect(() => {
     listRef.current?.scrollTo({ top: listRef.current.scrollHeight, behavior: 'smooth' });
@@ -528,6 +534,7 @@ export const CloudChat: React.FC<CloudChatProps> = ({
   apiBaseUrl = import.meta.env.VITE_CHAT_API_URL,
   widgetScriptUrl = import.meta.env.VITE_CHAT_WIDGET_SCRIPT_URL,
   chatUrl = import.meta.env.VITE_CHAT_URL,
+  apiKey = import.meta.env.VITE_CHATBOT_API_KEY,
   title = import.meta.env.VITE_CHAT_TITLE ?? 'Orion Städ Assistent Chat',
   subtitle = import.meta.env.VITE_CHAT_SUBTITLE ?? '',
   launcherLabel = 'Öppna chatt',
@@ -540,11 +547,16 @@ export const CloudChat: React.FC<CloudChatProps> = ({
   );
   const enabled = resolveWidgetEnabled(visibleProp);
   const apiBase = normalizeApiBase(apiBaseUrl ?? '');
+  const apiKeyValue = (apiKey ?? '').trim();
   const apiMode = Boolean(apiBase);
   const iframeUrl = (chatUrl ?? '').trim();
   const scriptSrc = (widgetScriptUrl ?? '').trim();
   const scriptMode = Boolean(scriptSrc) && !apiMode;
   const iframeMode = Boolean(iframeUrl) && !apiMode && !scriptMode;
+  const widgetApiUrl = normalizeApiBase((import.meta.env.VITE_CHATBOT_API_URL ?? '').trim() || apiBase);
+  const widgetApiKey = (import.meta.env.VITE_CHATBOT_API_KEY ?? '').trim();
+  const widgetName = (import.meta.env.VITE_CHATBOT_NAME ?? title).trim();
+  const widgetGreeting = (import.meta.env.VITE_CHATBOT_GREETING ?? launcherTeaser).trim();
 
   useEffect(() => {
     if (!enabled) {
@@ -561,6 +573,20 @@ export const CloudChat: React.FC<CloudChatProps> = ({
       return;
     }
 
+    const win = window as Window & typeof globalThis;
+    if (widgetApiUrl) {
+      win.CHATBOT_API_URL = widgetApiUrl;
+    }
+    if (widgetApiKey) {
+      win.CHATBOT_API_KEY = widgetApiKey;
+    }
+    if (widgetName) {
+      win.CHATBOT_NAME = widgetName;
+    }
+    if (widgetGreeting) {
+      win.CHATBOT_GREETING = widgetGreeting;
+    }
+
     const s = document.createElement('script');
     s.id = WIDGET_SCRIPT_ID;
     s.src = scriptSrc;
@@ -569,8 +595,12 @@ export const CloudChat: React.FC<CloudChatProps> = ({
 
     return () => {
       document.getElementById(WIDGET_SCRIPT_ID)?.remove();
+      delete win.CHATBOT_API_URL;
+      delete win.CHATBOT_API_KEY;
+      delete win.CHATBOT_NAME;
+      delete win.CHATBOT_GREETING;
     };
-  }, [enabled, scriptMode, scriptSrc]);
+  }, [enabled, scriptMode, scriptSrc, widgetApiKey, widgetApiUrl, widgetGreeting, widgetName]);
 
   useEffect(() => {
     if (enabled && !apiBase && !iframeUrl && !scriptSrc) {
@@ -588,6 +618,7 @@ export const CloudChat: React.FC<CloudChatProps> = ({
     return (
       <CloudChatApiPanel
         apiBase={apiBase}
+        apiKey={apiKeyValue}
         title={title}
         subtitle={subtitle}
         launcherLabel={launcherLabel}

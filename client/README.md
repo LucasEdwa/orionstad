@@ -137,6 +137,22 @@ VITE_EMAILJS_TEMPLATE_IDCONTACT=...
 VITE_EMAILJS_PUBLIC_KEY=...
 ```
 
+For the chat widget, set one of these depending on the mode you are using:
+
+```bash
+# Native panel that calls your backend directly
+VITE_CHAT_API_URL=https://app.second-horizon.com
+
+# Widget script bootstrap values used before loading widget.js
+VITE_CHAT_WIDGET_SCRIPT_URL=https://app.second-horizon.com/widget.js
+VITE_CHATBOT_API_URL=https://app.second-horizon.com
+VITE_CHATBOT_API_KEY=your_key_here
+VITE_CHATBOT_NAME=Orion Städ
+VITE_CHATBOT_GREETING=Hej! 👋 Hur kan jag hjälpa dig idag?
+```
+
+In AWS Amplify, add the same names in the Hosting environment variables panel for the app. For local development, put them in `client/.env.local`.
+
 ## Handling Failure Cases
 
 ### 404 — Route Not Found
