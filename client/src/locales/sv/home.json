@@ -103,6 +103,10 @@
       }
     ]
   },
+  "faq": {
+    "title": "Vanliga frågor",
+    "subtitle": "Allt du behöver veta om våra professionella städtjänster i Stockholm."
+  },
   "benefits": {
     "title": "Vad du får",
     "quickContact": {

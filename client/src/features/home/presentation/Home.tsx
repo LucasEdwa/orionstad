@@ -10,11 +10,11 @@ import { FeaturesGrid } from "./components/FeaturesGrid";
 import { BookingStepOne } from "./components/BookingStepOne";
 import { BookingStepTwo } from "./components/BookingStepTwo";
 import { BookingBenefits } from "./components/BookingBenefits";
+import { FAQSection } from "./components/FAQSection";
 
 // Hooks
 import { useBookingSubmission } from "./hooks/useBookingSubmission";
 import { useFeatures } from "./hooks/useFeatures";
-import WinterPromotion from "../../../components/WinterPromotion";
 
 const Home = () => {
   const step = useSelector((state: RootState) => state.booking.step);
@@ -40,8 +40,6 @@ const Home = () => {
 
       {/* Main Content */}
       <main className="bg-gray-50">
-            <WinterPromotion />
-
         {/* About Section with Modern Cards */}
         <AboutSection />
 
@@ -73,6 +71,9 @@ const Home = () => {
           </div>
         </section>
       </main>
+
+      {/* FAQ Section */}
+      <FAQSection />
 
       {showLang && <LanguageSwitcher />}
     </>

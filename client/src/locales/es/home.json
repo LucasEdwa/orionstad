@@ -103,6 +103,10 @@
       }
     ]
   },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "Todo lo que necesitas saber sobre nuestros servicios de limpieza profesional en Estocolmo."
+  },
   "benefits": {
     "title": "Lo que obtienes",
     "quickContact": {

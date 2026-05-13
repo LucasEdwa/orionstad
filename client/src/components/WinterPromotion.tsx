@@ -69,9 +69,9 @@ export default function PromoPopup() {
                             <div className="text-sm text-gray-300 italic">LIMITED TIME</div>
                         </div>
 
-                        <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-300">
+                        <p className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-300">
                             40% OFF
-                        </h1>
+                        </p>
 
                         <p className="mt-3 text-gray-300 max-w-lg">
                             Save 40% on your first 3-hour cleaning session. Hurry — slots fill up fast.
