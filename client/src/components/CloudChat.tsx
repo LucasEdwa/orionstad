@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { useCallback, useEffect, useId, useRef, useState, type CSSProperties } from 'react';
 import {
   FaCheckCircle,
   FaExclamationCircle,
@@ -163,6 +163,20 @@ function ChatPanelChrome({
       return false;
     }
   });
+  const [vpStyle, setVpStyle] = useState<CSSProperties | undefined>(undefined);
+
+  useEffect(() => {
+    const vp = window.visualViewport;
+    if (!vp) return;
+    const update = () => setVpStyle({ top: vp.offsetTop, height: vp.height });
+    update();
+    vp.addEventListener('resize', update);
+    vp.addEventListener('scroll', update);
+    return () => {
+      vp.removeEventListener('resize', update);
+      vp.removeEventListener('scroll', update);
+    };
+  }, []);
 
   const dismissTeaser = useCallback(() => {
     try {
@@ -200,111 +214,136 @@ function ChatPanelChrome({
     return () => window.removeEventListener('keydown', onKey);
   }, [open, setOpen]);
 
+  const chatHeader = (
+    <header
+      className="flex shrink-0 items-start justify-between gap-3 px-4 py-3 text-white"
+      style={{ background: 'linear-gradient(90deg, #3C0C0C 0%, #98754C 100%)' }}
+    >
+      <div className="flex min-w-0 gap-3">
+        <div
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 backdrop-blur-sm"
+          aria-hidden
+        >
+          <FaRobot className="h-5 w-5" />
+        </div>
+        <div className="min-w-0">
+          <p className="truncate text-sm font-semibold tracking-tight">{title}</p>
+          {subtitle.trim() ? (
+            <p className="truncate text-xs text-white/85">{subtitle}</p>
+          ) : null}
+        </div>
+      </div>
+      <button
+        type="button"
+        className="shrink-0 rounded-lg p-2 text-white/90 transition hover:bg-white/15 focus:ring-2 focus:ring-white/50 focus:outline-none"
+        aria-label="Close chat window"
+        onClick={() => setOpen(false)}
+      >
+        <FaTimes className="h-4 w-4" aria-hidden />
+      </button>
+    </header>
+  );
+
+  const teaserBubble = showTeaser ? (
+    <div
+      className="animate-fade-in-up relative max-w-[min(300px,calc(100vw-5.5rem))] rounded-2xl border border-[#3C0C0C]/18 bg-white px-3.5 py-3 pr-10 shadow-lg"
+      role="region"
+      aria-label="Inbjudan att chatta"
+    >
+      <div className="flex gap-3 pr-4">
+        <div
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#3C0C0C] to-[#98754C] text-white shadow-md"
+          aria-hidden
+        >
+          <FaRobot className="h-6 w-6" />
+        </div>
+        <div className="min-w-0 pt-0.5">
+          <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-[#3C0C0C]/90">
+            <FaMagic className="h-3 w-3 shrink-0 text-[#98754C]" aria-hidden />
+            Städassistenten
+          </p>
+          <p className="mt-1 text-sm leading-snug font-medium text-neutral-800">{teaserText}</p>
+        </div>
+      </div>
+      <button
+        type="button"
+        className="absolute top-1.5 right-1.5 flex h-7 w-7 items-center justify-center rounded-lg text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-800 focus:ring-2 focus:ring-[#98754C]/50 focus:outline-none"
+        aria-label="Stäng meddelande"
+        onClick={dismissTeaser}
+      >
+        <FaTimes className="h-3.5 w-3.5" aria-hidden />
+      </button>
+      <div
+        className="absolute -bottom-1.5 right-5 h-3 w-3 rotate-45 border-b border-r border-[#3C0C0C]/18 bg-white"
+        aria-hidden
+      />
+    </div>
+  ) : null;
+
+  const launcherButton = (isOpen: boolean) => (
+    <button
+      type="button"
+      className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white shadow-lg ring-2 ring-white/35 transition hover:opacity-95 hover:shadow-xl focus:ring-2 focus:ring-[#98754C] focus:ring-offset-2 focus:outline-none"
+      style={{ background: 'linear-gradient(135deg, #3C0C0C 0%, #98754C 100%)' }}
+      aria-label={launcherLabel}
+      aria-expanded={isOpen}
+      aria-controls={panelId}
+      onClick={() => setOpen((v) => !v)}
+    >
+      {isOpen ? (
+        <FaTimes className="h-6 w-6" aria-hidden />
+      ) : (
+        <FaRobot className="h-7 w-7" aria-hidden />
+      )}
+    </button>
+  );
+
   return (
     <>
-      <div className="fixed bottom-5 right-5 z-[10050] flex flex-col items-end gap-2 sm:bottom-6 sm:right-6">
-        {showTeaser ? (
-          <div
-            className="animate-fade-in-up relative max-w-[min(300px,calc(100vw-5.5rem))] rounded-2xl border border-[#3C0C0C]/18 bg-white px-3.5 py-3 pr-10 shadow-lg"
-            role="region"
-            aria-label="Inbjudan att chatta"
-          >
-            <div className="flex gap-3 pr-4">
-              <div
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#3C0C0C] to-[#98754C] text-white shadow-md"
-                aria-hidden
-              >
-                <FaRobot className="h-6 w-6" />
-              </div>
-              <div className="min-w-0 pt-0.5">
-                <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-[#3C0C0C]/90">
-                  <FaMagic className="h-3 w-3 shrink-0 text-[#98754C]" aria-hidden />
-                  Städassistenten
-                </p>
-                <p className="mt-1 text-sm leading-snug font-medium text-neutral-800">{teaserText}</p>
-              </div>
-            </div>
+      {/* Mobile full-screen overlay (< lg) */}
+      {open && (
+        <div
+          id={panelId}
+          role="dialog"
+          aria-modal="true"
+          aria-label={title}
+          className="fixed inset-x-0 z-[10060] flex flex-col bg-white lg:hidden animate-slide-up"
+          style={vpStyle ?? { top: 0, height: '100svh' }}
+        >
+          {chatHeader}
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden">{children}</div>
+        </div>
+      )}
+
+      {/* Desktop floating widget (lg+) */}
+      <div className="fixed bottom-5 right-5 z-[10050] hidden lg:flex flex-col items-end gap-2 sm:bottom-6 sm:right-6">
+        {teaserBubble}
+        {launcherButton(open)}
+        {open ? (
+          <>
             <button
               type="button"
-              className="absolute top-1.5 right-1.5 flex h-7 w-7 items-center justify-center rounded-lg text-neutral-500 transition hover:bg-neutral-100 hover:text-neutral-800 focus:ring-2 focus:ring-[#98754C]/50 focus:outline-none"
-              aria-label="Stäng meddelande"
-              onClick={dismissTeaser}
-            >
-              <FaTimes className="h-3.5 w-3.5" aria-hidden />
-            </button>
-            <div
-              className="absolute -bottom-1.5 right-5 h-3 w-3 rotate-45 border-b border-r border-[#3C0C0C]/18 bg-white"
-              aria-hidden
+              className="fixed inset-0 z-[10040] bg-black/40 backdrop-blur-[1px]"
+              aria-label="Close chat"
+              onClick={() => setOpen(false)}
             />
-          </div>
+            <div
+              className="fixed z-[10060] flex h-[min(560px,calc(100dvh-7rem))] max-h-[min(640px,calc(100dvh-7rem))] flex-col overflow-hidden rounded-2xl border border-[#3C0C0C]/20 bg-white shadow-2xl bottom-24 right-6 w-[min(420px,calc(100vw-2rem))]"
+            >
+              {chatHeader}
+              <div className="flex min-h-0 flex-1 flex-col overflow-hidden">{children}</div>
+            </div>
+          </>
         ) : null}
-        <button
-          type="button"
-          className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white shadow-lg ring-2 ring-white/35 transition hover:opacity-95 hover:shadow-xl focus:ring-2 focus:ring-[#98754C] focus:ring-offset-2 focus:outline-none"
-          style={{
-            background: 'linear-gradient(135deg, #3C0C0C 0%, #98754C 100%)',
-          }}
-          aria-label={launcherLabel}
-          aria-expanded={open}
-          aria-controls={panelId}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? (
-            <FaTimes className="h-6 w-6" aria-hidden />
-          ) : (
-            <FaRobot className="h-7 w-7" aria-hidden />
-          )}
-        </button>
       </div>
 
-      {open ? (
-        <>
-          <button
-            type="button"
-            className="fixed inset-0 z-[10040] bg-black/40 backdrop-blur-[1px]"
-            aria-label="Close chat"
-            onClick={() => setOpen(false)}
-          />
-          <div
-            id={panelId}
-            role="dialog"
-            aria-modal="true"
-            aria-label={title}
-            className="fixed z-[10060] flex h-[min(560px,calc(100dvh-7rem))] max-h-[min(640px,calc(100dvh-7rem))] flex-col overflow-hidden rounded-2xl border border-[#3C0C0C]/20 bg-white shadow-2xl bottom-[max(5.75rem,env(safe-area-inset-bottom))] left-3 right-3 sm:bottom-24 sm:left-auto sm:right-6 sm:w-[min(420px,calc(100vw-2rem))]"
-          >
-            <header
-              className="flex shrink-0 items-start justify-between gap-3 px-4 py-3 text-white"
-              style={{
-                background: 'linear-gradient(90deg, #3C0C0C 0%, #98754C 100%)',
-              }}
-            >
-              <div className="flex min-w-0 gap-3">
-                <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 backdrop-blur-sm"
-                  aria-hidden
-                >
-                  <FaRobot className="h-5 w-5" />
-                </div>
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold tracking-tight">{title}</p>
-                  {subtitle.trim() ? (
-                    <p className="truncate text-xs text-white/85">{subtitle}</p>
-                  ) : null}
-                </div>
-              </div>
-              <button
-                type="button"
-                className="shrink-0 rounded-lg p-2 text-white/90 transition hover:bg-white/15 focus:ring-2 focus:ring-white/50 focus:outline-none"
-                aria-label="Close chat window"
-                onClick={() => setOpen(false)}
-              >
-                <FaTimes className="h-4 w-4" aria-hidden />
-              </button>
-            </header>
-            {children}
-          </div>
-        </>
-      ) : null}
+      {/* Mobile floating button (< lg, only when closed) */}
+      {!open && (
+        <div className="fixed bottom-5 right-5 z-[10050] flex lg:hidden flex-col items-end gap-2 sm:bottom-6 sm:right-6">
+          {teaserBubble}
+          {launcherButton(false)}
+        </div>
+      )}
     </>
   );
 }
