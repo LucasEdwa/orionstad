@@ -8,9 +8,11 @@ import { useBookingFormSubmit } from '../hooks/useBookingFormSubmit';
 import { FieldError } from '../../../../components/FieldError';
 interface BookingStepOneProps {
   onNext: () => void;
+  /** h1 when the form is the page's main content (/booking), h2 when embedded on the home page */
+  headingLevel?: 'h1' | 'h2';
 }
 
-export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext }) => {
+export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext, headingLevel: Heading = 'h2' }) => {
   const { t } = useTranslation("home");
   const { serviceOptions, frequencyOptions } = useBookingFormOptions();
   const { bookingForm, handleServiceSelect, handleFrequencySelect, handleChange } = useBookingFormHandlers();
@@ -19,7 +21,7 @@ export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext }) =
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">{t("bookingForm.title")}</h2>
+        <Heading className="text-3xl font-bold text-gray-800 mb-4">{t("bookingForm.title")}</Heading>
         <p className="text-gray-600 leading-relaxed">{t("bookingForm.intro")}</p>
       </div>
 

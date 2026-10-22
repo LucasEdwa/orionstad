@@ -26,8 +26,8 @@ export const CONTACT_SECTIONS = [
     intro: "You can reach us through the following channels:",
     email: "polly@orionstad.se",
     emailHref: "mailto:polly@orionstad.se",
-    phone: "+46 70 418 05 97",
+    phone: "+46 76 327 22 83",
     address: "Orion Home, Södervägen 18A, 141 36 Stockholm, Sweden",
-    whatsapp: "https://wa.me/message/I6GQY6OWYB5FH1",
+    whatsapp: "https://wa.me/46763272283",
   },
 ];

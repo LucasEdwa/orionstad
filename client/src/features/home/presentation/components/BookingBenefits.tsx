@@ -30,7 +30,7 @@ export const BookingBenefits = ({ benefits }: BookingBenefitsProps) => {
         </p>
         <div className="space-y-3">
           <a
-            href="tel:+4670418097"
+            href="tel:+46763272283"
             className="flex items-center space-x-3 text-gray-800 hover:text-gray-700 transition-colors"
           >
             <div className=" p-2 rounded-full">
@@ -39,7 +39,7 @@ export const BookingBenefits = ({ benefits }: BookingBenefitsProps) => {
             <span className="font-medium text-gray-800">{t("benefits.quickContact.call")}</span>
           </a>
           <a
-            href="https://wa.me/message/I6GQY6OWYB5FH1"
+            href="https://wa.me/46763272283"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-3 text-gray-800 hover:text-green-700 transition-colors"

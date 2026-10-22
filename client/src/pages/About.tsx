@@ -10,7 +10,7 @@ export const About = () => {
         keywords="om Orion Home, städföretag Stockholm, eco-friendly cleaning company, professional cleaners Sweden, miljövänlig städfirma, hållbar städning"
         canonicalUrl={`${BASE_URL}/about`}
         breadcrumbs={[
-          { name: 'Home', url: BASE_URL },
+          { name: 'Home', url: `${BASE_URL}/` },
           { name: 'About', url: `${BASE_URL}/about` },
         ]}
       />

@@ -11,14 +11,14 @@
       "description": "Prata direkt med vårt team",
       "icon": "FaPhone",
       "action": "Ring Nu",
-      "href": "tel:+4670418097"
+      "href": "tel:+46763272283"
     },
     {
       "title": "WhatsApp",
       "description": "Snabb chatt för omedelbar respons",
       "icon": "FaWhatsapp",
       "action": "Skicka Meddelande",
-      "href": "https://wa.me/message/I6GQY6OWYB5FH1"
+      "href": "https://wa.me/46763272283"
     },
     {
       "title": "E-post",
@@ -72,9 +72,9 @@
       "intro": "Kontakta oss via någon av dessa bekväma kanaler:",
       "email": "polly@orionstad.se",
       "emailHref": "mailto:polly@orionstad.se",
-      "phone": "+46 70 418 05 97",
+      "phone": "+46 76 327 22 83",
       "address": "Orion Home, Södervägen 18A, 141 36 Stockholm, Sverige",
-      "whatsapp": "https://wa.me/message/I6GQY6OWYB5FH1",
+      "whatsapp": "https://wa.me/46763272283",
       "whatsappLabel": "Chatta med oss på WhatsApp"
     }
   ]

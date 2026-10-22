@@ -13,8 +13,8 @@ export class StaticNavigationRepository implements NavigationRepository {
 
   getContactInfo(): ContactInfo {
     return {
-      phone: "+4670418097",
-      whatsapp: "https://wa.me/message/I6GQY6OWYB5FH1",
+      phone: "+46763272283",
+      whatsapp: "https://wa.me/46763272283",
       bookNow: "Book Now"
     };
   }

@@ -36,8 +36,8 @@ export class NotFoundRepositoryImpl implements NotFoundRepository {
       {
         id: 'phone',
         type: 'phone',
-        value: '+4670418097',
-        displayValue: '+46 70 418 05 97',
+        value: '+46763272283',
+        displayValue: '+46 76 327 22 83',
         icon: '📞'
       },
       {

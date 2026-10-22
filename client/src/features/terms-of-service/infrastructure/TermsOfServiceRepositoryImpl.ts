@@ -68,7 +68,7 @@ export class TermsOfServiceRepositoryImpl implements TermsOfServiceRepository {
         id: 'call-now',
         type: 'phone',
         label: 'Call Now',
-        value: '+4670418097',
+        value: '+46763272283',
         icon: '📞',
         primary: false
       }

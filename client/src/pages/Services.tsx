@@ -41,7 +41,7 @@ export const Services = () => {
         canonicalUrl={`${BASE_URL}/services`}
         structuredData={servicesSchema}
         breadcrumbs={[
-          { name: 'Home', url: BASE_URL },
+          { name: 'Home', url: `${BASE_URL}/` },
           { name: 'Services', url: `${BASE_URL}/services` },
         ]}
       />

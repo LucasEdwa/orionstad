@@ -1,7 +1,8 @@
 import { lazy, Suspense } from 'react';
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { Navigate, type RouteObject } from 'react-router-dom';
 import { Layout } from './pages/Layout';
 import { NotFound } from './pages/NotFound';
+import { PageLoader } from './components/PageLoader';
 
 const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
 const Services = lazy(() => import('./pages/Services').then(m => ({ default: m.Services })));
@@ -10,14 +11,8 @@ const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Con
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
 const Booking = lazy(() => import('./pages/Booking').then(m => ({ default: m.Booking })));
 
-const PageLoader = () => (
-  <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <div style={{ width: 40, height: 40, border: '3px solid #e5e7eb', borderTopColor: '#6b4c3b', borderRadius: '50%', animation: 'spin 0.8s linear infinite' }} />
-    <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
-  </div>
-);
-
-const router = createBrowserRouter([
+// Shared by the browser router (main.tsx) and the build-time prerenderer (entry-server.tsx)
+export const routes: RouteObject[] = [
   {
     path: "/",
     element: <Layout />,
@@ -32,6 +27,7 @@ const router = createBrowserRouter([
       { path: "/booking", element: <Suspense fallback={<PageLoader />}><Booking /></Suspense> },
     ],
   },
-]);
+];
 
-export default router;
+// Paths prerendered to static HTML at build time
+export const PRERENDER_PATHS = ['/', '/services', '/about', '/contact', '/booking', '/terms-of-service'];

@@ -9,7 +9,7 @@ const TermsOfService = () => {
         description="Read the terms of service and privacy policy for Orion Home professional cleaning services in Stockholm, Sweden."
         canonicalUrl={`${BASE_URL}/terms-of-service`}
         breadcrumbs={[
-          { name: 'Home', url: BASE_URL },
+          { name: 'Home', url: `${BASE_URL}/` },
           { name: 'Terms of Service', url: `${BASE_URL}/terms-of-service` },
         ]}
       />

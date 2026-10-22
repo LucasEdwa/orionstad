@@ -21,7 +21,7 @@ describe('Contact Form - EmailJS Integration', () => {
     it('should show contact information and quick actions', () => {
       // Check contact information is displayed
       cy.contains('polly@orionstad.se').should('exist')
-      cy.contains('+46 70 418 05 97').should('exist')
+      cy.contains('+46 76 327 22 83').should('exist')
       cy.contains('Stockholm').should('exist')
       
       // Check quick action buttons/links
@@ -175,7 +175,7 @@ describe('Contact Form - EmailJS Integration', () => {
     it('should display complete contact information', () => {
       // Check all contact details are present
       cy.contains('polly@orionstad.se').should('exist')
-      cy.contains('+46 70 418 05 97').should('exist')
+      cy.contains('+46 76 327 22 83').should('exist')
       cy.contains('Stockholm').should('exist')
     })
   })

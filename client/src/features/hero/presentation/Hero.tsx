@@ -51,7 +51,12 @@ const HeroInner = () => {
 
       {/* Main content */}
       {showLogo ? (
-        <LogoAnimation brandAssets={brandAssets} logoVisible={logoVisible} />
+        <>
+          {/* The visible h1 only appears after the intro, so the first render
+              (which is what gets prerendered for crawlers) still needs one */}
+          <h1 className="sr-only">{content.welcome}</h1>
+          <LogoAnimation brandAssets={brandAssets} logoVisible={logoVisible} />
+        </>
       ) : (
         <HeroContentSection
           content={content}

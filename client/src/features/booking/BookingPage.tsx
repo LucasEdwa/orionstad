@@ -17,7 +17,7 @@ export const BookingPage = () => {
             {/* Booking Form */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
               {step === 1 && (
-                <BookingStepOne onNext={() => {}} />
+                <BookingStepOne onNext={() => {}} headingLevel="h1" />
               )}
 
               {step === 2 && (
