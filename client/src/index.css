@@ -12,6 +12,24 @@ body, #root {
   background: linear-gradient(90deg,  #d2b093 0%, #e2d8cc 100%);
 }
 
+/* Sonner toasts (form confirmations) in Orion colours. Base colours are set on
+   <Toaster> in App.tsx; these rules need [data-styled] to outrank sonner's injected styles. */
+[data-sonner-toaster] [data-sonner-toast][data-styled="true"] {
+  border-left: 4px solid #98754C;
+  box-shadow: 0 10px 30px rgba(60, 12, 12, 0.12);
+}
+[data-sonner-toaster] [data-sonner-toast][data-styled="true"] [data-description] {
+  color: #6b4c3b;
+}
+[data-sonner-toaster] [data-sonner-toast][data-styled="true"][data-type="success"] [data-icon] {
+  color: #98754C;
+}
+[data-sonner-toaster] [data-sonner-toast][data-styled="true"][data-type="error"] {
+  border-left-color: #a8322d;
+}
+[data-sonner-toaster] [data-sonner-toast][data-styled="true"][data-type="error"] [data-icon] {
+  color: #a8322d;
+}
 
 /* Orion Home custom gradient variable */
 :root {

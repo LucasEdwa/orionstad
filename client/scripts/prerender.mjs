@@ -1,13 +1,13 @@
 // Turns the client build in dist/ into static HTML per route so crawlers and
 // link-preview bots get real content without running JavaScript.
-// Run after `vite build` and `vite build --ssr src/entry-server.tsx --outDir dist-server`.
+// Run after `vite build` and `vite build --ssr src/entry-server.tsx --outDir node_modules/.cache/prerender`.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
-const serverEntry = path.join(root, 'dist-server', 'entry-server.js');
+const serverEntry = path.join(root, 'node_modules', '.cache', 'prerender', 'entry-server.js');
 
 const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf-8');
 const { render, PRERENDER_PATHS } = await import(pathToFileURL(serverEntry).href);
@@ -65,4 +65,4 @@ const notFound = await render('/__not-found__');
 fs.writeFileSync(path.join(dist, '404.html'), buildPage(notFound.html));
 console.log(`prerendered 404 -> dist/404.html (status ${notFound.status})`);
 
-fs.rmSync(path.join(root, 'dist-server'), { recursive: true, force: true });
+fs.rmSync(path.dirname(serverEntry), { recursive: true, force: true });
