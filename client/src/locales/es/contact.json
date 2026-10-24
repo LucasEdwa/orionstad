@@ -1,81 +1,35 @@
 {
-  "hero": {
-    "logoAlt": "Logo de Orion Home",
-    "imgAlt": "Contáctenos",
-    "title": "Póngase en Contacto",
-    "subtitle": "Estamos aquí para ayudarle. Comencemos una conversación sobre sus necesidades de limpieza."
+  "page": {
+    "eyebrow": "Contáctanos",
+    "title": "¿Cómo podemos ayudarte?",
+    "subtitle": "¿Tienes preguntas o quieres un presupuesto? Cuéntanos un poco sobre lo que necesitas y te ayudaremos."
   },
-  "quickActions": [
-    {
-      "title": "Llámenos",
-      "description": "Hable directamente con nuestro equipo",
-      "icon": "FaPhone",
-      "action": "Llamar Ahora",
-      "href": "tel:+46763272283"
-    },
-    {
-      "title": "WhatsApp",
-      "description": "Chat rápido para respuesta instantánea",
-      "icon": "FaWhatsapp",
-      "action": "Enviar Mensaje",
-      "href": "https://wa.me/46763272283"
-    },
-    {
-      "title": "Email",
-      "description": "Consultas detalladas bienvenidas",
-      "icon": "FaEnvelope",
-      "action": "Enviar Email",
-      "href": "mailto:polly@orionstad.se"
-    },
-    {
-      "title": "Reservar Servicio",
-      "description": "¿Listo para programar?",
-      "icon": "FaCheckCircle",
-      "action": "Reservar Ahora",
-      "href": "/#booking"
-    }
-  ],
-  "businessHours": {
-    "title": "Horarios de Atención",
-    "weekdays": "8:00 AM - 6:00 PM",
-    "weekends": "10:00 AM - 4:00 PM",
-    "note": "Servicios de limpieza de emergencia disponibles 24/7 con cita previa.",
-    "responseTime": "Normalmente respondemos dentro de 2 horas"
+  "channels": {
+    "title": "Hablemos.",
+    "subtitle": "Elige la forma de contacto que mejor te convenga.",
+    "callTitle": "Llámanos",
+    "writeTitle": "Escríbenos",
+    "whatsappTitle": "WhatsApp",
+    "whatsappAction": "Iniciar una conversación",
+    "area": "Limpieza en Estocolmo y alrededores.",
+    "phone": "076-327 22 83",
+    "phoneHref": "tel:+46763272283",
+    "email": "polly@orionstad.se",
+    "emailHref": "mailto:polly@orionstad.se",
+    "whatsapp": "https://wa.me/46763272283"
   },
   "form": {
-    "sending": "Enviando...",
-    "placeholders": {
-      "name": "Ingrese su nombre...",
-      "email": "Ingrese su correo electrónico...",
-      "message": "Escriba su mensaje..."
-    }
-  },
-  "sections": [
-    {
-      "title": "Por qué contactarnos",
-      "paragraphs": [
-        "Ya sea que tenga una pregunta, necesite más información o esté listo para reservar un servicio, estamos aquí para ayudarle. Nuestro equipo está dedicado a brindarle la mejor experiencia de servicio al cliente posible.",
-        "No dude en comunicarse con nosotros. Estamos encantados de ayudarle con cualquier consulta que pueda tener y proporcionar soluciones personalizadas para sus necesidades de limpieza."
-      ]
-    },
-    {
-      "title": "Envíenos un Mensaje",
-      "fields": [
-        { "name": "user_name", "type": "text", "placeholder": "Nombre" },
-        { "name": "user_email", "type": "email", "placeholder": "Correo electrónico" },
-        { "name": "message", "type": "textarea", "placeholder": "Mensaje" }
-      ],
-      "submitLabel": "Enviar Mensaje"
-    },
-    {
-      "title": "Información de Contacto",
-      "intro": "Comuníquese con nosotros a través de cualquiera de estos canales convenientes:",
-      "email": "polly@orionstad.se",
-      "emailHref": "mailto:polly@orionstad.se",
-      "phone": "+46 76 327 22 83",
-      "address": "Orion Home, Södervägen 18A, 141 36 Estocolmo, Suecia",
-      "whatsapp": "https://wa.me/46763272283",
-      "whatsappLabel": "Chatea con nosotros en WhatsApp"
-    }
-  ]
+    "title": "Envía una solicitud",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "nombre@ejemplo.com",
+    "serviceLabel": "¿En qué necesitas ayuda?",
+    "servicePlaceholder": "Elige un servicio",
+    "serviceOther": "Otro",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntanos qué necesitas y en qué zona.",
+    "submit": "Enviar solicitud",
+    "sending": "Enviando..."
+  }
 }

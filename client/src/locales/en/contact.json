@@ -1,81 +1,35 @@
 {
-  "hero": {
-    "logoAlt": "Orion Home Logo",
-    "imgAlt": "Contact Us",
-    "title": "Get in Touch",
-    "subtitle": "We're here to help. Let's start a conversation about your cleaning needs."
+  "page": {
+    "eyebrow": "Contact us",
+    "title": "How can we help you?",
+    "subtitle": "Do you have questions or would you like a quote? Tell us a little about your needs and we'll help you further."
   },
-  "quickActions": [
-    {
-      "title": "Call Us",
-      "description": "Speak directly with our team",
-      "icon": "FaPhone",
-      "action": "Call Now",
-      "href": "tel:+46763272283"
-    },
-    {
-      "title": "WhatsApp",
-      "description": "Quick chat for instant response",
-      "icon": "FaWhatsapp",
-      "action": "Message Us",
-      "href": "https://wa.me/46763272283"
-    },
-    {
-      "title": "Email",
-      "description": "Detailed inquiries welcome",
-      "icon": "FaEnvelope",
-      "action": "Send Email",
-      "href": "mailto:polly@orionstad.se"
-    },
-    {
-      "title": "Book Service",
-      "description": "Ready to schedule?",
-      "icon": "FaCheckCircle",
-      "action": "Book Now",
-      "href": "/#booking"
-    }
-  ],
-  "businessHours": {
-    "title": "Business Hours",
-    "weekdays": "8:00 AM - 6:00 PM",
-    "weekends": "10:00 AM - 4:00 PM",
-    "note": "Emergency cleaning services available 24/7 by appointment.",
-    "responseTime": "We typically respond within 2 hours"
+  "channels": {
+    "title": "We'd love to hear from you.",
+    "subtitle": "Choose the way of contact that suits you best.",
+    "callTitle": "Call us",
+    "writeTitle": "Write to us",
+    "whatsappTitle": "WhatsApp",
+    "whatsappAction": "Start a conversation",
+    "area": "Cleaning in Stockholm and surrounding areas.",
+    "phone": "076-327 22 83",
+    "phoneHref": "tel:+46763272283",
+    "email": "polly@orionstad.se",
+    "emailHref": "mailto:polly@orionstad.se",
+    "whatsapp": "https://wa.me/46763272283"
   },
   "form": {
-    "sending": "Sending...",
-    "placeholders": {
-      "name": "Enter your name...",
-      "email": "Enter your email address...",
-      "message": "Enter your message..."
-    }
-  },
-  "sections": [
-    {
-      "title": "Why Contact Us",
-      "paragraphs": [
-        "Whether you have a question, need more information, or are ready to book a service, we're here to assist you. Our team is dedicated to providing you with the best customer service experience possible.",
-        "Don't hesitate to reach out to us. We're happy to help with any inquiries you may have and provide personalized solutions for your cleaning needs."
-      ]
-    },
-    {
-      "title": "Send Us a Message",
-      "fields": [
-        { "name": "user_name", "type": "text", "placeholder": "Name" },
-        { "name": "user_email", "type": "email", "placeholder": "Email" },
-        { "name": "message", "type": "textarea", "placeholder": "Message" }
-      ],
-      "submitLabel": "Send Message"
-    },
-    {
-      "title": "Contact Information",
-      "intro": "Reach out to us through any of these convenient channels:",
-      "email": "polly@orionstad.se",
-      "emailHref": "mailto:polly@orionstad.se",
-      "phone": "+46 76 327 22 83",
-      "address": "Orion Home, Södervägen 18A, 141 36 Stockholm, Sweden",
-      "whatsapp": "https://wa.me/46763272283",
-      "whatsappLabel": "Chat with us on WhatsApp"
-    }
-  ]
+    "title": "Send a request",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "name@example.com",
+    "serviceLabel": "What do you need help with?",
+    "servicePlaceholder": "Choose a service",
+    "serviceOther": "Other",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us about your needs and your area.",
+    "submit": "Send request",
+    "sending": "Sending..."
+  }
 }

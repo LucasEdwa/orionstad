@@ -1,81 +1,35 @@
 {
-  "hero": {
-    "logoAlt": "Orion Home Logotyp",
-    "imgAlt": "Kontakta oss",
-    "title": "Hör av Dig",
-    "subtitle": "Vi finns här för att hjälpa. Låt oss börja ett samtal om dina städbehov."
+  "page": {
+    "eyebrow": "Kontakta oss",
+    "title": "Hur kan vi hjälpa dig?",
+    "subtitle": "Har du frågor eller vill du få en offert? Berätta lite om dina behov så hjälper vi dig vidare."
   },
-  "quickActions": [
-    {
-      "title": "Ring Oss",
-      "description": "Prata direkt med vårt team",
-      "icon": "FaPhone",
-      "action": "Ring Nu",
-      "href": "tel:+46763272283"
-    },
-    {
-      "title": "WhatsApp",
-      "description": "Snabb chatt för omedelbar respons",
-      "icon": "FaWhatsapp",
-      "action": "Skicka Meddelande",
-      "href": "https://wa.me/46763272283"
-    },
-    {
-      "title": "E-post",
-      "description": "Detaljerade förfrågningar välkomnas",
-      "icon": "FaEnvelope",
-      "action": "Skicka E-post",
-      "href": "mailto:polly@orionstad.se"
-    },
-    {
-      "title": "Boka Tjänst",
-      "description": "Redo att schemalägga?",
-      "icon": "FaCheckCircle",
-      "action": "Boka Nu",
-      "href": "/#booking"
-    }
-  ],
-  "businessHours": {
-    "title": "Öppettider",
-    "weekdays": "8:00 - 18:00",
-    "weekends": "10:00 - 16:00",
-    "note": "Akuta städtjänster tillgängliga dygnet runt efter bokning.",
-    "responseTime": "Vi svarar vanligtvis inom 2 timmar"
+  "channels": {
+    "title": "Vi hörs gärna.",
+    "subtitle": "Välj det kontaktsätt som passar dig bäst.",
+    "callTitle": "Ring oss",
+    "writeTitle": "Skriv till oss",
+    "whatsappTitle": "WhatsApp",
+    "whatsappAction": "Starta en konversation",
+    "area": "Städning i Stockholm med omnejd.",
+    "phone": "076-327 22 83",
+    "phoneHref": "tel:+46763272283",
+    "email": "polly@orionstad.se",
+    "emailHref": "mailto:polly@orionstad.se",
+    "whatsapp": "https://wa.me/46763272283"
   },
   "form": {
-    "sending": "Skickar...",
-    "placeholders": {
-      "name": "Ange ditt namn...",
-      "email": "Ange din e-postadress...",
-      "message": "Skriv ditt meddelande..."
-    }
-  },
-  "sections": [
-    {
-      "title": "Varför kontakta oss",
-      "paragraphs": [
-        "Oavsett om du har en fråga, behöver mer information eller är redo att boka en tjänst, finns vi här för att hjälpa dig. Vårt team är dedikerat till att ge dig den bästa kundserviceupplevelsen.",
-        "Tveka inte att höra av dig till oss. Vi hjälper dig gärna med alla frågor du kan ha och tillhandahåller personliga lösningar för dina städbehov."
-      ]
-    },
-    {
-      "title": "Skicka Oss ett Meddelande",
-      "fields": [
-        { "name": "user_name", "type": "text", "placeholder": "Namn" },
-        { "name": "user_email", "type": "email", "placeholder": "E-post" },
-        { "name": "message", "type": "textarea", "placeholder": "Meddelande" }
-      ],
-      "submitLabel": "Skicka Meddelande"
-    },
-    {
-      "title": "Kontaktinformation",
-      "intro": "Kontakta oss via någon av dessa bekväma kanaler:",
-      "email": "polly@orionstad.se",
-      "emailHref": "mailto:polly@orionstad.se",
-      "phone": "+46 76 327 22 83",
-      "address": "Orion Home, Södervägen 18A, 141 36 Stockholm, Sverige",
-      "whatsapp": "https://wa.me/46763272283",
-      "whatsappLabel": "Chatta med oss på WhatsApp"
-    }
-  ]
+    "title": "Skicka en förfrågan",
+    "nameLabel": "Namn",
+    "namePlaceholder": "Ditt namn",
+    "emailLabel": "E-post",
+    "emailPlaceholder": "namn@exempel.se",
+    "serviceLabel": "Vad behöver du hjälp med?",
+    "servicePlaceholder": "Välj tjänst",
+    "serviceOther": "Annat",
+    "messageLabel": "Meddelande",
+    "messagePlaceholder": "Berätta om dina behov och ditt område.",
+    "submit": "Skicka förfrågan",
+    "sending": "Skickar..."
+  }
 }

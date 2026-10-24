@@ -9,7 +9,7 @@ describe('Contact Form - EmailJS Integration', () => {
 
   describe('Contact Form Display and Validation', () => {
     it('should display the contact form correctly', () => {
-      cy.get('h2').should('contain.text', 'Send Us a Message')
+      cy.get('h2').should('contain.text', 'Send a request')
       
       // Check if all required fields are present
       cy.get('input[name="user_name"]').should('be.visible')
@@ -21,7 +21,7 @@ describe('Contact Form - EmailJS Integration', () => {
     it('should show contact information and quick actions', () => {
       // Check contact information is displayed
       cy.contains('polly@orionstad.se').should('exist')
-      cy.contains('+46 76 327 22 83').should('exist')
+      cy.contains('076-327 22 83').should('exist')
       cy.contains('Stockholm').should('exist')
       
       // Check quick action buttons/links
@@ -166,16 +166,16 @@ describe('Contact Form - EmailJS Integration', () => {
     })
   })
 
-  describe('Business Hours and Contact Information', () => {
-    it('should display business hours', () => {
-      // Look for business hours section
-      cy.contains('Business Hours', { matchCase: false }).should('be.visible')
+  describe('Service Selection and Contact Information', () => {
+    it('should preselect the service from the query string', () => {
+      cy.visit('/contact?service=flyttstadning')
+      cy.get('select[name="service"]').should('have.value', 'flyttstadning')
     })
 
     it('should display complete contact information', () => {
       // Check all contact details are present
       cy.contains('polly@orionstad.se').should('exist')
-      cy.contains('+46 76 327 22 83').should('exist')
+      cy.contains('076-327 22 83').should('exist')
       cy.contains('Stockholm').should('exist')
     })
   })

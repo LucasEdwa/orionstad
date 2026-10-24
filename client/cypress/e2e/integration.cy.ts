@@ -124,7 +124,7 @@ describe('End-to-End EmailJS Integration Tests', () => {
       
       // Navigate to contact page
       cy.visit('/contact')
-      cy.get('h2').should('contain.text', 'Send Us a Message')
+      cy.get('h2').should('contain.text', 'Send a request')
       
       // Navigate back to home
       cy.visit('/')

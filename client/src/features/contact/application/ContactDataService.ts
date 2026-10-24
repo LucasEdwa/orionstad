@@ -1,34 +1,16 @@
-import type { ContactPageData, ContactHero, QuickAction, BusinessHours, ContactSection, ContactField } from '../domain/entities/Contact';
+import type { ContactPageData, ContactPageIntro, ContactChannels, ContactFormCopy } from '../domain/entities/Contact';
 
 export class ContactDataService {
   createContactPageData(
-    hero: ContactHero,
-    quickActions: QuickAction[],
-    businessHours: BusinessHours,
-    sections: ContactSection[]
+    page: ContactPageIntro,
+    channels: ContactChannels,
+    form: ContactFormCopy
   ): ContactPageData {
-    return {
-      hero,
-      quickActions,
-      businessHours,
-      sections
-    };
+    return { page, channels, form };
   }
 
-  getContactSection(sections: ContactSection[], index: number): ContactSection | null {
-    return sections[index] || null;
-  }
-
-  getFormFields(sections: ContactSection[]): ContactField[] {
-    const formSection = this.getContactSection(sections, 1);
-    return formSection?.fields || [];
-  }
-
-  getContactInfo(sections: ContactSection[]): ContactSection | null {
-    return this.getContactSection(sections, 2);
-  }
-
-  getWhyContactUs(sections: ContactSection[]): ContactSection | null {
-    return this.getContactSection(sections, 0);
+  /** Accepts a `?service=` value only if it is one of the offered options */
+  getInitialService(requested: string | null, optionValues: string[]): string {
+    return requested && optionValues.includes(requested) ? requested : '';
   }
 }

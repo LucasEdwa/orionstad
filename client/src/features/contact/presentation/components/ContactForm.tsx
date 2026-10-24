@@ -1,97 +1,130 @@
-import { useTranslation } from 'react-i18next';
-import type { ContactSection } from '../../domain/entities/Contact';
+import { memo, useEffect, useRef } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
+import { useSearchParams } from 'react-router-dom';
+import type { ContactFormCopy } from '../../domain/entities/Contact';
+import { ContactDataService } from '../../application/ContactDataService';
 import { useContactForm } from '../hooks/useContactForm';
-import {memo} from 'react';
 import { FieldError } from '../../../../components/FieldError';
-interface ContactFormProps {
-  formSection: ContactSection | null;
-  whyContactSection: ContactSection | null;
+import { Card } from '../../../../components/ui';
+import { buttonClass, fieldClass, labelClass } from '../../../../components/ui/styles';
+
+// Module-level singleton — pure helpers, no state
+const contactDataService = new ContactDataService();
+
+export interface ServiceOption {
+  value: string;
+  label: string;
 }
 
-export const ContactForm = memo<ContactFormProps>(({ 
-  formSection, 
-  whyContactSection 
-}) => {
-  const { t } = useTranslation('contact');
+interface ContactFormProps {
+  copy: ContactFormCopy;
+  serviceOptions: ServiceOption[];
+}
+
+export const ContactForm = memo<ContactFormProps>(({ copy, serviceOptions }) => {
   const { handleSubmit, isSubmitting, fieldErrors, clearFieldError } = useContactForm();
+  const [searchParams] = useSearchParams();
 
-  // Helper function to get the correct placeholder
-  const getPlaceholder = (fieldName: string, fieldPlaceholder: string) => {
-    // Try to get specific translation first
-    const translationKey = `form.placeholders.${fieldName}`;
-    const translation = t(translationKey, '');
-    
-    // If translation exists, use it; otherwise fall back to field placeholder
-    return translation || fieldPlaceholder;
-  };
+  const serviceRef = useRef<HTMLSelectElement>(null);
 
-  if (!formSection) {
-    return null;
-  }
+  const options = [...serviceOptions, { value: 'other', label: copy.serviceOther }];
+  const optionValues = options.map((option) => option.value).join('|');
+
+  // Preselect from /contact?service=<id>. Done after mount because the page is
+  // prerendered without query params, and kept uncontrolled so form.reset() clears it.
+  const requestedService = searchParams.get('service');
+  useEffect(() => {
+    if (!serviceRef.current) return;
+    serviceRef.current.value = contactDataService.getInitialService(requestedService, optionValues.split('|'));
+  }, [requestedService, optionValues]);
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6">
-      <div className="mb-4">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">
-          {formSection.title}
-        </h2>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          {whyContactSection?.paragraphs?.[0]}
-        </p>
-      </div>
+    <Card className="rounded-[0.75rem] px-[1.5625rem] py-7">
+      <h2 className="text-[1.5625rem] leading-[1.5625rem] text-ink tracking-tight">{copy.title}</h2>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        {(formSection.fields ?? []).map((field, idx) => (
-          <div key={idx}>
-            <label
-              htmlFor={field.name}
-              className="block text-sm font-semibold text-gray-700 mb-1"
-            >
-              {field.placeholder}
-            </label>
-            {field.type === "textarea" ? (
-              <textarea
-                name={field.name}
-                id={field.name}
-                rows={3}
-                className={`w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 resize-none text-sm ${fieldErrors[field.name] ? 'border-red-500' : 'border-gray-300'}`}
-                required
-                placeholder={getPlaceholder(field.name, field.placeholder)}
-                onChange={() => clearFieldError(field.name)}
-              />
-            ) : (
-              <input
-                name={field.name}
-                type={field.type}
-                id={field.name}
-                className={`w-full px-3 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 text-sm ${fieldErrors[field.name] ? 'border-red-500' : 'border-gray-300'}`}
-                required
-                placeholder={getPlaceholder(field.name, field.placeholder)}
-                onChange={() => clearFieldError(field.name)}
-              />
-            )}
-            <FieldError name={field.name} errors={fieldErrors} />
+      <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+        <div className="grid grid-cols-1 sm:grid-cols-[14.375rem_minmax(0,1fr)] gap-x-[1.5625rem] gap-y-5">
+          <div>
+            <label htmlFor="user_name" className={labelClass}>{copy.nameLabel}</label>
+            <input
+              name="user_name"
+              type="text"
+              id="user_name"
+              autoComplete="name"
+              className={fieldClass(!!fieldErrors.user_name)}
+              required
+              placeholder={copy.namePlaceholder}
+              onChange={() => clearFieldError('user_name')}
+            />
+            <FieldError name="user_name" errors={fieldErrors} />
           </div>
-        ))}
-        
-        <button 
-          type="submit" 
+          <div>
+            <label htmlFor="user_email" className={labelClass}>{copy.emailLabel}</label>
+            <input
+              name="user_email"
+              type="email"
+              id="user_email"
+              autoComplete="email"
+              className={fieldClass(!!fieldErrors.user_email)}
+              required
+              placeholder={copy.emailPlaceholder}
+              onChange={() => clearFieldError('user_email')}
+            />
+            <FieldError name="user_email" errors={fieldErrors} />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="service" className={labelClass}>{copy.serviceLabel}</label>
+          <div className="relative">
+            <select
+              ref={serviceRef}
+              name="service"
+              id="service"
+              defaultValue=""
+              className={`${fieldClass()} appearance-none pr-10`}
+            >
+              <option value="">{copy.servicePlaceholder}</option>
+              {options.map((option) => (
+                <option key={option.value} value={option.value}>{option.label}</option>
+              ))}
+            </select>
+            <FaChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-2.5 h-2.5 text-muted" aria-hidden />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="message" className={labelClass}>{copy.messageLabel}</label>
+          <textarea
+            name="message"
+            id="message"
+            rows={4}
+            className={fieldClass(!!fieldErrors.message, 'textarea')}
+            required
+            placeholder={copy.messagePlaceholder}
+            onChange={() => clearFieldError('message')}
+          />
+          <FieldError name="message" errors={fieldErrors} />
+        </div>
+
+        <button
+          type="submit"
           disabled={isSubmitting}
-          className="w-full bg-orion-gradient text-white py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-purple-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+          className={buttonClass('primary', 'w-[12rem]')}
         >
           {isSubmitting ? (
-            <span className="flex items-center justify-center">
-              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <>
+              <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              {t('form.sending')}
-            </span>
+              {copy.sending}
+            </>
           ) : (
-            formSection.submitLabel || t('sections.1.submitLabel', 'Send Message')
+            copy.submit
           )}
         </button>
       </form>
-    </div>
+    </Card>
   );
 });

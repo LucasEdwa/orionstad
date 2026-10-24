@@ -1,52 +1,30 @@
 import React from 'react';
 import { useContactData } from './hooks/useContactData';
-import { ContactDataService } from '../application/ContactDataService';
-import { ContactHeroSection } from './components/ContactHeroSection';
-import { QuickActions } from './components/QuickActions';
 import { ContactForm } from './components/ContactForm';
 import { ContactInfo } from './components/ContactInfo';
-import { BusinessHoursSection } from './components/BusinessHoursSection';
-import { WhyContactUs } from './components/WhyContactUs';
+import { useServicesData } from '../../services';
+import { Container, PageHeader } from '../../../components/ui';
 
 export const Contact: React.FC = () => {
-  const contactData = useContactData();
-  const contactDataService = new ContactDataService();
-
-  const formSection = contactDataService.getContactSection(contactData.sections, 1);
-  const contactSection = contactDataService.getContactInfo(contactData.sections);
-  const whyContactSection = contactDataService.getWhyContactUs(contactData.sections);
+  const { page, channels, form } = useContactData();
+  const { services } = useServicesData();
+  const serviceOptions = services.map((service) => ({ value: service.id, label: service.title }));
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      {/* Hero Section */}
-      <ContactHeroSection hero={contactData.hero} />
+    <div className="bg-white">
+      <PageHeader eyebrow={page.eyebrow} title={page.title} subtitle={page.subtitle} />
 
-      {/* Quick Contact Actions */}
-      <QuickActions quickActions={contactData.quickActions} />
+      <main>
+        {/* Design PDF, page 4: 385px channel column, 545px form card, 32px below the header */}
+        <Container className="pt-8 pb-14">
+          <div className="grid grid-cols-1 lg:grid-cols-[24.0625rem_34.0625rem] lg:justify-between gap-10 items-start">
+            {/* Contact channels */}
+            <ContactInfo channels={channels} />
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          
-          {/* Contact Form */}
-          <ContactForm 
-            formSection={formSection}
-            whyContactSection={whyContactSection}
-          />
-
-          {/* Contact Information */}
-          <div className="space-y-6">
-            
-            {/* Contact Details */}
-            <ContactInfo contactSection={contactSection} />
-
-            {/* Business Hours */}
-            <BusinessHoursSection businessHours={contactData.businessHours} />
-
-            {/* Why Contact Us */}
-            <WhyContactUs whyContactSection={whyContactSection} />
+            {/* Contact Form */}
+            <ContactForm copy={form} serviceOptions={serviceOptions} />
           </div>
-        </div>
+        </Container>
       </main>
     </div>
   );
