@@ -3,17 +3,17 @@
   "short_name": "Orion Home",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#f9f5f0",
-  "theme_color": "#3C0C0C",
+  "background_color": "#ffffff",
+  "theme_color": "#55603a",
   "description": "Orion Home – Professional cleaning services in Stockholm, Sweden. Home cleaning, office cleaning, deep cleaning, and move-in/move-out.",
   "icons": [
     {
-      "src": "/orion-logo.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/orion-logo.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

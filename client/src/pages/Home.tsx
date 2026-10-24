@@ -9,7 +9,7 @@ const organizationSchema = {
   name: 'Orion Home',
   legalName: 'Atomus AB',
   url: `${BASE_URL}/`,
-  logo: `${BASE_URL}/orion-logo.png`,
+  logo: `${BASE_URL}/icon-512.png`,
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+46763272283',
