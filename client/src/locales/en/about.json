@@ -1,10 +1,30 @@
 {
-  "hero": {
-    "logoAlt": "Orion Home Logo",
-    "imgAlt": "About Hero",
-    "title": "About Orion Home",
-    "subtitle": "Transforming lives through the power of cleaning – where Brazilian warmth meets Scandinavian excellence"
+  "intro": {
+    "eyebrow": "About Orion Home",
+    "title": "Personal care. Professional cleaning.",
+    "subtitle": "We believe in thorough work, respect for your home and a personal contact that makes everyday life easier."
   },
+  "story": {
+    "eyebrow": "Our story",
+    "titleLine1": "Built on experience.",
+    "titleLine2": "Driven by care.",
+    "text": "Orion began with first-hand experience of the cleaning profession and a will to do it better. With Brazilian warmth and an eye for detail, we want to create a service that feels personal from the very first contact.",
+    "imageAlt": "Cleaner at work in a bright bathroom"
+  },
+  "pillars": [
+    {
+      "title": "Care",
+      "text": "We listen to your wishes and respect your home."
+    },
+    {
+      "title": "Precision",
+      "text": "The details make the difference in our work."
+    },
+    {
+      "title": "Personal contact",
+      "text": "Simple communication, from request to follow-up."
+    }
+  ],
   "sections": [
     {
       "title": "Our Origin Story",

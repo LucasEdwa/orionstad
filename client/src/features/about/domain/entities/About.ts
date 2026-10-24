@@ -1,31 +1,30 @@
-export interface AboutHero {
-  logoAlt: string;
-  imgAlt: string;
+export interface AboutIntro {
+  eyebrow: string;
   title: string;
   subtitle: string;
+}
+
+export interface AboutStory {
+  eyebrow: string;
+  titleLine1: string;
+  titleLine2: string;
+  text: string;
+  imageAlt: string;
+}
+
+export interface AboutPillar {
+  title: string;
+  text: string;
 }
 
 export interface AboutSection {
   title: string;
   paragraphs: string[];
-  icon?: string;
-  highlight?: boolean;
 }
 
 export interface AboutPageData {
-  hero: AboutHero;
+  intro: AboutIntro;
+  story: AboutStory;
+  pillars: AboutPillar[];
   sections: AboutSection[];
-}
-
-export interface TeamStats {
-  yearsExperience: string;
-  happyClients: string;
-  teammembers: string;
-  certifications: string;
-}
-
-export interface CompanyValues {
-  title: string;
-  description: string;
-  icon?: string;
 }

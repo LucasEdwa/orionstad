@@ -1,8 +1,8 @@
 export { About } from './presentation/About';
-export type { 
-  AboutHero, 
-  AboutSection, 
-  AboutPageData, 
-  TeamStats, 
-  CompanyValues 
+export type {
+  AboutIntro,
+  AboutStory,
+  AboutPillar,
+  AboutSection,
+  AboutPageData
 } from './domain/entities/About';

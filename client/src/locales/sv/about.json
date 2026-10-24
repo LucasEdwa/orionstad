@@ -1,10 +1,30 @@
 {
-  "hero": {
-    "logoAlt": "Orion Home Logotyp",
-    "imgAlt": "Om Oss Hjälte",
-    "title": "Om Orion Home",
-    "subtitle": "Förvandlar liv genom städningens kraft – där brasiliansk värme möter skandinavisk excellens"
+  "intro": {
+    "eyebrow": "Om Orion Home",
+    "title": "Personlig omtanke. Professionell städning.",
+    "subtitle": "Vi tror på noggrant arbete, respekt för ditt hem och en personlig kontakt som gör vardagen enklare."
   },
+  "story": {
+    "eyebrow": "Vår historia",
+    "titleLine1": "Byggt på erfarenhet.",
+    "titleLine2": "Drivet av omsorg.",
+    "text": "Orion började med egen erfarenhet av städyrket och en vilja att göra det bättre. Med brasiliansk värme och känsla för detaljer vill vi skapa en service som känns personlig från första kontakten.",
+    "imageAlt": "Städare i arbete i ett ljust badrum"
+  },
+  "pillars": [
+    {
+      "title": "Omtanke",
+      "text": "Vi lyssnar på dina önskemål och respekterar ditt hem."
+    },
+    {
+      "title": "Noggrannhet",
+      "text": "Detaljerna gör skillnaden i vårt arbete."
+    },
+    {
+      "title": "Personlig kontakt",
+      "text": "Enkel kommunikation, från förfrågan till uppföljning."
+    }
+  ],
   "sections": [
     {
       "title": "Vår Ursprungshistoria",

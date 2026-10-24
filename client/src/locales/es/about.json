@@ -1,10 +1,30 @@
 {
-  "hero": {
-    "logoAlt": "Logo de Orion Home",
-    "imgAlt": "Héroe Sobre Nosotros",
-    "title": "Sobre Orion Home",
-    "subtitle": "Transformando vidas a través del poder de la limpieza – donde la calidez brasileña se encuentra con la excelencia escandinava"
+  "intro": {
+    "eyebrow": "Sobre Orion Home",
+    "title": "Cuidado personal. Limpieza profesional.",
+    "subtitle": "Creemos en el trabajo minucioso, el respeto por tu hogar y un contacto personal que facilita el día a día."
   },
+  "story": {
+    "eyebrow": "Nuestra historia",
+    "titleLine1": "Construido con experiencia.",
+    "titleLine2": "Impulsado por el cuidado.",
+    "text": "Orion nació de la experiencia propia en el oficio de la limpieza y del deseo de hacerlo mejor. Con calidez brasileña y atención al detalle, queremos ofrecer un servicio que se sienta personal desde el primer contacto.",
+    "imageAlt": "Limpiadora trabajando en un baño luminoso"
+  },
+  "pillars": [
+    {
+      "title": "Cuidado",
+      "text": "Escuchamos tus deseos y respetamos tu hogar."
+    },
+    {
+      "title": "Precisión",
+      "text": "Los detalles marcan la diferencia en nuestro trabajo."
+    },
+    {
+      "title": "Contacto personal",
+      "text": "Comunicación sencilla, desde la solicitud hasta el seguimiento."
+    }
+  ],
   "sections": [
     {
       "title": "Nuestra Historia de Origen",
