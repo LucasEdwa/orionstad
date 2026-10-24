@@ -2,7 +2,8 @@ import { useMemo } from 'react';
 import { useTranslation } from "react-i18next";
 import { StaticContentRepository } from '../../infrastructure/StaticContentRepository';
 import type { HeroContent } from '../../domain/entities/Hero';
-import heroImage from '../../../../assets/design-living-room.jpg';
+// Photo: Spacejoy on Unsplash (Unsplash License), unsplash.com/photos/4YGsYQf7DNQ
+import heroImage from '../../../../assets/living-room-bright.jpg';
 
 // Module-level singleton — pure config, no state
 const fallbackContent = new StaticContentRepository().getHeroContent();

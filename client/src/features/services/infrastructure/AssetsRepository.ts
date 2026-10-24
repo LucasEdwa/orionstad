@@ -1,16 +1,19 @@
 import type { ServiceId } from '../domain/serviceIds';
-import livingRoomImg from '../../../assets/design-living-room.jpg';
+// Photos from Unsplash (Unsplash License): Spacejoy 4YGsYQf7DNQ, EZcurtain Life eLMSYhpAGEI,
+// Collov Home Design js8AQlw71HA, plus the house and office images from the design
+import livingRoomImg from '../../../assets/living-room-bright.jpg';
+import curtainsRoomImg from '../../../assets/living-room-curtains.jpg';
+import sofaRoomImg from '../../../assets/living-room-sofa.jpg';
 import houseImg from '../../../assets/design-house.jpg';
 import officeImg from '../../../assets/design-office.jpg';
 
-// Same image per service as the design proposal
 const SERVICE_IMAGES: Record<ServiceId, string> = {
   hemstadning: livingRoomImg,
   flyttstadning: houseImg,
-  storstadning: livingRoomImg,
+  storstadning: curtainsRoomImg,
   fonsterputs: houseImg,
   kontorsstadning: officeImg,
-  'extra-hjalp': livingRoomImg,
+  'extra-hjalp': sofaRoomImg,
 };
 
 export class AssetsRepository {

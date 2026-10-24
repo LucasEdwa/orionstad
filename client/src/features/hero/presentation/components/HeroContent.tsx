@@ -39,8 +39,8 @@ export const HeroContentSection = memo<HeroContentProps>(function HeroContentSec
           <img
             src={heroImage}
             alt={content.imageAlt}
-            width={580}
-            height={400}
+            width={1600}
+            height={900}
             fetchPriority="high"
             className="w-full h-[15rem] sm:h-[21.875rem] object-cover rounded-[0.75rem] lg:relative lg:left-[0.625rem]"
           />
