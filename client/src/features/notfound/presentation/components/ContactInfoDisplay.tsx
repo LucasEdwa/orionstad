@@ -18,7 +18,7 @@ export const ContactInfoDisplay = ({ contacts }: ContactInfoDisplayProps) => {
           <a
             key={contact.id}
             href={getHref(contact)}
-            className="text-purple-600 hover:text-purple-700 font-medium transition-colors"
+            className="text-olive hover:text-olive-dark font-medium transition-colors"
           >
             {contact.icon} {contact.displayValue}
           </a>

@@ -3,7 +3,7 @@ export const NotFoundHeader = () => {
     <>
       {/* Animated 404 with cleaning theme */}
       <div className="mb-8">
-        <div className="text-8xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text mb-4 animate-pulse">
+        <div className="text-8xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-olive to-blue-600 bg-clip-text mb-4 animate-pulse">
           404
         </div>
         <div className="text-6xl mb-4 animate-bounce">

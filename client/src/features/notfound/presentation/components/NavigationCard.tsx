@@ -9,7 +9,7 @@ export const NavigationCard = ({ item }: NavigationCardProps) => {
   return (
     <Link
       to={item.path}
-      className="group p-4 rounded-xl hover:bg-purple-50 transition-colors border border-gray-100 hover:border-purple-200"
+      className="group p-4 rounded-xl hover:bg-sage transition-colors border border-gray-100 hover:border-line"
     >
       <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
         {item.icon}

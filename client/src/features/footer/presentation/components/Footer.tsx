@@ -5,37 +5,40 @@ import { CompanyInfo } from './CompanyInfo';
 import { QuickLinks } from './QuickLinks';
 import { SocialMedia } from './SocialMedia';
 import { FooterBottom } from './FooterBottom';
+import { Container } from '../../../../components/ui';
 
 export const Footer: React.FC = () => {
   const { footerData, reviewsWidget } = useFooterData();
 
   return (
-    <footer className="bg-white text-gray-800">
+    <footer className="bg-white text-ink">
       {/* Reviews Widget */}
       <ReviewsWidget widget={reviewsWidget} />
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <CompanyInfo 
-            companyInfo={footerData.companyInfo} 
-            address={footerData.address} 
+      <Container className="py-12">
+        <div className="border-t border-line pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <CompanyInfo 
+              companyInfo={footerData.companyInfo} 
+              address={footerData.address} 
+            />
+
+            {/* Quick Links */}
+            <QuickLinks links={footerData.links} />
+
+            {/* Social Media & Contact */}
+            <SocialMedia social={footerData.social} />
+          </div>
+
+          {/* Bottom Bar */}
+          <FooterBottom 
+            copyright={footerData.copyright} 
+            taglineBottom={footerData.taglineBottom} 
           />
-
-          {/* Quick Links */}
-          <QuickLinks links={footerData.links} />
-
-          {/* Social Media & Contact */}
-          <SocialMedia social={footerData.social} />
         </div>
-
-        {/* Bottom Bar */}
-        <FooterBottom 
-          copyright={footerData.copyright} 
-          taglineBottom={footerData.taglineBottom} 
-        />
-      </div>
+      </Container>
     </footer>
   );
 };

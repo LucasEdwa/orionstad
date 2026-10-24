@@ -39,7 +39,7 @@ export class TermsOfServiceService {
   }
 
   getSectionColorScheme(): { from: string; to: string } {
-    return { from: 'from-[#3C0C0C]', to: 'to-[#98754C]' };
+    return { from: 'from-[#3E4729]', to: 'to-[#55603A]' };
   }
 
   handleGoBack(): void {
