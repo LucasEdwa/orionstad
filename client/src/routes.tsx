@@ -11,7 +11,6 @@ const ServiceDetail = lazy(() => import('./pages/ServiceDetail').then(m => ({ de
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
 const TermsOfService = lazy(() => import('./pages/TermsOfService'));
-const Booking = lazy(() => import('./pages/Booking').then(m => ({ default: m.Booking })));
 
 // Shared by the browser router (main.tsx) and the build-time prerenderer (entry-server.tsx)
 export const routes: RouteObject[] = [
@@ -27,13 +26,13 @@ export const routes: RouteObject[] = [
       { path: "/contact", element: <Suspense fallback={<PageLoader />}><Contact /></Suspense> },
       { path: "/terms-of-service", element: <Suspense fallback={<PageLoader />}><TermsOfService /></Suspense> },
       { path: "/privacy-policy", element: <Navigate to="/terms-of-service" replace /> },
-      { path: "/booking", element: <Suspense fallback={<PageLoader />}><Booking /></Suspense> },
+      { path: "/booking", element: <Navigate to="/contact" replace /> },
     ],
   },
 ];
 
 // Paths prerendered to static HTML at build time
 export const PRERENDER_PATHS = [
-  '/', '/services', '/about', '/contact', '/booking', '/terms-of-service',
+  '/', '/services', '/about', '/contact', '/terms-of-service',
   ...SERVICE_IDS.map((id) => `/services/${id}`),
 ];

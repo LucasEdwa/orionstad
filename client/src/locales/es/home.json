@@ -1,8 +1,8 @@
 {
   "seasonBanner": {
     "cta": "Explora Nuestros Servicios",
-  "title": "¡El otoño está por terminar, el invierno se acerca!",
-  "description": "El otoño está por terminar. Prepara tu hogar para el invierno: reserva una limpieza profunda y disfruta de un espacio acogedor y saludable toda la temporada!"
+    "title": "¡El otoño está por terminar, el invierno se acerca!",
+    "description": "El otoño está por terminar. Prepara tu hogar para el invierno: reserva una limpieza profunda y disfruta de un espacio acogedor y saludable toda la temporada!"
   },
   "marketingPromo": {
     "title": "¡20% de descuento para nuevos clientes!",
@@ -11,8 +11,8 @@
   "autumnPromotionMessages": [
     " Promoción de otoño: ¡20% de descuento en todos los servicios de limpieza para nuevos clientes!",
     "¡Reserva ahora y disfruta de un hogar reluciente este otoño!",
-  "Solo por esta temporada: transforma tu hogar y ahorra con nuestra oferta especial de otoño. Aprovecha la oportunidad de renovar tu espacio y sentir la diferencia de una limpieza profesional.",
-  "Elige limpieza ecológica y disfruta de un ambiente cálido, saludable y acogedor este otoño. Nuestro equipo utiliza productos sostenibles para cuidar de tu familia y del planeta."
+    "Solo por esta temporada: transforma tu hogar y ahorra con nuestra oferta especial de otoño. Aprovecha la oportunidad de renovar tu espacio y sentir la diferencia de una limpieza profesional.",
+    "Elige limpieza ecológica y disfruta de un ambiente cálido, saludable y acogedor este otoño. Nuestro equipo utiliza productos sostenibles para cuidar de tu familia y del planeta."
   ],
   "hero": {
     "eyebrow": "Limpieza en Estocolmo",
@@ -65,87 +65,8 @@
       ]
     }
   ],
-  "bookingForm": {
-    "title": "Reservar un servicio de limpieza",
-    "intro": "¿Listo para experimentar la diferencia de Orion Home? ¡Reservar un servicio de limpieza es fácil! Simplemente haga clic en el botón de abajo para comenzar.",
-    "serviceLabel": "Seleccione el tipo de servicio e ingrese el tamaño del hogar",
-    "serviceOptions": [
-      { "value": "", "label": "Seleccione el tipo de servicio" },
-      { "value": "regular", "label": "Limpieza regular" },
-      { "value": "deep", "label": "Limpieza profunda" },
-      { "value": "move-in-out", "label": "Limpieza de mudanza" }
-    ],
-    "sizeLabel": "Ingrese el tamaño del hogar (m²):",
-    "frequencyLabel": "Seleccione la frecuencia de limpieza:",
-    "frequencyOptions": [
-      { "value": "", "label": "Seleccione la frecuencia" },
-      { "value": "one-time", "label": "Limpieza única" },
-      { "value": "weekly", "label": "Limpieza semanal" },
-      { "value": "bi-weekly", "label": "Limpieza quincenal" },
-      { "value": "monthly", "label": "Limpieza mensual" }
-    ],
-    "nextLabel": "Siguiente"
-  },
-  "customerForm": {
-    "title": "Información del cliente",
-    "intro": "Por favor, proporcione su información de contacto para completar la reserva.",
-    "fields": [
-      { "type": "text", "placeholder": "Nombre completo", "name": "fullName" },
-      { "type": "email", "placeholder": "Correo electrónico", "name": "email" },
-      { "type": "tel", "placeholder": "Número de teléfono", "name": "phone" },
-      { "type": "text", "placeholder": "Dirección", "name": "address" },
-      { "type": "text", "placeholder": "Número de habitaciones", "name": "numberOfRooms" },
-      { "type": "text", "placeholder": "Número de baños", "name": "numberOfBathrooms" },
-      { "type": "text", "placeholder": "Cómo acceder a su hogar", "name": "accessInstructions" },
-      { "type": "text", "placeholder": "Áreas prioritarias para limpiar", "name": "priorityAreas" },
-      { "type": "text", "placeholder": "Instrucciones especiales", "name": "specialInstructions" },
-      { "type": "text", "placeholder": "Materiales sensibles o alergias", "name": "allergies" },
-      { "type": "text", "placeholder": "Mascotas en el hogar", "name": "pets" }
-    ],
-    "backLabel": "Atrás",
-    "submitLabel": "Enviar"
-  },
-  "features": {
-    "title": "¿Por qué elegir Orion Home?",
-    "subtitle": "Experimenta la diferencia de nuestro método único de limpieza que transforma hogares y vidas.",
-    "items": [
-      {
-        "title": "Calidad Premium",
-        "description": "Limpieza profesional con atención a cada detalle"
-      },
-      {
-        "title": "Confiable y asegurado",
-        "description": "Servicio completamente asegurado con limpiadores verificados"
-      },
-      {
-        "title": "Enfoque cuidadoso",
-        "description": "Tratamos tu hogar con respeto y presencia"
-      },
-      {
-        "title": "Servicio 5 estrellas",
-        "description": "Constantemente calificado como excelente por nuestros clientes satisfechos"
-      }
-    ]
-  },
   "faq": {
     "title": "Preguntas frecuentes",
     "subtitle": "Todo lo que necesitas saber sobre nuestros servicios de limpieza profesional en Estocolmo."
-  },
-  "benefits": {
-    "title": "Lo que obtienes",
-    "quickContact": {
-      "title": "Contacto rápido",
-      "description": "¿Tienes preguntas? ¿Necesitas discutir requisitos especiales? ¡Estamos aquí para ayudar!",
-      "call": "Llámanos: +46 76 327 22 83",
-      "whatsapp": "Escríbenos por WhatsApp instantáneamente"
-    },
-    "items": [
-      "Consulta gratuita y plan de limpieza personalizado",
-      "Limpiadores profesionales, capacitados y confiables",
-      "Productos ecológicos seguros para la familia y las mascotas",
-      "Horarios flexibles que se adaptan a tu vida",
-      "Garantía de satisfacción del 100%",
-      "El mismo limpiador para consistencia y confianza"
-    ]
   }
 }

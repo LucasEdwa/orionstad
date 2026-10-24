@@ -1,8 +1,8 @@
 {
   "seasonBanner": {
     "cta": "Explore Our Services",
-  "title": "Autumn is almost over, winter is near!",
-  "description": "Autumn is coming to an end. Prepare your home for winter—book a deep cleaning and enjoy a cozy, healthy space all season!"
+    "title": "Autumn is almost over, winter is near!",
+    "description": "Autumn is coming to an end. Prepare your home for winter—book a deep cleaning and enjoy a cozy, healthy space all season!"
   },
   "cta": "Explore Our Services",
   "marketingPromo": {
@@ -12,8 +12,8 @@
   "autumnPromotionMessages": [
     " Autumn Promotion: 20% off all cleaning services for new clients!",
     "Book now and enjoy a sparkling home this fall!",
-  "For a limited time only: transform your home and save with our special autumn offer. Experience the comfort and freshness of a professionally cleaned space.",
-  "Choose eco-friendly cleaning and enjoy a warm, healthy, and inviting home this autumn. Our team uses sustainable products to care for your family and the planet."
+    "For a limited time only: transform your home and save with our special autumn offer. Experience the comfort and freshness of a professionally cleaned space.",
+    "Choose eco-friendly cleaning and enjoy a warm, healthy, and inviting home this autumn. Our team uses sustainable products to care for your family and the planet."
   ],
   "hero": {
     "eyebrow": "Cleaning in Stockholm",
@@ -66,88 +66,8 @@
       ]
     }
   ],
-  "bookingForm": {
-    "title": "Book a Cleaning Service",
-    "intro": "Ready to experience the Orion Home difference? Booking a cleaning service is easy! Simply click the button below to get started.",
-    "serviceLabel": "Select Service Type and Enter Home Size",
-    "serviceOptions": [
-      { "value": "", "label": "Select Service Type" },
-      { "value": "regular", "label": "Regular Cleaning" },
-      { "value": "deep", "label": "Deep Cleaning" },
-      { "value": "move-in-out", "label": "Move In/Out Cleaning" }
-    ],
-    "sizeLabel": "Enter Home Size (m²):",
-    "frequencyLabel": "Select Cleaning Frequency:",
-    "frequencyOptions": [
-      { "value": "", "label": "Select Frequency" },
-      { "value": "one-time", "label": "One-Time Cleaning" },
-      { "value": "weekly", "label": "Weekly Cleaning" },
-      { "value": "bi-weekly", "label": "Bi-Weekly Cleaning" },
-      { "value": "monthly", "label": "Monthly Cleaning" }
-    ],
-    "nextLabel": "Next"
-  },
-  "customerForm": {
-    "title": "Customer Information",
-    "intro": "Please provide your contact information to complete the booking.",
-    "fields": [
-      { "type": "text", "placeholder": "Full Name", "name": "fullName" },
-      { "type": "email", "placeholder": "Email Address", "name": "email" },
-      { "type": "tel", "placeholder": "Phone Number", "name": "phone" },
-      { "type": "text", "placeholder": "Address", "name": "address" },
-      { "type": "text", "placeholder": "Number of Rooms", "name": "numberOfRooms" },
-      { "type": "text", "placeholder": "Number of Bathrooms", "name": "numberOfBathrooms" },
-      { "type": "text", "placeholder": "How to Access Your Home", "name": "accessInstructions" },
-      { "type": "text", "placeholder": "Priority Areas to Clean", "name": "priorityAreas" },
-      { "type": "text", "placeholder": "Any Special Instructions", "name": "specialInstructions" },
-      { "type": "text", "placeholder": "Sensitive Materials or Allergies", "name": "allergies" },
-      { "type": "text", "placeholder": "Pets in the Home", "name": "pets" }
-    ],
-    "backLabel": "Back",
-    "submitLabel": "Submit"
-  },
-  "features": {
-    "title": "Why Choose Orion Home?",
-    "subtitle": "Experience the difference of our unique cleaning method that transforms homes and lives.",
-    "items": [
-      {
-        "title": "Premium Quality",
-        "description": "Professional cleaning with attention to every detail"
-      },
-      {
-        "title": "Trusted & Insured",
-        "description": "Fully insured service with background-checked cleaners"
-      },
-      {
-        "title": "Caring Approach",
-        "description": "We treat your home with respect and presence"
-      },
-      {
-        "title": "5-Star Service",
-        "description": "Consistently rated excellent by our satisfied clients"
-      }
-    ]
-  },
   "faq": {
     "title": "Frequently Asked Questions",
     "subtitle": "Everything you need to know about our professional cleaning services in Stockholm."
-  },
-  "benefits": {
-    "title": "What You Get",
-    "quickContact": {
-      "title": "Quick Contact",
-      "description": "Have questions? Need to discuss special requirements? We're here to help!",
-      "call": "Call us: +46 76 327 22 83",
-      "whatsapp": "WhatsApp us instantly"
-    },
-    "items": [
-      "Free consultation and customized cleaning plan",
-      "Professional, trained, and trusted cleaners",
-      "Eco-friendly products safe for family and pets",
-      "Flexible scheduling that works with your life",
-      "100% satisfaction guarantee",
-      "Same cleaner for consistency and trust"
-    ]
-  
   }
 }

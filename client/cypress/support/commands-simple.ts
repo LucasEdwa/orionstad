@@ -7,39 +7,12 @@ declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
     interface Chainable {
-      fillBookingForm(bookingData: { serviceType: string; homeSize: string; frequency: string }, customerData: { fullName: string; email: string; phone: string; address: string; specialInstructions?: string }): Chainable<void>
       fillContactForm(contactData: { user_name: string; user_email: string; message: string }): Chainable<void>
       mockEmailJS(shouldSucceed?: boolean): Chainable<void>
       handleSweetAlert(expectedType: 'success' | 'error'): Chainable<void>
     }
   }
 }
-
-// Fill booking form command
-Cypress.Commands.add('fillBookingForm', (bookingData, customerData) => {
-  // Step 1: Service selection
-  cy.get('select[name="serviceType"]').select(bookingData.serviceType)
-  cy.get('input[name="homeSize"]').type(bookingData.homeSize)
-  cy.get('select[name="frequency"]').select(bookingData.frequency)
-  cy.get('button[type="submit"]').click()
-  
-  // Step 2: Customer information
-  cy.get('input[name="fullName"]', { timeout: 5000 }).should('be.visible')
-  cy.get('input[name="fullName"]').type(customerData.fullName)
-  cy.get('input[name="email"]').type(customerData.email)
-  cy.get('input[name="phone"]').type(customerData.phone)
-  cy.get('input[name="address"]').type(customerData.address)
-  
-  // Optional fields
-  if (customerData.specialInstructions) {
-    const instructions = customerData.specialInstructions
-    cy.get('body').then(($body) => {
-      if ($body.find('input[name="specialInstructions"]').length > 0) {
-        cy.get('input[name="specialInstructions"]').type(instructions)
-      }
-    })
-  }
-})
 
 // Fill contact form command
 Cypress.Commands.add('fillContactForm', (contactData) => {

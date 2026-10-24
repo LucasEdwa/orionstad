@@ -79,7 +79,7 @@ export default function PromoPopup() {
 
                         <div className="mt-6 flex items-center gap-3">
                             <Link
-                                to="/booking"
+                                to="/contact"
                                 className="inline-flex items-center gap-2 bg-orion-gradient text-black font-semibold px-5 py-3 rounded-full shadow-2xl hover:scale-[1.02] transform transition"
                                 aria-label="Book now — 40% off"
                             >

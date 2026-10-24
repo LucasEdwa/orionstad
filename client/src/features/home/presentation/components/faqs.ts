@@ -18,7 +18,7 @@ export const EN_FAQS: FAQItem[] = [
   {
     question: 'How do I book a cleaning service?',
     answer:
-      'Booking is easy. Use the online form on this page, call us at +46 76 327 22 83, or reach us on WhatsApp. We will confirm your appointment and answer any questions about your specific cleaning needs.',
+      'Booking is easy. Send a request through our contact form, call us at +46 76 327 22 83, or reach us on WhatsApp. We will get back to you with a quote, confirm your appointment and answer any questions about your specific cleaning needs.',
   },
   {
     question: 'Are your cleaners insured and background-checked?',

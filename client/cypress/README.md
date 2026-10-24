@@ -1,30 +1,23 @@
 # Cypress Tests for EmailJS Integration
 
-This test suite ensures that your booking and contact forms work correctly with EmailJS before deploying to production.
+This test suite ensures that your contact form works correctly with EmailJS before deploying to production.
 
 ## 📋 Test Overview
 
 The test suite includes:
 
-1. **Booking Form Tests** (`booking-form.cy.ts`)
-   - Two-step booking process validation
-   - EmailJS integration testing
-   - Form state persistence
-   - Error handling
-
-2. **Contact Form Tests** (`contact-form.cy.ts`)
+1. **Contact Form Tests** (`contact-form.cy.ts`)
    - Contact form validation
    - EmailJS integration testing
    - Accessibility checks
    - Mobile responsiveness
 
-3. **Integration Tests** (`integration.cy.ts`)
+2. **Integration Tests** (`integration.cy.ts`)
    - End-to-end form flows
-   - Cross-page navigation
    - Security validation
    - Production readiness checks
 
-4. **Example Usage** (`example-usage.cy.ts`)
+3. **Example Usage** (`example-usage.cy.ts`)
    - Demonstrates custom commands
    - Simple test examples
 
@@ -35,7 +28,6 @@ The test suite includes:
 1. **Environment Variables**: Set up your EmailJS environment variables:
    ```bash
    VITE_EMAILJS_SERVICE_ID=your_service_id
-   VITE_EMAILJS_TEMPLATE_IDHOME=your_booking_template_id
    VITE_EMAILJS_TEMPLATE_IDCONTACT=your_contact_template_id
    VITE_EMAILJS_PUBLIC_KEY=your_public_key
    ```
@@ -52,7 +44,7 @@ npm run test:e2e
 npm run test:e2e:open
 
 # Run specific test file
-npx cypress run --spec "cypress/e2e/booking-form.cy.ts"
+npx cypress run --spec "cypress/e2e/contact-form.cy.ts"
 
 # Run tests with different viewport (mobile testing)
 npx cypress run --config viewportWidth=375,viewportHeight=667
@@ -60,26 +52,11 @@ npx cypress run --config viewportWidth=375,viewportHeight=667
 
 ## 🎯 Test Structure
 
-### Booking Form Tests
-
-```typescript
-describe('Booking Form - EmailJS Integration', () => {
-  describe('Booking Form Step 1 - Service Selection', () => {
-    // Tests for service type, home size, frequency selection
-  })
-  
-  describe('Booking Form Step 2 - Customer Information & EmailJS', () => {
-    // Tests for customer details and EmailJS submission
-  })
-})
-```
-
 ### Key Test Scenarios
 
 1. **Form Validation**
    - Required field validation
    - Email format validation
-   - Form progression between steps
 
 2. **EmailJS Integration**
    - Successful email submission (mocked)
@@ -88,17 +65,13 @@ describe('Booking Form - EmailJS Integration', () => {
 
 3. **User Experience**
    - Loading states during submission
-   - Success/error feedback via SweetAlert
-   - Form data persistence
+   - Success/error feedback via toast notifications
 
 ## 🛠 Custom Commands
 
 The test suite includes custom Cypress commands for easier testing:
 
 ```typescript
-// Fill booking form (both steps)
-cy.fillBookingForm(bookingData, customerData)
-
 // Fill contact form
 cy.fillContactForm(contactData)
 
@@ -112,15 +85,12 @@ cy.handleSweetAlert('success' | 'error')
 ### Example Usage
 
 ```typescript
-it('should submit booking successfully', () => {
-  cy.visit('/')
+it('should send the contact form successfully', () => {
+  cy.visit('/contact')
   cy.mockEmailJS(true) // Mock successful EmailJS
-  
-  cy.fillBookingForm(
-    { serviceType: 'deep', homeSize: '85', frequency: 'monthly' },
-    { fullName: 'Test User', email: 'test@example.com', phone: '+46701234567', address: '123 Test St' }
-  )
-  
+
+  cy.fillContactForm({ user_name: 'Test User', user_email: 'test@example.com', message: 'Hello from Cypress' })
+
   cy.get('button[type="submit"]').click()
   cy.handleSweetAlert('success')
 })
@@ -133,7 +103,6 @@ it('should submit booking successfully', () => {
 The tests verify that these environment variables are properly configured:
 
 - `VITE_EMAILJS_SERVICE_ID` - Your EmailJS service ID
-- `VITE_EMAILJS_TEMPLATE_IDHOME` - Template for booking form
 - `VITE_EMAILJS_TEMPLATE_IDCONTACT` - Template for contact form  
 - `VITE_EMAILJS_PUBLIC_KEY` - Your EmailJS public key
 
@@ -190,24 +159,6 @@ For continuous integration, add these commands to your pipeline:
 ```
 
 ## 📝 Test Data
-
-### Booking Form Test Data
-
-```typescript
-const bookingData = {
-  serviceType: 'deep' | 'regular' | 'move-in-out',
-  homeSize: '75', // in square meters
-  frequency: 'weekly' | 'bi-weekly' | 'monthly' | 'one-time'
-}
-
-const customerData = {
-  fullName: 'John Doe',
-  email: 'john@example.com',
-  phone: '+46701234567',
-  address: '123 Street, Stockholm',
-  specialInstructions: 'Optional instructions'
-}
-```
 
 ### Contact Form Test Data
 

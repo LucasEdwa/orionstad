@@ -1,12 +1,8 @@
 export {
-  bookingStepOneSchema,
-  customerFormSchema,
   contactFormSchema,
   emailjsResponseSchema,
 } from './schemas';
 export type {
-  BookingStepOneData,
-  CustomerFormData,
   ContactFormDataValidated,
   EmailJSResponse,
 } from './schemas';

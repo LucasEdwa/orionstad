@@ -10,7 +10,7 @@ export const FAQSection = () => {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="bg-white py-14" aria-labelledby="faq-heading">
+    <section className="bg-white pb-14" aria-labelledby="faq-heading">
       <Container>
         <div className="max-w-[47.5rem]">
           <div className="mb-8">

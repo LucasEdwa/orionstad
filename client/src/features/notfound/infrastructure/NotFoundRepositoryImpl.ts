@@ -54,9 +54,9 @@ export class NotFoundRepositoryImpl implements NotFoundRepository {
     return {
       id: 'productivity-fact',
       title: 'Did you know?',
-      description: 'A clean and organized space can improve productivity by up to 76%! While you\'re here, why not book a cleaning service? 😊',
-      ctaText: 'Book a cleaning',
-      ctaPath: '/#booking',
+      description: 'A clean and organized space can improve productivity by up to 76%! While you\'re here, why not ask us for a quote? 😊',
+      ctaText: 'Get a quote',
+      ctaPath: '/contact',
       icon: '✨'
     };
   }
