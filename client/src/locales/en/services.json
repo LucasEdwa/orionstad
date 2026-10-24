@@ -1,130 +1,89 @@
 {
-  "hero": {
-    "logoAlt": "Orion Home Logo",
-    "imgAlt": "Service-hero",
-    "title": "Our Services",
-    "subtitle": "Discover our range of professional cleaning services",
-    "highlights": [
-      "Home Cleaning",
-      "Office Cleaning",
-      "Specialized Services"
-    ]
+  "page": {
+    "eyebrow": "Our services",
+    "title": "The right cleaning for you.",
+    "subtitle": "For your home, your move and your workplace. Choose a service and tell us what you need help with."
   },
   "ui": {
-    "whatWeOffer": "What We Offer",
-    "whatWeOfferDescription": "Professional cleaning services tailored to your needs. From regular home cleaning to specialized office maintenance.",
-    "whyChooseUs": "Why Choose Orion Home?",
-    "whyChooseUsDescription": "Numbers that speak for our commitment to excellence",
-    "getQuote": "Get Quote for",
-    "learnMore": "Learn More",
-    "showLess": "Show Less",
-    "moreFeatures": "more features...",
-    "categories": {
-      "home": "home",
-      "office": "office", 
-      "specialized": "specialized"
-    }
+    "requestQuote": "Request a quote",
+    "included": "What's included",
+    "allServices": "All services",
+    "otherServices": "More services",
+    "ctaTitle": "Would you like a quote?",
+    "ctaText": "Tell us a little about your home or workplace and we'll get back to you with a proposal."
   },
-  "stats": {
-    "happyCustomers": {
-      "number": "500+",
-      "label": "Happy Customers",
-      "description": "Satisfied clients who trust our services"
-    },
-    "experience": {
-      "number": "3+",
-      "label": "Years Experience", 
-      "description": "Years of professional cleaning expertise"
-    },
-    "support": {
-      "number": "24/7",
-      "label": "Support",
-      "description": "Always available when you need us"
-    },
-    "satisfaction": {
-      "number": "100%",
-      "label": "Satisfaction",
-      "description": "Guaranteed quality in every service"
-    }
-  },
-  "cta": {
-    "title": "Ready to Experience Professional Cleaning?",
-    "description": "Let us take care of your cleaning needs so you can focus on what matters most. Get your free quote today and join hundreds of satisfied customers.",
-    "getFreeQuote": "Get Free Quote",
-    "callNow": "Call Now",
-    "phoneNumber": "+46 76 327 22 83",
-    "features": {
-      "quickResponse": {
-        "title": "Quick Response",
-        "description": "Same day booking available"
-      },
-      "qualityGuaranteed": {
-        "title": "Quality Guaranteed", 
-        "description": "100% satisfaction promise"
-      },
-      "fairPricing": {
-        "title": "Fair Pricing",
-        "description": "Transparent, no hidden fees"
-      }
-    }
-  },
-  "sections": [
+  "catalog": [
     {
-      "title": "Home Cleaning (Hemstädning)",
-      "contents": [
-        { "type": "text", "label": "Regular Cleaning:", "text": "Available on a weekly, biweekly, or monthly basis. Includes:" },
-        { "type": "list", "items": [
-          "Dusting all surfaces",
-          "Vacuuming and mopping floors",
-          "Cleaning bathrooms: toilets, showers, sinks",
-          "Kitchen cleaning: wiping down surfaces, cleaning exterior of appliances",
-          "Emptying trash bins"
-        ] },
-        { "type": "text", "label": "Deep Cleaning:", "text": "A more thorough version of regular cleaning. Includes:" },
-        { "type": "list", "items": [
-          "All tasks from regular cleaning",
-          "Detailed cleaning of hard-to-reach areas",
-          "Cleaning behind and under furniture",
-          "Oven and refrigerator interior cleaning"
-        ] },
-        { "type": "text", "label": "Move-In/Move-Out Cleaning:", "text": "Comprehensive cleaning for moving in or out. Includes:" },
-        { "type": "list", "items": [
-          "All tasks from deep cleaning",
-          "Cleaning inside cabinets and closets",
-          "Cleaning windows and window sills",
-          "Removing any remaining dust or debris"
-        ] }
+      "id": "hemstadning",
+      "title": "Home cleaning",
+      "short": "Recurring help for an easier everyday life.",
+      "intro": "Regular cleaning every week, every other week or once a month. The same careful routine every time, so you come home to a clean and pleasant home.",
+      "included": [
+        "Dusting all surfaces",
+        "Vacuuming and mopping floors",
+        "Cleaning bathrooms: toilets, showers, sinks",
+        "Kitchen cleaning: wiping down surfaces, cleaning exterior of appliances",
+        "Emptying trash bins"
       ]
     },
     {
-      "title": "Office Cleaning",
-      "contents": [
-        { "type": "text", "text": "Tailored cleaning services for office environments. Includes:" },
-        { "type": "list", "items": [
-          "Custom cleaning plans to meet the needs of your office",
-          "Vacuuming and mopping of office floors",
-          "Cleaning and disinfecting workspaces, including desks, chairs, and common areas",
-          "Restroom cleaning and restocking of supplies",
-          "Kitchen area cleaning, including appliances and surfaces",
-          "Flexible scheduling to minimize disruption to your workday"
-        ] }
+      "id": "flyttstadning",
+      "title": "Move-out cleaning",
+      "short": "Leave it clean and focus on your new home.",
+      "intro": "Comprehensive cleaning when you move in or out, so the home is ready for its next chapter and you can put your energy into the move.",
+      "included": [
+        "All tasks from deep cleaning",
+        "Cleaning inside cabinets and closets",
+        "Cleaning windows and window sills",
+        "Removing any remaining dust or debris"
       ]
     },
     {
-      "title": "Specialized Services",
-      "contents": [
-        { "type": "text", "label": "Fridge Cleaning:", "text": "Includes:" },
-        { "type": "list", "items": [
-          "Removing all items from the fridge",
-          "Thorough cleaning of all shelves, drawers, and surfaces",
-          "Replacing items in the fridge"
-        ] },
-        { "type": "text", "label": "Oven Cleaning:", "text": "Includes:" },
-        { "type": "list", "items": [
-          "Cleaning the inside of the oven",
-          "Cleaning oven racks and door"
-        ] },
-        { "type": "text", "label": "Extra Requests:", "text": "We also offer customized cleaning services based on specific needs." }
+      "id": "storstadning",
+      "title": "Deep cleaning",
+      "short": "A more thorough pass through your home.",
+      "intro": "A more thorough version of home cleaning, for when the details need extra care – before a holiday, after a renovation or simply when it's needed.",
+      "included": [
+        "All tasks from regular cleaning",
+        "Detailed cleaning of hard-to-reach areas",
+        "Cleaning behind and under furniture",
+        "Oven and refrigerator interior cleaning"
+      ]
+    },
+    {
+      "id": "fonsterputs",
+      "title": "Window cleaning",
+      "short": "Clean windows that let in more light.",
+      "intro": "We clean your windows so more daylight reaches your home. Book it on its own or as an add-on to other cleaning.",
+      "included": [
+        "Cleaning window glass",
+        "Wiping window frames and sills",
+        "Cleaning mirrors and glass surfaces when needed"
+      ]
+    },
+    {
+      "id": "kontorsstadning",
+      "title": "Office cleaning",
+      "short": "A fresh workplace for colleagues and visitors.",
+      "intro": "Tailored cleaning for office environments, planned to disrupt your workday as little as possible.",
+      "included": [
+        "Custom cleaning plans to meet the needs of your office",
+        "Vacuuming and mopping of office floors",
+        "Cleaning and disinfecting workspaces, including desks, chairs and common areas",
+        "Restroom cleaning and restocking of supplies",
+        "Kitchen area cleaning, including appliances and surfaces",
+        "Flexible scheduling to minimize disruption to your workday"
+      ]
+    },
+    {
+      "id": "extra-hjalp",
+      "title": "Extra help",
+      "short": "Complement your cleaning to fit your needs.",
+      "intro": "Add-on services that complement your cleaning. If you have other requests, we're happy to listen.",
+      "included": [
+        "Fridge cleaning: all shelves, drawers and surfaces",
+        "Oven cleaning: inside, racks and door",
+        "Custom requests based on your needs"
       ]
     }
   ]

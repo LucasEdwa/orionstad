@@ -1,29 +1,29 @@
-import type { Service, ServiceContent, ServiceCategory, ServiceHero, ServicesPageData } from '../domain/entities/Service';
+import type { Service, ServiceCatalogEntry, ServicesPageIntro, ServicesPageData } from '../domain/entities/Service';
+import { isServiceId, type ServiceId } from '../domain/serviceIds';
 
 export class ServicesDataService {
-  transformRawData(rawSections: Array<{ title: string; contents: ServiceContent[] }>, serviceImages: string[][]): Service[] {
-    return rawSections.map((section, index) => ({
-      id: `service-${index}`,
-      title: section.title,
-      contents: section.contents,
-      images: serviceImages[index] || [],
-      category: this.getCategoryByIndex(index)
-    }));
+  /** Drops catalog entries with unknown ids and attaches each service's image */
+  transformCatalog(catalog: ServiceCatalogEntry[], getImage: (id: ServiceId) => string): Service[] {
+    if (!Array.isArray(catalog)) return [];
+    return catalog
+      .filter((entry) => isServiceId(entry.id))
+      .map((entry) => ({ ...entry, image: getImage(entry.id) }));
   }
 
-  private getCategoryByIndex(index: number): ServiceCategory {
-    const categories: ServiceCategory[] = ['home', 'office', 'specialized'];
-    return categories[index] || 'home';
+  createServicesPageData(page: ServicesPageIntro, services: Service[]): ServicesPageData {
+    return { page, services };
   }
 
-  createServicesPageData(hero: ServiceHero, services: Service[]): ServicesPageData {
-    return {
-      hero,
-      services
-    };
+  findById(services: Service[], id: ServiceId): Service | undefined {
+    return services.find((service) => service.id === id);
   }
 
-  getServicesByCategory(services: Service[], category: ServiceCategory): Service[] {
-    return services.filter(service => service.category === category);
+  /** The services that follow `id` in catalog order, wrapping around */
+  getRelated(services: Service[], id: ServiceId, count = 3): Service[] {
+    const index = services.findIndex((service) => service.id === id);
+    if (index === -1) return services.slice(0, count);
+    return Array.from({ length: Math.min(count, services.length - 1) }, (_, i) =>
+      services[(index + 1 + i) % services.length]
+    );
   }
 }

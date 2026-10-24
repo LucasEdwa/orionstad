@@ -1,25 +1,19 @@
 import { useTranslation } from 'react-i18next';
-import type { ServicesPageData, ServiceContent } from '../../domain/entities/Service';
+import type { ServicesPageData, ServiceCatalogEntry, ServicesPageIntro } from '../../domain/entities/Service';
 import { ServicesDataService } from '../../application/ServicesDataService';
 import { AssetsRepository } from '../../infrastructure/AssetsRepository';
 
+// Module-level singletons — stateless
+const servicesDataService = new ServicesDataService();
+const assetsRepository = new AssetsRepository();
+
 export const useServicesData = (): ServicesPageData => {
   const { t } = useTranslation('services');
-  const servicesDataService = new ServicesDataService();
-  const assetsRepository = new AssetsRepository();
 
-  const hero = t('hero', { returnObjects: true }) as {
-    highlights: string[];
-    logoAlt: string;
-    imgAlt: string;
-    title: string;
-    subtitle: string;
-  };
+  const page = t('page', { returnObjects: true }) as ServicesPageIntro;
+  const catalog = t('catalog', { returnObjects: true }) as ServiceCatalogEntry[];
 
-  const rawSections = t('sections', { returnObjects: true }) as Array<{ title: string; contents: ServiceContent[] }>;
-  const serviceImages = assetsRepository.getServiceImages();
-  
-  const services = servicesDataService.transformRawData(rawSections, serviceImages);
-  
-  return servicesDataService.createServicesPageData(hero, services);
+  const services = servicesDataService.transformCatalog(catalog, (id) => assetsRepository.getServiceImage(id));
+
+  return servicesDataService.createServicesPageData(page, services);
 };

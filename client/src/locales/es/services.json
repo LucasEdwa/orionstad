@@ -1,130 +1,89 @@
 {
-  "hero": {
-    "logoAlt": "Logo de Orion Home",
-    "imgAlt": "Héroe de servicios",
-    "title": "Nuestros Servicios",
-    "subtitle": "Descubra nuestra gama de servicios de limpieza profesional",
-    "highlights": [
-      "Limpieza del hogar",
-      "Limpieza de oficinas",
-      "Servicios especializados"
-    ]
+  "page": {
+    "eyebrow": "Nuestros servicios",
+    "title": "La limpieza adecuada para ti.",
+    "subtitle": "Para tu hogar, tu mudanza y tu lugar de trabajo. Elige un servicio y cuéntanos en qué necesitas ayuda."
   },
   "ui": {
-    "whatWeOffer": "Lo que ofrecemos",
-    "whatWeOfferDescription": "Servicios de limpieza profesional adaptados a sus necesidades. Desde limpieza doméstica regular hasta mantenimiento especializado de oficinas.",
-    "whyChooseUs": "¿Por qué elegir Orion Home?",
-    "whyChooseUsDescription": "Números que hablan de nuestro compromiso con la excelencia",
-    "getQuote": "Solicitar presupuesto para",
-    "learnMore": "Saber más",
-    "showLess": "Mostrar menos",
-    "moreFeatures": "características más...",
-    "categories": {
-      "home": "hogar",
-      "office": "oficina",
-      "specialized": "especializado"
-    }
+    "requestQuote": "Pedir presupuesto",
+    "included": "Qué incluye",
+    "allServices": "Todos los servicios",
+    "otherServices": "Más servicios",
+    "ctaTitle": "¿Quieres un presupuesto?",
+    "ctaText": "Cuéntanos un poco sobre tu hogar o lugar de trabajo y te enviaremos una propuesta."
   },
-  "stats": {
-    "happyCustomers": {
-      "number": "500+",
-      "label": "Clientes satisfechos",
-      "description": "Clientes satisfechos que confían en nuestros servicios"
-    },
-    "experience": {
-      "number": "3+",
-      "label": "Años de experiencia",
-      "description": "Años de experiencia profesional en limpieza"
-    },
-    "support": {
-      "number": "24/7",
-      "label": "Soporte",
-      "description": "Siempre disponibles cuando nos necesite"
-    },
-    "satisfaction": {
-      "number": "100%",
-      "label": "Satisfacción",
-      "description": "Calidad garantizada en cada servicio"
-    }
-  },
-  "cta": {
-    "title": "¿Listo para experimentar la limpieza profesional?",
-    "description": "Permítanos encargarnos de sus necesidades de limpieza para que pueda concentrarse en lo que más importa. Obtenga su presupuesto gratuito hoy y únase a cientos de clientes satisfechos.",
-    "getFreeQuote": "Presupuesto gratuito",
-    "callNow": "Llamar ahora",
-    "phoneNumber": "+46 76 327 22 83",
-    "features": {
-      "quickResponse": {
-        "title": "Respuesta rápida",
-        "description": "Reserva el mismo día disponible"
-      },
-      "qualityGuaranteed": {
-        "title": "Calidad garantizada",
-        "description": "Promesa de satisfacción del 100%"
-      },
-      "fairPricing": {
-        "title": "Precios justos",
-        "description": "Transparente, sin tarifas ocultas"
-      }
-    }
-  },
-  "sections": [
+  "catalog": [
     {
-      "title": "Limpieza del hogar (Hemstädning)",
-      "contents": [
-        { "type": "text", "label": "Limpieza regular:", "text": "Disponible semanal, quincenal o mensualmente. Incluye:" },
-        { "type": "list", "items": [
-          "Limpiar el polvo de todas las superficies",
-          "Aspirar y fregar los suelos",
-          "Limpieza de baños: inodoros, duchas, lavabos",
-          "Limpieza de cocina: limpiar superficies, limpiar exterior de electrodomésticos",
-          "Vaciar los cubos de basura"
-        ] },
-        { "type": "text", "label": "Limpieza profunda:", "text": "Una versión más exhaustiva de la limpieza regular. Incluye:" },
-        { "type": "list", "items": [
-          "Todas las tareas de la limpieza regular",
-          "Limpieza detallada de áreas de difícil acceso",
-          "Limpieza detrás y debajo de los muebles",
-          "Limpieza interior de horno y nevera"
-        ] },
-        { "type": "text", "label": "Limpieza de mudanza:", "text": "Limpieza integral para mudanzas. Incluye:" },
-        { "type": "list", "items": [
-          "Todas las tareas de la limpieza profunda",
-          "Limpieza dentro de armarios y closets",
-          "Limpieza de ventanas y alféizares",
-          "Eliminación de polvo o residuos restantes"
-        ] }
+      "id": "hemstadning",
+      "title": "Limpieza del hogar",
+      "short": "Ayuda periódica para un día a día más fácil.",
+      "intro": "Limpieza regular cada semana, cada dos semanas o una vez al mes. La misma rutina cuidadosa cada vez, para que vuelvas a un hogar limpio y agradable.",
+      "included": [
+        "Quitar el polvo de todas las superficies",
+        "Aspirar y fregar los suelos",
+        "Limpieza de baños: inodoros, duchas, lavabos",
+        "Limpieza de cocina: limpiar superficies y el exterior de los electrodomésticos",
+        "Vaciar las papeleras"
       ]
     },
     {
+      "id": "flyttstadning",
+      "title": "Limpieza de mudanza",
+      "short": "Déjalo limpio y concéntrate en tu nuevo hogar.",
+      "intro": "Una limpieza completa cuando te mudas, para que la vivienda quede lista para su próximo capítulo y puedas dedicar tu energía a la mudanza.",
+      "included": [
+        "Todas las tareas de la limpieza profunda",
+        "Limpieza del interior de armarios",
+        "Limpieza de ventanas y alféizares",
+        "Eliminación del polvo o restos que queden"
+      ]
+    },
+    {
+      "id": "storstadning",
+      "title": "Limpieza profunda",
+      "short": "Un repaso más a fondo de tu hogar.",
+      "intro": "Una versión más minuciosa de la limpieza del hogar, para cuando los detalles necesitan más cuidado: antes de una celebración, después de una reforma o simplemente cuando haga falta.",
+      "included": [
+        "Todas las tareas de la limpieza regular",
+        "Limpieza detallada de zonas de difícil acceso",
+        "Limpieza detrás y debajo de los muebles",
+        "Limpieza del interior del horno y la nevera"
+      ]
+    },
+    {
+      "id": "fonsterputs",
+      "title": "Limpieza de ventanas",
+      "short": "Ventanas limpias que dejan entrar más luz.",
+      "intro": "Limpiamos tus ventanas para que entre más luz natural en tu hogar. Se puede reservar por separado o como complemento de otra limpieza.",
+      "included": [
+        "Limpieza de los cristales",
+        "Limpieza de marcos y alféizares",
+        "Limpieza de espejos y superficies de cristal si es necesario"
+      ]
+    },
+    {
+      "id": "kontorsstadning",
       "title": "Limpieza de oficinas",
-      "contents": [
-        { "type": "text", "text": "Servicios de limpieza adaptados para entornos de oficina. Incluye:" },
-        { "type": "list", "items": [
-          "Planes de limpieza personalizados para su oficina",
-          "Aspirado y fregado de suelos de oficina",
-          "Limpieza y desinfección de espacios de trabajo, incluidos escritorios, sillas y áreas comunes",
-          "Limpieza de baños y reposición de suministros",
-          "Limpieza de la zona de cocina, incluidos electrodomésticos y superficies",
-          "Horarios flexibles para minimizar la interrupción de su jornada laboral"
-        ] }
+      "short": "Un lugar de trabajo fresco para colegas y visitas.",
+      "intro": "Limpieza a medida para oficinas, planificada para interrumpir lo menos posible la jornada laboral.",
+      "included": [
+        "Planes de limpieza adaptados a tu oficina",
+        "Aspirado y fregado de suelos",
+        "Limpieza y desinfección de puestos de trabajo, incluidos escritorios, sillas y zonas comunes",
+        "Limpieza de aseos y reposición de suministros",
+        "Limpieza de la cocina, incluidos electrodomésticos y superficies",
+        "Horarios flexibles para minimizar las interrupciones"
       ]
     },
     {
-      "title": "Servicios especializados",
-      "contents": [
-        { "type": "text", "label": "Limpieza de nevera:", "text": "Incluye:" },
-        { "type": "list", "items": [
-          "Retirar todos los artículos de la nevera",
-          "Limpieza a fondo de estantes, cajones y superficies",
-          "Volver a colocar los artículos en la nevera"
-        ] },
-        { "type": "text", "label": "Limpieza de horno:", "text": "Incluye:" },
-        { "type": "list", "items": [
-          "Limpieza del interior del horno",
-          "Limpieza de las rejillas y la puerta del horno"
-        ] },
-        { "type": "text", "label": "Solicitudes extra:", "text": "También ofrecemos servicios de limpieza personalizados según necesidades específicas." }
+      "id": "extra-hjalp",
+      "title": "Ayuda extra",
+      "short": "Complementa la limpieza según tus necesidades.",
+      "intro": "Servicios adicionales que complementan tu limpieza. Si tienes otras peticiones, te escuchamos con gusto.",
+      "included": [
+        "Limpieza de nevera: todas las baldas, cajones y superficies",
+        "Limpieza de horno: interior, rejillas y puerta",
+        "Peticiones personalizadas según tus necesidades"
       ]
     }
   ]

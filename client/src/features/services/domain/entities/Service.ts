@@ -1,29 +1,25 @@
-export interface ServiceContent {
-  type: 'text' | 'list';
-  label?: string;
-  text?: string;
-  items?: string[];
-}
+import type { ServiceId } from '../serviceIds';
 
-export interface Service {
-  id: string;
+/** One entry of the `catalog` array in the services namespace */
+export interface ServiceCatalogEntry {
+  id: ServiceId;
   title: string;
-  contents: ServiceContent[];
-  images: string[];
-  category: ServiceCategory;
+  short: string;
+  intro: string;
+  included: string[];
 }
 
-export interface ServiceHero {
-  highlights: string[];
-  logoAlt: string;
-  imgAlt: string;
+export interface Service extends ServiceCatalogEntry {
+  image: string;
+}
+
+export interface ServicesPageIntro {
+  eyebrow: string;
   title: string;
   subtitle: string;
 }
 
-export type ServiceCategory = 'home' | 'office' | 'specialized';
-
 export interface ServicesPageData {
-  hero: ServiceHero;
+  page: ServicesPageIntro;
   services: Service[];
 }

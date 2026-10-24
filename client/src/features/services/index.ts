@@ -1,4 +1,7 @@
 export { Services } from './presentation/Services';
+export { ServiceDetail } from './presentation/ServiceDetail';
 export { ServiceCard } from './presentation/components/ServiceCard';
-export type { Service, ServiceContent, ServiceHero, ServicesPageData } from './domain/entities/Service';
-export type { ServiceImageCarousel, ServiceCardState } from './domain/entities/ServiceCard';
+export { useServicesData } from './presentation/hooks/useServicesData';
+export { SERVICE_IDS, isServiceId } from './domain/serviceIds';
+export type { ServiceId } from './domain/serviceIds';
+export type { Service, ServiceCatalogEntry, ServicesPageIntro, ServicesPageData } from './domain/entities/Service';
