@@ -1,6 +1,7 @@
 import { useFormStatus } from "react-dom";
 import { useTranslation } from "react-i18next";
 import { FaCheckCircle } from "react-icons/fa";
+import { buttonClass } from "../../../../components/ui/styles";
 
 export const SubmitButton = () => {
   const { pending } = useFormStatus();
@@ -10,7 +11,7 @@ export const SubmitButton = () => {
     <button
       type="submit"
       disabled={pending}
-      className="flex-1 bg-orion-gradient text-white py-3 rounded-xl font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+      className={buttonClass('primary', 'flex-1 justify-center')}
     >
       {pending ? (
         <>

@@ -1,5 +1,6 @@
 import type { Option } from "../../domain/entities/Feature";
 import { useState, useRef, useEffect, memo } from "react";
+import { fieldClass, labelClass } from "../../../../components/ui/styles";
 
  interface DropdownProps {
   options: Option[];
@@ -28,7 +29,7 @@ export const Dropdown = memo(({ options, value, onChange, label, icon, id }: Dro
 
   return (
     <div className="relative inline-block w-full" ref={dropdownRef}>
-      <label className="block text-sm font-semibold text-gray-700 mb-3">
+      <label className={labelClass}>
         {icon}
         {label}
       </label>
@@ -37,13 +38,13 @@ export const Dropdown = memo(({ options, value, onChange, label, icon, id }: Dro
         onClick={() => setIsOpen(prev => !prev)}
         aria-expanded={isOpen}
         aria-controls={`${id}-dropdown`}
-        className="w-full px-4 py-3 border text-left border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#CDB697] focus:border-transparent transition-all duration-200"
+        className={`${fieldClass()} text-left`}
         tabIndex={0}
       >
         {selectedLabel}
       </button>
       {isOpen && (
-        <div id={`${id}-dropdown`} className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-xl shadow-lg">
+        <div id={`${id}-dropdown`} className="absolute z-10 w-full mt-1 bg-white border border-line rounded-[0.375rem] shadow-lg overflow-hidden">
           {options.map(opt => (
             <div
               key={opt.value}
@@ -52,7 +53,7 @@ export const Dropdown = memo(({ options, value, onChange, label, icon, id }: Dro
                 onChange(opt.value);
                 setIsOpen(false);
               }}
-              className={`px-4 py-3 cursor-pointer hover:bg-gray-100 ${value === opt.value ? "bg-gray-100" : ""}`}
+              className={`px-3 py-2.5 text-[0.75rem] cursor-pointer text-ink hover:bg-sage ${value === opt.value ? "bg-sage text-olive font-semibold" : ""}`}
             >
               {opt.label}
             </div>

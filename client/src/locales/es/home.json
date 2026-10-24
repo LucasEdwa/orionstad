@@ -15,15 +15,39 @@
   "Elige limpieza ecológica y disfruta de un ambiente cálido, saludable y acogedor este otoño. Nuestro equipo utiliza productos sostenibles para cuidar de tu familia y del planeta."
   ],
   "hero": {
-    "welcome": "Servicios de limpieza profesional en Estocolmo",
-    "subtitle": "Su socio de confianza para servicios de limpieza profesional",
-    "heroImgAlt": "Servicio de limpieza",
-    "logoImgAlt": "Logo de Orion Home",
-    "bookNow": "Reservar ahora",
-    "learnMore": "Saber Más",
-    "licensedInsured": "Licenciado y Asegurado",
-    "fiveStarService": "Servicio 5 Estrellas",
-    "eco-friendly": "Productos Ecológicos"
+    "eyebrow": "Limpieza en Estocolmo",
+    "titleLine1": "Un hogar limpio.",
+    "titleLine2": "Más tiempo para vivir.",
+    "subtitle": "Nos ocupamos de la limpieza con cariño y precisión. Tú ganas tiempo para lo que más importa.",
+    "primaryCta": "Pide un presupuesto gratis",
+    "secondaryCta": "Ver nuestros servicios",
+    "imageAlt": "Salón luminoso y ordenado",
+    "trust": [
+      "Contacto personal",
+      "Limpieza a tu medida",
+      "Solicitud de reserva sencilla"
+    ]
+  },
+  "help": {
+    "title": "¿Cómo podemos ayudarte?",
+    "items": [
+      {
+        "title": "Limpieza del hogar",
+        "text": "Un día a día limpio y agradable."
+      },
+      {
+        "title": "Limpieza de mudanza",
+        "text": "Concéntrate en tu nuevo hogar."
+      },
+      {
+        "title": "Limpieza profunda",
+        "text": "Más cuidado en los detalles."
+      },
+      {
+        "title": "Limpieza de oficinas",
+        "text": "Un lugar de trabajo fresco."
+      }
+    ]
   },
   "sections": [
     {

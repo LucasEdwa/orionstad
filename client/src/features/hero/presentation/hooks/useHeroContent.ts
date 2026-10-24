@@ -1,15 +1,11 @@
 import { useMemo } from 'react';
 import { useTranslation } from "react-i18next";
-import { AssetService } from '../../application/AssetService';
 import { StaticContentRepository } from '../../infrastructure/StaticContentRepository';
 import type { HeroContent } from '../../domain/entities/Hero';
+import heroImage from '../../../../assets/design-living-room.jpg';
 
-// Module-level singletons — pure config, no state
-const assetService = new AssetService();
-const staticRepository = new StaticContentRepository();
-const videoConfig = assetService.getVideoConfig();
-const brandAssets = assetService.getBrandAssets();
-const fallbackContent = staticRepository.getHeroContent();
+// Module-level singleton — pure config, no state
+const fallbackContent = new StaticContentRepository().getHeroContent();
 
 export const useHeroContent = () => {
   const { t, ready } = useTranslation("home");
@@ -17,22 +13,11 @@ export const useHeroContent = () => {
   const content = useMemo<HeroContent>(() => {
     if (!ready) return fallbackContent;
 
-    const welcome = t("hero.welcome");
-    const subtitle = t("hero.subtitle");
-    const bookNow = t("hero.bookNow");
+    const hero = t("hero", { returnObjects: true }) as Partial<HeroContent>;
+    if (!hero?.titleLine1 || !Array.isArray(hero.trust)) return fallbackContent;
 
-    if (!welcome || !subtitle || !bookNow) return fallbackContent;
-
-    return {
-      welcome,
-      subtitle,
-      bookNow,
-      learnMore: t("hero.learnMore"),
-      licensedInsured: t("hero.licensedInsured"),
-      fiveStarService: t("hero.fiveStarService"),
-      ecoFriendly: t("hero.eco-friendly"),
-    };
+    return { ...fallbackContent, ...hero };
   }, [t, ready]);
 
-  return { videoConfig, brandAssets, content };
+  return { content, heroImage };
 };

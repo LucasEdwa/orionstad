@@ -23,12 +23,12 @@ export class HeroErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="relative w-full h-screen flex items-center justify-center bg-black">
-          <div className="text-center text-white/80">
-            <h1 className="text-2xl font-semibold mb-2">Something went wrong</h1>
+        <div className="relative w-full py-24 flex items-center justify-center bg-sage">
+          <div className="text-center text-ink">
+            <h1 className="text-2xl mb-2">Something went wrong</h1>
             <button
               onClick={() => this.setState({ hasError: false })}
-              className="mt-4 px-6 py-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
+              className="mt-4 px-6 py-3 bg-olive text-white font-bold rounded-lg hover:bg-olive-dark transition-colors"
             >
               Try again
             </button>

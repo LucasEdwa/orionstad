@@ -16,16 +16,39 @@
   "Choose eco-friendly cleaning and enjoy a warm, healthy, and inviting home this autumn. Our team uses sustainable products to care for your family and the planet."
   ],
   "hero": {
-    "welcome": "Professional Cleaning Services in Stockholm",
-    "subtitle": "Your trusted partner for professional cleaning services",
-    "heroImgAlt": "Cleaning Service",
-    "logoImgAlt": "Orion Home Logo",
-    "bookNow": "Book Now",
-    "learnMore": "Learn More",
-    "licensedInsured": "Licensed & Insured",
-    "fiveStarService": "5-Star Service",
-    "trustworthy": "Trustworthy & Reliable",
-    "eco-friendly": "Eco-friendly Products"
+    "eyebrow": "Cleaning in Stockholm",
+    "titleLine1": "A clean home.",
+    "titleLine2": "More time for life.",
+    "subtitle": "We take care of the cleaning with care and precision. You get time for what matters most.",
+    "primaryCta": "Get a free quote",
+    "secondaryCta": "See our services",
+    "imageAlt": "Bright, tidy living room",
+    "trust": [
+      "Personal contact",
+      "Cleaning tailored to you",
+      "Easy booking request"
+    ]
+  },
+  "help": {
+    "title": "How can we help you?",
+    "items": [
+      {
+        "title": "Home cleaning",
+        "text": "A clean and pleasant everyday life."
+      },
+      {
+        "title": "Move-out cleaning",
+        "text": "Focus on your next home."
+      },
+      {
+        "title": "Deep cleaning",
+        "text": "Extra care for the details."
+      },
+      {
+        "title": "Office cleaning",
+        "text": "A fresh workplace."
+      }
+    ]
   },
   "sections": [
     {

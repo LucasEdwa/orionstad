@@ -6,6 +6,7 @@ import { useBookingFormOptions } from '../hooks/useBookingFormOptions';
 import { useBookingFormHandlers } from '../hooks/useBookingFormHandlers';
 import { useBookingFormSubmit } from '../hooks/useBookingFormSubmit';
 import { FieldError } from '../../../../components/FieldError';
+import { buttonClass, fieldClass, labelClass } from '../../../../components/ui/styles';
 interface BookingStepOneProps {
   onNext: () => void;
   /** h1 when the form is the page's main content (/booking), h2 when embedded on the home page */
@@ -19,10 +20,10 @@ export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext, hea
   const { handleSubmit, fieldErrors, clearFieldError } = useBookingFormSubmit(onNext);
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="text-center mb-8">
-        <Heading className="text-3xl font-bold text-gray-800 mb-4">{t("bookingForm.title")}</Heading>
-        <p className="text-gray-600 leading-relaxed">{t("bookingForm.intro")}</p>
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="mb-6">
+        <Heading className="text-[1.5625rem] leading-[1.5625rem] text-ink tracking-tight mb-3">{t("bookingForm.title")}</Heading>
+        <p className="text-[0.875rem] leading-[1.46875rem] text-muted">{t("bookingForm.intro")}</p>
       </div>
 
       <div>
@@ -31,15 +32,15 @@ export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext, hea
           value={bookingForm.serviceType}
           onChange={(val) => { handleServiceSelect(val); clearFieldError('serviceType'); }}
           label={t("bookingForm.serviceLabel")}
-          icon={<FaHome className="inline w-4 h-4 mr-2" />}
+          icon={<FaHome className="inline w-3 h-3 mr-1.5 text-olive" />}
           id="service"
         />
         <FieldError name="serviceType" errors={fieldErrors} />
       </div>
 
       <div>
-        <label className="block text-sm font-semibold text-gray-700 mb-3">
-          <FaHome className="inline w-4 h-4 mr-2" />
+        <label className={labelClass}>
+          <FaHome className="inline w-3 h-3 mr-1.5 text-olive" />
           {t("bookingForm.sizeLabel")}
         </label>
         <input
@@ -47,7 +48,7 @@ export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext, hea
           type="number"
           min="0"
           placeholder="Enter size in m²"
-          className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#CDB697] focus:border-transparent transition-all duration-200 ${fieldErrors.homeSize ? 'border-red-500' : 'border-gray-300'}`}
+          className={fieldClass(!!fieldErrors.homeSize)}
           required
           value={bookingForm.homeSize || ""}
           onChange={(e) => { handleChange(e); clearFieldError('homeSize'); }}
@@ -61,7 +62,7 @@ export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext, hea
           value={bookingForm.frequency}
           onChange={(val) => { handleFrequencySelect(val); clearFieldError('frequency'); }}
           label={t("bookingForm.frequencyLabel")}
-          icon={<FaCalendar className="inline w-4 h-4 mr-2" />}
+          icon={<FaCalendar className="inline w-3 h-3 mr-1.5 text-olive" />}
           id="frequency"
         />
         <FieldError name="frequency" errors={fieldErrors} />
@@ -69,7 +70,7 @@ export const BookingStepOne: React.FC<BookingStepOneProps> = memo(({ onNext, hea
 
       <button
         type="submit"
-        className="w-full bg-orion-gradient text-white py-4 rounded-xl font-semibold  transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
+        className={buttonClass('primary', 'w-full justify-center')}
       >
         <span>{t("bookingForm.nextLabel")}</span>
         <FaArrowRight className="w-4 h-4" />

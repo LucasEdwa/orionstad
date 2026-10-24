@@ -15,15 +15,39 @@
   "Välj miljövänlig städning och njut av ett varmt, hälsosamt och inbjudande hem i höst. Vårt team använder hållbara produkter för att ta hand om din familj och miljön."
   ],
   "hero": {
-    "welcome": "Professionell städning i Stockholm",
-    "subtitle": "Din pålitliga partner för professionella städtjänster",
-    "heroImgAlt": "Städtjänst",
-    "logoImgAlt": "Orion Home Logotyp",
-    "bookNow": "Boka nu",
-    "learnMore": "Läs Mer",
-    "licensedInsured": "Licensierad & Försäkrad",
-    "fiveStarService": "5-Stjärnig Service",
-    "eco-friendly": "Ekolgiska Produkter"
+    "eyebrow": "Städning i Stockholm",
+    "titleLine1": "Ett rent hem.",
+    "titleLine2": "Mer tid för livet.",
+    "subtitle": "Vi tar hand om städningen med omsorg och noggrannhet. Du får tid över till det som betyder mest.",
+    "primaryCta": "Få en kostnadsfri offert",
+    "secondaryCta": "Se våra tjänster",
+    "imageAlt": "Ljust och städat vardagsrum",
+    "trust": [
+      "Personlig kontakt",
+      "Städning efter dina behov",
+      "Enkel bokningsförfrågan"
+    ]
+  },
+  "help": {
+    "title": "Hur kan vi hjälpa dig?",
+    "items": [
+      {
+        "title": "Hemstädning",
+        "text": "En ren och trivsam vardag."
+      },
+      {
+        "title": "Flyttstädning",
+        "text": "Fokusera på ditt nästa hem."
+      },
+      {
+        "title": "Storstädning",
+        "text": "Extra omsorg om detaljerna."
+      },
+      {
+        "title": "Kontorsstädning",
+        "text": "En fräsch arbetsplats."
+      }
+    ]
   },
   "sections": [
     {

@@ -5,6 +5,7 @@ import { setBookingStep, setCustomerForm } from "../../../../store/bookingSlice"
 import { SubmitButton } from "./SubmitButton";
 import { FieldError } from "../../../../components/FieldError";
 import type { FieldErrors } from "../../../../validation";
+import { fieldClass, labelClass } from "../../../../components/ui/styles";
 
 interface BookingStepTwoProps {
   formAction: (formData: FormData) => void;
@@ -25,21 +26,21 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ formAction, isPe
   };
 
   return (
-    <form action={formAction} className="space-y-6">
+    <form action={formAction} className="space-y-5">
       {/* Hidden inputs for booking step values */}
       <input type="hidden" name="serviceType" value={bookingForm.serviceType || ""} />
       <input type="hidden" name="homeSize" value={bookingForm.homeSize || ""} />
       <input type="hidden" name="frequency" value={bookingForm.frequency || ""} />
 
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">{t("customerForm.title")}</h2>
-        <p className="text-gray-600">{t("customerForm.intro")}</p>
+      <div className="mb-6">
+        <h2 className="text-[1.5625rem] leading-[1.5625rem] text-ink tracking-tight mb-3">{t("customerForm.title")}</h2>
+        <p className="text-[0.875rem] leading-[1.46875rem] text-muted">{t("customerForm.intro")}</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[1.5625rem] gap-y-5">
         {(t("customerForm.fields", { returnObjects: true }) as Array<{ name: string; type: string; placeholder: string }>).map((field, idx) => (
           <div key={idx} className={field.name === 'specialInstructions' || field.name === 'accessInstructions' || field.name === 'priorityAreas' ? 'md:col-span-2' : ''}>
-            <label htmlFor={field.name} className="block text-sm font-semibold text-gray-700 mb-2">
+            <label htmlFor={field.name} className={labelClass}>
               {field.placeholder}
             </label>
             <input
@@ -47,7 +48,7 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ formAction, isPe
               type={field.type}
               id={field.name}
               placeholder={`Enter your ${field.placeholder.toLowerCase()}...`}
-              className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#CDB697] focus:border-transparent transition-all duration-200 ${fieldErrors[field.name] ? 'border-red-500' : 'border-gray-300'}`}
+              className={fieldClass(!!fieldErrors[field.name])}
               required={['fullName', 'email', 'phone', 'address'].includes(field.name)}
               value={customerForm[field.name] || ""}
               onChange={handleCustomerChange}
@@ -61,7 +62,7 @@ export const BookingStepTwo: React.FC<BookingStepTwoProps> = ({ formAction, isPe
         <button
           type="button"
           disabled={isPending}
-          className="flex-1 bg-gray-200 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-300 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 h-[2.6875rem] bg-white border border-line text-ink text-[0.75rem] rounded-[0.4375rem] font-bold hover:bg-sage transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={() => dispatch(setBookingStep(1))}
         >
           {t("customerForm.backLabel")}
