@@ -5,8 +5,8 @@ export class StaticNavigationRepository implements NavigationRepository {
   getNavigationLinks(): NavLink[] {
     return [
       { label: "Home", href: "/" },
-      { label: "Services", href: "/services" },
-      { label: "About", href: "/about" },
+      { label: "About us", href: "/about" },
+      { label: "Our services", href: "/services" },
       { label: "Contact", href: "/contact" },
     ];
   }
@@ -15,7 +15,7 @@ export class StaticNavigationRepository implements NavigationRepository {
     return {
       phone: "+46763272283",
       whatsapp: "https://wa.me/46763272283",
-      bookNow: "Book Now"
+      getQuote: "Get a quote"
     };
   }
 }

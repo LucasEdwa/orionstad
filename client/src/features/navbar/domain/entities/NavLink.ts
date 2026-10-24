@@ -6,7 +6,7 @@ export interface NavLink {
 export interface ContactInfo {
   phone: string;
   whatsapp: string;
-  bookNow: string;
+  getQuote: string;
 }
 export interface ContactAction {
   label: string;

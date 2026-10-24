@@ -1,14 +1,26 @@
 {
   "links": [
-    { "label": "Inicio", "href": "/" },
-    { "label": "Servicios", "href": "/services" },
-    { "label": "Sobre Nosotros", "href": "/about" },
-    { "label": "Contáctenos", "href": "/contact" }
+    {
+      "label": "Inicio",
+      "href": "/"
+    },
+    {
+      "label": "Sobre nosotros",
+      "href": "/about"
+    },
+    {
+      "label": "Nuestros servicios",
+      "href": "/services"
+    },
+    {
+      "label": "Contacto",
+      "href": "/contact"
+    }
   ],
   "contactInfo": {
     "phone": "+46763272283",
     "whatsapp": "https://wa.me/46763272283",
-    "bookNow": "Reservar ahora"
+    "getQuote": "Pedir presupuesto"
   },
   "contactAction": {
     "label": "Llamarnos",

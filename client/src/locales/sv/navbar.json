@@ -1,14 +1,26 @@
 {
   "links": [
-    { "label": "Hem", "href": "/" },
-    { "label": "Tjänster", "href": "/services" },
-    { "label": "Om Oss", "href": "/about" },
-    { "label": "Kontakt", "href": "/contact" }
+    {
+      "label": "Hem",
+      "href": "/"
+    },
+    {
+      "label": "Om oss",
+      "href": "/about"
+    },
+    {
+      "label": "Våra tjänster",
+      "href": "/services"
+    },
+    {
+      "label": "Kontakt",
+      "href": "/contact"
+    }
   ],
   "contactInfo": {
     "phone": "+46763272283",
     "whatsapp": "https://wa.me/46763272283",
-    "bookNow": "Boka nu"
+    "getQuote": "Få en offert"
   },
   "contactAction": {
     "label": "Ring oss",

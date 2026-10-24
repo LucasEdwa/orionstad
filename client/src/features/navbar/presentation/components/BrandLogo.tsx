@@ -1,33 +1,21 @@
 import { memo } from "react";
+import { Link } from "react-router-dom";
 import type { BrandInfo } from "../../domain/entities/NavLink";
 
 interface BrandLogoProps {
   brandInfo: BrandInfo;
-  isScrolled: boolean;
 }
 
-export const BrandLogo = memo<BrandLogoProps>(({ brandInfo, isScrolled }) => {
+export const BrandLogo = memo<BrandLogoProps>(({ brandInfo }) => {
   return (
-    <div className="flex items-center space-x-3">
-      <a href="/" className="flex items-center space-x-3 group">
-        <img 
-          src={brandInfo.logoSrc} 
-          alt={`${brandInfo.name} Logo`} 
-          className="h-10 w-20 rounded-full group-hover:scale-105 transition-transform duration-200 object-cover" 
-        />
-        <div className="flex flex-col">
-          <span className={`font-bold text-lg leading-tight transition-colors duration-300 ${
-            isScrolled ? 'text-gray-800' : 'text-white'
-          }`}>
-            {brandInfo.name}
-          </span>
-          <span className={`text-xs italic transition-colors duration-300 ${
-            isScrolled ? 'text-gray-600' : 'text-purple-200'
-          }`}>
-            {brandInfo.tagline}
-          </span>
-        </div>
-      </a>
-    </div>
+    <Link to="/" className="flex items-center shrink-0 lg:ml-2" aria-label={brandInfo.name}>
+      <img
+        src={brandInfo.logoSrc}
+        alt={`${brandInfo.name} Logo`}
+        width={314}
+        height={235}
+        className="h-[3rem] lg:h-[4.125rem] w-auto"
+      />
+    </Link>
   );
 });

@@ -15,49 +15,42 @@ export const Navbar: React.FC = () => {
   const { brandInfo } = useBrand();
 
   return (
-    <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300  ${
-        sidebarOpen
-          ? ' '
-          : isScrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' 
-            : 'bg-orion-gradient backdrop-blur-sm py-4'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-          
+    <header className={`sticky top-0 z-50 bg-white transition-shadow duration-300 ${
+      isScrolled ? 'shadow-[0_1px_12px_rgba(22,59,72,0.08)]' : ''
+    }`}>
+      {/* Rule spans 1010px of the 1100px artboard (45px inset); logo sits 8px inside it */}
+      <nav className="max-w-[68.75rem] mx-auto px-4 sm:px-6 lg:px-[2.8125rem]">
+        <div className="flex items-center justify-between h-[4.5rem] lg:h-[5.9375rem] border-b border-line">
+
           {/* Logo and Brand */}
-          <BrandLogo brandInfo={brandInfo} isScrolled={isScrolled} />
+          <BrandLogo brandInfo={brandInfo} />
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            <DesktopNavigation links={links} isScrolled={isScrolled} />
-            <ContactActions contactInfo={contactInfo} isScrolled={isScrolled} />
+          <div className="hidden lg:flex items-center gap-[3.3125rem]">
+            <DesktopNavigation links={links} />
+            <ContactActions contactInfo={contactInfo} />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
             {!sidebarOpen && (
-              <SidebarMenuButton 
-                onClick={() => setSidebarOpen(true)} 
+              <SidebarMenuButton
+                onClick={() => setSidebarOpen(true)}
                 ariaLabel="Toggle menu"
-                isScrolled={isScrolled}
               />
             )}
           </div>
         </div>
-
-        {/* Mobile Sidebar */}
-          <MobileSidebar
-            isOpen={sidebarOpen}
-            onClose={() => setSidebarOpen(false)}
-            links={links}
-            contactInfo={contactInfo}
-            brandInfo={brandInfo}
-          />
       </nav>
-      
-      {/* Spacer to prevent content from hiding behind fixed navbar */}
-      <div className="h-20"></div>
-    </>
+
+      {/* Mobile Sidebar */}
+      <MobileSidebar
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        links={links}
+        contactInfo={contactInfo}
+        brandInfo={brandInfo}
+      />
+    </header>
   );
 };

@@ -1,5 +1,5 @@
 import type { BrandInfo } from '../domain/entities/NavLink';
-import logoImg from '../../../assets/orion-logo.png';
+import logoImg from '../../../assets/orion-home-logo.png';
 
 export class BrandService {
   getBrandInfo(): BrandInfo {

@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 import { Footer } from "../features/footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import  { AnimatedNavbar } from "../components/AnimatedNav";
+import { Navbar } from "../features/navbar";
 
 export const Layout = () => {
   const location = useLocation();
@@ -21,8 +21,8 @@ export const Layout = () => {
   }, [location]);
 
   return (
-    <div className="bg-gray-100 ">
-      <AnimatedNavbar />
+    <div className="bg-white text-ink">
+      <Navbar />
       <Outlet />
       <Footer />
     </div>

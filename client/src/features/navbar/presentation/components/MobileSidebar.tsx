@@ -1,5 +1,7 @@
 import React from "react";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import { NavLink as RouterNavLink } from "react-router-dom";
+import { ButtonLink } from "../../../../components/ui";
 import type { NavLink, ContactInfo, BrandInfo } from "../../domain/entities/NavLink";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
@@ -35,84 +37,75 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
     <>
       {/* Mobile Sidebar */}
       <div
-        className={`fixed top-0 left-0 w-80 bg-white shadow-2xl transform ${isOpen ? "translate-x-0" : "-translate-x-full"
-          } transition-transform duration-300 ease-out z-[100] lg:hidden`}
+        className={`fixed top-0 left-0 w-80 max-w-[85vw] bg-white shadow-2xl transform ${isOpen ? "translate-x-0 visible" : "-translate-x-full invisible"
+          } transition-[transform,visibility] duration-300 ease-out z-[100] lg:hidden flex flex-col`}
         style={{ height: '100dvh' }}
       >
         {/* Sidebar Header */}
-        <div className="p-6  bg-gray-50">
-          <div className="flex items-center justify-center">
-            <div className="flex flex-col items-center space-x-3 relative">
-              <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-54 w-86 rounded-full object-fill" />
-              <div className="w-full text-center mt-2">
-                <h2 className="text-[#d2b093] font-bold text-lg">{brandInfo.name}</h2>
-                <p className="text-gray-600 text-sm italic">{brandInfo.tagline}</p>
-              </div>
-            </div>
-            <button
-              className="text-gray-800 hover:text-gray-600 transition-colors p-2 absolute top-0 right-0"
-              onClick={onClose}
-              aria-label="Close menu"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+        <div className="flex items-center justify-between px-6 py-4 border-b border-line">
+          <img src={brandInfo.logoSrc} alt={brandInfo.name} className="h-12 w-auto" />
+          <button
+            className="text-ink hover:text-olive transition-colors p-2"
+            onClick={onClose}
+            aria-label="Close menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
 
         {/* Sidebar Navigation */}
-        <div className="p-6 bg-gray-50">
-          <ul className="space-y-4 ">
+        <div className="p-6 flex-1 overflow-y-auto">
+          <ul className="space-y-1">
             {links.map(link => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="flex items-center space-x-3 text-gray-800 hover:text-gray-600 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200 group"
+                <RouterNavLink
+                  to={link.href}
+                  end={link.href === "/"}
+                  className={({ isActive }) =>
+                    `block px-4 py-3 rounded-lg transition-colors duration-200 ${
+                      isActive ? 'bg-sage font-bold text-olive' : 'text-ink hover:bg-sage'
+                    }`
+                  }
                   onClick={onClose}
                 >
-                  <span className="w-1 h-1 bg-orion-gradient rounded-full group-hover:bg-white transition-colors"></span>
-                  <span className="font-medium">{link.label}</span>
-                </a>
+                  {link.label}
+                </RouterNavLink>
               </li>
             ))}
           </ul>
 
           {/* Mobile Contact Actions */}
-          <div className="mt-8 pt-6">
-            <div className="space-y-4">
-              <a
-                href={`tel:${contactInfo.phone}`}
-                className="flex items-center space-x-3 text-gray-800 hover:text-gray-600 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
-              >
-                <FaPhone className="w-4 h-4" />
-                <span>{t("contactAction.label")}</span>
-              </a>
-              <a
-                href={contactInfo.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center space-x-3 text-gray-800 hover:text-green-200 hover:bg-white/10 px-4 py-3 rounded-lg transition-all duration-200"
-              >
-                <FaWhatsapp className="w-4 h-4" />
-                <span>WhatsApp</span>
-              </a>
-              <a
-                href="/#booking"
-                className="block w-full bg-orion-gradient text-gray-800 px-6 py-3 rounded-lg font-semibold text-center hover:bg-purple-50 transition-colors duration-200 shadow-lg"
-                onClick={onClose}
-              >
-                {contactInfo.bookNow}
-              </a>
-            </div>
+          <div className="mt-6 pt-6 border-t border-line space-y-1">
+            <a
+              href={`tel:${contactInfo.phone}`}
+              className="flex items-center gap-3 text-ink hover:bg-sage px-4 py-3 rounded-lg transition-colors duration-200"
+            >
+              <FaPhone className="w-4 h-4 text-olive" />
+              <span>{t("contactAction.label")}</span>
+            </a>
+            <a
+              href={contactInfo.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-ink hover:bg-sage px-4 py-3 rounded-lg transition-colors duration-200"
+            >
+              <FaWhatsapp className="w-4 h-4 text-olive" />
+              <span>WhatsApp</span>
+            </a>
           </div>
+
+          <ButtonLink to="/contact" className="mt-6 w-full" onClick={onClose}>
+            {contactInfo.getQuote}
+          </ButtonLink>
         </div>
       </div>
 
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 lg:hidden"
+          className="fixed inset-0 z-40 bg-ink/30 lg:hidden"
           onClick={onClose}
         />
       )}
