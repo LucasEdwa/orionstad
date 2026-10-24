@@ -1,28 +1,61 @@
+@import "tailwindcss";
+
+/* Orion Home design tokens: bg-olive, text-ink, border-line, bg-sage, ... */
+@theme {
+  --color-olive: #55603a;
+  --color-olive-dark: #454e2f;
+  --color-ink: #163b48;
+  --color-muted: #58717a;
+  --color-line: #dce8eb;
+  --color-sage: #f3f5ef;
+}
+
 body, #root {
   position: static !important;
   overflow: visible !important;
 }
-/* Promo shine text gradient */
-/* Improved readable gold gradient for promo text */
-/* High-contrast gold-white gradient for promo text */
 
-/* Custom utility for Orion gradient background */
-/* Classy & chic Orion gradient */
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+/* The design is a 1100px artboard and all component sizes are in rem
+   (design px / 16). From 1100px up the root size follows the viewport,
+   so the page keeps the design's proportions (55px gutters = 5% of width)
+   like the PDF does when it is scaled to fit the screen. Capped at 1.5x. */
+@media (min-width: 1100px) {
+  html {
+    font-size: clamp(16px, 1.4545vw, 24px);
+  }
+}
+
+/* Legacy utility still used by secondary pages; now the solid brand olive */
 .bg-orion-gradient {
-  background: linear-gradient(90deg,  #d2b093 0%, #e2d8cc 100%);
+  background: var(--color-olive);
+}
+
+/* Small uppercase label above headings (10px bold in the design) */
+.eyebrow {
+  font-size: 0.625rem;
+  line-height: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-olive);
 }
 
 /* Sonner toasts (form confirmations) in Orion colours. Base colours are set on
    <Toaster> in App.tsx; these rules need [data-styled] to outrank sonner's injected styles. */
 [data-sonner-toaster] [data-sonner-toast][data-styled="true"] {
-  border-left: 4px solid #98754C;
-  box-shadow: 0 10px 30px rgba(60, 12, 12, 0.12);
+  border-left: 4px solid var(--color-olive);
+  box-shadow: 0 10px 30px rgba(22, 59, 72, 0.12);
 }
 [data-sonner-toaster] [data-sonner-toast][data-styled="true"] [data-description] {
-  color: #6b4c3b;
+  color: var(--color-muted);
 }
 [data-sonner-toaster] [data-sonner-toast][data-styled="true"][data-type="success"] [data-icon] {
-  color: #98754C;
+  color: var(--color-olive);
 }
 [data-sonner-toaster] [data-sonner-toast][data-styled="true"][data-type="error"] {
   border-left-color: #a8322d;
@@ -31,16 +64,6 @@ body, #root {
   color: #a8322d;
 }
 
-/* Orion Home custom gradient variable */
-:root {
-  --orion-gradient: linear-gradient(90deg, #3C0C0C 0%, #98754C 100%);
-  --contact-gradient-from:  #3C0C0C /* purple-900/70 */
-  --contact-gradient-to: #98754C /* purple-600/50 */
-}
-
-.bg-contact-gradient {
-  background: linear-gradient(to right, var(--contact-gradient-from), var(--contact-gradient-to));
-}
 /* Services page animations */
 @keyframes fade-in-up {
   from {
@@ -162,5 +185,3 @@ body, #root {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-@import "tailwindcss";

@@ -6,9 +6,9 @@ import { Toaster } from 'sonner';
 import { CloudChat, DEFAULT_LAUNCHER_TEASER } from './components/CloudChat';
 
 const TOAST_THEME = {
-  '--normal-bg': '#fffaf5',
-  '--normal-border': '#d2b093',
-  '--normal-text': '#3C0C0C',
+  '--normal-bg': '#ffffff',
+  '--normal-border': '#dce8eb',
+  '--normal-text': '#163b48',
 } as CSSProperties;
 
 // The router is passed in as children: a browser router on the client,
