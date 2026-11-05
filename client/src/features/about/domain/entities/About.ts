@@ -4,27 +4,11 @@ export interface AboutIntro {
   subtitle: string;
 }
 
+/** `text` holds paragraphs separated by a blank line */
 export interface AboutStory {
   eyebrow: string;
   titleLine1: string;
   titleLine2: string;
   text: string;
   imageAlt: string;
-}
-
-export interface AboutPillar {
-  title: string;
-  text: string;
-}
-
-export interface AboutSection {
-  title: string;
-  paragraphs: string[];
-}
-
-export interface AboutPageData {
-  intro: AboutIntro;
-  story: AboutStory;
-  pillars: AboutPillar[];
-  sections: AboutSection[];
 }
