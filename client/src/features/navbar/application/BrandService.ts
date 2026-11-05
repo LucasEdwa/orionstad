@@ -6,7 +6,7 @@ export class BrandService {
     return {
       logoSrc: logoImg,
       name: "Orion Home",
-      tagline: "Where cleaning becomes caring"
+      tagline: "Där städning blir omsorg"
     };
   }
 }

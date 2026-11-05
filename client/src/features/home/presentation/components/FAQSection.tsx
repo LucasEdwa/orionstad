@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { EN_FAQS } from './faqs';
 import { Container } from '../../../../components/ui';
+import type { FAQItem } from './useFaqs';
+import { useFaqs } from './useFaqs';
 
 export const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const { t } = useTranslation('home');
+  const faqs: FAQItem[] = useFaqs();
 
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
@@ -21,7 +23,7 @@ export const FAQSection = () => {
           </div>
   
           <div className="border-t border-line">
-            {EN_FAQS.map((faq, i) => (
+            {faqs.map((faq, i) => (
               <div key={i} className="border-b border-line">
                 <button
                   className="w-full text-left py-[1.125rem] flex justify-between items-center text-[1rem] text-ink hover:text-olive transition-colors"

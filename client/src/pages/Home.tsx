@@ -1,6 +1,7 @@
+import { useTranslation } from 'react-i18next';
 import { Home as CleanArchHome } from '../features/home';
 import { SEO, BASE_URL } from '../components/SEO';
-import { EN_FAQS } from '../features/home/presentation/components/faqs';
+import { useFaqs } from '../features/home/presentation/components/useFaqs';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -12,9 +13,9 @@ const organizationSchema = {
   logo: `${BASE_URL}/icon-512.png`,
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+46763272283',
     contactType: 'customer service',
-    availableLanguage: ['Swedish', 'English', 'Spanish'],
+    email: 'polly@orionstad.se',
+    availableLanguage: ['Swedish', 'English'],
   },
   sameAs: [
     'https://www.facebook.com/people/Orion-Städ/pfbid032LTfFTwtW1M1Rjx4h1CSb3JXGQTonuXZyKpkZiu9j3ZXPUF6tc5KKqpVikBz5SDHl/',
@@ -32,19 +33,11 @@ const localBusinessSchema = {
   legalName: 'Atomus AB',
   description: 'Professional cleaning services in Stockholm, Sweden. Home cleaning, office cleaning, deep cleaning, and move-in/move-out cleaning.',
   url: `${BASE_URL}/`,
-  telephone: '+46763272283',
   email: 'polly@orionstad.se',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Södervägen 18A',
     addressLocality: 'Stockholm',
-    postalCode: '141 36',
     addressCountry: 'SE',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 59.2858,
-    longitude: 18.0050,
   },
   areaServed: ['Stockholm', 'Huddinge', 'Solna', 'Sundbyberg'].map((name) => ({ '@type': 'City', name })),
   priceRange: '$$',
@@ -66,29 +59,35 @@ const websiteSchema = {
   name: 'Orion Home',
   url: `${BASE_URL}/`,
   publisher: { '@id': `${BASE_URL}/#organization` },
-  inLanguage: ['sv', 'en', 'es'],
+  inLanguage: ['sv', 'en'],
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: EN_FAQS.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-  })),
-};
+const Home = () => {
+  const { t } = useTranslation('common');
+  const faqs = useFaqs();
 
-const Home = () => (
-  <>
-    <SEO
-      description="Professional cleaning services in Stockholm. Home cleaning, office cleaning, deep cleaning, and move-in/move-out. Eco-friendly products. Book online today!"
-      keywords="städning Stockholm, hemstädning, kontorsstädning, flyttstädning, deep cleaning Stockholm, professional cleaning Sweden, Orion Home, städfirma Stockholm, eco-friendly cleaning, miljövänlig städning"
-      canonicalUrl={`${BASE_URL}/`}
-      structuredData={[organizationSchema, localBusinessSchema, websiteSchema, faqSchema]}
-    />
-    <CleanArchHome />
-  </>
-);
+  // Built from the visible FAQ text, so schema and page always match the chosen language
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  };
+
+  return (
+    <>
+      <SEO
+        description={t('seo.home.description')}
+        keywords={t('seo.home.keywords')}
+        canonicalUrl={`${BASE_URL}/`}
+        structuredData={[organizationSchema, localBusinessSchema, websiteSchema, faqSchema]}
+      />
+      <CleanArchHome />
+    </>
+  );
+};
 
 export { Home };

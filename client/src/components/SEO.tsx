@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import type { RootState } from '../store';
 
 interface BreadcrumbItem {
@@ -20,26 +21,21 @@ interface SEOProps {
 }
 
 const SITE_NAME = 'Orion Home';
-const DEFAULT_DESCRIPTION =
-  'Professional cleaning services in Stockholm, Sweden. Home cleaning, office cleaning, deep cleaning, and move-in/move-out cleaning. Eco-friendly and affordable.';
 export const BASE_URL = 'https://www.orionstad.se';
-const OG_IMAGE_ALT = 'Orion Home – professional cleaning services in Stockholm';
 
 const LANG_MAP: Record<string, string> = {
   sv: 'sv',
   en: 'en',
-  es: 'es',
 };
 
 const LOCALE_MAP: Record<string, string> = {
   sv: 'sv_SE',
   en: 'en_GB',
-  es: 'es_ES',
 };
 
 export const SEO = ({
   title,
-  description = DEFAULT_DESCRIPTION,
+  description: descriptionProp,
   keywords,
   canonicalUrl,
   ogType = 'website',
@@ -49,12 +45,15 @@ export const SEO = ({
   breadcrumbs,
 }: SEOProps) => {
   const language = useSelector((state: RootState) => state.language.language);
-  const lang = LANG_MAP[language] || 'en';
-  const locale = LOCALE_MAP[language] || 'en_GB';
+  const { t } = useTranslation('common');
+  const description = descriptionProp ?? t('seo.defaultDescription');
+  const imageAlt = t('seo.imageAlt');
+  const lang = LANG_MAP[language] || 'sv';
+  const locale = LOCALE_MAP[language] || 'sv_SE';
 
   const fullTitle = title
     ? `${title} | ${SITE_NAME}`
-    : `${SITE_NAME} – Professional Cleaning Services in Stockholm`;
+    : t('seo.defaultTitle');
 
   const canonical = canonicalUrl || `${BASE_URL}/`;
 
@@ -104,7 +103,7 @@ export const SEO = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={OG_IMAGE_ALT} />
+      <meta property="og:image:alt" content={imageAlt} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content={locale} />
 
@@ -113,7 +112,7 @@ export const SEO = ({
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:image:alt" content={OG_IMAGE_ALT} />
+      <meta name="twitter:image:alt" content={imageAlt} />
 
       {/* Structured Data */}
       {allStructuredData.map((data, i) => (

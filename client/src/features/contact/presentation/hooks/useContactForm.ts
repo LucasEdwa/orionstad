@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import i18n from '../../../../i18n';
 import type { ContactFormState } from '../../domain/entities/ContactForm';
 import { ContactFormService } from '../../application/ContactFormService';
 import { EmailRepository } from '../../infrastructure/EmailRepository';
@@ -24,7 +25,7 @@ export const useContactForm = () => {
 
   const submitForm = async (formElement: HTMLFormElement) => {
     if (!emailRepository.isConfigured()) {
-      const errorMessage = 'Email service is not configured';
+      const errorMessage = i18n.t('toast.notConfigured', { ns: 'common' });
       setFormState(contactFormService.getErrorState(formState, errorMessage));
       notificationService.showError(errorMessage);
       return;
@@ -48,14 +49,14 @@ export const useContactForm = () => {
       if (emailResult.success) {
         setFormState(contactFormService.getSuccessState(formState));
         formElement.reset();
-        notificationService.showSuccess("Your message has been sent successfully! We'll get back to you soon.");
+        notificationService.showSuccess(i18n.t('toast.success', { ns: 'common' }));
       } else {
-        const errorMessage = emailResult.error || 'Failed to send message';
+        const errorMessage = emailResult.error || i18n.t('toast.sendFailed', { ns: 'common' });
         setFormState(contactFormService.getErrorState(formState, errorMessage));
         notificationService.showError(errorMessage);
       }
     } catch {
-      const errorMessage = 'An unexpected error occurred';
+      const errorMessage = i18n.t('toast.unexpected', { ns: 'common' });
       setFormState(contactFormService.getErrorState(formState, errorMessage));
       notificationService.showError(errorMessage);
     }

@@ -1,5 +1,6 @@
 import React from "react";
-import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
+import { LanguageToggle } from "../../../../components/LanguageToggle";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { ButtonLink } from "../../../../components/ui";
 import type { NavLink, ContactInfo, BrandInfo } from "../../domain/entities/NavLink";
@@ -79,22 +80,17 @@ export const MobileSidebar = memo<MobileSidebarProps>(({
           {/* Mobile Contact Actions */}
           <div className="mt-6 pt-6 border-t border-line space-y-1">
             <a
-              href={`tel:${contactInfo.phone}`}
-              className="flex items-center gap-3 text-ink hover:bg-sage px-4 py-3 rounded-lg transition-colors duration-200"
-            >
-              <FaPhone className="w-4 h-4 text-olive" />
-              <span>{t("contactAction.label")}</span>
-            </a>
-            <a
               href={contactInfo.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 text-ink hover:bg-sage px-4 py-3 rounded-lg transition-colors duration-200"
             >
               <FaWhatsapp className="w-4 h-4 text-olive" />
-              <span>WhatsApp</span>
+              <span>{t("contactAction.label")}</span>
             </a>
           </div>
+
+          <LanguageToggle className="mt-6 px-4" />
 
           <ButtonLink to="/contact" className="mt-6 w-full" onClick={onClose}>
             {contactInfo.getQuote}

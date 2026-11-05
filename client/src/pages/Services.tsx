@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Services as ServicesFeature } from '../features/services';
 import { SEO, BASE_URL } from '../components/SEO';
 
@@ -32,17 +33,19 @@ const servicesSchema = {
 };
 
 export const Services = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <SEO
-        title="Cleaning Services"
-        description="Explore our professional cleaning services: regular home cleaning, deep cleaning, move-in/move-out cleaning, office cleaning, and specialized services in Stockholm."
-        keywords="hemstädning Stockholm, kontorsstädning, flyttstädning Stockholm, storstädning, fönsterputsning, städtjänster Stockholm, cleaning services Stockholm, office cleaning Sweden, städfirma"
+        title={t('seo.services.title')}
+        description={t('seo.services.description')}
+        keywords={t('seo.services.keywords')}
         canonicalUrl={`${BASE_URL}/services`}
         structuredData={servicesSchema}
         breadcrumbs={[
-          { name: 'Home', url: `${BASE_URL}/` },
-          { name: 'Services', url: `${BASE_URL}/services` },
+          { name: t('seo.breadcrumbs.home'), url: `${BASE_URL}/` },
+          { name: t('seo.breadcrumbs.services'), url: `${BASE_URL}/services` },
         ]}
       />
       <ServicesFeature />

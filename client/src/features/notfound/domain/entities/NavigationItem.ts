@@ -9,7 +9,7 @@ export interface NavigationItem {
 
 export interface ContactInfo {
   id: string;
-  type: 'phone' | 'email';
+  type: 'whatsapp' | 'email';
   value: string;
   displayValue: string;
   icon: string;

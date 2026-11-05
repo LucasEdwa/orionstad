@@ -1,26 +1,28 @@
 import type { TermsOfServiceRepository } from '../domain/repositories/TermsOfServiceRepository';
 import type { TermsOfService, TrustIndicator, ContactAction } from '../domain/entities/TermsOfService';
-import { TERMS_OF_SERVICE } from '../../../constants/termsOfService';
+import i18n from '../../../i18n';
+
+const t = (key: string) => i18n.t(key, { ns: 'common' });
 
 export class TermsOfServiceRepositoryImpl implements TermsOfServiceRepository {
   getTermsOfService(): TermsOfService {
     return {
       id: 'terms-of-service-v1',
-      title: TERMS_OF_SERVICE.title,
-      lastUpdated: 'August 2025',
-      description: 'We believe in transparency. Here are the terms that govern our cleaning services, written in clear, understandable language.',
+      title: t('terms.title'),
+      lastUpdated: t('terms.lastUpdated'),
+      description: t('terms.description'),
       sections: [
         {
           id: 'privacy-policy',
-          heading: TERMS_OF_SERVICE.sections[0].heading,
-          items: TERMS_OF_SERVICE.sections[0].items,
+          heading: t('terms.safetyHeading'),
+          items: i18n.t('terms.safetyItems', { ns: 'common', returnObjects: true }) as unknown as string[],
           order: 1,
           type: 'privacy'
         },
         {
           id: 'terms-conditions',
-          heading: TERMS_OF_SERVICE.sections[1].heading,
-          content: TERMS_OF_SERVICE.sections[1].content,
+          heading: t('terms.privacyHeading'),
+          content: t('terms.privacyContent'),
           order: 2,
           type: 'terms'
         }
@@ -33,22 +35,22 @@ export class TermsOfServiceRepositoryImpl implements TermsOfServiceRepository {
       {
         id: 'fully-insured',
         icon: '🔒',
-        title: 'Fully Insured',
-        description: 'Complete protection for your peace of mind',
+        title: t('terms.trust.insured.title'),
+        description: t('terms.trust.insured.description'),
         order: 1
       },
       {
         id: 'five-star-service',
         icon: '⭐',
-        title: '5-Star Service',
-        description: 'Consistently rated excellent by our clients',
+        title: t('terms.trust.service.title'),
+        description: t('terms.trust.service.description'),
         order: 2
       },
       {
         id: 'transparent',
         icon: '🤝',
-        title: 'Transparent',
-        description: 'Clear terms, honest pricing, no surprises',
+        title: t('terms.trust.transparent.title'),
+        description: t('terms.trust.transparent.description'),
         order: 3
       }
     ];
@@ -59,17 +61,17 @@ export class TermsOfServiceRepositoryImpl implements TermsOfServiceRepository {
       {
         id: 'contact-us',
         type: 'link',
-        label: 'Contact Us',
+        label: t('terms.contactUs'),
         value: '/contact',
         icon: 'FaInfoCircle',
         primary: true
       },
       {
-        id: 'call-now',
-        type: 'phone',
-        label: 'Call Now',
-        value: '+46763272283',
-        icon: '📞',
+        id: 'whatsapp',
+        type: 'whatsapp',
+        label: t('terms.whatsapp'),
+        value: 'https://wa.me/46763272283',
+        icon: '💬',
         primary: false
       }
     ];

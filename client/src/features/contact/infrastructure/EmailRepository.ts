@@ -23,10 +23,8 @@ export class EmailRepository {
     } catch (error) {
       console.error('EmailJS error:', error);
       
-      return {
-        success: false,
-        error: 'Failed to send message. Please try again.'
-      };
+      // The caller shows a translated fallback message
+      return { success: false };
     }
   }
 

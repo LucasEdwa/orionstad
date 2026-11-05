@@ -19,7 +19,7 @@ export const useNavigation = () => {
   const contactInfo = t("contactInfo", { returnObjects: true }) as ContactInfo;
   
   // Validate translation data
-  if (Array.isArray(links) && links.length > 0 && contactInfo && contactInfo.phone) {
+  if (Array.isArray(links) && links.length > 0 && contactInfo && contactInfo.whatsapp) {
     const navigationRepository = new I18nNavigationRepository(links, contactInfo);
     return {
       links: navigationRepository.getNavigationLinks(),

@@ -18,12 +18,11 @@
     }
   ],
   "contactInfo": {
-    "phone": "+46763272283",
     "whatsapp": "https://wa.me/46763272283",
     "getQuote": "Få en offert"
   },
   "contactAction": {
-    "label": "Ring oss",
+    "label": "Skriv till oss på WhatsApp",
     "href": "/contact"
   }
 }

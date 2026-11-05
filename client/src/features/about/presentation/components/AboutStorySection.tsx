@@ -24,7 +24,11 @@ export const AboutStorySection = memo<AboutStorySectionProps>(({ story }) => (
         <span className="block">{story.titleLine1}</span>
         <span className="block">{story.titleLine2}</span>
       </h2>
-      <p className="mt-[0.625rem] text-[0.875rem] leading-[1.46875rem] text-muted max-w-[32.5rem]">{story.text}</p>
+      <div className="mt-[0.625rem] space-y-3 text-[0.875rem] leading-[1.46875rem] text-muted max-w-[32.5rem]">
+        {story.text.split('\n\n').map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
+      </div>
     </div>
   </div>
 ));

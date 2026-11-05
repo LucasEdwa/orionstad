@@ -7,13 +7,10 @@
   "channels": {
     "title": "We'd love to hear from you.",
     "subtitle": "Choose the way of contact that suits you best.",
-    "callTitle": "Call us",
     "writeTitle": "Write to us",
     "whatsappTitle": "WhatsApp",
-    "whatsappAction": "Start a conversation",
+    "whatsappAction": "Message us on WhatsApp",
     "area": "Cleaning in Stockholm and surrounding areas.",
-    "phone": "076-327 22 83",
-    "phoneHref": "tel:+46763272283",
     "email": "polly@orionstad.se",
     "emailHref": "mailto:polly@orionstad.se",
     "whatsapp": "https://wa.me/46763272283"

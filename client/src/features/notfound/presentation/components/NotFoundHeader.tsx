@@ -1,4 +1,8 @@
+import { useTranslation } from 'react-i18next';
+
 export const NotFoundHeader = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
       {/* Animated 404 with cleaning theme */}
@@ -14,11 +18,10 @@ export const NotFoundHeader = () => {
       {/* Main content */}
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-          Oops! This page got swept away
+          {t('notFound.heading')}
         </h1>
         <p className="text-lg md:text-xl text-gray-600 mb-6 leading-relaxed">
-          Looks like this page needs some cleaning up! Don't worry, we're excellent at finding 
-          what's missing and putting everything back in its right place.
+          {t('notFound.text')}
         </p>
       </div>
     </>

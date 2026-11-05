@@ -7,7 +7,6 @@ interface ContactInfoProps {
 
 export const ContactInfo = memo<ContactInfoProps>(({ channels }) => {
   const rows = [
-    { title: channels.callTitle, label: channels.phone, href: channels.phoneHref },
     { title: channels.writeTitle, label: channels.email, href: channels.emailHref },
     { title: channels.whatsappTitle, label: channels.whatsappAction, href: channels.whatsapp, external: true },
   ];

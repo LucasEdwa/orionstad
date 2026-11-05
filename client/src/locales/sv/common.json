@@ -1,0 +1,107 @@
+{
+  "language": {
+    "label": "Språk",
+    "switchTo": "Byt språk"
+  },
+  "seo": {
+    "siteName": "Orion Home",
+    "defaultTitle": "Orion Home – Professionell städning i Stockholm",
+    "defaultDescription": "Professionell städning i Stockholm. Hemstädning, kontorsstädning, storstädning och flyttstädning. Miljövänliga produkter och personlig kontakt.",
+    "imageAlt": "Orion Home – professionell städning i Stockholm",
+    "breadcrumbs": {
+      "home": "Hem",
+      "about": "Om oss",
+      "contact": "Kontakt",
+      "services": "Tjänster",
+      "terms": "Användarvillkor"
+    },
+    "home": {
+      "description": "Professionell städning i Stockholm. Hemstädning, kontorsstädning, storstädning och flyttstädning. Miljövänliga produkter. Skicka en förfrågan idag!",
+      "keywords": "städning Stockholm, hemstädning, kontorsstädning, flyttstädning, storstädning Stockholm, städfirma Stockholm, miljövänlig städning, Orion Home"
+    },
+    "about": {
+      "title": "Om oss",
+      "description": "Läs om Orion Home – ett städföretag i Stockholm som tror på städning som görs ordentligt, med omsorg om både hemmet och människorna som bor där.",
+      "keywords": "om Orion Home, städföretag Stockholm, miljövänlig städfirma, hållbar städning"
+    },
+    "contact": {
+      "title": "Kontakta oss",
+      "description": "Kontakta Orion Home. Skriv till oss på WhatsApp eller mejla polly@orionstad.se för att få en offert på städning i Stockholm.",
+      "keywords": "kontakta Orion Home, städföretag kontakt Stockholm, offert städning, boka städning Stockholm"
+    },
+    "services": {
+      "title": "Våra tjänster",
+      "description": "Utforska våra städtjänster: hemstädning, storstädning, flyttstädning och kontorsstädning i Stockholm.",
+      "keywords": "hemstädning Stockholm, kontorsstädning, flyttstädning Stockholm, storstädning, städtjänster Stockholm, städfirma"
+    },
+    "terms": {
+      "title": "Användarvillkor",
+      "description": "Läs användarvillkoren och integritetspolicyn för Orion Home, städning i Stockholm."
+    },
+    "notFound": {
+      "title": "Sidan hittades inte"
+    }
+  },
+  "validation": {
+    "nameRequired": "Ange ditt namn",
+    "nameMin": "Namnet måste vara minst 2 tecken",
+    "nameMax": "Namnet får vara högst 100 tecken",
+    "emailRequired": "Ange din e-postadress",
+    "emailInvalid": "Ange en giltig e-postadress",
+    "messageRequired": "Skriv ett meddelande",
+    "messageMin": "Meddelandet måste vara minst 10 tecken",
+    "messageMax": "Meddelandet får vara högst 5000 tecken"
+  },
+  "toast": {
+    "notConfigured": "E-posttjänsten är inte konfigurerad",
+    "success": "Ditt meddelande har skickats! Vi återkommer så snart vi kan.",
+    "sendFailed": "Meddelandet kunde inte skickas. Försök igen.",
+    "unexpected": "Ett oväntat fel uppstod"
+  },
+  "notFound": {
+    "heading": "Hoppsan! Den här sidan har städats bort",
+    "text": "Det verkar som att sidan behöver städas upp! Ingen fara, vi är bra på att hitta det som saknas och sätta allt på rätt plats.",
+    "home": "Till startsidan",
+    "back": "Gå tillbaka",
+    "looking": "Letar du efter något särskilt?",
+    "nav": {
+      "services": { "title": "Våra tjänster", "description": "Utforska våra städtjänster" },
+      "about": { "title": "Om oss", "description": "Läs mer om oss" },
+      "contact": { "title": "Kontakt", "description": "Hör av dig till oss" }
+    },
+    "fact": {
+      "title": "Visste du att?",
+      "description": "Ett rent och organiserat utrymme kan öka produktiviteten med upp till 76 %! Passa på att be oss om en offert medan du är här. 😊",
+      "cta": "Få en offert"
+    },
+    "stillNeedHelp": "Behöver du fortfarande hjälp att hitta rätt?",
+    "whatsapp": "Skriv till oss på WhatsApp"
+  },
+  "terms": {
+    "title": "Användarvillkor",
+    "lastUpdated": "augusti 2025",
+    "lastUpdatedLabel": "Senast uppdaterad",
+    "description": "Vi tror på öppenhet. Här är villkoren för våra städtjänster, skrivna på ett tydligt och lättförståeligt språk.",
+    "back": "Tillbaka",
+    "summaryTitle": "Kort sammanfattning",
+    "summary": "Vi erbjuder professionell städning med respekt och omsorg. Du bokar, vi städar, du blir nöjd. Vi är försäkrade, professionella och inriktade på din tillfredsställelse. Så enkelt är det! 😊",
+    "safetyHeading": "Trygghet, förtroende och garantier",
+    "safetyItems": [
+      "Full försäkring för hem och arbeten.",
+      "Utbildad och respektfull personal",
+      "Fullständig sekretess.",
+      "Noga utvalda kunder och medarbetare"
+    ],
+    "privacyHeading": "Integritetspolicy:",
+    "privacyContent": "Flexibel avbokningspolicy.",
+    "questionsTitle": "Frågor om våra villkor?",
+    "questionsText": "Vi förklarar gärna! Hör av dig om du har frågor om våra villkor eller vår policy.",
+    "contactUs": "Kontakta oss",
+    "whatsapp": "Skriv till oss på WhatsApp",
+    "trust": {
+      "insured": { "title": "Fullt försäkrat", "description": "Komplett skydd för din trygghet" },
+      "service": { "title": "Femstjärnig service", "description": "Genomgående högt betyg från våra kunder" },
+      "transparent": { "title": "Transparent", "description": "Tydliga villkor, ärliga priser, inga överraskningar" }
+    }
+  }
+}

@@ -30,7 +30,7 @@ describe('contactFormSchema', () => {
     const result = contactFormSchema.safeParse({ ...valid, message: 'Hi' });
     expect(result.success).toBe(false);
     if (!result.success) {
-      expect(result.error.issues[0].message).toContain('at least 10');
+      expect(result.error.issues[0].message).toBe('validation.messageMin');
     }
   });
 

@@ -8,7 +8,7 @@
     "eyebrow": "Vår historia",
     "titleLine1": "Byggt på erfarenhet.",
     "titleLine2": "Drivet av omsorg.",
-    "text": "Orion började med egen erfarenhet av städyrket och en vilja att göra det bättre. Med brasiliansk värme och känsla för detaljer vill vi skapa en service som känns personlig från första kontakten.",
+    "text": "Vi startade Orion Home för att vi tror på städning som görs ordentligt, med omsorg om både hemmet och människorna som bor där. För oss betyder kvalitet att vara noggrann, lyssna på dina önskemål och göra ett arbete som du känner dig nöjd med.\n\nVi vill göra det enklare för dig att få vardagen att gå ihop. Med personlig kontakt och hjälp med städningen får du mer tid över och ett rent hem att trivas i.",
     "imageAlt": "Städare i arbete i ett ljust badrum"
   },
   "pillars": [
@@ -27,14 +27,6 @@
   ],
   "sections": [
     {
-      "title": "Vår Ursprungshistoria",
-      "paragraphs": [
-        "Orion Home AB föddes ur levd erfarenhet. Vår grundare började själv som städare, efter att ha immigrerat till Sverige, och tillbringade år med att arbeta för andra företag. Även om hon var tacksam för möjligheten, märkte hon att många metoder saknade både själ och precision.",
-        "Så hon skapade sitt eget sätt — ett som värdesätter kvalitet, respekt och mänsklig kontakt. Städning finns i hennes blod — ett arv från hennes polska rötter — och hon insåg att det var mer än bara ett jobb. Det var hennes kallelse.",
-        "Hon grundade Orion för att förvandla liv genom städningens kraft och skapade något verkligt speciellt i processen."
-      ]
-    },
-    {
       "title": "Vad Som Gör Oss Annorlunda",
       "paragraphs": [
         "Vi städar inte bara — vi bryr oss, observerar och förvandlar. På Orion har vi en unik städmetod som blandar brasiliansk värme och uppmärksamhet på detaljer med skandinavisk effektivitet och standard.",
@@ -52,9 +44,9 @@
       ]
     },
     {
-      "title": "Vårt Expertteam",
+      "title": "Vårt Expert team",
       "paragraphs": [
-        "Vi är ett litet, välutbildat, mångkulturellt team — mestadels bestående av kvinnliga immigranter. Många av dem kom till Sverige utan möjligheter och har blivit mästare i städningens konst genom Orion.",
+        "Vi är ett litet, välutbildat team som tar hand om varje hem med omsorg och noggrannhet.",
         "Varje teammedlem tränas personligen från noll till professionell nivå. Det som förenar oss är inte bara våra färdigheter, utan stoltheten vi tar i vårt arbete och förtroendet vi tjänar från våra kunder.",
         "Vi stöttar varandra, delar erfarenheter och fortsätter lära oss. Orion är mer än ett företag — det är en kollektiv kraft styrd av ett delat syfte: att tjäna genom excellens, omtanke och kärlek för det vi gör."
       ]
@@ -89,7 +81,7 @@
     },
     "team": {
       "number": "10+",
-      "title": "Expertteam",
+      "title": "Expert team",
       "description": "Skickliga professionella"
     },
     "certifications": {

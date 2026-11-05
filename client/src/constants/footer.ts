@@ -13,7 +13,7 @@ export type FooterContent = {
 
 export const FOOTER_CONTENT: FooterContent = {
   copyright: "© 2025 Orion Home. All rights reserved.",
-  address: "Atomus AB, Södervägen 18A, 14137 Huddinge, Sweden, Organisationsnummer 559468-1479",
+  address: "Atomus AB, Organisationsnummer 559468-1479",
   links: [
     { href: "/privacy-policy", label: "Privacy Policy" },
     { href: "/terms-of-service", label: "Terms of Service" },

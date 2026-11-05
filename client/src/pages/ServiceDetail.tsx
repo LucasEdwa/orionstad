@@ -1,10 +1,12 @@
 import { useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ServiceDetail as ServiceDetailFeature, isServiceId, useServicesData } from '../features/services';
 import { SEO, BASE_URL } from '../components/SEO';
 import { NotFound } from './NotFound';
 
 export const ServiceDetail = () => {
   const { serviceId } = useParams();
+  const { t } = useTranslation('common');
   const { page, services } = useServicesData();
   const service = isServiceId(serviceId) ? services.find((s) => s.id === serviceId) : undefined;
 
@@ -30,8 +32,8 @@ export const ServiceDetail = () => {
         canonicalUrl={url}
         structuredData={serviceSchema}
         breadcrumbs={[
-          { name: 'Home', url: `${BASE_URL}/` },
-          { name: 'Services', url: `${BASE_URL}/services` },
+          { name: t('seo.breadcrumbs.home'), url: `${BASE_URL}/` },
+          { name: t('seo.breadcrumbs.services'), url: `${BASE_URL}/services` },
           { name: service.title, url },
         ]}
       />

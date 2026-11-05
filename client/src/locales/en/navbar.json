@@ -18,12 +18,11 @@
     }
   ],
   "contactInfo": {
-    "phone": "+46763272283",
     "whatsapp": "https://wa.me/46763272283",
     "getQuote": "Get a quote"
   },
   "contactAction": {
-    "label": "Call us",
+    "label": "Message us on WhatsApp",
     "href": "/contact"
   }
 }

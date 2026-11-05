@@ -1,4 +1,5 @@
 import { FaInfoCircle } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import type { ContactAction } from '../../domain/entities/TermsOfService';
 
 interface ContactSectionProps {
@@ -6,10 +7,10 @@ interface ContactSectionProps {
 }
 
 export const ContactSection = ({ actions }: ContactSectionProps) => {
+  const { t } = useTranslation("common");
   const getHref = (action: ContactAction): string => {
     switch (action.type) {
-      case 'phone':
-        return `tel:${action.value}`;
+      case 'whatsapp':
       case 'email':
         return `mailto:${action.value}`;
       default:
@@ -33,10 +34,9 @@ export const ContactSection = ({ actions }: ContactSectionProps) => {
 
   return (
     <div className="bg-gradient-to-r from-[#F3F5EF] to-[#F3F5EF] rounded-2xl p-8 text-center">
-      <h3 className="text-2xl font-bold text-gray-800 mb-4">Questions About Our Terms?</h3>
+      <h3 className="text-2xl font-bold text-gray-800 mb-4">{t("terms.questionsTitle")}</h3>
       <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-        We're always happy to clarify anything! Feel free to reach out if you have 
-        questions about our terms or policies.
+        {t("terms.questionsText")}
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -44,6 +44,7 @@ export const ContactSection = ({ actions }: ContactSectionProps) => {
           <a
             key={action.id}
             href={getHref(action)}
+            {...(action.type === 'whatsapp' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className={getButtonStyles(action)}
           >
             {getIcon(action)}

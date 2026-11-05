@@ -1,6 +1,6 @@
 {
   "copyright": "© 2025 Orion Home. Alla rättigheter förbehållna.",
-  "address": "Atomus AB, Södervägen 18A, 14137 Huddinge, Sverige, Organisationsnummer 559468-1479",
+  "address": "Atomus AB, Organisationsnummer 559468-1479",
   "taglineBottom": "Förvandlar hem och liv genom städningens konst",
   "quickLinksTitle": "Snabblänkar",
   "connectTitle": "Anslut med Oss",
@@ -10,14 +10,39 @@
     "description": "Vi förvandlar hem och liv genom vår unika städmetod som blandar brasiliansk värme med skandinavisk effektivitet. Varje hem behandlas som ett heligt utrymme som förtjänar respekt och närvaro."
   },
   "links": [
-    { "href": "/privacy-policy", "label": "Integritetspolicy" },
-    { "href": "/terms-of-service", "label": "Användarvillkor" },
-    { "href": "/contact", "label": "Kontakta oss" }
+    {
+      "href": "/privacy-policy",
+      "label": "Integritetspolicy"
+    },
+    {
+      "href": "/terms-of-service",
+      "label": "Användarvillkor"
+    },
+    {
+      "href": "/contact",
+      "label": "Kontakta oss"
+    }
   ],
   "social": [
-    { "href": "https://www.facebook.com/people/Orion-Städ/pfbid032LTfFTwtW1M1Rjx4h1CSb3JXGQTonuXZyKpkZiu9j3ZXPUF6tc5KKqpVikBz5SDHl/", "label": "Facebook", "icon": "FaFacebook" },
-    { "href": "https://www.instagram.com/orion.stad/", "label": "Instagram", "icon": "FaInstagram" },
-    { "href": "https://www.linkedin.com/in/orion-städ-819995308/?originalSubdomain=se", "label": "LinkedIn", "icon": "FaLinkedin" },
-    { "href": "https://wa.me/46763272283", "label": "WhatsApp", "icon": "FaWhatsapp" }
+    {
+      "href": "https://www.facebook.com/people/Orion-Städ/pfbid032LTfFTwtW1M1Rjx4h1CSb3JXGQTonuXZyKpkZiu9j3ZXPUF6tc5KKqpVikBz5SDHl/",
+      "label": "Facebook",
+      "icon": "FaFacebook"
+    },
+    {
+      "href": "https://www.instagram.com/orion.stad/",
+      "label": "Instagram",
+      "icon": "FaInstagram"
+    },
+    {
+      "href": "https://www.linkedin.com/in/orion-städ-819995308/?originalSubdomain=se",
+      "label": "LinkedIn",
+      "icon": "FaLinkedin"
+    },
+    {
+      "href": "https://wa.me/46763272283",
+      "label": "WhatsApp",
+      "icon": "FaWhatsapp"
+    }
   ]
 }

@@ -67,6 +67,32 @@
   ],
   "faq": {
     "title": "Vanliga frågor",
-    "subtitle": "Allt du behöver veta om våra professionella städtjänster i Stockholm."
+    "subtitle": "Allt du behöver veta om våra professionella städtjänster i Stockholm.",
+    "items": [
+      {
+        "question": "Vilka städtjänster erbjuder ni i Stockholm?",
+        "answer": "Vi erbjuder ett brett utbud av professionell städning i Stockholm med omnejd: hemstädning, storstädning, flyttstädning och kontorsstädning. Alla tjänster kan bokas som ett enstaka besök eller återkommande – varje vecka, varannan vecka eller en gång i månaden."
+      },
+      {
+        "question": "Är era städprodukter miljövänliga?",
+        "answer": "Ja. Vi använder endast miljövänliga, giftfria produkter som är säkra för barn, husdjur och allergiker. Vårt engagemang för hållbar städning ger ett hälsosammare hem för din familj och ett mindre avtryck på miljön."
+      },
+      {
+        "question": "Hur bokar jag en städning?",
+        "answer": "Det är enkelt. Skicka en förfrågan via vårt kontaktformulär eller skriv till oss på WhatsApp. Vi återkommer med en offert, bekräftar din tid och svarar på dina frågor om just dina städbehov."
+      },
+      {
+        "question": "Är era städare försäkrade och bakgrundskontrollerade?",
+        "answer": "Absolut. Alla städare på Orion Home är fullt försäkrade och har genomgått en noggrann bakgrundskontroll. Vi är ett ansvarsfullt städföretag och tar ditt förtroende och din trygghet på största allvar vid varje besök."
+      },
+      {
+        "question": "Vad är skillnaden mellan vanlig städning och storstädning?",
+        "answer": "Vanlig städning omfattar det regelbundna underhållet – dammtorkning, dammsugning, moppning samt rengöring av badrum och kök. Storstädning går längre och tar hand om svåråtkomliga ytor, insidan av vitvaror, utrymmen bakom möbler och smuts som byggts upp över tid. Vi rekommenderar en storstädning innan du börjar med regelbunden städning eller efter en längre period utan städning."
+      },
+      {
+        "question": "Erbjuder ni en nöjdhetsgaranti?",
+        "answer": "Ja. Vi står bakom vårt arbete med 100 % nöjdhetsgaranti. Är du inte nöjd med någon del av städningen, kontakta oss inom 24 timmar så kommer vi tillbaka och städar om utan extra kostnad."
+      }
+    ]
   }
 }

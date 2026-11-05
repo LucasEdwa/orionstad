@@ -7,13 +7,10 @@
   "channels": {
     "title": "Vi hörs gärna.",
     "subtitle": "Välj det kontaktsätt som passar dig bäst.",
-    "callTitle": "Ring oss",
     "writeTitle": "Skriv till oss",
     "whatsappTitle": "WhatsApp",
-    "whatsappAction": "Starta en konversation",
+    "whatsappAction": "Skriv till oss på WhatsApp",
     "area": "Städning i Stockholm med omnejd.",
-    "phone": "076-327 22 83",
-    "phoneHref": "tel:+46763272283",
     "email": "polly@orionstad.se",
     "emailHref": "mailto:polly@orionstad.se",
     "whatsapp": "https://wa.me/46763272283"

@@ -1,0 +1,107 @@
+{
+  "language": {
+    "label": "Language",
+    "switchTo": "Change language"
+  },
+  "seo": {
+    "siteName": "Orion Home",
+    "defaultTitle": "Orion Home – Professional Cleaning Services in Stockholm",
+    "defaultDescription": "Professional cleaning services in Stockholm. Home cleaning, office cleaning, deep cleaning and move-out cleaning. Eco-friendly products and personal contact.",
+    "imageAlt": "Orion Home – professional cleaning services in Stockholm",
+    "breadcrumbs": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact",
+      "services": "Services",
+      "terms": "Terms of Service"
+    },
+    "home": {
+      "description": "Professional cleaning services in Stockholm. Home cleaning, office cleaning, deep cleaning, and move-in/move-out. Eco-friendly products. Send a request today!",
+      "keywords": "städning Stockholm, hemstädning, kontorsstädning, flyttstädning, deep cleaning Stockholm, professional cleaning Sweden, Orion Home, städfirma Stockholm, eco-friendly cleaning, miljövänlig städning"
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn about Orion Home – a cleaning company in Stockholm that believes in cleaning done properly, with care for both the home and the people who live in it.",
+      "keywords": "om Orion Home, städföretag Stockholm, eco-friendly cleaning company, professional cleaners Sweden, miljövänlig städfirma"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with Orion Home. Message us on WhatsApp or email polly@orionstad.se to get a quote for cleaning in Stockholm.",
+      "keywords": "kontakta Orion Home, städföretag kontakt Stockholm, cleaning service contact, book cleaning Stockholm, offert städning"
+    },
+    "services": {
+      "title": "Cleaning Services",
+      "description": "Explore our professional cleaning services: regular home cleaning, deep cleaning, move-in/move-out cleaning and office cleaning in Stockholm.",
+      "keywords": "hemstädning Stockholm, kontorsstädning, flyttstädning Stockholm, storstädning, städtjänster Stockholm, cleaning services Stockholm, städfirma"
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "description": "Read the terms of service and privacy policy for Orion Home cleaning services in Stockholm, Sweden."
+    },
+    "notFound": {
+      "title": "Page Not Found"
+    }
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "nameMin": "Name must be at least 2 characters",
+    "nameMax": "Name must be under 100 characters",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
+    "messageRequired": "Message is required",
+    "messageMin": "Message must be at least 10 characters",
+    "messageMax": "Message must be under 5000 characters"
+  },
+  "toast": {
+    "notConfigured": "Email service is not configured",
+    "success": "Your message has been sent successfully! We'll get back to you soon.",
+    "sendFailed": "Failed to send message. Please try again.",
+    "unexpected": "An unexpected error occurred"
+  },
+  "notFound": {
+    "heading": "Oops! This page got swept away",
+    "text": "Looks like this page needs some cleaning up! Don't worry, we're excellent at finding what's missing and putting everything back in its right place.",
+    "home": "Take Me Home",
+    "back": "Go Back",
+    "looking": "Looking for something specific?",
+    "nav": {
+      "services": { "title": "Our Services", "description": "Explore our cleaning services" },
+      "about": { "title": "About Us", "description": "Learn about our story" },
+      "contact": { "title": "Contact", "description": "Get in touch with us" }
+    },
+    "fact": {
+      "title": "Did you know?",
+      "description": "A clean and organized space can improve productivity by up to 76%! While you're here, why not ask us for a quote? 😊",
+      "cta": "Get a quote"
+    },
+    "stillNeedHelp": "Still need help finding what you're looking for?",
+    "whatsapp": "Message us on WhatsApp"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "August 2025",
+    "lastUpdatedLabel": "Last updated",
+    "description": "We believe in transparency. Here are the terms that govern our cleaning services, written in clear, understandable language.",
+    "back": "Back",
+    "summaryTitle": "Quick Summary",
+    "summary": "We provide professional cleaning services with respect and care. You book, we clean, you're happy. We're insured, professional, and committed to your satisfaction. Simple as that! 😊",
+    "safetyHeading": "Safety, Trust & Guarantees",
+    "safetyItems": [
+      "Full insurance for homes and works.",
+      "Trained, respectful staff",
+      "Total confidentiality.",
+      "Carefully selected clients and staff"
+    ],
+    "privacyHeading": "Privacy Policy:",
+    "privacyContent": "Flexible cancellation policy.",
+    "questionsTitle": "Questions About Our Terms?",
+    "questionsText": "We're always happy to clarify anything! Feel free to reach out if you have questions about our terms or policies.",
+    "contactUs": "Contact Us",
+    "whatsapp": "Message us on WhatsApp",
+    "trust": {
+      "insured": { "title": "Fully Insured", "description": "Complete protection for your peace of mind" },
+      "service": { "title": "5-Star Service", "description": "Consistently rated excellent by our clients" },
+      "transparent": { "title": "Transparent", "description": "Clear terms, honest pricing, no surprises" }
+    }
+  }
+}

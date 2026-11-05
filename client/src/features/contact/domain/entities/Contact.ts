@@ -7,13 +7,10 @@ export interface ContactPageIntro {
 export interface ContactChannels {
   title: string;
   subtitle: string;
-  callTitle: string;
   writeTitle: string;
   whatsappTitle: string;
   whatsappAction: string;
   area: string;
-  phone: string;
-  phoneHref: string;
   email: string;
   emailHref: string;
   whatsapp: string;

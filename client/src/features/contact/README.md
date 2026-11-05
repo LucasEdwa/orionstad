@@ -100,7 +100,7 @@ The contact form integrates with EmailJS for reliable email delivery:
 
 ### 🎨 User Experience Enhancements
 - **Hero Section**: Stunning background image with overlay and logo
-- **Quick Actions**: One-click contact options (call, WhatsApp, email)
+- **Quick Actions**: One-click contact options (WhatsApp, email)
 - **Form Validation**: Real-time validation with helpful error messages
 - **Loading States**: Visual feedback during form submission
 - **Success/Error Feedback**: Toast notifications for submission results
@@ -112,7 +112,6 @@ The contact form integrates with EmailJS for reliable email delivery:
 - **Fast Loading**: Optimized images and lazy loading
 
 ### 🔗 Contact Methods
-- **Phone**: Direct calling with tel: links
 - **Email**: Mailto links for email clients
 - **WhatsApp**: Direct messaging integration
 - **Contact Form**: Full-featured form with EmailJS integration

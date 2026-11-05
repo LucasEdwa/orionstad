@@ -4,7 +4,6 @@ export interface NavLink {
 }
 
 export interface ContactInfo {
-  phone: string;
   whatsapp: string;
   getQuote: string;
 }

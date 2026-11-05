@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import type { FieldErrors } from '../validation';
 
 interface FieldErrorProps {
@@ -6,11 +7,12 @@ interface FieldErrorProps {
 }
 
 export const FieldError: React.FC<FieldErrorProps> = ({ name, errors }) => {
+  const { t } = useTranslation('common');
   const error = errors[name];
   if (!error) return null;
   return (
     <p className="mt-1 text-sm text-red-600" role="alert">
-      {error}
+      {t(error)}
     </p>
   );
 };

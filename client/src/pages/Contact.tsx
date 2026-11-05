@@ -1,20 +1,23 @@
+import { useTranslation } from 'react-i18next';
 import { Contact as ContactFeature } from '../features/contact';
 import { SEO, BASE_URL } from '../components/SEO';
 
 export const Contact = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <SEO
-        title="Contact Us"
-        description="Get in touch with Orion Home. Call +46 76 327 22 83 or email polly@orionstad.se. Located at Södervägen 18A, 141 36 Stockholm, Sweden."
-        keywords="kontakta Orion Home, städföretag kontakt Stockholm, cleaning service contact, book cleaning Stockholm, offert städning"
+        title={t('seo.contact.title')}
+        description={t('seo.contact.description')}
+        keywords={t('seo.contact.keywords')}
         canonicalUrl={`${BASE_URL}/contact`}
         breadcrumbs={[
-          { name: 'Home', url: `${BASE_URL}/` },
-          { name: 'Contact', url: `${BASE_URL}/contact` },
+          { name: t('seo.breadcrumbs.home'), url: `${BASE_URL}/` },
+          { name: t('seo.breadcrumbs.contact'), url: `${BASE_URL}/contact` },
         ]}
       />
       <ContactFeature />
     </>
   );
-}
+};

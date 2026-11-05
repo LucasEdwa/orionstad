@@ -25,7 +25,7 @@ export interface TrustIndicator {
 
 export interface ContactAction {
   id: string;
-  type: 'link' | 'phone' | 'email';
+  type: 'link' | 'whatsapp' | 'email';
   label: string;
   value: string;
   icon: string;

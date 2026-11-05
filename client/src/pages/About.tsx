@@ -1,17 +1,20 @@
+import { useTranslation } from 'react-i18next';
 import { About as AboutFeature } from '../features/about';
 import { SEO, BASE_URL } from '../components/SEO';
 
 export const About = () => {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <SEO
-        title="About Us"
-        description="Learn about Orion Home – a professional, eco-friendly cleaning company based in Stockholm, Sweden. Our story, values, and commitment to excellence."
-        keywords="om Orion Home, städföretag Stockholm, eco-friendly cleaning company, professional cleaners Sweden, miljövänlig städfirma, hållbar städning"
+        title={t('seo.about.title')}
+        description={t('seo.about.description')}
+        keywords={t('seo.about.keywords')}
         canonicalUrl={`${BASE_URL}/about`}
         breadcrumbs={[
-          { name: 'Home', url: `${BASE_URL}/` },
-          { name: 'About', url: `${BASE_URL}/about` },
+          { name: t('seo.breadcrumbs.home'), url: `${BASE_URL}/` },
+          { name: t('seo.breadcrumbs.about'), url: `${BASE_URL}/about` },
         ]}
       />
       <AboutFeature />

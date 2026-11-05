@@ -3,6 +3,7 @@ import { DesktopNavigation } from "./components/DesktopNavigation";
 import { ContactActions } from "./components/ContactActions";
 import { SidebarMenuButton } from "./components/SidebarMenuButton";
 import { MobileSidebar } from "./components/MobileSidebar";
+import { LanguageToggle } from "../../../components/LanguageToggle";
 
 // Hooks
 import { useNavigation } from "./hooks/useNavigation";
@@ -28,6 +29,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-[3.3125rem]">
             <DesktopNavigation links={links} />
+            <LanguageToggle />
             <ContactActions contactInfo={contactInfo} />
           </div>
 

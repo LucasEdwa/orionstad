@@ -1,21 +1,22 @@
 import { z } from 'zod';
 
 // --- Contact Form ---
+// Messages are translation keys (common namespace); FieldError renders them in the active language
 export const contactFormSchema = z.object({
   user_name: z
     .string()
-    .min(1, 'Name is required')
-    .min(2, 'Name must be at least 2 characters')
-    .max(100, 'Name must be under 100 characters'),
+    .min(1, 'validation.nameRequired')
+    .min(2, 'validation.nameMin')
+    .max(100, 'validation.nameMax'),
   user_email: z
     .string()
-    .min(1, 'Email is required')
-    .email('Please enter a valid email address'),
+    .min(1, 'validation.emailRequired')
+    .email('validation.emailInvalid'),
   message: z
     .string()
-    .min(1, 'Message is required')
-    .min(10, 'Message must be at least 10 characters')
-    .max(5000, 'Message must be under 5000 characters'),
+    .min(1, 'validation.messageRequired')
+    .min(10, 'validation.messageMin')
+    .max(5000, 'validation.messageMax'),
 });
 
 export type ContactFormDataValidated = z.infer<typeof contactFormSchema>;

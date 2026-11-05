@@ -1,4 +1,5 @@
 import { FaShieldAlt, FaArrowLeft } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 interface TermsHeaderProps {
   title: string;
@@ -8,6 +9,8 @@ interface TermsHeaderProps {
 }
 
 export const TermsHeader = ({ title, description, lastUpdated, onGoBack }: TermsHeaderProps) => {
+  const { t } = useTranslation("common");
+
   return (
     <div className="bg-gradient-to-r from-[#3E4729] to-[#55603A] text-white py-12">
       <div className="max-w-4xl mx-auto px-6">
@@ -16,7 +19,7 @@ export const TermsHeader = ({ title, description, lastUpdated, onGoBack }: Terms
           className="flex items-center gap-2 text-[#55603A] hover:text-white transition-colors mb-6"
         >
           <FaArrowLeft className="text-sm" />
-          <span>Back</span>
+          <span>{t("terms.back")}</span>
         </button>
         
         <div className="flex items-center gap-4 mb-4">
@@ -29,7 +32,7 @@ export const TermsHeader = ({ title, description, lastUpdated, onGoBack }: Terms
         </p>
         
         <div className="mt-6 text-sm text-[#55603A]">
-          <span>Last updated: {lastUpdated}</span>
+          <span>{t("terms.lastUpdatedLabel")}: {lastUpdated}</span>
         </div>
       </div>
     </div>
