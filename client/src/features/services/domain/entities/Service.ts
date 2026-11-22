@@ -10,7 +10,10 @@ export interface ServiceCatalogEntry {
 }
 
 export interface Service extends ServiceCatalogEntry {
+  /** Main image (the first of `images`) */
   image: string;
+  /** Every image of the service; the card shows them as a slideshow when there are several */
+  images: string[];
 }
 
 export interface ServicesPageIntro {

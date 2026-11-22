@@ -13,7 +13,7 @@ export const useServicesData = (): ServicesPageData => {
   const page = t('page', { returnObjects: true }) as ServicesPageIntro;
   const catalog = t('catalog', { returnObjects: true }) as ServiceCatalogEntry[];
 
-  const services = servicesDataService.transformCatalog(catalog, (id) => assetsRepository.getServiceImage(id));
+  const services = servicesDataService.transformCatalog(catalog, (id) => assetsRepository.getServiceImages(id));
 
   return servicesDataService.createServicesPageData(page, services);
 };

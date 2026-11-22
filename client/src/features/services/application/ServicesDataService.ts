@@ -2,12 +2,15 @@ import type { Service, ServiceCatalogEntry, ServicesPageIntro, ServicesPageData 
 import { isServiceId, type ServiceId } from '../domain/serviceIds';
 
 export class ServicesDataService {
-  /** Drops catalog entries with unknown ids and attaches each service's image */
-  transformCatalog(catalog: ServiceCatalogEntry[], getImage: (id: ServiceId) => string): Service[] {
+  /** Drops catalog entries with unknown ids and attaches each service's images */
+  transformCatalog(catalog: ServiceCatalogEntry[], getImages: (id: ServiceId) => string[]): Service[] {
     if (!Array.isArray(catalog)) return [];
     return catalog
       .filter((entry) => isServiceId(entry.id))
-      .map((entry) => ({ ...entry, image: getImage(entry.id) }));
+      .map((entry) => {
+        const images = getImages(entry.id);
+        return { ...entry, image: images[0], images };
+      });
   }
 
   createServicesPageData(page: ServicesPageIntro, services: Service[]): ServicesPageData {

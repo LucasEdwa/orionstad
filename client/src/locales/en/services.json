@@ -6,6 +6,7 @@
   },
   "ui": {
     "requestQuote": "Request a quote",
+    "showImage": "Show image {{n}}",
     "included": "What's included",
     "allServices": "All services",
     "otherServices": "More services",

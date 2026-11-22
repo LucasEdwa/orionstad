@@ -6,6 +6,7 @@
   },
   "ui": {
     "requestQuote": "Be om offert",
+    "showImage": "Visa bild {{n}}",
     "included": "Det här ingår",
     "allServices": "Alla tjänster",
     "otherServices": "Fler tjänster",
