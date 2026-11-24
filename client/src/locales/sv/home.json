@@ -1,4 +1,12 @@
 {
+  "holidayPromo": {
+    "eyebrow": "Jul- & nyårserbjudande",
+    "title": "Ett rent hem. En lugnare jul.",
+    "offer": "10% rabatt på storstädning",
+    "text": "Vi tar hand om städningen så att du får mer tid över till julens alla stunder.",
+    "validity": "Gäller bokningar 2 december – 20 januari.",
+    "cta": "Boka storstädning"
+  },
   "seasonBanner": {
     "cta": "Utforska Våra Tjänster",
     "title": "Hösten är nästan över, vintern är nära!",

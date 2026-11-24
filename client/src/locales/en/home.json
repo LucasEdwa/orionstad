@@ -1,4 +1,12 @@
 {
+  "holidayPromo": {
+    "eyebrow": "Christmas & New Year offer",
+    "title": "A clean home. A calmer Christmas.",
+    "offer": "10% off deep cleaning",
+    "text": "We take care of the cleaning so you have more time for the moments that matter this season.",
+    "validity": "Valid for bookings 2 December – 20 January.",
+    "cta": "Book deep cleaning"
+  },
   "seasonBanner": {
     "cta": "Explore Our Services",
     "title": "Autumn is almost over, winter is near!",
